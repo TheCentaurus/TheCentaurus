@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+  font-family: "Karla" ;
+  src: url("/Karla.ttf") ;
+}
+
+@font-face {
+  font-family: "Josefin Sans" ;
+  src: url("/JosefinSans.ttf") ;
+  font-weight: 700;
+}
+
+
+html,
+body {
+  font-family: "Karla", sans-serif;
+  font-weight: bold;
+ 
+}
+
+.only {
+  font-family: "Josefin Sans", sans-serif;
+
+  
+}
+
+
+.hide-scroll-bar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hide-scroll-bar::-webkit-scrollbar {
+  display: none;
+}
+
+
+@media (max-width: 1060px) {
+  main {
+    display: block !important;
+    padding: 88px 2%;
+  }
+  main .row {
+    width: 100% !important;
+  }
+
+  main .shoe {
+    margin-right: 0px !important;
+  }
+
+  main .shoe img {
+    width: 80vw !important;
+    height: auto !important;
+  }
+
+}
+
+@media (min-width: 2100px) {
+  main .row {
+    width: 100% !important;
+  }
+
+  main .shoe img {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 1000px !important;
+    max-height: 100% !important;
+  }
+
+
+}
