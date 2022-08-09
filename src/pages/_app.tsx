@@ -3,6 +3,9 @@ import "../styles/global.css"
 import 'tailwindcss/tailwind.css'
 import type { AppProps } from 'next/app'
 import NextHead from 'next/head'
+import { useEffect } from 'react'
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 // 1. import `ChakraProvider` component
 import { ChakraProvider } from '@chakra-ui/react'
@@ -54,11 +57,16 @@ const client = createClient({
 })
 
 function App({ Component, pageProps }: AppProps) {
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
+
   return (
     <WagmiConfig client={client}>
       
       <NextHead>
-        <title>Mint | HODLēR</title>
+        <title>Centaurus | Mint</title>
         <link rel="shortcut icon" href="favicon.ico" />
 
                 <link
