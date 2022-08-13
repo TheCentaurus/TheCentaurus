@@ -3,7 +3,10 @@
 @tailwind utilities;
 
 
-@font-face {
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+
+/* @font-face {
   font-family: "Karla" ;
   src: url("/Karla.ttf") ;
 }
@@ -12,12 +15,13 @@
   font-family: "Josefin Sans" ;
   src: url("/JosefinSans.ttf") ;
   font-weight: 700;
-}
+} */
 
 
 html,
 body {
-  font-family: "Karla", sans-serif;
+  /* font-family: "Karla", sans-serif; */
+  font-family: "Inter", sans-serif;
   font-weight: bold;
  
 }
