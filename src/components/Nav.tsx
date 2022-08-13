@@ -7,6 +7,10 @@ import { Sidebar } from "./Sidebar";
 import { FiMoreHorizontal } from "react-icons/fi";
 import {
   Button,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
   Modal,
   ModalBody,
   ModalCloseButton,
@@ -128,15 +132,64 @@ export function Nav(props: any) {
             </button>
           </div>
           <div>
-            <button className="border-2 border-yellow-300 cursor-pointer text-[#E6E0FA] font-bold lg:text-sm text-[12px] rounded-xl px-[15px] py-[10px]">
-              <FiMoreHorizontal
-                size={20}
-                className="text-center text-gray-600"
-              />
-            </button>
+            {/* menu item */}
+            <Menu>
+              <MenuButton className="border-2 border-yellow-300 cursor-pointer text-[#E6E0FA] font-bold lg:text-sm text-[12px] rounded-xl px-[15px] py-[10px]">
+                {" "}
+                <FiMoreHorizontal
+                  size={20}
+                  className="text-center text-[#E6E0FA]"
+                />
+              </MenuButton>
+              <MenuList border={"none"} bg={"#1b1324a1"} color={"#E6E0FA"}>
+                <MenuItem
+                  _hover={{
+                    background: "#1b1324",
+                    color: "teal.500",
+                  }}
+                  _focus={{ background: "#1b1324", color: "teal.500" }}
+                >
+                  NFT Junction
+                </MenuItem>
+                <MenuItem
+                  _hover={{
+                    background: "#1b1324",
+                    color: "teal.500",
+                  }}
+                >
+                  DEX
+                </MenuItem>
+                <MenuItem
+                  _hover={{
+                    background: "#1b1324",
+                    color: "teal.500",
+                  }}
+                >
+                  $$cent
+                </MenuItem>
+                <MenuItem
+                  _hover={{
+                    background: "#1b1324",
+                    color: "teal.500",
+                  }}
+                >
+                  Resources
+                </MenuItem>
+                <MenuItem
+                  _hover={{
+                    background: "#1b1324",
+                    color: "teal.500",
+                  }}
+                >
+                  Home
+                </MenuItem>
+              </MenuList>
+            </Menu>
+            {/* end menu item */}
           </div>
         </div>
       </div>
+
       {/* modal for search on mobile */}
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
