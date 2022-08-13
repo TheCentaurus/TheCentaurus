@@ -3,8 +3,8 @@ import { BiWallet, BiImageAdd } from "react-icons/bi";
 
 export function CTA() {
   return (
-    <div className="px-5 lg:px-0">
-      <h1 className="text-3xl font-semibold text-center text-[#E6E0FA]">
+    <div className="px-5 lg:px-0 lg:pb-10">
+      <h1 className="text-2xl lg:text-4xl font-bold text-center text-[#E6E0FA] my-10">
         Easiest place to create, buy and sell NFTs on web3
       </h1>
 

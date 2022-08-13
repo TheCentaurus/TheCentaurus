@@ -1,120 +1,112 @@
+import logo from "../assets/logo.svg";
+import audit from "../assets/audit.png";
+import binance from "../assets/binance.png";
+import Link from "next/link";
+import {
+  AiOutlineFacebook,
+  AiOutlineTwitter,
+  AiOutlineInstagram,
+} from "react-icons/ai";
+import { TbBrandTelegram, TbBrandDiscord } from "react-icons/tb";
+import { FaMediumM } from "react-icons/fa";
+import { FiTwitter } from "react-icons/fi";
 export function Footer() {
   return (
     <div className="bg-[#120E17]">
-      <footer className="text-[#E6E0FA] body-font">
+      <footer className="text-[#E6E0FA] font-light text-sm ">
         <div className="container px-5 py-24 mx-auto">
-          <div className="flex flex-wrap -mx-4 -mb-10 text-center md:text-left">
-            <div className="w-full px-4 lg:w-1/6 md:w-1/2">
-              <h2 className="mb-3 text-sm font-medium tracking-widest text-[#E6E0FA] title-font">
-                CATEGORIES
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+            <div className="w-full px-4 ">
+              <div className="flex justify-center w-full">
+                <img
+                  src={logo.src}
+                  alt=""
+                  className="md:w-full h-16 object-contain  m-auto md:-ml-5 -mt-10 mb-5 "
+                />
+              </div>
+              <p className="text-[#E6E0FA] text-left ">
+                Centaurus is world’s first Cross-chain Decentralized digital NFT
+                marketplace that hosts the complete NFT lifecycle, and allows
+                anyone to securely and seamlessly create, collect, buy, and sell
+                NFTs.
+              </p>
+            </div>
+            <div className="w-full px-4 text-center md:text-left">
+              <h2 className="mb-3 text-lg font-medium tracking-widest text-[#E6E0FA] title-font">
+                My Account
               </h2>
               <nav className="mb-10 list-none">
                 <li>
-                  <a className="text-[#E6E0FA]">First Link</a>
+                  <Link href="#" className="text-[#E6E0FA]">
+                    Profile
+                  </Link>
                 </li>
                 <li>
-                  <a className="text-[#E6E0FA]">Second Link</a>
-                </li>
-                <li>
-                  <a className="text-[#E6E0FA]">Third Link</a>
-                </li>
-                <li>
-                  <a className="text-[#E6E0FA]">Fourth Link</a>
+                  <Link href="#" className="text-[#E6E0FA]">
+                    Settings
+                  </Link>
                 </li>
               </nav>
             </div>
-            <div className="w-full px-4 lg:w-1/6 md:w-1/2">
-              <h2 className="mb-3 text-sm font-medium tracking-widest text-[#E6E0FA] title-font">
-                CATEGORIES
+            <div className="w-full px-4 text-center md:text-left">
+              <h2 className="mb-3 text-lg font-medium tracking-widest text-[#E6E0FA] title-font">
+                Resources
               </h2>
               <nav className="mb-10 list-none">
                 <li>
-                  <a className="text-[#E6E0FA]">First Link</a>
+                  <Link href="/help" className="text-[#E6E0FA]">
+                    Help Contact
+                  </Link>
                 </li>
                 <li>
-                  <a className="text-[#E6E0FA]">Second Link</a>
+                  <Link href="/disclaimer" className="text-[#E6E0FA]">
+                    Disclaimer
+                  </Link>
                 </li>
                 <li>
-                  <a className="text-[#E6E0FA]">Third Link</a>
+                  <Link href="/terms" className="text-[#E6E0FA]">
+                    Terms and Conditions
+                  </Link>
                 </li>
                 <li>
-                  <a className="text-[#E6E0FA]">Fourth Link</a>
+                  <Link href="/privacy" className="text-[#E6E0FA]">
+                    Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/faq" className="text-[#E6E0FA]">
+                    FAQ
+                  </Link>
                 </li>
               </nav>
             </div>
-            <div className="w-full px-4 lg:w-1/6 md:w-1/2">
-              <h2 className="mb-3 text-sm font-medium tracking-widest text-[#E6E0FA] title-font">
-                CATEGORIES
+            <div className="w-full px-4 text-center md:text-left">
+              <h2 className="mb-3 text-lg font-medium tracking-widest text-[#E6E0FA] title-font">
+                Company
               </h2>
               <nav className="mb-10 list-none">
                 <li>
-                  <a className="text-[#E6E0FA]">First Link</a>
-                </li>
-                <li>
-                  <a className="text-[#E6E0FA]">Second Link</a>
-                </li>
-                <li>
-                  <a className="text-[#E6E0FA]">Third Link</a>
-                </li>
-                <li>
-                  <a className="text-[#E6E0FA]">Fourth Link</a>
+                  <Link href="/about" className="text-[#E6E0FA]">
+                    About
+                  </Link>
                 </li>
               </nav>
             </div>
-            <div className="w-full px-4 lg:w-1/6 md:w-1/2">
-              <h2 className="mb-3 text-sm font-medium tracking-widest text-[#E6E0FA] title-font">
-                CATEGORIES
-              </h2>
+            <div className="w-full px-4 text-center md:text-left">
               <nav className="mb-10 list-none">
                 <li>
-                  <a className="text-[#E6E0FA]">First Link</a>
+                  <img
+                    src={audit.src}
+                    alt=""
+                    className="md:w-full h-16 object-contain  m-auto mb-5 cursor-pointer"
+                  />
                 </li>
                 <li>
-                  <a className="text-[#E6E0FA]">Second Link</a>
-                </li>
-                <li>
-                  <a className="text-[#E6E0FA]">Third Link</a>
-                </li>
-                <li>
-                  <a className="text-[#E6E0FA]">Fourth Link</a>
-                </li>
-              </nav>
-            </div>
-            <div className="w-full px-4 lg:w-1/6 md:w-1/2">
-              <h2 className="mb-3 text-sm font-medium tracking-widest text-[#E6E0FA] title-font">
-                CATEGORIES
-              </h2>
-              <nav className="mb-10 list-none">
-                <li>
-                  <a className="text-[#E6E0FA]">First Link</a>
-                </li>
-                <li>
-                  <a className="text-[#E6E0FA]">Second Link</a>
-                </li>
-                <li>
-                  <a className="text-[#E6E0FA]">Third Link</a>
-                </li>
-                <li>
-                  <a className="text-[#E6E0FA]">Fourth Link</a>
-                </li>
-              </nav>
-            </div>
-            <div className="w-full px-4 lg:w-1/6 md:w-1/2">
-              <h2 className="mb-3 text-sm font-medium tracking-widest text-[#E6E0FA] title-font">
-                CATEGORIES
-              </h2>
-              <nav className="mb-10 list-none">
-                <li>
-                  <a className="text-[#E6E0FA]">First Link</a>
-                </li>
-                <li>
-                  <a className="text-[#E6E0FA]">Second Link</a>
-                </li>
-                <li>
-                  <a className="text-[#E6E0FA]">Third Link</a>
-                </li>
-                <li>
-                  <a className="text-[#E6E0FA]">Fourth Link</a>
+                  <img
+                    src={binance.src}
+                    alt=""
+                    className="md:w-full h-16 object-contain cursor-pointer  m-auto"
+                  />
                 </li>
               </nav>
             </div>
@@ -122,102 +114,20 @@ export function Footer() {
         </div>
         <div className="border-t border-gray-200">
           <div className="container flex flex-wrap items-center px-5 py-8 mx-auto">
-            <div className="flex flex-wrap items-end justify-center md:flex-nowrap md:justify-start">
-              <div className="relative w-40 mr-2 sm:w-64 sm:mr-4">
-                <label className="text-sm leading-7 text-[#E6E0FA]">
-                  Placeholder
-                </label>
-                <input
-                  type="text"
-                  id="footer-field"
-                  name="footer-field"
-                  className="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-gray-100 bg-opacity-50 border border-gray-300 rounded outline-none focus:ring-2 focus:bg-transparent focus:ring-indigo-200 focus:border-indigo-500"
-                />
-              </div>
-              <button className="inline-flex px-6 py-2 text-[#E6E0FA] bg-indigo-500 border-0 rounded focus:outline-none hover:bg-indigo-600">
-                Button
-              </button>
-              <p className="mt-2 text-sm text-center text-[#E6E0FA] md:ml-6 md:mt-0 sm:text-left">
-                Bitters chicharrones fanny pack
-                <br className="hidden lg:block" />
-                waistcoat green juice
+            <div>
+              {" "}
+              <p className="text-sm text-center md:text-left text-[#E6E0FA] sm:text-left">
+                © 2022 All Rights Reserved The Centaurus.io.
               </p>
             </div>
-            <span className="inline-flex justify-center w-full mt-6 lg:ml-auto lg:mt-0 md:justify-start md:w-auto">
-              <a className="text-[#E6E0FA]">
-                <svg
-                  fill="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  className="w-5 h-5"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
-                </svg>
-              </a>
-              <a className="ml-3 text-[#E6E0FA]">
-                <svg
-                  fill="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  className="w-5 h-5"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
-                </svg>
-              </a>
-              <a className="ml-3 text-[#E6E0FA]">
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  className="w-5 h-5"
-                  viewBox="0 0 24 24"
-                >
-                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-                  <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
-                </svg>
-              </a>
-              <a className="ml-3 text-[#E6E0FA]">
-                <svg
-                  fill="currentColor"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="0"
-                  className="w-5 h-5"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke="none"
-                    d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
-                  ></path>
-                  <circle cx="4" cy="4" r="2" stroke="none"></circle>
-                </svg>
-              </a>
-            </span>
-          </div>
-        </div>
-        <div>
-          <div className="container flex flex-col flex-wrap px-5 py-4 mx-auto sm:flex-row">
-            <p className="text-sm text-center text-[#E6E0FA] sm:text-left">
-              © 2020 Tailblocks —
-              <a
-                href="https://twitter.com/knyttneve"
-                className="ml-1 text-[#E6E0FA]"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                @knyttneve
-              </a>
-            </p>
-            <span className="w-full mt-2 text-sm text-center text-[#E6E0FA] sm:ml-auto sm:mt-0 sm:w-auto sm:text-left">
-              Enamel pin tousled raclette tacos irony
-            </span>
+            <div className="inline-flex justify-center w-full mt-6 lg:ml-auto lg:mt-0 md:justify-start md:w-auto">
+              <AiOutlineInstagram className=" h-5 w-5 mr-2" />
+              <AiOutlineFacebook className=" h-5 w-5 mr-2" />
+              <FiTwitter className="h-5 w-5 mr-2" />
+              <TbBrandTelegram className=" h-5 w-5 mr-2" />
+              <TbBrandDiscord className=" h-5 w-5 mr-2" />
+              <FaMediumM className=" h-5 w-5 mr-2" />
+            </div>
           </div>
         </div>
       </footer>

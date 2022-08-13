@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo.svg";
 import { BsSearch } from "react-icons/bs";
 import { IoNotifications } from "react-icons/io5";
 import { AiOutlineMenu, AiFillInstagram } from "react-icons/ai";
@@ -64,7 +64,7 @@ export function Nav(props: any) {
             onClick={onOpen}
             className="h-7 w-7 bg-[#1b1324] border p-2 rounded-lg mr-5"
           >
-            <BsSearch size={10} className="text-white" />
+            <BsSearch size={10} className="text-[#E6E0FA]" />
           </div>
           <h1 className="text-gray-600">
             <AiOutlineMenu
@@ -141,8 +141,10 @@ export function Nav(props: any) {
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader className="bg-[#1b1324] text-white">Search</ModalHeader>
-          <ModalCloseButton className="text-white" />
+          <ModalHeader className="bg-[#1b1324] text-[#E6E0FA]">
+            Search
+          </ModalHeader>
+          <ModalCloseButton className="text-[#E6E0FA]" />
           <ModalBody className="bg-[#1b1324]">
             <form className="w-full">
               <label className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300">
@@ -179,7 +181,7 @@ export function Nav(props: any) {
 
           <ModalFooter className="bg-[#1b1324]">
             <button
-              className="w-full rounded-xl border-2 border-yellow-300 px-8 py-2 text-white"
+              className="w-full rounded-xl border-2 border-yellow-300 px-8 py-2 text-[#E6E0FA]"
               onClick={onClose}
             >
               Search

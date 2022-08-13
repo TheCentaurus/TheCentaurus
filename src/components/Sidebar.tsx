@@ -16,7 +16,7 @@ export function Sidebar(props: any) {
           className="flex flex-col space-y-6 "
         >
           <div>
-            <p className="text-white">Sidebar Link</p>
+            <p className="text-[#E6E0FA]">Sidebar Link</p>
           </div>
         </nav>
         <div

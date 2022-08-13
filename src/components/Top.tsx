@@ -4,7 +4,7 @@ import shaker from "../assets/shaker.png";
 export function Top() {
   return (
     <>
-      <div className="flex justify-center">
+      <div className="flex justify-center lg:pb-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 m-auto ">
           <div className="my-4">
             <h1 className="text-3xl font-semibold text-[#E6E0FA]">
