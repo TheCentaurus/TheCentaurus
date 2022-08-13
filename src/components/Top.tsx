@@ -1,15 +1,31 @@
 import prm from "../assets/plm.png";
 import indigo from "../assets/indigo.png";
 import shaker from "../assets/shaker.png";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
 export function Top() {
   return (
     <>
       <div className="flex justify-center lg:pb-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 m-auto ">
-          <div className="my-4">
-            <h1 className="text-3xl font-semibold text-[#E6E0FA]">
+          <motion.div
+            initial={{ x: -20 }}
+            whileInView={{
+              y: 0,
+              x: 0,
+              scale: 1,
+              transition: {
+                ease: [0.455, 0.03, 0.515, 0.955],
+                duration: 0.85,
+              },
+            }}
+            viewport={{ amount: 0.8 }}
+            className="my-4"
+          >
+            <motion.h1 className="text-3xl font-semibold text-[#E6E0FA]">
               Top Buyers
-            </h1>
+            </motion.h1>
 
             <div className="max-w-md p-4 bg-[#1B1324] rounded-lg shadow-md sm:p-8 my-4">
               <div className="flow-root ">
@@ -57,12 +73,19 @@ export function Top() {
                 </ul>
               </div>
             </div>
-          </div>
-          <div className="my-4">
+          </motion.div>
+          <motion.div
+            initial={{ x: 80 }}
+            whileInView={{
+              x: 0,
+            }}
+            viewport={{ amount: 0.8 }}
+            className="my-4"
+          >
             {" "}
-            <h1 className="text-3xl font-semibold text-[#E6E0FA]">
+            <motion.h1 className="text-3xl font-semibold text-[#E6E0FA]">
               Top Sellers
-            </h1>
+            </motion.h1>
             <div className="max-w-md p-4 bg-[#1B1324] rounded-lg shadow-md sm:p-8 my-4">
               <div className="flow-root ">
                 <ul role="list">
@@ -107,7 +130,7 @@ export function Top() {
                 </ul>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </>
