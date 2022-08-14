@@ -114,7 +114,7 @@ export function Nav(props: any) {
               <input
                 type="search"
                 id="default-search"
-                className="block p-3 pl-10 w-full text-sm text-gray-50 bg-gray-600 rounded-lg "
+                className="block p-3 pl-10 w-full text-sm text-gray-50 border-none bg-[#221C30] placeholder:text-[#8175A7] rounded-lg "
                 placeholder="Search by collection, NFT or User"
                 required
               />

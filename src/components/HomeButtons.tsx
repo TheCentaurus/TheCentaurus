@@ -8,7 +8,7 @@ export function HomeButtons() {
   return (
     <>
       <div className="mb-24">
-        <motion.div className="flex justify-between w-9/12  m-auto lg:w-6/12 flex-wrap">
+        <motion.div className="flex justify-between w-9/12  m-auto lg:w-5/12 flex-wrap">
           <motion.button
             initial={{ x: -20, y: 60 }}
             whileInView={{

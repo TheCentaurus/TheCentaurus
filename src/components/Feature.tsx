@@ -62,7 +62,7 @@ export function Feature(props: any) {
           alt="hero"
           src={state.urls[state.index].pic.src.src}
         />
-        <div className="flex justify-between items-center -mt-8  md:-mt-12">
+        <div className="flex justify-between items-center mb-3 ">
           {state.index !== 0 ? (
             <motion.div
               whileHover={{
@@ -91,7 +91,7 @@ export function Feature(props: any) {
               delay: 1.2,
             }}
             src={state.urls[state.index].elipsePic.src.src}
-            className="object-cover object-center rounded w-16 h-16 md:w-auto md:h-auto"
+            className="object-cover object-center rounded w-16 h-16 md:w-auto md:h-auto -mt-8  md:-mt-12"
             alt="hero"
           />
           {state?.urls.length - 1 !== state.index ? (
@@ -113,7 +113,7 @@ export function Feature(props: any) {
           )}
         </div>
       </div>
-      <div className="flex w-full justify-between items-center">
+      <div className="flex w-full justify-between items-center ">
         <div className="flex items-center">
           <h1 className="text-[#E6E0FA] font-bold text-[18px] md:text-[24px] mr-2">
             {state.urls[state.index].title}
@@ -137,7 +137,8 @@ export function Feature(props: any) {
           </motion.button>
         </div>
       </div>
-      <hr className="bg-slate-400 my-5" />
+      <div className="h-[1px] w-full bg-slate-400 my-5"></div>
+      {/* <hr className="bg-slate-400 my-5" /> */}
       <div>
         <p className="text-[#E6E0FA]">{state.urls[state.index].description}</p>
       </div>

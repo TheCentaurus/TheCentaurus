@@ -16,7 +16,7 @@ export function Community() {
       <h1 className="text-[#E6E0FA] text-2xl  lg:text-4xl font-bold text-center">
         Join our community
       </h1>
-      <div className="flex justify-between w-full lg:w-1/2 m-auto text-[#F6D10B] mt-8">
+      <div className="flex justify-between w-full lg:w-1/2 2xl:w-1/3 m-auto text-[#F6D10B] mt-8">
         <motion.div
           whileHover={{
             scale: 1.1,

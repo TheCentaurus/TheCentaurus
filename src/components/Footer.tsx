@@ -13,7 +13,7 @@ import { FiTwitter } from "react-icons/fi";
 export function Footer() {
   return (
     <div className="bg-[#120E17]">
-      <footer className="text-[#E6E0FA] font-light text-sm ">
+      <footer className="text-[#8175A7] font-light text-sm ">
         <div className="container px-5 py-24 mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
             <div className="w-full px-4 ">
@@ -24,7 +24,7 @@ export function Footer() {
                   className="md:w-full h-16 object-contain  m-auto md:-ml-5 -mt-10 mb-5 "
                 />
               </div>
-              <p className="text-[#E6E0FA] text-left ">
+              <p className="text-[#8175A7] text-left ">
                 Centaurus is world’s first Cross-chain Decentralized digital NFT
                 marketplace that hosts the complete NFT lifecycle, and allows
                 anyone to securely and seamlessly create, collect, buy, and sell
@@ -32,61 +32,61 @@ export function Footer() {
               </p>
             </div>
             <div className="w-full px-4 text-center md:text-left">
-              <h2 className="mb-3 text-lg font-medium tracking-widest text-[#E6E0FA] title-font">
+              <h2 className="mb-3 text-lg font-medium tracking-widest text-[#8175A7] title-font">
                 My Account
               </h2>
               <nav className="mb-10 list-none">
                 <li>
-                  <Link href="#" className="text-[#E6E0FA]">
+                  <Link href="#" className="text-[#8175A7]">
                     Profile
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-[#E6E0FA]">
+                  <Link href="#" className="text-[#8175A7]">
                     Settings
                   </Link>
                 </li>
               </nav>
             </div>
             <div className="w-full px-4 text-center md:text-left">
-              <h2 className="mb-3 text-lg font-medium tracking-widest text-[#E6E0FA] title-font">
+              <h2 className="mb-3 text-lg font-medium tracking-widest text-[#8175A7] title-font">
                 Resources
               </h2>
               <nav className="mb-10 list-none">
                 <li>
-                  <Link href="/help" className="text-[#E6E0FA]">
+                  <Link href="/help" className="text-[#8175A7]">
                     Help Contact
                   </Link>
                 </li>
                 <li>
-                  <Link href="/disclaimer" className="text-[#E6E0FA]">
+                  <Link href="/disclaimer" className="text-[#8175A7]">
                     Disclaimer
                   </Link>
                 </li>
                 <li>
-                  <Link href="/terms" className="text-[#E6E0FA]">
+                  <Link href="/terms" className="text-[#8175A7]">
                     Terms and Conditions
                   </Link>
                 </li>
                 <li>
-                  <Link href="/privacy" className="text-[#E6E0FA]">
+                  <Link href="/privacy" className="text-[#8175A7]">
                     Privacy Policy
                   </Link>
                 </li>
                 <li>
-                  <Link href="/faq" className="text-[#E6E0FA]">
+                  <Link href="/faq" className="text-[#8175A7]">
                     FAQ
                   </Link>
                 </li>
               </nav>
             </div>
             <div className="w-full px-4 text-center md:text-left">
-              <h2 className="mb-3 text-lg font-medium tracking-widest text-[#E6E0FA] title-font">
+              <h2 className="mb-3 text-lg font-medium tracking-widest text-[#8175A7] title-font">
                 Company
               </h2>
               <nav className="mb-10 list-none">
                 <li>
-                  <Link href="/about" className="text-[#E6E0FA]">
+                  <Link href="/about" className="text-[#8175A7]">
                     About
                   </Link>
                 </li>
@@ -116,7 +116,7 @@ export function Footer() {
           <div className="container flex flex-wrap items-center px-5 py-8 mx-auto">
             <div>
               {" "}
-              <p className="text-sm text-center md:text-left text-[#E6E0FA] sm:text-left">
+              <p className="text-sm text-center md:text-left text-[#8175A7] sm:text-left">
                 © 2022 All Rights Reserved The Centaurus.io.
               </p>
             </div>
