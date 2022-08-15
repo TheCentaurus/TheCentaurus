@@ -1,13 +1,5 @@
 import React from "react";
 
-import {
-  AiOutlineFacebook,
-  AiOutlineTwitter,
-  AiOutlineInstagram,
-} from "react-icons/ai";
-import { TbBrandTelegram, TbBrandDiscord } from "react-icons/tb";
-import { FaMediumM } from "react-icons/fa";
-import { FiTwitter } from "react-icons/fi";
 import { motion } from "framer-motion";
 
 export function Community() {
@@ -27,7 +19,7 @@ export function Community() {
             rotate: [0, 45, 0],
           }}
         >
-          <AiOutlineInstagram className="lg:h-12 lg:w-12 h-8 w-8 cursor-pointer" />
+          <img src="/instagram.png" alt="Instagram" className="w-8 h-8 cursor-pointer lg:h-12 lg:w-12" />
         </motion.div>
         <motion.div
           whileHover={{
@@ -39,7 +31,7 @@ export function Community() {
             rotate: [0, 45, 0],
           }}
         >
-          <AiOutlineFacebook className="lg:h-12 lg:w-12 h-8 w-8 cursor-pointer" />
+          <img src="/facebook.png" alt="Facebook" className="w-8 h-8 cursor-pointer lg:h-12 lg:w-12" />
         </motion.div>
         <motion.div
           whileHover={{
@@ -51,7 +43,7 @@ export function Community() {
             rotate: [0, 45, 0],
           }}
         >
-          <FiTwitter className="lg:h-11 lg:w-11 h-7 w-7 mt-1 cursor-pointer" />
+          <img src="/twitter.png" alt="Twitter" className="w-8 h-8 cursor-pointer lg:h-12 lg:w-12" />
         </motion.div>
         <motion.div
           whileHover={{
@@ -63,7 +55,7 @@ export function Community() {
             rotate: [0, 45, 0],
           }}
         >
-          <TbBrandTelegram className="lg:h-12 lg:w-12 h-8 w-8 cursor-pointer" />
+          <img src="/telegram.png" alt="Telegram" className="w-8 h-8 cursor-pointer lg:h-12 lg:w-12" />
         </motion.div>
         <motion.div
           whileHover={{
@@ -75,7 +67,7 @@ export function Community() {
             rotate: [0, 45, 0],
           }}
         >
-          <TbBrandDiscord className="lg:h-12 lg:w-12 h-8 w-8 cursor-pointer" />
+          <img src="/discord.png" alt="Discord" className="w-8 h-8 cursor-pointer lg:h-12 lg:w-12" />
         </motion.div>
         <motion.div
           whileHover={{
@@ -87,7 +79,7 @@ export function Community() {
             rotate: [0, 45, 0],
           }}
         >
-          <FaMediumM className="lg:h-12 lg:w-12 h-8 w-8 cursor-pointer" />
+          <img src="/medium.png" alt="Medium" className="w-8 h-8 cursor-pointer lg:h-12 lg:w-12" />
         </motion.div>
       </div>
     </div>
