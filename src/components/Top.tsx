@@ -75,7 +75,7 @@ export function Top() {
             </div>
           </motion.div>
           <motion.div
-            initial={{ x: 80 }}
+            initial={{ x: 40 }}
             whileInView={{
               x: 0,
             }}

@@ -19,7 +19,13 @@ export function Community() {
             rotate: [0, 45, 0],
           }}
         >
-          <img src="/instagram.png" alt="Instagram" className="w-8 h-8 cursor-pointer lg:h-12 lg:w-12" />
+          <a href="https://www.instagram.com/accounts/login/?next=/centaurusnft/">
+            <img
+              src="/instagram.png"
+              alt="Instagram"
+              className="w-8 h-8 cursor-pointer lg:h-12 lg:w-12"
+            />
+          </a>
         </motion.div>
         <motion.div
           whileHover={{
@@ -31,7 +37,13 @@ export function Community() {
             rotate: [0, 45, 0],
           }}
         >
-          <img src="/facebook.png" alt="Facebook" className="w-8 h-8 cursor-pointer lg:h-12 lg:w-12" />
+          <a href="https://www.facebook.com/Centaurusnft-105638135319887">
+            <img
+              src="/facebook.png"
+              alt="Facebook"
+              className="w-8 h-8 cursor-pointer lg:h-12 lg:w-12"
+            />
+          </a>
         </motion.div>
         <motion.div
           whileHover={{
@@ -43,7 +55,14 @@ export function Community() {
             rotate: [0, 45, 0],
           }}
         >
-          <img src="/twitter.png" alt="Twitter" className="w-8 h-8 cursor-pointer lg:h-12 lg:w-12" />
+          <a href="https://twitter.com/CNftmarketing">
+            {" "}
+            <img
+              src="/twitter.png"
+              alt="Twitter"
+              className="w-8 h-8 cursor-pointer lg:h-12 lg:w-12"
+            />
+          </a>
         </motion.div>
         <motion.div
           whileHover={{
@@ -55,7 +74,13 @@ export function Community() {
             rotate: [0, 45, 0],
           }}
         >
-          <img src="/telegram.png" alt="Telegram" className="w-8 h-8 cursor-pointer lg:h-12 lg:w-12" />
+          <a href="https://t.me/centarusofficial">
+            <img
+              src="/telegram.png"
+              alt="Telegram"
+              className="w-8 h-8 cursor-pointer lg:h-12 lg:w-12"
+            />
+          </a>
         </motion.div>
         <motion.div
           whileHover={{
@@ -67,7 +92,13 @@ export function Community() {
             rotate: [0, 45, 0],
           }}
         >
-          <img src="/discord.png" alt="Discord" className="w-8 h-8 cursor-pointer lg:h-12 lg:w-12" />
+          <a href="https://discord.gg/yGuN8GXv2f">
+            <img
+              src="/discord.png"
+              alt="Discord"
+              className="w-8 h-8 cursor-pointer lg:h-12 lg:w-12"
+            />
+          </a>
         </motion.div>
         <motion.div
           whileHover={{
@@ -79,7 +110,13 @@ export function Community() {
             rotate: [0, 45, 0],
           }}
         >
-          <img src="/medium.png" alt="Medium" className="w-8 h-8 cursor-pointer lg:h-12 lg:w-12" />
+          <a href="https://medium.com/@centaurusnftmarketing/centaurus-feature-rich-highly-compatible-and-next-gen-nft-platform-d0d1cffc4484">
+            <img
+              src="/medium.png"
+              alt="Medium"
+              className="w-8 h-8 cursor-pointer lg:h-12 lg:w-12"
+            />
+          </a>
         </motion.div>
       </div>
     </div>

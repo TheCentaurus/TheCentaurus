@@ -1,6 +1,7 @@
 import logo from "../assets/logo.svg";
 import audit from "../assets/audit.png";
 import binance from "../assets/binance.png";
+import flo from "../assets/FLO.png";
 import Link from "next/link";
 import {
   AiOutlineFacebook,
@@ -14,7 +15,7 @@ export function Footer() {
   return (
     <div className="bg-[#120E17]">
       <footer className="text-[#8175A7] font-light text-sm ">
-        <div className="container px-5 py-24 mx-auto">
+        <div className="container px-5 pt-20 pb-10 mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
             <div className="w-full px-4 ">
               <div className="flex justify-center w-full">
@@ -25,25 +26,20 @@ export function Footer() {
                 />
               </div>
               <p className="text-[#8175A7] text-left ">
-                Centaurus is world’s first Cross-chain Decentralized digital NFT
-                marketplace that hosts the complete NFT lifecycle, and allows
-                anyone to securely and seamlessly create, collect, buy, and sell
-                NFTs.
+                The Centaurus is All In ONE Decentralized Ecosystem Enable
+                Cross-Chain interoperability. Hosts complete NFT & Crypto
+                lifecycle, And allows anyone to securely and seeminglessly
+                Discover ,Create , Collect, Trade, Buy, and Sell crypto assets
               </p>
             </div>
             <div className="w-full px-4 text-center md:text-left">
               <h2 className="mb-3 text-lg font-medium tracking-widest text-[#8175A7] title-font">
-                My Account
+                Company
               </h2>
               <nav className="mb-10 list-none">
                 <li>
-                  <Link href="#" className="text-[#8175A7]">
-                    Profile
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="text-[#8175A7]">
-                    Settings
+                  <Link href="/about" className="text-[#8175A7]">
+                    About
                   </Link>
                 </li>
               </nav>
@@ -80,20 +76,26 @@ export function Footer() {
                 </li>
               </nav>
             </div>
+
             <div className="w-full px-4 text-center md:text-left">
               <h2 className="mb-3 text-lg font-medium tracking-widest text-[#8175A7] title-font">
-                Company
+                My Account
               </h2>
               <nav className="mb-10 list-none">
                 <li>
-                  <Link href="/about" className="text-[#8175A7]">
-                    About
+                  <Link href="#" className="text-[#8175A7]">
+                    Profile
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="text-[#8175A7]">
+                    Settings
                   </Link>
                 </li>
               </nav>
             </div>
-            <div className="w-full px-4 text-center md:text-left">
-              <nav className="mb-10 list-none">
+            <div className="w-full px-4 text-center md:text-left ">
+              <nav className="mb-10 list-none md:m-auto">
                 <li>
                   <img
                     src={audit.src}
@@ -108,25 +110,62 @@ export function Footer() {
                     className="md:w-full h-16 object-contain cursor-pointer  m-auto"
                   />
                 </li>
+                <li className="md:hidden lg:block">
+                  <img
+                    src={flo.src}
+                    alt="flo"
+                    className="md:w-full object-contain cursor-pointer  m-auto"
+                  />
+                </li>
               </nav>
             </div>
+            <li className="hidden md:block lg:hidden">
+              <img
+                src={flo.src}
+                alt="flo"
+                className="md:w-full object-contain cursor-pointer  m-auto"
+              />
+            </li>
           </div>
         </div>
         <div className="border-t border-gray-200">
-          <div className="container flex flex-wrap items-center px-5 py-8 mx-auto">
-            <div>
+          <div className="container flex flex-wrap justify-between items-center px-5 py-8 mx-auto">
+            <div className="m-auto ">
               {" "}
               <p className="text-sm text-center md:text-left text-[#8175A7] sm:text-left">
                 © 2022 All Rights Reserved The Centaurus.io.
               </p>
             </div>
-            <div className="inline-flex justify-center w-full mt-6 lg:ml-auto lg:mt-0 md:justify-start md:w-auto">
-              <AiOutlineInstagram className=" h-5 w-5 mr-2" />
-              <AiOutlineFacebook className=" h-5 w-5 mr-2" />
-              <FiTwitter className="h-5 w-5 mr-2" />
-              <TbBrandTelegram className=" h-5 w-5 mr-2" />
-              <TbBrandDiscord className=" h-5 w-5 mr-2" />
-              <FaMediumM className=" h-5 w-5 mr-2" />
+            <div className="m-auto mt-5 md:mt-0">
+              <ul className="flex">
+                <li className="mr-2 cursor-pointer">Disclaimer | </li>
+                <li className="mr-2 cursor-pointer"> Contact | </li>
+                <li className="mr-2 cursor-pointer"> FAQ </li>
+              </ul>
+            </div>
+            <div className="inline-flex justify-center w-full m-auto mt-6 lg:ml-auto lg:mt-0 md:justify-start md:w-auto">
+              <a href="https://www.instagram.com/accounts/login/?next=/centaurusnft/">
+                {" "}
+                <AiOutlineInstagram className=" h-5 w-5 mr-2" />
+              </a>{" "}
+              <a href="https://www.facebook.com/Centaurusnft-105638135319887">
+                {" "}
+                <AiOutlineFacebook className=" h-5 w-5 mr-2" />
+              </a>{" "}
+              <a href="https://twitter.com/CNftmarketing">
+                {" "}
+                <FiTwitter className="h-5 w-5 mr-2" />
+              </a>{" "}
+              <a href="https://t.me/centarusofficial">
+                <TbBrandTelegram className=" h-5 w-5 mr-2" />
+              </a>{" "}
+              <a href="https://discord.gg/yGuN8GXv2f">
+                <TbBrandDiscord className=" h-5 w-5 mr-2" />
+              </a>
+              <a href="https://medium.com/@centaurusnftmarketing/centaurus-feature-rich-highly-compatible-and-next-gen-nft-platform-d0d1cffc4484">
+                {" "}
+                <FaMediumM className=" h-5 w-5 mr-2" />
+              </a>{" "}
             </div>
           </div>
         </div>

@@ -183,6 +183,14 @@ export function Nav(props: any) {
                 >
                   Home
                 </MenuItem>
+                <MenuItem
+                  _hover={{
+                    background: "#1b1324",
+                    color: "teal.500",
+                  }}
+                >
+                  Centaurus wallet
+                </MenuItem>
               </MenuList>
             </Menu>
             {/* end menu item */}

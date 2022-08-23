@@ -8,7 +8,7 @@ export function Video() {
         <iframe
           // width="420"
           // height="315"
-          src="https://www.youtube.com/embed/do8WEABeh2k?autoplay=1&mute=1"
+          src="https://www.youtube.com/embed/do8WEABeh2k?autoplay=0&mute=1"
           className="w-full h-full rounded-xl"
         ></iframe>
       </div>

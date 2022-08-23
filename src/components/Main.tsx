@@ -49,73 +49,82 @@ export function Main() {
 
   return (
     <section className="text-gray-600 body-font md:px-20 xl:px-40 2xl:px-80 ">
-      <div className="container 2xl:px-32 flex flex-col items-center  py-24 mx-auto md:flex-row">
+      <div className="container 2xl:px-28 flex flex-col items-center  py-24 mx-auto md:flex-row">
         <div className="flex flex-col items-center mb-16 text-center lg:flex-grow md:w-1/2  md:items-start md:text-left md:mb-0">
-          <motion.h1
-            initial={{ y: -20, x: 50, scale: 0.5 }}
-            animate={{ y: 0, x: 0, scale: 1 }}
-            transition={{ duration: 0.8, ease: [0.6, 0.05, -0.01, 0.9] }}
-            className="mb-4 text-transparent  bg-clip-text font-bold bg-gradient-to-r from-[#CC67FC] to-[#F6D10B] text-3xl md:text-4xl lg:text-5xl 2xl:text-[56px] "
-          >
-            All in one
-          </motion.h1>
-          <motion.h1
-            initial={{ y: 20, x: -20, scale: 0 }}
-            animate={{ y: 0, x: 0, scale: 1 }}
-            transition={{ duration: 0.8, ease: [0.6, 0.05, -0.01, 0.9] }}
-            className="mb-4 text-transparent  bg-clip-text font-bold bg-gradient-to-r from-[#CC67FC] to-[#F6D10B] text-3xl md:text-4xl lg:text-5xl 2xl:text-[56px] "
-          >
-            NFT Paradise
-          </motion.h1>
-          <motion.p
-            initial={{ y: -20 }}
-            animate={{ y: 0 }}
-            transition={{ duration: 1.5, ease: [0.6, 0.05, -0.01, 0.9] }}
-            className="mt-5 tracking-tight letter-spacing:-0.05em font-regular text-[#E6E0FA] text-[14px] lg:text-[24px]"
-          >
-            Discover , Create, Buy and Sell.
-          </motion.p>
-          <div className="flex justify-center mt-5">
-            <motion.button
-              initial={{ x: -20, y: 200 }}
-              animate={{
-                x: 0,
-                y: 0,
-                rotate: [90, 0],
-              }}
-              whileHover={{
-                scale: 1.1,
-              }}
-              whileTap={{
-                scale: 0.9,
-              }}
-              transition={{ duration: 0.2, ease: [0.6, 0.05, -0.01, 0.9] }}
-              className="px-6 py-1 text-black bg-gradient-to-t from-[#F6D10B] to-[#FFEB84]  rounded-xl "
+          <div className="w-full">
+            {" "}
+            <motion.h1
+              initial={{ y: -20, x: 50, scale: 0.5 }}
+              animate={{ y: 0, x: 0, scale: 1 }}
+              transition={{ duration: 0.8, ease: [0.6, 0.05, -0.01, 0.9] }}
+              className="mb-4 text-transparent  bg-clip-text font-bold bg-gradient-to-r from-[#CC67FC] to-[#F6D10B] text-3xl md:text-4xl lg:text-5xl 2xl:text-[56px] text-center "
             >
-              Create
-            </motion.button>
-            <motion.button
-              initial={{ x: -20, y: 200 }}
-              animate={{
-                x: 0,
-                y: 0,
-                rotate: [90, 0],
-              }}
-              whileHover={{
-                scale: 1.1,
-              }}
-              whileTap={{
-                scale: 0.9,
-              }}
-              transition={{ duration: 0.2, ease: [0.6, 0.05, -0.01, 0.9] }}
-              className="px-6 py-1  ml-4 text-lg text-[#E6E0FA] border-2 border-[#F6D10B]  rounded-xl bg-transparent"
+              All in one
+            </motion.h1>
+          </div>
+          <div className="w-full">
+            <motion.h1
+              initial={{ y: 20, x: -20, scale: 0 }}
+              animate={{ y: 0, x: 0, scale: 1 }}
+              transition={{ duration: 0.8, ease: [0.6, 0.05, -0.01, 0.9] }}
+              className="mb-4 text-transparent text-center bg-clip-text font-bold bg-gradient-to-r from-[#CC67FC] to-[#F6D10B] text-3xl md:text-4xl lg:text-5xl 2xl:text-[56px] "
             >
-              Explore
-            </motion.button>
+              NFT Paradise
+            </motion.h1>
+          </div>
+          <div className="w-full">
+            <motion.p
+              initial={{ y: -20 }}
+              animate={{ y: 0 }}
+              transition={{ duration: 1.5, ease: [0.6, 0.05, -0.01, 0.9] }}
+              className="mt-5 tracking-tight letter-spacing:-0.05em font-regular text-[#E6E0FA] text-[14px] lg:text-[24px]"
+            >
+              Discover , Create, Buy and Sell.
+            </motion.p>
+            <div className="flex justify-center mt-5">
+              <motion.button
+                initial={{ x: -20, y: 200 }}
+                animate={{
+                  x: 0,
+                  y: 0,
+                  rotate: [90, 0],
+                }}
+                whileHover={{
+                  scale: 1.1,
+                }}
+                whileTap={{
+                  scale: 0.9,
+                }}
+                transition={{ duration: 0.2, ease: [0.6, 0.05, -0.01, 0.9] }}
+                className="px-6 py-1 text-black bg-gradient-to-t from-[#F6D10B] to-[#FFEB84]  rounded-xl "
+              >
+                Create
+              </motion.button>
+              <motion.button
+                initial={{ x: -20, y: 200 }}
+                animate={{
+                  x: 0,
+                  y: 0,
+                  rotate: [90, 0],
+                }}
+                whileHover={{
+                  scale: 1.1,
+                }}
+                whileTap={{
+                  scale: 0.9,
+                }}
+                transition={{ duration: 0.2, ease: [0.6, 0.05, -0.01, 0.9] }}
+                className="px-6 py-1  ml-4 text-lg text-[#E6E0FA] border-2 border-[#F6D10B]  rounded-xl bg-transparent"
+              >
+                Explore
+              </motion.button>
+            </div>
           </div>
         </div>
-        <div>
-          <p className="font-semibold mb-1 text-[#E6E0FA]">Featured</p>
+        <div className="m-auto px-10 ">
+          <p className="font-semibold mb-1 text-lg text-[#E6E0FA] text-center lg:text-left">
+            Featured Users
+          </p>
           <Feature data={sampleData} />
         </div>
       </div>
