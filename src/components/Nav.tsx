@@ -59,7 +59,7 @@ export function Nav(props: any) {
           <img
             src={logo.src}
             alt=""
-            className="md:w-full h-16 object-contain ml-5"
+            className="object-contain h-16 ml-5 md:w-full"
           />
         </div>
 
@@ -94,7 +94,7 @@ export function Nav(props: any) {
               Search
             </label>
             <div className="relative">
-              <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+              <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                 <svg
                   aria-hidden="true"
                   className="w-5 h-5 text-gray-500 dark:text-gray-400"
@@ -122,14 +122,14 @@ export function Nav(props: any) {
           </form>
         </div>
 
-        <div className="flex justify-between items-center  md:w-4/12 lg:w-3/12">
+        <div className="flex items-center justify-between md:w-4/12 lg:w-3/12">
           <div className=" text-[#E6E0FA]">
             <IoNotifications size={25} className="text-center text-gray-600" />
           </div>
           <div className="max-w-[200px] flex items-center justify-center text-[#E6E0FA] font-bold max-h-[60px] rounded-sm py-[3px] px-[2px] button-custom">
-            <button className="w-full h-full relative border-2 border-yellow-300 cursor-pointer text-[#E6E0FA] font-bold lg:text-sm text-[12px] rounded-xl px-[15px] py-[10px] ">
+            <a href="/connect" className="w-full h-full relative border-2 border-yellow-300 cursor-pointer text-[#E6E0FA] font-bold lg:text-sm text-[12px] rounded-xl px-[15px] py-[10px] ">
               Connect Wallet
-            </button>
+            </a>
           </div>
           <div>
             {/* menu item */}
@@ -165,7 +165,15 @@ export function Nav(props: any) {
                     color: "teal.500",
                   }}
                 >
-                  $$cent
+                  $CENT
+                </MenuItem>
+                  <MenuItem
+                  _hover={{
+                    background: "#1b1324",
+                    color: "teal.500",
+                  }}
+                >
+                  WALLET
                 </MenuItem>
                 <MenuItem
                   _hover={{
@@ -212,7 +220,7 @@ export function Nav(props: any) {
                 Search
               </label>
               <div className="relative">
-                <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                   <svg
                     aria-hidden="true"
                     className="w-5 h-5 text-gray-500 dark:text-gray-400"
@@ -232,7 +240,7 @@ export function Nav(props: any) {
                 <input
                   type="search"
                   id="default-search"
-                  className="block p-3 pl-10 w-full text-sm text-gray-50 bg-gray-600 rounded-lg "
+                  className="block w-full p-3 pl-10 text-sm bg-gray-600 rounded-lg text-gray-50 "
                   placeholder="Search by collection, NFT or User"
                   required
                 />

@@ -49,8 +49,8 @@ export function Main() {
 
   return (
     <section className="text-gray-600 body-font md:px-20 xl:px-40 2xl:px-80 ">
-      <div className="container 2xl:px-28 flex flex-col items-center  py-24 mx-auto md:flex-row">
-        <div className="flex flex-col items-center mb-16 text-center lg:flex-grow md:w-1/2  md:items-start md:text-left md:mb-0">
+      <div className="container flex flex-col items-center py-24 mx-auto 2xl:px-28 md:flex-row">
+        <div className="flex flex-col items-center mb-16 text-center lg:flex-grow md:w-1/2 md:items-start md:text-left md:mb-0">
           <div className="w-full">
             {" "}
             <motion.h1
@@ -77,7 +77,7 @@ export function Main() {
               initial={{ y: -20 }}
               animate={{ y: 0 }}
               transition={{ duration: 1.5, ease: [0.6, 0.05, -0.01, 0.9] }}
-              className="mt-5 tracking-tight letter-spacing:-0.05em font-regular text-[#E6E0FA] text-[14px] lg:text-[24px]"
+              className="mt-5 tracking-tight letter-spacing:-0.05em font-regular text-[#E6E0FA] text-[14px] lg:text-[24px] text-center"
             >
               Discover , Create, Buy and Sell.
             </motion.p>
@@ -121,7 +121,7 @@ export function Main() {
             </div>
           </div>
         </div>
-        <div className="m-auto px-10 ">
+        <div className="px-10 m-auto ">
           <p className="font-semibold mb-1 text-lg text-[#E6E0FA] text-center lg:text-left">
             Featured Users
           </p>

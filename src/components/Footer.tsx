@@ -5,7 +5,7 @@ import flo from "../assets/FLO.png";
 import Link from "next/link";
 import {
   AiOutlineFacebook,
-  AiOutlineTwitter,
+
   AiOutlineInstagram,
 } from "react-icons/ai";
 import { TbBrandTelegram, TbBrandDiscord } from "react-icons/tb";
@@ -16,13 +16,13 @@ export function Footer() {
     <div className="bg-[#120E17]">
       <footer className="text-[#8175A7] font-light text-sm ">
         <div className="container px-5 pt-20 pb-10 mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-5">
             <div className="w-full px-4 ">
               <div className="flex justify-center w-full">
                 <img
                   src={logo.src}
                   alt=""
-                  className="md:w-full h-16 object-contain  m-auto md:-ml-5 -mt-10 mb-5 "
+                  className="object-contain h-16 m-auto mb-5 -mt-10 md:w-full md:-ml-5 "
                 />
               </div>
               <p className="text-[#8175A7] text-left ">
@@ -100,21 +100,21 @@ export function Footer() {
                   <img
                     src={audit.src}
                     alt=""
-                    className="md:w-full h-16 object-contain  m-auto mb-5 cursor-pointer"
+                    className="object-contain h-16 m-auto mb-5 cursor-pointer md:w-full"
                   />
                 </li>
                 <li>
                   <img
                     src={binance.src}
                     alt=""
-                    className="md:w-full h-16 object-contain cursor-pointer  m-auto"
+                    className="object-contain h-16 m-auto cursor-pointer md:w-full"
                   />
                 </li>
                 <li className="md:hidden lg:block">
                   <img
                     src={flo.src}
                     alt="flo"
-                    className="md:w-full object-contain cursor-pointer  m-auto"
+                    className="object-contain m-auto cursor-pointer md:w-full"
                   />
                 </li>
               </nav>
@@ -123,13 +123,13 @@ export function Footer() {
               <img
                 src={flo.src}
                 alt="flo"
-                className="md:w-full object-contain cursor-pointer  m-auto"
+                className="object-contain m-auto cursor-pointer md:w-full"
               />
             </li>
           </div>
         </div>
         <div className="border-t border-gray-200">
-          <div className="container flex flex-wrap justify-between items-center px-5 py-8 mx-auto">
+          <div className="container flex flex-wrap items-center justify-between px-5 py-8 mx-auto">
             <div className="m-auto ">
               {" "}
               <p className="text-sm text-center md:text-left text-[#8175A7] sm:text-left">
@@ -146,25 +146,25 @@ export function Footer() {
             <div className="inline-flex justify-center w-full m-auto mt-6 lg:ml-auto lg:mt-0 md:justify-start md:w-auto">
               <a href="https://www.instagram.com/accounts/login/?next=/centaurusnft/">
                 {" "}
-                <AiOutlineInstagram className=" h-5 w-5 mr-2" />
+                <AiOutlineInstagram className="w-5 h-5 mr-2 " />
               </a>{" "}
               <a href="https://www.facebook.com/Centaurusnft-105638135319887">
                 {" "}
-                <AiOutlineFacebook className=" h-5 w-5 mr-2" />
+                <AiOutlineFacebook className="w-5 h-5 mr-2 " />
               </a>{" "}
               <a href="https://twitter.com/CNftmarketing">
                 {" "}
-                <FiTwitter className="h-5 w-5 mr-2" />
+                <FiTwitter className="w-5 h-5 mr-2" />
               </a>{" "}
               <a href="https://t.me/centarusofficial">
-                <TbBrandTelegram className=" h-5 w-5 mr-2" />
+                <TbBrandTelegram className="w-5 h-5 mr-2 " />
               </a>{" "}
               <a href="https://discord.gg/yGuN8GXv2f">
-                <TbBrandDiscord className=" h-5 w-5 mr-2" />
+                <TbBrandDiscord className="w-5 h-5 mr-2 " />
               </a>
               <a href="https://medium.com/@centaurusnftmarketing/centaurus-feature-rich-highly-compatible-and-next-gen-nft-platform-d0d1cffc4484">
                 {" "}
-                <FaMediumM className=" h-5 w-5 mr-2" />
+                <FaMediumM className="w-5 h-5 mr-2 " />
               </a>{" "}
             </div>
           </div>

@@ -22,7 +22,10 @@ export function Sidebar(props: any) {
             <p className="text-[#E6E0FA]"> DEX</p>
           </div>
           <div>
-            <p className="text-[#E6E0FA]"> $$cent</p>
+            <p className="text-[#E6E0FA]">WALLET</p>
+          </div>
+          <div>
+            <p className="text-[#E6E0FA]"> $$CENT</p>
           </div>
           <div>
             <p className="text-[#E6E0FA]">Resources</p>
@@ -35,7 +38,7 @@ export function Sidebar(props: any) {
           </div>
         </nav>
         <div
-          className="h-full absolute right-0 top-0"
+          className="absolute top-0 right-0 h-full"
           onClick={props.handleShowSidebar}
         >
           <p
