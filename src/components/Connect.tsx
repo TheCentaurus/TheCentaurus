@@ -1,62 +1,53 @@
-import { useAccount, useConnect, useDisconnect } from 'wagmi'
-import { Menu, MenuItem, MenuButton, MenuList } from "@chakra-ui/react"
+import { useAccount, useConnect,useDisconnect } from 'wagmi'
 import { useIsMounted } from '../hooks'
 
 export function Connect() {
   const isMounted = useIsMounted()
-  const { connector, isConnected , address} = useAccount()
-  const { connect, connectors } =
+  const { connector ,isConnected} = useAccount()
+  const { connect, connectors  } =
     useConnect()
   const { disconnect } = useDisconnect()
 
   return (
     
-      <Menu >   
-              
-        {
-          isConnected ? (
-            <MenuButton className="inline-flex items-center px-8 py-3 mt-4 text-black uppercase bg-white border-0 focus:outline-none md:mt-0">
-          
-              {/* truncate address */}
-              {
-                address !== undefined ? 
-                <span className="inline-block ml-2 ">
-                {address.substring(0, 8)} ...
-                {address.substring(address.length - 4, address.length)}
-                  </span>
-                  :
-                  null
-              }
-
-            </MenuButton>
-          ) : (
-            <MenuButton className="inline-flex items-center px-8 py-3 mt-4 text-black uppercase bg-white border-0 focus:outline-none md:mt-0">
-            Connect Wallet
-          </MenuButton>)
-            }
-   
-              <MenuList>
-         
+      <div>   
         {connectors
-          .filter((x) => isMounted && x.ready && x.id !== connector?.id)
+          .filter((x) => isMounted && x.ready && x.id !== connector?.id && x.name !== 'injected')
           .map((x) => (
-            <MenuItem key={x.id} onClick={() => connect({ connector: x })} >
-             <h1  className="text-black " > {x.name}</h1>
-           
-            </MenuItem>
+            <div key={x.id} onClick={() => connect({ connector: x })} >
+              {
+                x.name == 'Coinbase Wallet' ?
+                <div className="flex items-center w-full p-2 m-2 align-middle border border-[#8175A7] rounded-xl">
+                                          <span className="px-1">  <img src="/coinbase.svg" alt="metamask" className="w-8 h-8 pr-2 img-responsive"  /></span>  Coinbase Wallet
+                            
+                  </div>
+                  : x.name == 'WalletConnect' ?
+                    <div className="flex items-center w-full p-2 m-2 align-middle border border-[#8175A7] rounded-xl">
+                                                         <span className="px-1"><svg fill="none"  viewBox="0 0 24 24"  className="w-8 h-8 pr-1 img-responsive"  xmlns="http://www.w3.org/2000/svg"><path clipRule="evenodd" d="m21 12c0 4.9706-4.0294 9-9 9-4.97056 0-9-4.0294-9-9 0-4.97056 4.02944-9 9-9 4.9706 0 9 4.02944 9 9zm-3.75 0c0 2.8995-2.3505 5.25-5.25 5.25s-5.25-2.3505-5.25-5.25 2.3505-5.25 5.25-5.25 5.25 2.3505 5.25 5.25zm-5.9375-1.6875c-.5523 0-1 .4477-1 1v1.375c0 .5523.4477 1 1 1h1.375c.5523 0 1-.4477 1-1v-1.375c0-.5523-.4477-1-1-1z" fill="#2d65f8" fillRule="evenodd"/></svg></span> WalletConnect        
+                    </div>
+                    : x.name == 'MetaMask' ?
+                      <div className="flex items-center w-full p-2 m-2 align-middle border border-[#8175A7] rounded-xl">
+                                      <span className="px-1">
+                        <img src="/metamask.svg" alt="metamask" className="w-8 h-8 pr-2 img-responsive" />
+                        </span>  Metamask
+                      </div>
+                    : null
+              }
+            </div>
           ))}
-        {isConnected ? 
-          <MenuItem onClick={() => disconnect()} >
-            <h1 className="text-black " >
+           {isConnected ? 
+        <div onClick={() => disconnect()} className="flex items-center w-full p-2 m-2 align-middle border border-[#8175A7] rounded-xl" >
+                         <span className="px-1">
+          <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+  <path strokeLinecap="round" strokeLinejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+</svg></span>
+            <h1 className="text-white " >
             Disconnect
               </h1>
-          </MenuItem> : null
+          </div> : null
         
           }
-              </MenuList>
-      </Menu>
-  
-        
-    
+        </div>
+
   )
 }

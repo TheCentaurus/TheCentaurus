@@ -19,7 +19,7 @@ function Page() {
   if (!hasMounted) {
     return null;
   }
-  console.log(bg, "nnnn");
+
   return (
     <div
       style={{ backgroundImage: "url(" + bg.src + ")" }}

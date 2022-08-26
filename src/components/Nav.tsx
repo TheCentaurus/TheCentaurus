@@ -1,12 +1,14 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect ,useRef} from "react";
 import logo from "../assets/logo.svg";
 import { BsSearch } from "react-icons/bs";
 import { IoNotifications } from "react-icons/io5";
-import { AiOutlineMenu, AiFillInstagram } from "react-icons/ai";
+import { AiOutlineMenu} from "react-icons/ai";
 import { Sidebar } from "./Sidebar";
 import { FiMoreHorizontal } from "react-icons/fi";
+import {useAccount} from 'wagmi'
+
 import {
-  Button,
+
   Menu,
   MenuButton,
   MenuItem,
@@ -21,14 +23,17 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 
-export function Nav(props: any) {
+  
+export function Nav() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [showSidebar, setShowSidebar] = useState(true);
   const handleShowSidebar = () => {
     setShowSidebar(!showSidebar);
   };
   //navbar scroll when active state
-  const [navbar, setNavbar] = useState(false);
+  const [navbar, setNavbar] = useState(false); 
+  
+const {address, isConnected } = useAccount()
 
   //navbar scroll changeBackground function
   const changeBackground = () => {
@@ -128,7 +133,18 @@ export function Nav(props: any) {
           </div>
           <div className="max-w-[200px] flex items-center justify-center text-[#E6E0FA] font-bold max-h-[60px] rounded-sm py-[3px] px-[2px] button-custom">
             <a href="/connect" className="w-full h-full relative border-2 border-yellow-300 cursor-pointer text-[#E6E0FA] font-bold lg:text-sm text-[12px] rounded-xl px-[15px] py-[10px] ">
-              Connect Wallet
+              {
+                isConnected ? (  
+                address !== undefined ? 
+                <span className="inline-block ml-2 ">
+                {address.substring(0, 8)} ...
+                {address.substring(address.length - 4, address.length)}
+                  </span>
+                  :
+                  null
+              ):
+                  "Connect Wallet"
+             }
             </a>
           </div>
           <div>
