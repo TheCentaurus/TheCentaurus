@@ -16,8 +16,8 @@ export default function ConnectPage() {
 
     return (
           <div
-      style={{ backgroundImage: "url(" + bg.src + ")" }}
-      className="bg-cover min-h-[100vh] bg-center text-white"
+
+      className="bg-cover min-h-[100vh] bg-center text-white "
         >
             <div className="flex flex-col sm:grid sm:gap-4 sm:grid-cols-6 ">
                 <div className="hidden h-screen sm:col-span-1 sm:block "    style={{ backgroundImage: "url(/art.jpeg)",   backgroundSize: "cover",backgroundPosition: "right"  }}>

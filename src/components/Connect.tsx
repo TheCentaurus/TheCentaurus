@@ -10,7 +10,8 @@ export function Connect() {
 
   return (
     
-      <div>   
+    <div>   
+   
         {connectors
           .filter((x) => isMounted && x.ready && x.id !== connector?.id && x.name !== 'injected')
           .map((x) => (
@@ -46,7 +47,8 @@ export function Connect() {
               </h1>
           </div> : null
         
-          }
+        }
+
         </div>
 
   )

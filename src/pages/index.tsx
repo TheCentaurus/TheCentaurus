@@ -26,7 +26,7 @@ function Page() {
   
   return (
     <div
-      style={{ backgroundImage: "url(" + bg.src + ")" }}
+  
       className="bg-cover min-h-[100vh] bg-center"
     >
 
