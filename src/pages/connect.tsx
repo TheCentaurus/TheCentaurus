@@ -30,7 +30,7 @@ export default function ConnectPage() {
                <div className="items-end justify-end hidden mx-8 align-middle sm:flex ">
                         <a href="/" className="p-2 m-2"><img src={logo.src} alt="logo" className="img-responsive"/></a>
                     </div>
-                    <div className="w-full px-4 mx-0 mt-32 sm:mt-64 sm:mx-16 sm:w-1/4">
+                    <div className="w-full px-4 mx-0 mt-32 sm:mt-64 sm:mx-16 sm:w-1/3">
                         <div className="mb-8">
                               <h1 className="mb-2 text-4xl text-[#8175A7]">Connect Wallet</h1>
                         <p className="text-[#8175A7]" >Choose how you want to connect. There are several wallet providers.</p>
@@ -39,7 +39,8 @@ export default function ConnectPage() {
                       <TabList >
                         <Tab><h1 className="text-[#8175A7]">Ethereum</h1></Tab>
                         <Tab><h1 className="text-[#8175A7]">BSC</h1></Tab>
-                        <Tab> <h1 className="text-[#8175A7]">Solana</h1></Tab>
+                  <Tab> <h1 className="text-[#8175A7]">Solana</h1></Tab>
+      
                             <Tab><h1 className="text-[#8175A7]">Polygon</h1></Tab>
                       </TabList>
                       <TabPanels>
@@ -61,7 +62,8 @@ export default function ConnectPage() {
                         </span>  Phantom
                                         </button>
                                         </div>
-                                </TabPanel>
+                  </TabPanel>
+      
         
                                  <TabPanel>
                                     <div>

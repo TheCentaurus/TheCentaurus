@@ -33,7 +33,7 @@ export function CTA() {
             Centuarus NFT marketplace by clicking this link.
           </p>
 
-          <a href="https://centuarus.com/nft" className="text-yellow-500">
+          <a href="/connect" className="text-yellow-500">
             Connect My Wallet
           </a>
         </motion.div>

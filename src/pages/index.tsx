@@ -1,5 +1,6 @@
 import * as React from "react";
 import bg from "../assets/backgroundImg.webp";
+
 import {
   Main,
   Footer,
@@ -13,6 +14,8 @@ import {
 
 function Page() {
   const [hasMounted, setHasMounted] = React.useState(false);
+
+  
   React.useEffect(() => {
     setHasMounted(true);
   }, []);
@@ -20,11 +23,13 @@ function Page() {
     return null;
   }
 
+  
   return (
     <div
       style={{ backgroundImage: "url(" + bg.src + ")" }}
       className="bg-cover min-h-[100vh] bg-center"
     >
+
       <Nav />
       <Main />
       <HomeButtons />

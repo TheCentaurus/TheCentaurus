@@ -59,7 +59,7 @@ export function Main() {
               transition={{ duration: 0.8, ease: [0.6, 0.05, -0.01, 0.9] }}
               className="mb-4 text-transparent  bg-clip-text font-bold bg-gradient-to-r from-[#CC67FC] to-[#F6D10B] text-3xl md:text-4xl lg:text-5xl 2xl:text-[56px] text-center "
             >
-              ALL IN ONE
+              All in ONE
             </motion.h1>
           </div>
           <div className="w-full">
