@@ -106,44 +106,44 @@ export function Footer() {
                   <div className="grid grid-cols-4 gap-2">
                       <Tooltip label='Ethereum'>
                     <a href="https://ethereum.org/en/" target="_blank">   <div className="flex items-center w-full h-12 p-1 m-auto align-middle bg-gray-100 rounded-full">
-                  <img src="/ethereum.svg" alt="" className="object-contain w-8 h-8 m-auto"/>
+                  <img src="/ethereum.svg" alt="" className="object-contain w-6 h-6 m-auto"/>
                     </div></a>
                     </Tooltip>
                                  <Tooltip label='Binance'>
                     <a href="https://www.binance.com/en" target="_blank">   <div className="flex items-center w-full h-12 p-1 m-auto align-middle bg-gray-100 rounded-full">
-                      <img src="/bnb.svg" alt="" className="object-contain w-8 h-8 m-auto"/>
+                      <img src="/bnb.svg" alt="" className="object-contain w-6 h-6 m-auto"/>
                       </div></a>
                       </Tooltip>
                            <Tooltip label='Polygon'>
                     <a href="https://polygon.technology/" target="_blank">  <div className="flex items-center w-full h-12 p-1 m-auto align-middle bg-gray-100 rounded-full">
-                                      <img src="/polygon.svg" alt="" className="object-contain w-8 h-8 m-auto"/>
+                                      <img src="/polygon.svg" alt="" className="object-contain w-6 h-6 m-auto"/>
                                       
                       </div></a>
                       </Tooltip>
                           <Tooltip label='Solana'>
                     <a href="https://solana.com/" target="_blank">   <div className="flex items-center w-full h-12 p-1 m-auto align-middle bg-gray-100 rounded-full">
-                        <img src="/solana.svg" alt="" className="object-contain w-8 h-8 m-auto" /></div></a>  
+                        <img src="/solana.svg" alt="" className="object-contain w-6 h-6 m-auto" /></div></a>  
                     </Tooltip>
                                   <Tooltip label='Fantom'>
                     <a href="https://fantom.foundation/" target="_blank">       <div className="flex items-center w-full h-12 p-1 m-auto align-middle bg-gray-100 rounded-full">
-                                      <img src="/fantom.svg" alt="" className="object-contain w-8 h-8 m-auto"/>
+                                      <img src="/fantom.svg" alt="" className="object-contain w-6 h-6 m-auto"/>
                       </div></a>  
                     </Tooltip>
                     
                      <Tooltip label='Lighting'>
                     <a href="https://lightning.network/" target="_blank">       <div className="flex items-center w-full h-12 p-1 m-auto align-middle bg-gray-100 rounded-full">
-                                      <img src="/lighting.svg" alt="" className="object-contain w-8 h-8 m-auto"/>
+                                      <img src="/lighting.svg" alt="" className="object-contain w-6 h-6 m-auto"/>
                       </div></a> 
                     </Tooltip>
                     <Tooltip label='Tezos'>
                     <a href="https://tezos.com/" target="_blank">       <div className="flex items-center w-full h-12 p-1 m-auto align-middle bg-gray-100 rounded-full">
-                                      <img src="/tezos.svg" alt="" className="object-contain w-8 h-8 m-auto"/>
+                                      <img src="/tezos.svg" alt="" className="object-contain w-6 h-6 m-auto"/>
                       </div></a> 
                     </Tooltip>
                     
                      <Tooltip label='Avax'>
                     <a href="https://www.avax.network/" target="_blank">       <div className="flex items-center w-full h-12 p-1 m-auto align-middle bg-gray-100 rounded-full">
-                                      <img src="/avax.svg" alt="" className="object-contain w-8 h-8 m-auto"/>
+                                      <img src="/avax.svg" alt="" className="object-contain w-6 h-6 m-auto"/>
                       </div></a> 
                       </Tooltip>
                                                             

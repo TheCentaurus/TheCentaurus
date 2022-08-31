@@ -6,7 +6,7 @@ export function CTA() {
     <div className="px-5 lg:px-0 lg:pb-10">
       <h1 className="text-2xl lg:text-4xl font-bold text-center text-[#E6E0FA] my-10 lg:mx-20">
         Effortless place to Discover, Create, Mint, Trade,<br/> Swap, Buy and Sell
-        NFTs on WEB3
+        NFTs on Web3
       </h1>
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 lg:mx-40 ">

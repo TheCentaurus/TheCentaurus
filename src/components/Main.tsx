@@ -49,7 +49,7 @@ export function Main() {
 
   return (
     <section className="text-gray-600 body-font md:px-20 xl:px-40 2xl:px-80 ">
-      <div className="container flex flex-col items-center py-24 mx-auto 2xl:px-28 md:flex-row">
+      <div className="container flex flex-col items-center py-24 mx-auto 2xl:px-12 md:flex-row">
         <div className="flex flex-col items-center mb-16 text-center lg:flex-grow md:w-1/2 md:items-start md:text-left md:mb-0">
           <div className="w-full">
             {" "}
@@ -57,7 +57,7 @@ export function Main() {
               initial={{ y: -20, x: 50, scale: 0.5 }}
               animate={{ y: 0, x: 0, scale: 1 }}
               transition={{ duration: 0.8, ease: [0.6, 0.05, -0.01, 0.9] }}
-              className="mb-4 text-transparent  bg-clip-text font-bold bg-gradient-to-r from-[#CC67FC] to-[#F6D10B] text-3xl md:text-4xl lg:text-5xl 2xl:text-[56px] text-center "
+              className="mb-4 text-transparent  bg-clip-text font-bold bg-gradient-to-r from-[#CC67FC] to-[#F6D10B] text-3xl md:text-4xl lg:text-5xl 2xl:text-[45px] text-center "
             >
               All in ONE
             </motion.h1>
@@ -67,7 +67,7 @@ export function Main() {
               initial={{ y: 20, x: -20, scale: 0 }}
               animate={{ y: 0, x: 0, scale: 1 }}
               transition={{ duration: 0.8, ease: [0.6, 0.05, -0.01, 0.9] }}
-              className="mb-4 text-transparent text-center bg-clip-text font-bold bg-gradient-to-r from-[#CC67FC] to-[#F6D10B] text-3xl md:text-4xl lg:text-5xl 2xl:text-[56px] "
+              className="mb-4 text-transparent text-center bg-clip-text font-bold bg-gradient-to-r from-[#CC67FC] to-[#F6D10B] text-3xl md:text-4xl lg:text-5xl 2xl:text-[45px] "
             >
               NFT Paradise
             </motion.h1>
