@@ -15,7 +15,6 @@ export function Sidebar(props: any) {
           onClick={props.handleShowSidebar}
           className="flex flex-col space-y-6 "
         >
-  
           <div>
             <p className="text-[#E6E0FA]"> DEX</p>
           </div>
@@ -31,7 +30,13 @@ export function Sidebar(props: any) {
           <div>
             <p className="text-[#E6E0FA]">Help</p>
           </div>
-      
+
+          <p className="bg-[#1b1324] border-none text-[#e6e0fa]">Ethereum</p>
+          <p className="bg-[#1b1324] border-none text-[#e6e0fa]">BNB</p>
+          <p className="bg-[#1b1324] border-none text-[#e6e0fa]">Polygon</p>
+          <p className="bg-[#1b1324] border-none text-[#e6e0fa]">Avalanche</p>
+          <p className="bg-[#1b1324] border-none text-[#e6e0fa]">Moonriver</p>
+          <p className="bg-[#1b1324] border-none text-[#e6e0fa]">Moonbeam</p>
         </nav>
         <div
           className="absolute top-0 right-0 h-full"
