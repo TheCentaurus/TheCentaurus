@@ -6,6 +6,9 @@ import { AiOutlineMenu } from "react-icons/ai";
 import { Sidebar } from "./Sidebar";
 import { FiMoreHorizontal } from "react-icons/fi";
 import { useAccount } from "wagmi";
+import CustomSelect from "./Select";
+
+import styled from "styled-components";
 
 import {
   Menu,
@@ -26,6 +29,53 @@ import {
 export function Nav() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [showSidebar, setShowSidebar] = useState(true);
+   const [isOpenDropdown, setIsOpenDropdown] = useState(false);
+  const [selectedOption, setSelectedOption] = useState(null);
+
+  const toggling = () => setIsOpenDropdown(!isOpenDropdown);
+
+  const onOptionClicked = value => () => {
+    setSelectedOption(value);
+    setIsOpenDropdown(false);
+    console.log(selectedOption);
+  };
+  
+  const Main = styled("div")`
+  font-family: sans-serif;
+  background: #f0f0f0;
+  height: 100vh;`;
+
+const DropDownContainer = styled("div")`
+
+  margin: 0 auto;`;
+
+  const DropDownHeader = styled("div")`
+
+  font-weight: 500;
+  color: white;`;
+
+  const DropDownListContainer = styled("div")`
+ width: 10.5em;
+  position: absolute;
+  z-index: 100;`;
+
+const DropDownList = styled("ul")`
+  padding: 3;
+  margin: 0;
+   width: 10.5em;
+  background: #1b1324;
+ 
+  box-sizing: border-box;
+  color: white;
+ 
+  font-weight: 500;
+  &:first-child {
+    padding-top: 0.8em;
+  }`;
+
+
+
+
   const handleShowSidebar = () => {
     setShowSidebar(!showSidebar);
   };
@@ -49,6 +99,7 @@ export function Nav() {
     // adding the event when scroll change background
     window.addEventListener("scroll", changeBackground);
   });
+  
 
   return (
     <div
@@ -134,7 +185,7 @@ export function Nav() {
 
         <div className="flex items-center justify-between md:w-4/12 lg:w-4/12">
           <div className=" text-[#E6E0FA]">
-            <IoNotifications size={25} className="text-center text-gray-600" />
+            <IoNotifications size={25} className="text-center text-gray-600 mr-2" />
           </div>
 
           <div className="max-w-[200px] flex items-center justify-center text-[#E6E0FA] font-bold max-h-[60px] rounded-sm py-[3px] px-[2px] button-custom">
@@ -154,7 +205,7 @@ export function Nav() {
               )}
             </a>
           </div>
-          <div>
+          <div className="ml-5">
             {/* menu item */}
             <Menu>
               <MenuButton className="border-2 border-yellow-300 cursor-pointer text-[#E6E0FA] font-bold lg:text-sm text-[12px] rounded-xl px-[15px] py-[10px]">
@@ -210,29 +261,45 @@ export function Nav() {
             {/* end menu item */}
           </div>
           {/* blockachain menu */}
-          <select
-            className="w-4/12 border-2 bg-transparent border-yellow-300 cursor-pointer text-[#E6E0FA] font-bold lg:text-sm text-[12px] rounded-xl px-[15px] py-[10px]"
-            placeholder="Select option"
-          >
-            <option className="bg-[#1b1324] border-none p-2" value="Ethereum">
-              Ethereum
-            </option>
-            <option className="bg-[#1b1324] border-none p-2" value="BNB">
-              BNB
-            </option>
-            <option className="bg-[#1b1324] border-none p-2" value="Polygon">
-              Polygon
-            </option>
-            <option className="bg-[#1b1324] border-none p-2" value="Avalanche">
-              Avalanche
-            </option>
-            <option className="bg-[#1b1324] border-none p-2" value="Moonriver">
-              Moonriver
-            </option>
-            <option className="bg-[#1b1324] border-none p-2" value="Moonbeam">
-              Moonbeam
-            </option>
-          </select>
+           <DropDownContainer>
+        <DropDownHeader onClick={toggling} className="w-full border-2 bg-transparent border-yellow-300 cursor-pointer text-[#E6E0FA] font-bold lg:text-sm text-[12px] rounded-xl px-[15px] py-[10px]">
+          {selectedOption || "Ethereum"}
+        </DropDownHeader>
+        {isOpenDropdown && (
+              <DropDownListContainer>
+            <DropDownList className="rounded-lg p-2">
+             
+                <li onClick={onOptionClicked("Ethereum")} className="bg-[#1b1324] flex mb-3 items-center">
+                    <img src="ethereum.svg" className="h-7 object-contain mr-2 " alt="" />
+                    Ethereum
+                  </li>
+                   <li onClick={onOptionClicked("BNB")} className="bg-[#1b1324] flex mb-3 items-center">
+                    <img src="bnb.svg" className="h-7 object-contain mr-2 " alt="" />
+                    BNB
+                  </li>
+                   <li onClick={onOptionClicked("Polygon")} className="bg-[#1b1324] flex mb-3 items-center">
+                    <img src="polygon.svg" className="h-7 object-contain mr-2 " alt="" />
+                    Polygon
+                  </li>
+                   <li onClick={onOptionClicked("Avalanche")} className="bg-[#1b1324] flex mb-3 items-center">
+                    <img src="avalanche.svg"className="h-7 object-contain mr-2 " alt="" />
+                    Avalanche
+                </li>
+                 <li onClick={onOptionClicked("Moonriver")} className="bg-[#1b1324] flex mb-3 items-center">
+                    <img src="moonriver.png" className="h-7 object-contain mr-2 " alt="" />
+                    Moonriver
+                  </li>
+                   <li onClick={onOptionClicked("Moonbeam")} className="bg-[#1b1324] flex mb-3 items-center">
+                    <img src="moonbeam.jpg" className="h-7 object-contain mr-2 " alt="" />
+                    Moonbeam
+                </li>
+               
+            
+            </DropDownList>
+          </DropDownListContainer>
+        )}
+      </DropDownContainer>
+          
           {/* end blockachain menu */}
         </div>
       </div>
