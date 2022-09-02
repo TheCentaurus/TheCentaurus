@@ -57,7 +57,7 @@ export function Main() {
               initial={{ y: -20, x: 50, scale: 0.5 }}
               animate={{ y: 0, x: 0, scale: 1 }}
               transition={{ duration: 0.8, ease: [0.6, 0.05, -0.01, 0.9] }}
-              className="mb-4 text-transparent  bg-clip-text font-bold bg-gradient-to-r from-[#CC67FC] to-[#F6D10B] text-3xl md:text-4xl lg:text-5xl 2xl:text-[45px] text-center "
+              className="mb-4 text-transparent  bg-clip-text font-bold bg-gradient-to-r from-[#CC67FC] to-[#F6D10B] text-3xl md:text-4xl lg:text-5xl 2xl:text-[45px] text-left "
             >
               All in ONE
             </motion.h1>
@@ -67,7 +67,7 @@ export function Main() {
               initial={{ y: 20, x: -20, scale: 0 }}
               animate={{ y: 0, x: 0, scale: 1 }}
               transition={{ duration: 0.8, ease: [0.6, 0.05, -0.01, 0.9] }}
-              className="mb-4 text-transparent text-center bg-clip-text font-bold bg-gradient-to-r from-[#CC67FC] to-[#F6D10B] text-3xl md:text-4xl lg:text-5xl 2xl:text-[45px] "
+              className="mb-4 text-transparent text-left bg-clip-text font-bold bg-gradient-to-r from-[#CC67FC] to-[#F6D10B] text-3xl md:text-4xl lg:text-5xl 2xl:text-[45px] "
             >
               NFT Paradise
             </motion.h1>
@@ -77,11 +77,11 @@ export function Main() {
               initial={{ y: -20 }}
               animate={{ y: 0 }}
               transition={{ duration: 1.5, ease: [0.6, 0.05, -0.01, 0.9] }}
-              className="mt-5 tracking-tight letter-spacing:-0.05em font-regular text-[#E6E0FA] text-[14px] lg:text-[24px] text-center"
+              className="mt-5 tracking-tight letter-spacing:-0.05em font-regular text-[#E6E0FA] text-[14px] lg:text-[24px] text-left"
             >
               Discover , Create, Buy and Sell.
             </motion.p>
-            <div className="flex justify-center mt-5">
+            <div className="flex justify-start mt-5">
               <motion.button
                 initial={{ x: -20, y: 200 }}
                 animate={{
