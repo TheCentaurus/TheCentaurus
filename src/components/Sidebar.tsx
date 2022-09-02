@@ -15,9 +15,7 @@ export function Sidebar(props: any) {
           onClick={props.handleShowSidebar}
           className="flex flex-col space-y-6 "
         >
-          <div>
-            <p className="text-[#E6E0FA]"> NFT Junction</p>
-          </div>
+  
           <div>
             <p className="text-[#E6E0FA]"> DEX</p>
           </div>
@@ -31,11 +29,9 @@ export function Sidebar(props: any) {
             <p className="text-[#E6E0FA]">Resources</p>
           </div>
           <div>
-            <p className="text-[#E6E0FA]">Home</p>
+            <p className="text-[#E6E0FA]">Help</p>
           </div>
-          <div>
-            <p className="text-[#E6E0FA]">Centaurus wallet</p>
-          </div>
+      
         </nav>
         <div
           className="absolute top-0 right-0 h-full"

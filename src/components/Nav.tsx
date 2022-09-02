@@ -52,7 +52,7 @@ const {address, isConnected } = useAccount()
   });
 
   return (
-    <div className="flex items-center justify-between w-full ">
+    <div className="sticky top-0 z-10 flex items-center justify-between w-full ">
       <div
         className={
           navbar
@@ -119,7 +119,7 @@ const {address, isConnected } = useAccount()
               <input
                 type="search"
                 id="default-search"
-                className="block p-3 pl-10 w-full text-sm text-gray-50 border-none bg-[#221C30] placeholder:text-[#8175A7] rounded-lg "
+                className="block p-3 pl-10 w-full text-sm text-gray-50  bg-[#221C30] placeholder:text-[#8175A7] rounded-lg border  border-[#8175A7] "
                 placeholder="Search by collection, NFT or User"
                 required
               />
@@ -131,6 +131,7 @@ const {address, isConnected } = useAccount()
           <div className=" text-[#E6E0FA]">
             <IoNotifications size={25} className="text-center text-gray-600" />
           </div>
+          
           <div className="max-w-[200px] flex items-center justify-center text-[#E6E0FA] font-bold max-h-[60px] rounded-sm py-[3px] px-[2px] button-custom">
             <a href="/connect" className="w-full h-full relative border-2 border-yellow-300 cursor-pointer text-[#E6E0FA] font-bold lg:text-sm text-[12px] rounded-xl px-[15px] py-[10px] ">
               {
@@ -158,15 +159,7 @@ const {address, isConnected } = useAccount()
                 />
               </MenuButton>
               <MenuList border={"none"} bg={"#1b1324a1"} color={"#E6E0FA"}>
-                <MenuItem
-                  _hover={{
-                    background: "#1b1324",
-                    color: "teal.500",
-                  }}
-                  _focus={{ background: "#1b1324", color: "teal.500" }}
-                >
-                  NFT Junction
-                </MenuItem>
+             
                 <MenuItem
                   _hover={{
                     background: "#1b1324",
@@ -205,16 +198,9 @@ const {address, isConnected } = useAccount()
                     color: "teal.500",
                   }}
                 >
-                  Home
+                  Help
                 </MenuItem>
-                <MenuItem
-                  _hover={{
-                    background: "#1b1324",
-                    color: "teal.500",
-                  }}
-                >
-                  Centaurus wallet
-                </MenuItem>
+      
               </MenuList>
             </Menu>
             {/* end menu item */}

@@ -122,9 +122,9 @@ export function Main() {
           </div>
         </div>
         <div className="px-10 m-auto ">
-          <p className="font-semibold mb-1 text-lg text-[#E6E0FA] text-center lg:text-left">
+          {/* <p className="font-semibold mb-1 text-lg text-[#E6E0FA] text-center lg:text-left">
             Featured Users
-          </p>
+          </p> */}
           <Feature data={sampleData} />
         </div>
       </div>
