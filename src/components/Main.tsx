@@ -48,8 +48,8 @@ export function Main() {
   };
 
   return (
-    <section className="text-gray-600 body-font md:px-20 xl:px-40 2xl:px-80 ">
-      <div className="container flex flex-col items-center py-24 mx-auto 2xl:px-12 md:flex-row">
+    <section className="pt-64 pb-24 text-gray-600 body-font md:px-20 xl:px-40 2xl:px-80">
+      <div className="container flex flex-col items-center mx-auto 2xl:px-12 md:flex-row">
         <div className="flex flex-col items-center mb-16 text-center lg:flex-grow md:w-1/2 md:items-start md:text-left md:mb-0">
           <div className="w-full">
             {" "}
