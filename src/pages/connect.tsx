@@ -1,5 +1,4 @@
 import * as React from "react";
-import bg from "../assets/backgroundImg.webp";
 import logo from "../assets/logo.svg";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
 import { Connect } from "../components";

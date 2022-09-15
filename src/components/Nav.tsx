@@ -117,11 +117,13 @@ const DropDownList = styled("ul")`
         }
       >
         <div className="items-center cursor-pointer md:hidden">
+          <a href="/">
           <img
             src={logo.src}
             alt=""
             className="object-contain h-16 ml-5 md:w-full"
           />
+    </a>
         </div>
 
         <div className="flex items-center fixed top-5 z-20 right-5 py-2 sm:hidden w-[80px]">
@@ -185,7 +187,7 @@ const DropDownList = styled("ul")`
 
         <div className="flex items-center justify-between md:w-4/12 lg:w-4/12">
           <div className=" text-[#E6E0FA]">
-            <IoNotifications size={25} className="text-center text-gray-600 mr-2" />
+            <IoNotifications size={25} className="mr-2 text-center text-gray-600" />
           </div>
 
           <div className="max-w-[200px] flex items-center justify-center text-[#E6E0FA] font-bold max-h-[60px] rounded-sm py-[3px] px-[2px] button-custom">
@@ -267,30 +269,30 @@ const DropDownList = styled("ul")`
         </DropDownHeader>
         {isOpenDropdown && (
               <DropDownListContainer>
-            <DropDownList className="rounded-lg p-2">
+            <DropDownList className="p-2 rounded-lg">
              
                 <li onClick={onOptionClicked("Ethereum")} className="bg-[#1b1324] flex mb-3 items-center">
-                    <img src="ethereum.svg" className="h-7 object-contain mr-2 " alt="" />
+                    <img src="ethereum.svg" className="object-contain mr-2 h-7 " alt="" />
                     Ethereum
                   </li>
                    <li onClick={onOptionClicked("BNB")} className="bg-[#1b1324] flex mb-3 items-center">
-                    <img src="bnb.svg" className="h-7 object-contain mr-2 " alt="" />
+                    <img src="bnb.svg" className="object-contain mr-2 h-7 " alt="" />
                     BNB
                   </li>
                    <li onClick={onOptionClicked("Polygon")} className="bg-[#1b1324] flex mb-3 items-center">
-                    <img src="polygon.svg" className="h-7 object-contain mr-2 " alt="" />
+                    <img src="polygon.svg" className="object-contain mr-2 h-7 " alt="" />
                     Polygon
                   </li>
                    <li onClick={onOptionClicked("Avalanche")} className="bg-[#1b1324] flex mb-3 items-center">
-                    <img src="avalanche.svg"className="h-7 object-contain mr-2 " alt="" />
+                    <img src="avalanche.svg"className="object-contain mr-2 h-7 " alt="" />
                     Avalanche
                 </li>
                  <li onClick={onOptionClicked("Moonriver")} className="bg-[#1b1324] flex mb-3 items-center">
-                    <img src="moonriver.png" className="h-7 object-contain mr-2 " alt="" />
+                    <img src="moonriver.png" className="object-contain mr-2 h-7 " alt="" />
                     Moonriver
                   </li>
                    <li onClick={onOptionClicked("Moonbeam")} className="bg-[#1b1324] flex mb-3 items-center">
-                    <img src="moonbeam.jpg" className="h-7 object-contain mr-2 " alt="" />
+                    <img src="moonbeam.jpg" className="object-contain mr-2 h-7 " alt="" />
                     Moonbeam
                 </li>
                

@@ -178,7 +178,8 @@ function App({ Component, pageProps }: AppProps) {
                     },
                 },
                 detectRetina: true,
-            }}  />
+          }} />
+        
           <Component {...pageProps} className="z-20" />
         
       </ChakraProvider>

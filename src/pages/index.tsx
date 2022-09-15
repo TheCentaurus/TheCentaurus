@@ -1,10 +1,8 @@
 import * as React from "react";
-import bg from "../assets/backgroundImg.webp";
+import { Layout } from '../components/Layout';
 
 import {
   Main,
-  Footer,
-  Nav,
   HomeButtons,
   Top,
   CTA,
@@ -23,22 +21,15 @@ function Page() {
     return null;
   }
 
-  
   return (
-    <div
-  
-      className="bg-cover min-h-[100vh] bg-center"
-    >
-
-      <Nav />
+    <Layout>
       <Main />
       <HomeButtons />
       <Top />
       <CTA />
       <Community />
       <Video />
-      <Footer />
-    </div>
+    </Layout>
   );
 }
 
