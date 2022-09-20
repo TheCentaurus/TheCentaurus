@@ -7,18 +7,96 @@ const products = [
     imageSrc: '/images/1.png',
     price: '5.0',
   },
-
+  {
+    id: 2,
+    name: 'Strange Rock (Tokyo)',
+    url: 'The Centaurus ',
+    imageSrc: '/images/rock.png',
+    price: '5.0',
+  },
+  {
+    id: 1,
+    name: 'Buffaosoldier01 / 5 of 5',
+    url: 'The Centaurus ',
+    imageSrc: '/images/buffalosoldier01.jpeg',
+    price: '5.0',
+  },
+  {
+    id: 1,
+    name: 'SCOTIA',
+    url: 'The Centaurus ',
+    imageSrc: '/images/SCOTIA.png',
+    price: '5.0',
+  },
+  {
+    id: 1,
+    name: 'Bonanza-Black',
+    url: 'The Centaurus ',
+    imageSrc: '/images/Bonanza-Black.jpeg',
+    price: '5.0',
+  },
+  {
+    id: 1,
+    name: 'Bitcoin / 1000 of 1000',
+    url: 'The Centaurus ',
+    imageSrc: '/images/bitcoin.gif',
+    price: '5.0',
+  },{
+    id: 1,
+    name: 'Strange Rock (BERLIN)',
+    url: 'The Centaurus ',
+    imageSrc: '/images/rock2.jpeg',
+    price: '5.0',
+  },{
+    id: 1,
+    name: 'Nature Cloud',
+    url: 'The Centaurus ',
+    imageSrc: '/images/cloud.jpeg',
+    price: '5.0',
+  }
 ]
 
 
 export default function Explore() {
   return <Layout>
-    <div className="py-16 sm:py-12" >
+    <div className="py-16 sm:py-12 mt-20" >
       <div className="max-w-2xl px-4 mx-auto sm:px-6 lg:max-w-7xl lg:px-8">
         <h2 className="text-2xl font-bold text-[#E6E0FA] sm:text-4xl">Explore Exclusive Digital Assets</h2>
 
-        <div className='bg-[#2A243D] h-16 mt-12 rounded-xl w-full'>
-
+        <div className='bg-[#2A243D] h-16 mt-12 rounded-xl w-full flex items-center p-2'>
+        <div className="flex items-center justify-around w-full md:w-5/12 lg:w-5/12 md:justify-between">
+          <form className="w-full">
+            <label className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300">
+              Search
+            </label>
+            <div className="relative">
+              <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                <svg
+                  aria-hidden="true"
+                  className="w-5 h-5 text-gray-500 dark:text-gray-400"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                  ></path>
+                </svg>
+              </div>
+              <input
+                type="search"
+                id="default-search"
+                className="block p-3 pl-10 w-full md:w-auto text-sm text-gray-50  bg-[#221C30] placeholder:text-[#8175A7] rounded-lg border  border-[#8175A7] "
+                placeholder="Search "
+                required
+              />
+            </div>
+          </form>
+        </div>
         </div>
 
         <div className="grid grid-cols-1 mt-8 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
@@ -29,7 +107,7 @@ export default function Explore() {
                   <img
                     src={product.imageSrc}
                     alt={product.name}
-                    className="object-contain object-center w-full h-full"
+                    className="object-contain object-cover w-full h-full"
                   />
                 </div>
                 <div className="relative mx-4 mt-4">
