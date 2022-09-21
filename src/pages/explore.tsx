@@ -1,4 +1,5 @@
 import { Layout } from '../components/Layout';
+import { useRouter } from 'next/router';
 const products = [
   {
     id: 1,
@@ -15,40 +16,40 @@ const products = [
     price: '5.0',
   },
   {
-    id: 1,
+    id: 3,
     name: 'Buffaosoldier01 / 5 of 5',
     url: 'The Centaurus ',
     imageSrc: '/images/buffalosoldier01.jpeg',
     price: '5.0',
   },
   {
-    id: 1,
+    id: 4,
     name: 'SCOTIA',
     url: 'The Centaurus ',
     imageSrc: '/images/SCOTIA.png',
     price: '5.0',
   },
   {
-    id: 1,
+    id: 5,
     name: 'Bonanza-Black',
     url: 'The Centaurus ',
     imageSrc: '/images/Bonanza-Black.jpeg',
     price: '5.0',
   },
   {
-    id: 1,
+    id: 6,
     name: 'Bitcoin / 1000 of 1000',
     url: 'The Centaurus ',
     imageSrc: '/images/bitcoin.gif',
     price: '5.0',
   },{
-    id: 1,
+    id: 7,
     name: 'Strange Rock (BERLIN)',
     url: 'The Centaurus ',
     imageSrc: '/images/rock2.jpeg',
     price: '5.0',
   },{
-    id: 1,
+    id: 8,
     name: 'Nature Cloud',
     url: 'The Centaurus ',
     imageSrc: '/images/cloud.jpeg',
@@ -58,6 +59,7 @@ const products = [
 
 
 export default function Explore() {
+  const router = useRouter()
   return <Layout>
     <div className="py-16 sm:py-12 mt-20" >
       <div className="max-w-2xl px-4 mx-auto sm:px-6 lg:max-w-7xl lg:px-8">
@@ -101,7 +103,11 @@ export default function Explore() {
 
         <div className="grid grid-cols-1 mt-8 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
           {products.map((product) => (
-            <a key={product.id} className="bg-[#2A243D] rounded-xl" href='#'>
+            <div key={product.id} className="bg-[#2A243D] rounded-xl cursor-pointer" onClick={()=>router.push({
+              pathname:'/collections',
+              query:product
+              
+            },'/collections')}>
               <div className="relative">
                 <div className="relative w-full overflow-hidden rounded-xl h-72">
                   <img
@@ -141,7 +147,7 @@ export default function Explore() {
                 <h1 className='text-[#E6E0FA]'>Reserve Price</h1>
                 <p className='text-white'>{product.price} WBNB</p>
               </div>
-            </a>
+            </div>
           ))}
         </div>
       </div>
