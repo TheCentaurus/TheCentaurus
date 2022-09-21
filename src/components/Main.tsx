@@ -8,6 +8,7 @@ import prmElipsePic from "../assets/plm-eclipse.png";
 import prmCardPic from "../assets/plm-rect.png";
 import { Feature } from "./Feature";
 import { motion } from "framer-motion";
+import { useRouter } from "next/router";
 export function Main() {
   const sampleData = {
     data: [
@@ -46,7 +47,7 @@ export function Main() {
       },
     ],
   };
-
+  const router = useRouter();
   return (
     <section className="py-24 text-gray-600 sm:pt-64 sm:pb-24 body-font md:px-20 xl:px-40 2xl:px-80">
       <div className="container flex flex-col items-center mx-auto 2xl:px-12 md:flex-row">
@@ -82,7 +83,7 @@ export function Main() {
               Discover , Create, Buy and Sell.
             </motion.p>
             <div className="flex justify-start mt-5">
-              <motion.a
+              <motion.p
                 initial={{ x: -20, y: 200 }}
                 animate={{
                   x: 0,
@@ -96,12 +97,12 @@ export function Main() {
                   scale: 0.9,
                 }}
                 transition={{ duration: 0.2, ease: [0.6, 0.05, -0.01, 0.9] }}
-                className="px-6 py-1 text-black bg-gradient-to-t from-[#F6D10B] to-[#FFEB84]  rounded-xl "
-                href="/create"
+                className="px-6 flex items-center text-black cursor-pointer bg-gradient-to-t from-[#F6D10B] to-[#FFEB84]  rounded-xl "
+                onClick={() => router.push("/create")}
               >
                 Create
-              </motion.a>
-              <motion.a
+              </motion.p>
+              <motion.p
                 initial={{ x: -20, y: 200 }}
                 animate={{
                   x: 0,
@@ -115,11 +116,11 @@ export function Main() {
                   scale: 0.9,
                 }}
                 transition={{ duration: 0.2, ease: [0.6, 0.05, -0.01, 0.9] }}
-                className="px-6 py-1  ml-4 text-lg text-[#E6E0FA] border-2 border-[#F6D10B]  rounded-xl bg-transparent"
-                href="/explore"
+                className="px-6 py-1  ml-4 text-lg text-[#E6E0FA] cursor-pointer border-2 border-[#F6D10B]  rounded-xl bg-transparent"
+                onClick={() => router.push("/explore")}
               >
                 Explore
-              </motion.a>
+              </motion.p>
             </div>
           </div>
         </div>

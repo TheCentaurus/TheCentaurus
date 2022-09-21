@@ -26,6 +26,7 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export function Nav() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -100,7 +101,7 @@ export function Nav() {
     // adding the event when scroll change background
     window.addEventListener("scroll", changeBackground);
   });
-
+  const router = useRouter();
   return (
     <div
       className={
@@ -117,13 +118,12 @@ export function Nav() {
         }
       >
         <div className="items-center cursor-pointer md:hidden">
-          <Link href="/">
-            <img
-              src={logo.src}
-              alt=""
-              className="object-contain h-16 ml-5 md:w-full"
-            />
-          </Link>
+          <img
+            onClick={() => router.push("/")}
+            src={logo.src}
+            alt=""
+            className="object-contain h-16 ml-5 md:w-full"
+          />
         </div>
 
         <div className="flex items-center fixed top-5 z-20 right-5 py-2 sm:hidden w-[80px]">
@@ -149,7 +149,12 @@ export function Nav() {
       />
       <div className=" w-full  bg-transparent top-0 left-0 right-0 py-6 hidden md:flex z-20 items-center lg:px-[80px] 2xl:px-[200px] md:px-5  md:justify-between">
         <div className="items-center hidden cursor-pointer md:flex">
-          <img src={logo.src} alt="" className="w-40" />
+          <img
+            onClick={() => router.push("/")}
+            src={logo.src}
+            alt=""
+            className="w-40"
+          />
         </div>
         <div className="flex items-center justify-around w-full md:w-5/12 lg:w-5/12 md:justify-between">
           <form className="w-full">
