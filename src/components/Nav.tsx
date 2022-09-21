@@ -25,56 +25,57 @@ import {
   Select,
   useDisclosure,
 } from "@chakra-ui/react";
+import Link from "next/link";
 
 export function Nav() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [showSidebar, setShowSidebar] = useState(true);
-   const [isOpenDropdown, setIsOpenDropdown] = useState(false);
+  const [isOpenDropdown, setIsOpenDropdown] = useState(false);
   const [selectedOption, setSelectedOption] = useState(null);
 
   const toggling = () => setIsOpenDropdown(!isOpenDropdown);
 
-  const onOptionClicked = value => () => {
+  const onOptionClicked = (value) => () => {
     setSelectedOption(value);
     setIsOpenDropdown(false);
     console.log(selectedOption);
   };
-  
+
   const Main = styled("div")`
-  font-family: sans-serif;
-  background: #f0f0f0;
-  height: 100vh;`;
+    font-family: sans-serif;
+    background: #f0f0f0;
+    height: 100vh;
+  `;
 
-const DropDownContainer = styled("div")`
-
-  margin: 0 auto;`;
+  const DropDownContainer = styled("div")`
+    margin: 0 auto;
+  `;
 
   const DropDownHeader = styled("div")`
-
-  font-weight: 500;
-  color: white;`;
+    font-weight: 500;
+    color: white;
+  `;
 
   const DropDownListContainer = styled("div")`
- width: 10.5em;
-  position: absolute;
-  z-index: 100;`;
+    width: 10.5em;
+    position: absolute;
+    z-index: 100;
+  `;
 
-const DropDownList = styled("ul")`
-  padding: 3;
-  margin: 0;
-   width: 10.5em;
-  background: #1b1324;
- 
-  box-sizing: border-box;
-  color: white;
- 
-  font-weight: 500;
-  &:first-child {
-    padding-top: 0.8em;
-  }`;
+  const DropDownList = styled("ul")`
+    padding: 3;
+    margin: 0;
+    width: 10.5em;
+    background: #1b1324;
 
+    box-sizing: border-box;
+    color: white;
 
-
+    font-weight: 500;
+    &:first-child {
+      padding-top: 0.8em;
+    }
+  `;
 
   const handleShowSidebar = () => {
     setShowSidebar(!showSidebar);
@@ -99,7 +100,6 @@ const DropDownList = styled("ul")`
     // adding the event when scroll change background
     window.addEventListener("scroll", changeBackground);
   });
-  
 
   return (
     <div
@@ -117,13 +117,13 @@ const DropDownList = styled("ul")`
         }
       >
         <div className="items-center cursor-pointer md:hidden">
-          <a href="/">
-          <img
-            src={logo.src}
-            alt=""
-            className="object-contain h-16 ml-5 md:w-full"
-          />
-    </a>
+          <Link href="/">
+            <img
+              src={logo.src}
+              alt=""
+              className="object-contain h-16 ml-5 md:w-full"
+            />
+          </Link>
         </div>
 
         <div className="flex items-center fixed top-5 z-20 right-5 py-2 sm:hidden w-[80px]">
@@ -187,7 +187,10 @@ const DropDownList = styled("ul")`
 
         <div className="flex items-center justify-between md:w-4/12 lg:w-4/12">
           <div className=" text-[#E6E0FA]">
-            <IoNotifications size={25} className="mr-2 text-center text-gray-600" />
+            <IoNotifications
+              size={25}
+              className="mr-2 text-center text-gray-600"
+            />
           </div>
 
           <div className="max-w-[200px] flex items-center justify-center text-[#E6E0FA] font-bold max-h-[60px] rounded-sm py-[3px] px-[2px] button-custom">
@@ -263,45 +266,87 @@ const DropDownList = styled("ul")`
             {/* end menu item */}
           </div>
           {/* blockachain menu */}
-           <DropDownContainer>
-        <DropDownHeader onClick={toggling} className="w-full border-2 bg-transparent border-yellow-300 cursor-pointer text-[#E6E0FA] font-bold lg:text-sm text-[12px] rounded-xl px-[15px] py-[10px]">
-          {selectedOption || "Ethereum"}
-        </DropDownHeader>
-        {isOpenDropdown && (
+          <DropDownContainer>
+            <DropDownHeader
+              onClick={toggling}
+              className="w-full border-2 bg-transparent border-yellow-300 cursor-pointer text-[#E6E0FA] font-bold lg:text-sm text-[12px] rounded-xl px-[15px] py-[10px]"
+            >
+              {selectedOption || "Ethereum"}
+            </DropDownHeader>
+            {isOpenDropdown && (
               <DropDownListContainer>
-            <DropDownList className="p-2 rounded-lg">
-             
-                <li onClick={onOptionClicked("Ethereum")} className="bg-[#1b1324] flex mb-3 items-center">
-                    <img src="ethereum.svg" className="object-contain mr-2 h-7 " alt="" />
+                <DropDownList className="p-2 rounded-lg">
+                  <li
+                    onClick={onOptionClicked("Ethereum")}
+                    className="bg-[#1b1324] flex mb-3 items-center"
+                  >
+                    <img
+                      src="ethereum.svg"
+                      className="object-contain mr-2 h-7 "
+                      alt=""
+                    />
                     Ethereum
                   </li>
-                   <li onClick={onOptionClicked("BNB")} className="bg-[#1b1324] flex mb-3 items-center">
-                    <img src="bnb.svg" className="object-contain mr-2 h-7 " alt="" />
+                  <li
+                    onClick={onOptionClicked("BNB")}
+                    className="bg-[#1b1324] flex mb-3 items-center"
+                  >
+                    <img
+                      src="bnb.svg"
+                      className="object-contain mr-2 h-7 "
+                      alt=""
+                    />
                     BNB
                   </li>
-                   <li onClick={onOptionClicked("Polygon")} className="bg-[#1b1324] flex mb-3 items-center">
-                    <img src="polygon.svg" className="object-contain mr-2 h-7 " alt="" />
+                  <li
+                    onClick={onOptionClicked("Polygon")}
+                    className="bg-[#1b1324] flex mb-3 items-center"
+                  >
+                    <img
+                      src="polygon.svg"
+                      className="object-contain mr-2 h-7 "
+                      alt=""
+                    />
                     Polygon
                   </li>
-                   <li onClick={onOptionClicked("Avalanche")} className="bg-[#1b1324] flex mb-3 items-center">
-                    <img src="avalanche.svg"className="object-contain mr-2 h-7 " alt="" />
+                  <li
+                    onClick={onOptionClicked("Avalanche")}
+                    className="bg-[#1b1324] flex mb-3 items-center"
+                  >
+                    <img
+                      src="avalanche.svg"
+                      className="object-contain mr-2 h-7 "
+                      alt=""
+                    />
                     Avalanche
-                </li>
-                 <li onClick={onOptionClicked("Moonriver")} className="bg-[#1b1324] flex mb-3 items-center">
-                    <img src="moonriver.png" className="object-contain mr-2 h-7 " alt="" />
+                  </li>
+                  <li
+                    onClick={onOptionClicked("Moonriver")}
+                    className="bg-[#1b1324] flex mb-3 items-center"
+                  >
+                    <img
+                      src="moonriver.png"
+                      className="object-contain mr-2 h-7 "
+                      alt=""
+                    />
                     Moonriver
                   </li>
-                   <li onClick={onOptionClicked("Moonbeam")} className="bg-[#1b1324] flex mb-3 items-center">
-                    <img src="moonbeam.jpg" className="object-contain mr-2 h-7 " alt="" />
+                  <li
+                    onClick={onOptionClicked("Moonbeam")}
+                    className="bg-[#1b1324] flex mb-3 items-center"
+                  >
+                    <img
+                      src="moonbeam.jpg"
+                      className="object-contain mr-2 h-7 "
+                      alt=""
+                    />
                     Moonbeam
-                </li>
-               
-            
-            </DropDownList>
-          </DropDownListContainer>
-        )}
-      </DropDownContainer>
-          
+                  </li>
+                </DropDownList>
+              </DropDownListContainer>
+            )}
+          </DropDownContainer>
+
           {/* end blockachain menu */}
         </div>
       </div>

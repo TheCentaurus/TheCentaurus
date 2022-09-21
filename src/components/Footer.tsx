@@ -3,15 +3,11 @@ import audit from "../assets/audit.png";
 import binance from "../assets/binance.png";
 import flo from "../assets/FLO.png";
 import Link from "next/link";
-import {
-  AiOutlineFacebook,
-
-  AiOutlineInstagram,
-} from "react-icons/ai";
+import { AiOutlineFacebook, AiOutlineInstagram } from "react-icons/ai";
 import { TbBrandTelegram, TbBrandDiscord } from "react-icons/tb";
 import { FaMediumM } from "react-icons/fa";
 import { FiTwitter } from "react-icons/fi";
-import { Tooltip } from '@chakra-ui/react';
+import { Tooltip } from "@chakra-ui/react";
 
 export function Footer() {
   return (
@@ -28,7 +24,11 @@ export function Footer() {
                 />
               </div>
               <p className="text-[#8175A7] text-justify ">
-            The Centaurus is All In ONE Decentralized Ecosystem with Enabled Cross-Chain interoperability. The  Centaurus offers a complete NFT & Crypto lifecycle platform which allows anyone to securely and seamlessly Discover, Create, Collect, Trade, Swap, Buy and Sell digital assets.
+                The Centaurus is All In ONE Decentralized Ecosystem with Enabled
+                Cross-Chain interoperability. The Centaurus offers a complete
+                NFT & Crypto lifecycle platform which allows anyone to securely
+                and seamlessly Discover, Create, Collect, Trade, Swap, Buy and
+                Sell digital assets.
               </p>
             </div>
             <div className="w-full px-4 text-center md:text-left">
@@ -104,56 +104,140 @@ export function Footer() {
                 </li>
                 <li>
                   <div className="grid grid-cols-4 gap-2">
-                      <Tooltip label='Ethereum'>
-                    <a href="https://ethereum.org/en/" target="_blank">   <div className="flex items-center w-full h-12 p-1 m-auto align-middle rounded-full">
-                  <img src="/ethereum.svg" alt="" className="object-contain w-6 h-6 m-auto"/>
-                    </div></a>
+                    <Tooltip label="Ethereum">
+                      <a
+                        href="https://ethereum.org/en/"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {" "}
+                        <div className="flex items-center w-full h-12 p-1 m-auto align-middle rounded-full">
+                          <img
+                            src="/ethereum.svg"
+                            alt=""
+                            className="object-contain w-6 h-6 m-auto"
+                          />
+                        </div>
+                      </a>
                     </Tooltip>
-                                 <Tooltip label='Binance'>
-                    <a href="https://www.binance.com/en" target="_blank">   <div className="flex items-center w-full h-12 p-1 m-auto align-middle rounded-full">
-                      <img src="/bnb.svg" alt="" className="object-contain w-6 h-6 m-auto"/>
-                      </div></a>
-                      </Tooltip>
-                           <Tooltip label='Polygon'>
-                    <a href="https://polygon.technology/" target="_blank">  <div className="flex items-center w-full h-12 p-1 m-auto align-middle rounded-full">
-                                      <img src="/polygon.svg" alt="" className="object-contain w-6 h-6 m-auto"/>
-                                      
-                      </div></a>
-                      </Tooltip>
-                          <Tooltip label='Solana'>
-                    <a href="https://solana.com/" target="_blank">   <div className="flex items-center w-full h-12 p-1 m-auto align-middle rounded-full">
-                        <img src="/solana.svg" alt="" className="object-contain w-6 h-6 m-auto" /></div></a>  
+                    <Tooltip label="Binance">
+                      <a
+                        href="https://www.binance.com/en"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {" "}
+                        <div className="flex items-center w-full h-12 p-1 m-auto align-middle rounded-full">
+                          <img
+                            src="/bnb.svg"
+                            alt=""
+                            className="object-contain w-6 h-6 m-auto"
+                          />
+                        </div>
+                      </a>
                     </Tooltip>
-                                  <Tooltip label='Fantom'>
-                    <a href="https://fantom.foundation/" target="_blank">       <div className="flex items-center w-full h-12 p-1 m-auto align-middle rounded-full">
-                                      <img src="/fantom.svg" alt="" className="object-contain w-6 h-6 m-auto"/>
-                      </div></a>  
+                    <Tooltip label="Polygon">
+                      <a
+                        href="https://polygon.technology/"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {" "}
+                        <div className="flex items-center w-full h-12 p-1 m-auto align-middle rounded-full">
+                          <img
+                            src="/polygon.svg"
+                            alt=""
+                            className="object-contain w-6 h-6 m-auto"
+                          />
+                        </div>
+                      </a>
                     </Tooltip>
-                    
-                     <Tooltip label='Lighting'>
-                    <a href="https://lightning.network/" target="_blank">       <div className="flex items-center w-full h-12 p-1 m-auto align-middle rounded-full">
-                                      <img src="/lighting.svg" alt="" className="object-contain w-6 h-6 m-auto"/>
-                      </div></a> 
+                    <Tooltip label="Solana">
+                      <a
+                        href="https://solana.com/"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {" "}
+                        <div className="flex items-center w-full h-12 p-1 m-auto align-middle rounded-full">
+                          <img
+                            src="/solana.svg"
+                            alt=""
+                            className="object-contain w-6 h-6 m-auto"
+                          />
+                        </div>
+                      </a>
                     </Tooltip>
-                    <Tooltip label='Tezos'>
-                    <a href="https://tezos.com/" target="_blank">       <div className="flex items-center w-full h-12 p-1 m-auto align-middle rounded-full">
-                                      <img src="/tezos.svg" alt="" className="object-contain w-6 h-6 m-auto"/>
-                      </div></a> 
+                    <Tooltip label="Fantom">
+                      <a
+                        href="https://fantom.foundation/"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {" "}
+                        <div className="flex items-center w-full h-12 p-1 m-auto align-middle rounded-full">
+                          <img
+                            src="/fantom.svg"
+                            alt=""
+                            className="object-contain w-6 h-6 m-auto"
+                          />
+                        </div>
+                      </a>
                     </Tooltip>
-                    
-                     <Tooltip label='Avax'>
-                    <a href="https://www.avax.network/" target="_blank">       <div className="flex items-center w-full h-12 p-1 m-auto align-middle rounded-full">
-                                      <img src="/avax.svg" alt="" className="object-contain w-6 h-6 m-auto"/>
-                      </div></a> 
-                      </Tooltip>
-                                                            
-  
-                 </div>
+
+                    <Tooltip label="Lighting">
+                      <a
+                        href="https://lightning.network/"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {" "}
+                        <div className="flex items-center w-full h-12 p-1 m-auto align-middle rounded-full">
+                          <img
+                            src="/lighting.svg"
+                            alt=""
+                            className="object-contain w-6 h-6 m-auto"
+                          />
+                        </div>
+                      </a>
+                    </Tooltip>
+                    <Tooltip label="Tezos">
+                      <a
+                        href="https://tezos.com/"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {" "}
+                        <div className="flex items-center w-full h-12 p-1 m-auto align-middle rounded-full">
+                          <img
+                            src="/tezos.svg"
+                            alt=""
+                            className="object-contain w-6 h-6 m-auto"
+                          />
+                        </div>
+                      </a>
+                    </Tooltip>
+
+                    <Tooltip label="Avax">
+                      <a
+                        href="https://www.avax.network/"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {" "}
+                        <div className="flex items-center w-full h-12 p-1 m-auto align-middle rounded-full">
+                          <img
+                            src="/avax.svg"
+                            alt=""
+                            className="object-contain w-6 h-6 m-auto"
+                          />
+                        </div>
+                      </a>
+                    </Tooltip>
+                  </div>
                 </li>
-     
               </nav>
             </div>
-   
           </div>
         </div>
         <div className="border-t border-[#8175A7]">
