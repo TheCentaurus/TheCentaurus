@@ -84,7 +84,12 @@ function Collections(props: any) {
       <Nav />
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-32 px-10 md:px-15 lg:px-20 2xl:px-32">
         <div className="bg-[#2A243D] h-fit w-fit rounded-xl p-2">
-          <img src={query.imageSrc} alt="" className="h-60 object-contain" />
+          <img
+            //   @ts-ignore
+            src={query.imageSrc}
+            alt=""
+            className="h-60 object-contain"
+          />
         </div>
         <div className="text-white">
           <p className="text-3xl text-white">{query.name}</p>
@@ -140,6 +145,7 @@ function Collections(props: any) {
               <p className="font-normal text-sm">Creator</p>
               <div className="flex items-center">
                 <img
+                  //   @ts-ignore
                   src={query.imageSrc}
                   className="h-12 w-12 object-cover mr-2"
                   alt=""
@@ -151,6 +157,7 @@ function Collections(props: any) {
               <p className="font-normal text-sm">Collection</p>
               <div className="flex items-center">
                 <img
+                  //   @ts-ignore
                   src={query.imageSrc}
                   className="h-12 w-12 object-cover mr-2"
                   alt=""
@@ -179,6 +186,7 @@ function Collections(props: any) {
                   <div className="flex">
                     <div>
                       <img
+                        //   @ts-ignore
                         src={query.imageSrc}
                         className="h-12 w-12 object-cover mr-2 rounded-lg"
                         alt=""
@@ -200,6 +208,7 @@ function Collections(props: any) {
                   <div className="flex items-center">
                     <div>
                       <img
+                        //   @ts-ignore
                         src={query.imageSrc}
                         className="h-12 w-12 object-cover mr-2 rounded-lg"
                         alt=""
@@ -242,8 +251,8 @@ function Collections(props: any) {
           onSlideChange={() => console.log("slide change")}
           onSwiper={(swiper) => console.log(swiper)}
         >
-          {products.map((product) => (
-            <SwiperSlide>
+          {products.map((product, index) => (
+            <SwiperSlide key={product.id}>
               <div
                 key={product.id}
                 className="bg-[#2A243D] rounded-xl cursor-pointer"
