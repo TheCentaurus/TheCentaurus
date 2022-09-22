@@ -17,19 +17,19 @@ function CreateSingle() {
 
   return (
     <Layout>
-      <div className="px-10 md:px-15 lg:px-20 mt-32">
+      <div className="px-10 md:px-15 lg:px-20 mt-10 lg:mt-32">
         {/* make banner for profile page
         
 
         */}
-        <div className="w-full bg-[#1b1324] rounded-xl p-5">
+        <div className="w-full bg-[#1b1324] h-44 lg:h-auto rounded-xl p-5">
           <BsImage className="m-auto text-yellow-300 text-[100px]" />
         </div>
         <div className="flex flex-col items-center lg:items-stretch lg:flex-row justify-between mt-10">
-          <div className="w-fit h-fit bg-[#1b1324] rounded-xl ml-5 -mt-16 font-medium text-[#8175A7] mb-5">
+          <div className="w-10/12 h-fit lg:w-fit lg:h-fit bg-[#1b1324] rounded-xl ml-5  lg:-mt-16 font-medium text-[#8175A7] mb-5">
             <img
               src="user.png"
-              className="h-44 object-cover rounded-xl"
+              className="lg:h-44 h-52 object-cover rounded-xl m-auto"
               alt=""
             />
             <p className="ml-2 text-sm my-3">0xa929c6b...0ce7</p>

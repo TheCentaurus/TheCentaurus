@@ -7,8 +7,8 @@ export default function Create() {
   const router = useRouter();
   return (
     <Layout>
-      <div className=" text-white md:w-1/2 m-auto lg:mt-32 font-normal">
-        <div className="flex justify-between ">
+      <div className=" text-white md:w-1/2 m-auto mt-10 lg:mt-32 font-normal px-10 md:px-15 lg:px-20">
+        <div className="flex justify-between items-center">
           {" "}
           <h1 className="font-bold text-xl lg:text-3xl border-l px-2">
             Create Collectible
@@ -28,22 +28,22 @@ export default function Create() {
         <div className="grid grid-cols-2 gap-4 my-5 justify-between mt-10">
           <div
             onClick={() => router.push("/create-single")}
-            className="flex flex-col items-center justify-center w-1/2 cursor-pointer rounded-xl"
+            className="flex flex-col items-center justify-center w-full cursor-pointer rounded-xl"
           >
-            <BsImage className="text-[100px]" color="#f6d10b" />
+            <BsImage className="text-[100px] m-auto" color="#f6d10b" />
             <Link href="/create-single">
-              <p className="text-[#F6D10B] cursor-pointer mt-5 text-xl font-bold">
+              <p className="text-[#F6D10B] cursor-pointer mt-5 text-xl font-bold text-center">
                 Single
               </p>
             </Link>
           </div>
           <div
             onClick={() => router.push("/create-multiple")}
-            className="flex flex-col items-center justify-center w-1/2 cursor-pointer rounded-xl"
+            className="flex flex-col items-center justify-center w-full cursor-pointer rounded-xl"
           >
             <BsImages className="text-[100px]" color="#f6d10b" />
             <Link href="/create-single">
-              <p className="text-[#F6D10B] cursor-pointer mt-5 text-xl font-bold">
+              <p className="text-[#F6D10B] cursor-pointer mt-5 text-xl font-bold text-center">
                 Multiple
               </p>
             </Link>
