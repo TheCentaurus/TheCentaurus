@@ -7,6 +7,7 @@ import { Sidebar } from "./Sidebar";
 import { FiMoreHorizontal } from "react-icons/fi";
 import { useAccount } from "wagmi";
 import CustomSelect from "./Select";
+import Translate from "./Translate";
 
 import styled from "styled-components";
 
@@ -106,8 +107,8 @@ export function Nav() {
     <div
       className={
         navbar
-          ? "bg-[#261a2fa8] z-10 flex items-center justify-between w-full fixed top-0 left-0 right-0"
-          : "bg-[#230c2e02] z-10 flex items-center justify-between w-full fixed top-0 left-0 right-0"
+          ? "bg-[#261a2fa8] z-30 flex items-center justify-between w-full fixed top-0 left-0 right-0 backdrop-blur-sm"
+          : "bg-[#230c2e02] z-30 flex items-center justify-between w-full fixed top-0 left-0 right-0 backdrop-blur-sm"
       }
     >
       <div
@@ -126,7 +127,7 @@ export function Nav() {
           />
         </div>
 
-        <div className="flex items-center fixed top-5 z-20 right-5 py-2 sm:hidden w-[80px]">
+        <div className="flex items-center fixed top-5 z-40 right-5 py-2 sm:hidden w-[80px]">
           <div
             onClick={onOpen}
             className="h-7 w-7 bg-[#1b1324] border p-2 rounded-lg mr-5"
@@ -156,7 +157,7 @@ export function Nav() {
             className="w-40"
           />
         </div>
-        <div className="flex items-center justify-around w-full md:w-5/12 lg:w-5/12 md:justify-between">
+        <div className="flex items-center justify-around w-full md:w-5/12 lg:w-4/12 md:justify-between">
           <form className="w-full">
             <label className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300">
               Search
@@ -182,7 +183,7 @@ export function Nav() {
               <input
                 type="search"
                 id="default-search"
-                className="block p-3 pl-10 w-full text-sm text-gray-50  bg-[#221C30] placeholder:text-[#8175A7] rounded-lg border  border-[#8175A7] "
+                className="block p-3 pl-10 w-full text-sm text-gray-50  bg-[#221C30] placeholder:text-[#8175A7] rounded-lg border-none "
                 placeholder="Search by collection, NFT or User"
                 required
               />
@@ -190,7 +191,7 @@ export function Nav() {
           </form>
         </div>
 
-        <div className="flex items-center justify-between md:w-4/12 lg:w-4/12">
+        <div className="flex items-center justify-between md:w-4/12 lg:w-5/12">
           <div className=" text-[#E6E0FA]">
             <IoNotifications
               size={25}
@@ -198,10 +199,10 @@ export function Nav() {
             />
           </div>
 
-          <div className="max-w-[200px] flex items-center justify-center text-[#E6E0FA] font-bold max-h-[60px] rounded-sm py-[3px] px-[2px] button-custom">
+          <div className="max-w-[200px] flex items-center justify-center text-yellow-300 font-bold max-h-[60px] rounded-sm py-[3px] px-[2px] button-custom">
             <a
               href="/connect"
-              className="w-full h-full relative border-2 border-yellow-300 cursor-pointer text-[#E6E0FA] font-bold lg:text-sm text-[12px] rounded-xl px-[15px] py-[10px] "
+              className="w-full h-full relative border-[1px] border-yellow-300 cursor-pointer text-yellow-300 font-bold lg:text-xs text-[12px] rounded-xl px-[15px] py-[10px] "
             >
               {isConnected ? (
                 address !== undefined ? (
@@ -218,15 +219,18 @@ export function Nav() {
           <div className="ml-5">
             {/* menu item */}
             <Menu>
-              <MenuButton className="border-2 border-yellow-300 cursor-pointer text-[#E6E0FA] font-bold lg:text-sm text-[12px] rounded-xl px-[15px] py-[10px]">
+              <MenuButton className="border-[1px] border-yellow-300 cursor-pointer text-[#E6E0FA] font-bold lg:text-sm text-[12px] rounded-xl px-[15px] py-[10px]">
                 {" "}
                 <FiMoreHorizontal
                   size={20}
-                  className="text-center text-[#E6E0FA]"
+                  className="text-center text-yellow-300"
                 />
               </MenuButton>
               <MenuList border={"none"} bg={"#1b1324a1"} color={"#E6E0FA"}>
                 <MenuItem
+                  _focus={{
+                    background: "#1b1324",
+                  }}
                   _hover={{
                     background: "#1b1324",
                     color: "teal.500",
@@ -270,13 +274,16 @@ export function Nav() {
             </Menu>
             {/* end menu item */}
           </div>
+          <div className="ml-5">
+            <Translate />
+          </div>
           {/* blockachain menu */}
-          <DropDownContainer>
+          {/* <DropDownContainer>
             <DropDownHeader
               onClick={toggling}
-              className="w-full border-2 bg-transparent border-yellow-300 cursor-pointer text-[#E6E0FA] font-bold lg:text-sm text-[12px] rounded-xl px-[15px] py-[10px]"
+              className="w-full border-[1px] bg-transparent border-yellow-300 cursor-pointer text-yellow-300 font-bold lg:text-sm text-[12px] rounded-xl px-[15px] py-[10px]"
             >
-              {selectedOption || "Ethereum"}
+              <p className="text-yellow-300"> {selectedOption || "Ethereum"}</p>
             </DropDownHeader>
             {isOpenDropdown && (
               <DropDownListContainer>
@@ -350,7 +357,7 @@ export function Nav() {
                 </DropDownList>
               </DropDownListContainer>
             )}
-          </DropDownContainer>
+          </DropDownContainer> */}
 
           {/* end blockachain menu */}
         </div>
@@ -400,7 +407,7 @@ export function Nav() {
 
           <ModalFooter className="bg-[#1b1324]">
             <button
-              className="w-full rounded-xl border-2 border-yellow-300 px-8 py-2 text-[#E6E0FA]"
+              className="w-full rounded-xl border-[1px] border-yellow-300 px-8 py-2 text-[#E6E0FA]"
               onClick={onClose}
             >
               Search

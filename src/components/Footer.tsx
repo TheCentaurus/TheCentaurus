@@ -11,11 +11,11 @@ import { Tooltip } from "@chakra-ui/react";
 
 export function Footer() {
   return (
-    <div className="bg-[#120E17]">
-      <footer className="text-[#8175A7] font-light text-sm ">
-        <div className="container px-5 pt-20 pb-10 mx-auto">
-          <div className="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-6">
-            <div className="w-full col-span-2 px-4 ">
+    <div className="bg-[#120E17] z-20">
+      <footer className="text-[#8175A7] font-light text-sm z-20">
+        <div className="container px-5 pt-20 pb-10 mx-auto z-20">
+          <div className="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-6 z-20">
+            <div className="w-full col-span-2 px-4 z-20">
               <div className="flex justify-center w-full">
                 <img
                   src={logo.src}
@@ -31,19 +31,25 @@ export function Footer() {
                 Sell digital assets.
               </p>
             </div>
-            <div className="w-full px-4 text-center md:text-left">
+
+            <div className="w-full col-span-2 md:col-span-1 px-4 text-center md:text-left z-20">
               <h2 className="mb-3 text-lg font-medium tracking-widest text-[#8175A7] title-font">
-                Company
+                My Account
               </h2>
               <nav className="mb-10 list-none">
                 <li>
-                  <Link href="/about" className="text-[#8175A7]">
-                    About
+                  <Link href="#" className="text-[#8175A7]">
+                    Profile
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="text-[#8175A7]">
+                    Settings
                   </Link>
                 </li>
               </nav>
             </div>
-            <div className="w-full px-4 text-center md:text-left">
+            <div className="w-full px-4 text-center md:text-left z-20 col-span-2 md:col-span-1">
               <h2 className="mb-3 text-lg font-medium tracking-widest text-[#8175A7] title-font">
                 Resources
               </h2>
@@ -75,34 +81,33 @@ export function Footer() {
                 </li>
               </nav>
             </div>
-
-            <div className="w-full px-4 text-center md:text-left">
+            <div className="w-full px-4 text-center md:text-left z-20 col-span-2 md:col-span-1">
               <h2 className="mb-3 text-lg font-medium tracking-widest text-[#8175A7] title-font">
-                My Account
+                Company
               </h2>
               <nav className="mb-10 list-none">
                 <li>
-                  <Link href="#" className="text-[#8175A7]">
-                    Profile
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="text-[#8175A7]">
-                    Settings
+                  <Link href="/about" className="text-[#8175A7]">
+                    About
                   </Link>
                 </li>
               </nav>
             </div>
-            <div className="w-full px-4 text-center md:text-left ">
-              <nav className="mb-10 list-none md:m-auto">
+            <div className="w-full px-4 text-center md:text-left z-20 col-span-2 md:col-span-1">
+              <nav className="mb-10 list-none lg:m-auto">
                 <li>
                   <img
                     src={audit.src}
                     alt=""
-                    className="object-contain h-16 m-auto mb-5 cursor-pointer md:w-full"
+                    className="object-contain h-16 m-auto md:m-0 lg:m-auto mb-5 cursor-pointer lg:w-full"
                   />
                 </li>
-                <li>
+                <img
+                  src="bsc.svg"
+                  alt=""
+                  className="object-contain h-16  lg:m-auto mb-5 m-auto md:m-0 cursor-pointer lg:w-full"
+                />
+                {/* <li>
                   <div className="grid grid-cols-4 gap-2">
                     <Tooltip label="Ethereum">
                       <a
@@ -235,27 +240,27 @@ export function Footer() {
                       </a>
                     </Tooltip>
                   </div>
-                </li>
+                </li> */}
               </nav>
             </div>
           </div>
         </div>
-        <div className="border-t border-[#8175A7]">
+        <div className="border-t border-[#8175A7] z-20">
           <div className="container flex flex-wrap items-center justify-between px-5 py-8 mx-auto">
-            <div className="m-auto ">
+            <div className="m-auto z-20">
               {" "}
               <p className="text-sm text-center md:text-left text-[#8175A7] sm:text-left">
                 © 2022 All Rights Reserved The Centaurus.io.
               </p>
             </div>
-            <div className="m-auto mt-5 md:mt-0">
+            <div className="m-auto mt-5 md:mt-0 z-20">
               <ul className="flex">
                 <li className="mr-2 cursor-pointer">Disclaimer | </li>
                 <li className="mr-2 cursor-pointer"> Contact | </li>
                 <li className="mr-2 cursor-pointer"> FAQ </li>
               </ul>
             </div>
-            <div className="inline-flex justify-center w-full m-auto mt-6 lg:ml-auto lg:mt-0 md:justify-start md:w-auto">
+            <div className="inline-flex justify-center w-full m-auto mt-6 lg:ml-auto lg:mt-0 md:justify-start md:w-auto z-20 text-yellow-300">
               <a href="https://www.instagram.com/accounts/login/?next=/centaurusnft/">
                 {" "}
                 <AiOutlineInstagram className="w-5 h-5 mr-2 " />

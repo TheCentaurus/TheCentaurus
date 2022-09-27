@@ -115,7 +115,7 @@ export function Feature(props: any) {
       </div>
       <div className="flex w-full justify-between items-center ">
         <div className="flex items-center">
-          <h1 className="text-[#E6E0FA] font-bold text-[18px] md:text-[24px] mr-2">
+          <h1 className="text-[#E6E0FA] font-bold text-[14px] md:text-[24px] mr-2">
             {state.urls[state.index].title}
           </h1>
           <img
@@ -131,7 +131,7 @@ export function Feature(props: any) {
               transition: { duration: 0.3 },
             }}
             whileTap={{ scale: 0.9 }}
-            className="px-6 py-1  ml-4 text-lg text-[#E6E0FA] border-2 border-[#F6D10B]  rounded-xl bg-transparent"
+            className="px-6 py-1  ml-4 text-sx lg:text-lg text-[#F6D10B] border-[1px] border-[#F6D10B]  rounded-xl bg-transparent"
           >
             Follow
           </motion.button>
@@ -140,7 +140,9 @@ export function Feature(props: any) {
       <div className="h-[1px] w-full bg-slate-400 my-5"></div>
       {/* <hr className="bg-slate-400 my-5" /> */}
       <div>
-        <p className="text-[#E6E0FA]">{state.urls[state.index].description}</p>
+        <p className="text-[#E6E0FA] text-sm md:text-md">
+          {state.urls[state.index].description}
+        </p>
       </div>
     </motion.div>
   );

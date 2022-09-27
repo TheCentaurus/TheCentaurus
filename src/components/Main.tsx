@@ -49,26 +49,26 @@ export function Main() {
   };
   const router = useRouter();
   return (
-    <section className="py-24 text-gray-600 sm:pt-64 sm:pb-24 body-font md:px-20 xl:px-40 2xl:px-80">
-      <div className="container flex flex-col items-center mx-auto 2xl:px-12 md:flex-row">
+    <section className="py-24 text-gray-600 sm:pt-64 sm:pb-24 body-font md:px-20 xl:px-40 2xl:px-80 ">
+      <div className="container flex flex-col items-center mx-auto 2xl:px-12 md:flex-row ">
         <div className="flex flex-col items-center mb-16 text-center lg:flex-grow md:w-1/2 md:items-start md:text-left md:mb-0">
-          <div className="w-full">
+          <div className="w-full z-20">
             {" "}
             <motion.h1
               initial={{ y: -20, x: 50, scale: 0.5 }}
               animate={{ y: 0, x: 0, scale: 1 }}
               transition={{ duration: 0.8, ease: [0.6, 0.05, -0.01, 0.9] }}
-              className="mb-4 text-transparent  bg-clip-text font-bold bg-gradient-to-r from-[#CC67FC] to-[#F6D10B] text-3xl md:text-4xl lg:text-5xl 2xl:text-[45px] text-left "
+              className="mb-4 text-transparent  bg-clip-text font-bold  text-3xl md:text-4xl bg-gradient-to-r from-[#CC67FC] via-[#c24cfc7a] to-[#F6D10B] lg:text-6xl 2xl:text-[45px] text-left z-20 w-fit"
             >
               All in ONE
             </motion.h1>
           </div>
-          <div className="w-full">
+          <div className="w-full z-20">
             <motion.h1
               initial={{ y: 20, x: -20, scale: 0 }}
               animate={{ y: 0, x: 0, scale: 1 }}
               transition={{ duration: 0.8, ease: [0.6, 0.05, -0.01, 0.9] }}
-              className="mb-4 text-transparent text-left bg-clip-text font-bold bg-gradient-to-r from-[#CC67FC] to-[#F6D10B] text-3xl md:text-4xl lg:text-5xl 2xl:text-[45px] "
+              className="mb-4 text-transparent text-left bg-clip-text font-bold  bg-gradient-to-r from-[#CC67FC] via-[#c24cfc7a] to-[#F6D10B] text-3xl md:text-4xl lg:text-6xl 2xl:text-[45px] z-20 w-fit "
             >
               NFT Paradise
             </motion.h1>
@@ -78,11 +78,11 @@ export function Main() {
               initial={{ y: -20 }}
               animate={{ y: 0 }}
               transition={{ duration: 1.5, ease: [0.6, 0.05, -0.01, 0.9] }}
-              className="mt-5 tracking-tight letter-spacing:-0.05em font-regular text-[#E6E0FA] text-[14px] lg:text-[24px] text-left"
+              className="mt-5 tracking-tight letter-spacing:-0.05em font-regular text-[#E6E0FA] text-[14px] lg:text-[24px] text-left z-20"
             >
               Discover , Create, Buy and Sell.
             </motion.p>
-            <div className="flex justify-start mt-5">
+            <div className="flex justify-start mt-5 z-20">
               <motion.p
                 initial={{ x: -20, y: 200 }}
                 animate={{
@@ -97,7 +97,7 @@ export function Main() {
                   scale: 0.9,
                 }}
                 transition={{ duration: 0.2, ease: [0.6, 0.05, -0.01, 0.9] }}
-                className="px-6 flex items-center text-black cursor-pointer bg-gradient-to-t from-[#F6D10B] to-[#FFEB84]  rounded-xl "
+                className="px-6 flex items-center text-black cursor-pointer bg-gradient-to-t from-[#F6D10B] to-[#FFEB84]  rounded-xl z-20"
                 onClick={() => router.push("/create")}
               >
                 Create
@@ -116,7 +116,7 @@ export function Main() {
                   scale: 0.9,
                 }}
                 transition={{ duration: 0.2, ease: [0.6, 0.05, -0.01, 0.9] }}
-                className="px-6 py-1  ml-4 text-lg text-[#E6E0FA] cursor-pointer border-2 border-[#F6D10B]  rounded-xl bg-transparent"
+                className="px-6 py-1  ml-4 text-lg text-[#F6D10B] cursor-pointer border-[1px] border-[#F6D10B]  rounded-xl bg-transparent z-20"
                 onClick={() => router.push("/explore")}
               >
                 Explore
@@ -124,7 +124,7 @@ export function Main() {
             </div>
           </div>
         </div>
-        <div className="px-10 m-auto ">
+        <div className="px-10 m-auto z-20">
           {/* <p className="font-semibold mb-1 text-lg text-[#E6E0FA] text-center lg:text-left">
             Featured Users
           </p> */}

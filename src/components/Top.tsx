@@ -21,7 +21,7 @@ export function Top() {
               },
             }}
             viewport={{ amount: 0.8 }}
-            className="my-4"
+            className="my-4 z-20"
           >
             <motion.h1 className="text-3xl font-semibold text-[#E6E0FA]">
               Top Buyers
@@ -80,7 +80,7 @@ export function Top() {
               x: 0,
             }}
             viewport={{ amount: 0.8 }}
-            className="my-4"
+            className="my-4 z-20"
           >
             {" "}
             <motion.h1 className="text-3xl font-semibold text-[#E6E0FA]">
