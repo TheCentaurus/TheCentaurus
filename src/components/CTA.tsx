@@ -119,7 +119,7 @@ export function CTA() {
             },
           }}
           viewport={{ amount: 0.2 }}
-          className="max-w-md p-4 bg-[#ffffffdd] border dark:border-none dark:bg-[#ffffffdd] dark:bg-[#1b1324] z-20 rounded-xl shadow-md sm:p-8 m-4"
+          className="max-w-md p-4 bg-[#ffffffdd] border dark:border-none  dark:bg-[#1b1324] z-20 rounded-xl shadow-md sm:p-8 m-4"
         >
           <div className=" p-2 rounded-lg w-fit">
             <AiOutlineTag className="text-[50px] text-[#413A5A] text-left" />
