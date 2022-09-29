@@ -69,7 +69,7 @@ export default function Explore() {
             Explore Exclusive Digital Assets
           </h2>
 
-          <div className="dark:bg-[#2A243D] bg-[#d5eef1ad] h-16 mt-12 rounded-xl w-full flex items-center p-2">
+          <div className="dark:bg-[#2A243D] bg-[#fff] border dark:border-none h-16 mt-12 rounded-xl w-full flex items-center p-2">
             <div className="z-20 flex items-center justify-around w-full md:w-5/12 lg:w-5/12 md:justify-between">
               <form className="z-20 w-full">
                 <label className="z-20 mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300">
