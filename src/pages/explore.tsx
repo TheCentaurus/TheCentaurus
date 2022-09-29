@@ -63,7 +63,7 @@ export default function Explore() {
   const router = useRouter();
   return (
     <Layout>
-      <div className="z-20 x-10 md:px-15 lg:px-20 pt-10 lg:pt-32 pb-16">
+      <div className="z-20 px-6 md:px-15 lg:px-20 pt-10 lg:pt-32 pb-16">
         <div className="z-20 max-w-2xl px-4 mx-auto sm:px-6 lg:max-w-7xl lg:px-8">
           <h2 className="z-20 text-2xl font-bold dark:text-[#E6E0FA] text-[#413A5A] sm:text-4xl">
             Explore Exclusive Digital Assets
