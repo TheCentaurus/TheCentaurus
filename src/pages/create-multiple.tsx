@@ -17,24 +17,26 @@ function CreateMultiple() {
 
   return (
     <Layout>
-      <div className="z-20 px-10 md:px-15 lg:px-20 pt-10 lg:pt-32">
+      <div className="z-20 px-8 md:px-15 lg:px-20 pt-10 lg:pt-32">
         {/* make banner for profile page
         
 
         */}
-        <div className="z-20 w-full dark:bg-[#1b1324] bg-[#ffffff] h-44 lg:h-auto rounded-xl p-5">
-          <BsImage className="z-20 m-auto text-yellow-300 text-[100px]" />
+        <div className="z-20 flex flex-col items-center lg:items-stretch lg:flex-row justify-between mt-10">
+          <div className="z-20 w-full  dark:bg-[#1b1324] bg-[#fff] border dark:border-none h-44 lg:h-auto rounded-xl p-5 font-medium dark:text-[#8175a7] text-[#413A5A] mb-5">
+            <BsImage className="z-20 m-auto text-yellow-300 text-[100px]" />
+          </div>
         </div>
         <div className="z-20 flex flex-col items-center lg:items-stretch lg:flex-row justify-between mt-10">
-          <div className="z-20 w-10/12 h-fit lg:w-fit lg:h-fit dark:bg-[#1b1324] bg-[#ffffff] rounded-xl ml-5  lg:-mt-16 font-medium text-[#8175A7] mb-5">
+          <div className="z-20 w-full pt-10 lg:pt-0 h-fit lg:w-fit lg:h-fit dark:bg-[#1b1324] bg-[#fff] rounded-xl lg:ml-5  lg:-mt-16 font-medium dark:text-[#8175a7] text-[#413A5A] mb-5">
             <img
               src="user.png"
               className="z-20 lg:h-44 h-52 object-cover rounded-xl m-auto"
               alt=""
             />
-            <p className="z-20 ml-2 text-sm my-3">0xa929c6b...0ce7</p>
-            <hr className="z-20 mx-2 my-3" />
-            <p className="z-20 ml-2 mb-2">0 followers</p>
+            <p className="z-20 lg:ml-2 text-sm my-3 mx-7">0xa929c6b...0ce7</p>
+            <hr className="z-20 lg:mx-2 my-3 mx-7" />
+            <p className="z-20 lg:ml-2 mb-2 mx-7">0 followers</p>
           </div>
           <div className="z-20  dark:bg-[#1b1324] bg-[#ffffff] lg:w-1/2 rounded-xl p-5 dark:text-white text-[#413A5A] mb-5 font-medium">
             <h1 className="z-20 font-bold text-xl lg:text-2xl mb-5 border-l px-2">

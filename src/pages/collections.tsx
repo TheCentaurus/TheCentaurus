@@ -83,7 +83,7 @@ function Collections(props: any) {
   return (
     <div>
       <Layout>
-        <div className="z-20 grid grid-cols-1 lg:grid-cols-2 gap-4 pt-16 lg:pt-32 px-10 md:px-15 lg:px-20 2xl:px-32">
+        <div className="z-20 grid grid-cols-1 lg:grid-cols-2 gap-4 pt-16 lg:pt-32 px-8 md:px-15 lg:px-20 2xl:px-32">
           <div className="z-20 bg-[#d5eef1ad] dark:bg-[#2A243D] h-fit w-fit rounded-xl p-2">
             <img
               //   @ts-ignore
@@ -336,7 +336,7 @@ function Collections(props: any) {
                       </span>
                     </div>
                   </div>
-                  <div className="z-20 mx-4 my-6">
+                  <div className="z-20 mx-4 my-6 pb-5">
                     <h1 className="z-20 dark:text-[#E6E0FA] text-[#413A5A]">
                       Reserve Price
                     </h1>

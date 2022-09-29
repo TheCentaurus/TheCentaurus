@@ -120,11 +120,11 @@ export function Nav() {
       <div
         className={
           navbar
-            ? ` dark:bg-[#261a2f] bg-[#d5eef16a] px-2 sshadow-lg md:hidden fixed top-0 left-0 right-0 py-0 z-30 pb-2`
+            ? ` dark:bg-[#261a2f] bg-[#ffffff] px-2 sshadow-lg md:hidden fixed top-0 left-0 right-0 py-0 z-30 pb-2`
             : " dark:bg-[#230c2e02] bg-[#d5eef100] md:hidden fixed top-0 left-0 right-0 py-0 z-30 pb-2"
         }
       >
-        <div className="items-center cursor-pointer md:hidden">
+        <div className="items-center cursor-pointer md:hidden py-2 lg:py-0">
           <img
             onClick={() => router.push("/")}
             src={logo.src}
@@ -136,7 +136,7 @@ export function Nav() {
         <div className="flex items-center fixed top-5 z-40 right-5 py-2 sm:hidden w-[80px]">
           <div
             onClick={onOpen}
-            className="h-7 w-7 dark:bg-[#1b1324] bg-[#fff] border p-2 rounded-lg mr-5"
+            className="h-7 w-7 dark:bg-[#1b1324] bg-[#f7ffff] border p-2 rounded-lg mr-5"
           >
             <BsSearch
               size={10}
@@ -395,11 +395,11 @@ export function Nav() {
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader className="bg-[#1b1324] dark:text-[#E6E0FA] text-[#261a2f]">
+          <ModalHeader className="dark:bg-[#1b1324] dark:text-[#E6E0FA] text-[#261a2f]">
             Search
           </ModalHeader>
           <ModalCloseButton className="dark:text-[#E6E0FA] text-[#261a2f]" />
-          <ModalBody className="bg-[#1b1324]">
+          <ModalBody className="dark:bg-[#1b1324] bg-white">
             <form className="w-full">
               <label className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300">
                 Search
@@ -425,7 +425,7 @@ export function Nav() {
                 <input
                   type="search"
                   id="default-search"
-                  className="block w-full p-3 pl-10 text-sm bg-gray-600 rounded-lg text-gray-50 "
+                  className="block w-full p-3 pl-10 text-sm dark:bg-[#221C30] bg-[#f1f1f1] rounded-lg text-gray-50 "
                   placeholder="Search by collection, NFT or User"
                   required
                 />
@@ -433,7 +433,7 @@ export function Nav() {
             </form>
           </ModalBody>
 
-          <ModalFooter className="bg-[#1b1324]">
+          <ModalFooter className="dark:bg-[#1b1324]">
             <button
               className="w-full rounded-xl border-[1px] border-yellow-300 px-8 py-2 dark:text-[#E6E0FA] text-[#261a2f]"
               onClick={onClose}

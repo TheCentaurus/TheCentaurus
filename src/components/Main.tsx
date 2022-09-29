@@ -49,9 +49,9 @@ export function Main() {
   };
   const router = useRouter();
   return (
-    <section className="py-24 text-gray-600 sm:pt-64 sm:pb-24 body-font md:px-20 xl:px-40 2xl:px-80 ">
+    <section className="py-10 text-gray-600 sm:pt-64 sm:pb-24 body-font md:px-20 xl:px-40 2xl:px-80 ">
       <div className="container flex flex-col items-center mx-auto 2xl:px-12 md:flex-row ">
-        <div className="flex flex-col items-center mb-16 text-center lg:flex-grow md:w-1/2 md:items-start md:text-left md:mb-0">
+        <div className="flex flex-col items-center mb-16 text-center lg:flex-grow w-[80%] md:w-1/2 md:items-start md:text-left md:mb-0">
           <div className="w-full z-20">
             {" "}
             <motion.h1
@@ -124,7 +124,7 @@ export function Main() {
             </div>
           </div>
         </div>
-        <div className="px-10 m-auto z-20">
+        <div className="lg:px-10 m-auto z-20">
           {/* <p className="font-semibold mb-1 text-lg text-[#E6E0FA] text-center lg:text-left">
             Featured Users
           </p> */}

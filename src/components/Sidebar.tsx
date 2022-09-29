@@ -1,8 +1,16 @@
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
 import Link from "next/link";
 import Translate from "./Translate";
+import { BsSun } from "react-icons/bs";
+import MyThemeContext from "../store/themeContext";
 
 export function Sidebar(props: any) {
+  const themeCtx: { isDarkMode?: boolean; toggleThemeHandler: () => void } =
+    useContext(MyThemeContext);
+
+  function toggleThemeHandler(): void {
+    themeCtx.toggleThemeHandler();
+  }
   return (
     <div
       className={
@@ -30,6 +38,16 @@ export function Sidebar(props: any) {
           </div>
           <div>
             <p className="dark:text-[#e6e0fa] text-[#1b1324]">Help</p>
+          </div>
+          <div>
+            {" "}
+            <button
+              type="button"
+              className="py-3 px-2 sm:px-5 mr-2 w-1/2 flex bg-zinc-800 text-white dark:bg-zinc-200 dark:text-black rounded-xl"
+              onClick={toggleThemeHandler}
+            >
+              <BsSun className="m-auto" />
+            </button>
           </div>
 
           {/* <p className="dark:bg-[#1b1324] bg-white border-none dark:text-[#e6e0fa] text-[#1b1324]">
