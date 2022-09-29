@@ -31,7 +31,7 @@ export function Sidebar(props: any) {
           <div>
             <p className="dark:text-[#e6e0fa] text-[#1b1324]">Help</p>
           </div>
-          <Translate />
+
           {/* <p className="dark:bg-[#1b1324] bg-white border-none dark:text-[#e6e0fa] text-[#1b1324]">
             Ethereum
           </p>
