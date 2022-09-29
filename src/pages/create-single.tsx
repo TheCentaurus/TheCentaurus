@@ -22,11 +22,11 @@ function CreateSingle() {
         
 
         */}
-        <div className="z-20 w-full bg-[#1b1324] h-44 lg:h-auto rounded-xl p-5">
+        <div className="z-20 w-full dark:bg-[#1b1324] bg-[#ffffff] border-[1px] border-[#1b132436] dark:border-none h-44 lg:h-auto rounded-xl p-5">
           <BsImage className="z-20 m-auto text-yellow-300 text-[100px]" />
         </div>
         <div className="z-20 flex flex-col items-center lg:items-stretch lg:flex-row justify-between mt-10">
-          <div className="z-20 w-10/12 h-fit lg:w-fit lg:h-fit bg-[#1b1324] rounded-xl ml-5  lg:-mt-16 font-medium text-[#8175A7] mb-5">
+          <div className="z-20 w-10/12 h-fit lg:w-fit lg:h-fit dark:bg-[#1b1324] bg-[#fff] rounded-xl ml-5  lg:-mt-16 font-medium dark:text-[#8175a7] text-[#413A5A] mb-5">
             <img
               src="user.png"
               className="z-20 lg:h-44 h-52 object-cover rounded-xl m-auto"
@@ -36,7 +36,7 @@ function CreateSingle() {
             <hr className="z-20 mx-2 my-3" />
             <p className="z-20 ml-2 mb-2">0 followers</p>
           </div>
-          <div className="z-20  bg-[#1b1324] lg:w-1/2 rounded-xl p-5 text-white mb-5 font-medium">
+          <div className="z-20  dark:bg-[#1b1324] bg-[#fff] lg:w-1/2 rounded-xl p-5 dark:text-white text-[#413A5A] mb-5 font-medium">
             <h1 className="z-20 font-bold text-xl lg:text-2xl mb-5 border-l px-2">
               Create Single Collectible Item
             </h1>
@@ -52,7 +52,7 @@ function CreateSingle() {
               />
               <label
                 htmlFor="file"
-                className="z-20 cursor-pointer text-[#8175A7] text-sm border-[1px] border-yellow-300 rounded-xl py-2 px-8 w-full text-center flex justify-center items-center"
+                className="z-20 cursor-pointer dark:text-[#8175a7] text-[#413A5A] text-sm border-[1px] dark:border-yellow-300 border rounded-xl py-2 px-8 w-full text-center flex justify-center items-center"
               >
                 Upload Image
               </label>
@@ -62,7 +62,7 @@ function CreateSingle() {
               <select
                 name="category"
                 id="category"
-                className="z-20 w-full mt-2 bg-[#1b1324] text-white border-[1px] border-yellow-300 rounded-xl py-2 px-8"
+                className="z-20 w-full mt-2 dark:bg-[#1b1324] bg-[#fff] dark:text-white text-[#413A5A] border-[1px] dark:border-yellow-300 border rounded-xl py-2 px-8"
               >
                 <option value="Art">Art</option>
                 <option value="Animation">Animation</option>
@@ -92,18 +92,18 @@ function CreateSingle() {
               <label htmlFor="title">Item Name</label>
               <input
                 type="text"
-                className="z-20 w-full mt-2 mb-2 bg-[#1b1324] text-white border-[1px] border-yellow-300 rounded-xl py-2 px-8"
+                className="z-20 w-full mt-2 mb-2 dark:bg-[#1b1324] bg-[#fff] dark:text-white text-[#413A5A] border-[1px] dark:border-yellow-300 border rounded-xl py-2 px-8"
               />
               <label htmlFor="title">Description</label>
               <textarea
                 name="description"
-                className="z-20 w-full mt-2 mb-2 bg-[#1b1324] text-white border-[1px] border-yellow-300 rounded-xl py-2 px-8"
+                className="z-20 w-full mt-2 mb-2 dark:bg-[#1b1324] bg-[#fff] dark:text-white text-[#413A5A] border-[1px] dark:border-yellow-300 border rounded-xl py-2 px-8"
               />
               <label htmlFor="title">Royalties</label>
               <input
                 placeholder="eg. 10%"
                 type="text"
-                className="z-20 w-full mt-2 mb-2 bg-[#1b1324] text-white border-[1px] border-yellow-300 rounded-xl py-2 px-8"
+                className="z-20 w-full mt-2 mb-2 dark:bg-[#1b1324] bg-[#fff] dark:text-white text-[#413A5A] border-[1px] dark:border-yellow-300 border rounded-xl py-2 px-8"
               />
               <div className="z-20 grid grid-cols-2 gap-4">
                 <div>
@@ -111,7 +111,7 @@ function CreateSingle() {
                   <input
                     placeholder="eg. size"
                     type="text"
-                    className="z-20 w-full mt-2 bg-[#1b1324] text-white border-[1px] border-yellow-300 rounded-xl py-2 px-8"
+                    className="z-20 w-full mt-2 dark:bg-[#1b1324] bg-[#fff] dark:text-white text-[#413A5A] border-[1px] dark:border-yellow-300 border rounded-xl py-2 px-8"
                   />
                 </div>
                 <div>
@@ -119,7 +119,7 @@ function CreateSingle() {
                   <input
                     placeholder="eg. M"
                     type="text"
-                    className="z-20 w-full mt-2 bg-[#1b1324] text-white border-[1px] border-yellow-300 rounded-xl py-2 px-8"
+                    className="z-20 w-full mt-2 dark:bg-[#1b1324] bg-[#fff] dark:text-white text-[#413A5A] border-[1px] dark:border-yellow-300 border rounded-xl py-2 px-8"
                   />
                 </div>
               </div>
@@ -186,13 +186,13 @@ function CreateSingle() {
                 </RadioGroup>
               </div>
               <div className="z-20 flex ">
-                <button className="z-20 m-auto px-8 py-2 border-[1px] text-yellow-300 border-yellow-300 rounded-lg mt-5">
+                <button className="z-20 m-auto px-8 py-2 border-[1px] dark:text-yellow-300 dark:border-yellow-300 border-[#1b1324] rounded-lg mt-5">
                   Create Contract
                 </button>
               </div>
             </div>
           </div>
-          <div className="z-20 mb-5 bg-[#1b1324] lg:w-1/4 rounded-xl p-5 text-white">
+          <div className="z-20 mb-5 dark:bg-[#1b1324] bg-[#fff] lg:w-1/4 rounded-xl p-5 dark:text-white text-[#413A5A]">
             {/* preview image */}
             <div className="z-20 w-full">
               <p className="z-20 mb-5 text-center">Preview</p>

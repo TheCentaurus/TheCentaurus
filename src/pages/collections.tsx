@@ -84,7 +84,7 @@ function Collections(props: any) {
     <div>
       <Layout>
         <div className="z-20 grid grid-cols-1 lg:grid-cols-2 gap-4 pt-16 lg:pt-32 px-10 md:px-15 lg:px-20 2xl:px-32">
-          <div className="z-20 bg-[#2A243D] h-fit w-fit rounded-xl p-2">
+          <div className="z-20 bg-[#d5eef1ad] dark:bg-[#2A243D] h-fit w-fit rounded-xl p-2">
             <img
               //   @ts-ignore
               src={query.imageSrc}
@@ -92,12 +92,14 @@ function Collections(props: any) {
               className="z-20 h-60 object-contain"
             />
           </div>
-          <div className="z-20 text-white">
-            <p className="z-20 text-3xl text-white">{query.name}</p>
+          <div className="z-20 bg-white dark:bg-transparent p-5 rounded-xl dark:text-[#fff] text-[#413A5A]">
+            <p className="z-20 text-3xl dark:text-[#fff] text-[#413A5A]">
+              {query.name}
+            </p>
             <div className="z-20 flex flex-col lg:flex-row justify-between">
               <div className="z-20 bg-yellow-300 p-2 rounded-full flex items-center mt-5 mb-5 lg:mb-0">
                 <BsTagsFill color="#fff" className="z-20 mr-2" />
-                <p className="z-20 text-xs text-white">
+                <p className="z-20 text-xs dark:text-[#fff] text-[#413A5A]">
                   5 % of sales will go to creator
                 </p>
               </div>
@@ -246,7 +248,7 @@ function Collections(props: any) {
         </div>
         <hr className="z-20 mx-10 md:mx-15 lg:mx-20" />
         <div className="z-20 px-10 md:px-15 lg:px-20 2xl:px-32">
-          <h1 className="z-20 text-xl lg:text-3xl text-white my-5">
+          <h1 className="z-20 text-xl lg:text-3xl dark:text-[#fff] text-[#413A5A] my-5">
             Other Author Assets
           </h1>
           <Swiper
@@ -271,7 +273,7 @@ function Collections(props: any) {
               <SwiperSlide key={product.id}>
                 <div
                   key={product.id}
-                  className="z-20 bg-[#2A243D] rounded-xl cursor-pointer"
+                  className="z-20 bg-white dark:bg-[#2A243D] rounded-xl cursor-pointer"
                   onClick={() =>
                     router.push(
                       {
@@ -291,7 +293,7 @@ function Collections(props: any) {
                       />
                     </div>
                     <div className="z-20 relative mx-4 mt-4">
-                      <h3 className="z-20 text-xl font-semibold text-[#E6E0FA]">
+                      <h3 className="z-20 text-xl font-semibold dark:text-[#E6E0FA] text-[#413A5A]">
                         {product.name}
                       </h3>
                       <div className="z-20 flex items-center my-4 align-center">
@@ -302,7 +304,7 @@ function Collections(props: any) {
                             className="z-20 object-contain object-center w-8 h-8 bg-white rounded-lg"
                           />
                         </div>
-                        <p className="z-20 mt-1 ml-2 text-xs font-light tracking-widest text-white uppercase">
+                        <p className="z-20 mt-1 ml-2 text-xs font-light tracking-widest dark:text-[#fff] text-[#413A5A] uppercase">
                           @{product.url}
                         </p>
                       </div>
@@ -328,15 +330,19 @@ function Collections(props: any) {
                           />
                         </svg>
 
-                        <p className="z-20 relative text-sm font-semibold text-[#E6E0FA] ml-2">
+                        <p className="z-20 relative text-sm font-semibold dark:text-[#E6E0FA] text-[#413A5A] ml-2">
                           2
                         </p>
                       </span>
                     </div>
                   </div>
                   <div className="z-20 mx-4 my-6">
-                    <h1 className="z-20 text-[#E6E0FA]">Reserve Price</h1>
-                    <p className="z-20 text-white">{product.price} WBNB</p>
+                    <h1 className="z-20 dark:text-[#E6E0FA] text-[#413A5A]">
+                      Reserve Price
+                    </h1>
+                    <p className="z-20 dark:text-[#fff] text-[#413A5A]">
+                      {product.price} WBNB
+                    </p>
                   </div>
                 </div>
               </SwiperSlide>

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 export function CTA() {
   return (
     <div className="px-5 lg:px-0 lg:pb-10 z-20">
-      <h1 className="text-2xl lg:text-4xl font-bold text-center text-[#E6E0FA] my-10 lg:mx-20">
+      <h1 className="text-2xl lg:text-4xl font-bold text-center dark:text-[#E6E0FA] text-[#413A5A] my-10 lg:mx-20">
         Effortless place to Discover, Create, Mint, Trade,
         <br /> Swap, Buy and Sell NFTs on Web3
       </h1>
@@ -22,12 +22,14 @@ export function CTA() {
             },
           }}
           viewport={{ amount: 0.2 }}
-          className="max-w-md p-4 bg-[#1B1324] z-20 rounded-xl shadow-md sm:p-8 m-4 text-left"
+          className="max-w-md p-4 bg-[#ffffffdd] dark:bg-[#1b1324] z-20 rounded-xl shadow-md sm:p-8 m-4 text-left"
         >
           <div className=" p-2 rounded-lg w-fit ">
             <BiWallet className="text-[50px] text-[#413A5A] text-left" />
           </div>
-          <h1 className="py-2 font-light text-[#E6E0FA]">Setup your wallet</h1>
+          <h1 className="py-2 font-light dark:text-[#E6E0FA] text-[#1B1324]">
+            Setup your wallet
+          </h1>
           <p className="text-sm font-light text-[#8175A7]">
             Once you have setup your wallet of your choice, connect it to
             Centuarus NFT marketplace by clicking this link.
@@ -51,7 +53,7 @@ export function CTA() {
             },
           }}
           viewport={{ amount: 0.2 }}
-          className="max-w-md p-4 bg-[#1B1324] z-20 rounded-xl shadow-md sm:p-8 m-4 "
+          className="max-w-md p-4 bg-[#ffffffdd] dark:bg-[#1b1324] z-20 rounded-xl shadow-md sm:p-8 m-4 "
         >
           <div className=" p-2 rounded-lg w-fit ">
             <svg
@@ -69,7 +71,9 @@ export function CTA() {
               />
             </svg>
           </div>
-          <h1 className="py-2 font-light text-[#E6E0FA]">List them for sale</h1>
+          <h1 className="py-2 font-light dark:text-[#E6E0FA] text-[#1B1324]">
+            List them for sale
+          </h1>
           <p className="text-sm font-light text-[#8175A7]">
             Choose between auctions, fixed-price listings, and declining-price
             listings. You choose how you want to sell your NFTs, and we help you
@@ -89,12 +93,14 @@ export function CTA() {
             },
           }}
           viewport={{ amount: 0.2 }}
-          className="max-w-md p-4 bg-[#1B1324] z-20 rounded-xl shadow-md sm:p-8 m-4 "
+          className="max-w-md p-4 bg-[#ffffffdd] dark:bg-[#1b1324] z-20 rounded-xl shadow-md sm:p-8 m-4 "
         >
           <div className=" rounded-lg w-fit ">
             <BiImageAdd className="text-[53px] text-[#413A5A] text-left" />
           </div>
-          <h1 className="py-2 font-light text-[#E6E0FA]">Add your NFT</h1>
+          <h1 className="py-2 font-light dark:text-[#E6E0FA] text-[#1B1324]">
+            Add your NFT
+          </h1>
           <p className="text-sm font-light text-[#8175A7]">
             Upload your work, add a title and description, and customize your
             NFTs with properties, stats, and unlockable content.
@@ -113,12 +119,14 @@ export function CTA() {
             },
           }}
           viewport={{ amount: 0.2 }}
-          className="max-w-md p-4 bg-[#1B1324] z-20 rounded-xl shadow-md sm:p-8 m-4"
+          className="max-w-md p-4 bg-[#ffffffdd] border dark:border-none dark:bg-[#ffffffdd] dark:bg-[#1b1324] z-20 rounded-xl shadow-md sm:p-8 m-4"
         >
           <div className=" p-2 rounded-lg w-fit">
             <AiOutlineTag className="text-[50px] text-[#413A5A] text-left" />
           </div>
-          <h1 className="py-2 font-light text-[#E6E0FA]">List them for sale</h1>
+          <h1 className="py-2 font-light dark:text-[#E6E0FA] text-[#1B1324]">
+            List them for sale
+          </h1>
           <p className="text-sm font-light text-[#8175A7]">
             Choose between auctions, fixed-price listings, and declining-price
             listings. You choose how you want to sell your NFTs, and we help you

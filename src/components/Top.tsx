@@ -23,17 +23,17 @@ export function Top() {
             viewport={{ amount: 0.8 }}
             className="my-4 z-20"
           >
-            <motion.h1 className="text-3xl font-semibold text-[#E6E0FA]">
+            <motion.h1 className="text-3xl font-semibold text-[#413A5A] dark:text-[#E6E0FA]">
               Top Buyers
             </motion.h1>
 
-            <div className="max-w-md p-4 bg-[#1B1324] rounded-lg shadow-md sm:p-8 my-4">
+            <div className="max-w-md p-4 bg-[#d5eef1ad] border dark:border-none dark:bg-[#1B1324] rounded-lg shadow-md sm:p-8 my-4">
               <div className="flow-root ">
                 <ul role="list">
                   <li className="py-3 sm:py-4">
                     <div className="flex items-center space-x-4">
                       <div>
-                        <p className="text-xl text-[#E6E0FA] dark:text-gray-400">
+                        <p className="text-xl text-[#413A5A] dark:text-[#E6E0FA] ">
                           1
                         </p>
                       </div>
@@ -45,7 +45,7 @@ export function Top() {
                         />
                       </div>
                       <div>
-                        <p className="text-lg  text-[#E6E0FA] font-semibold">
+                        <p className="text-lg  text-[#413A5A] dark:text-[#E6E0FA] font-semibold">
                           Prmlrecords
                         </p>
                       </div>
@@ -54,7 +54,7 @@ export function Top() {
                   <li className="py-3 sm:py-4">
                     <div className="flex items-center space-x-4">
                       <div>
-                        <p className="text-lg  text-[#E6E0FA] dark:text-gray-400">
+                        <p className="text-lg  text-[#413A5A] dark:text-[#E6E0FA] ">
                           2
                         </p>
                       </div>
@@ -66,7 +66,9 @@ export function Top() {
                         />
                       </div>
                       <div>
-                        <p className="text-lg  text-[#E6E0FA]">Indigo Bang</p>
+                        <p className="text-lg  text-[#413A5A] dark:text-[#E6E0FA]">
+                          Indigo Bang
+                        </p>
                       </div>
                     </div>
                   </li>
@@ -83,16 +85,16 @@ export function Top() {
             className="my-4 z-20"
           >
             {" "}
-            <motion.h1 className="text-3xl font-semibold text-[#E6E0FA]">
+            <motion.h1 className="text-3xl font-semibold text-[#413A5A] dark:text-[#E6E0FA]">
               Top Sellers
             </motion.h1>
-            <div className="max-w-md p-4 bg-[#1B1324] rounded-lg shadow-md sm:p-8 my-4">
+            <div className="max-w-md p-4 bg-[#d5eef1ad] border dark:border-none dark:bg-[#1B1324] rounded-lg shadow-md sm:p-8 my-4">
               <div className="flow-root ">
                 <ul role="list">
                   <li className="py-3 sm:py-4">
                     <div className="flex items-center space-x-4">
                       <div>
-                        <p className="text-xl text-[#E6E0FA] dark:text-gray-400 ">
+                        <p className="text-xl text-[#413A5A] dark:text-[#E6E0FA] ">
                           1
                         </p>
                       </div>
@@ -104,14 +106,16 @@ export function Top() {
                         />
                       </div>
                       <div>
-                        <p className="text-lg  text-[#E6E0FA]">Shaker Sangam</p>
+                        <p className="text-lg  text-[#413A5A] dark:text-[#E6E0FA]">
+                          Shaker Sangam
+                        </p>
                       </div>
                     </div>
                   </li>
                   <li className="py-3 sm:py-4">
                     <div className="flex items-center space-x-4">
                       <div>
-                        <p className="text-lg  text-[#E6E0FA] dark:text-gray-400">
+                        <p className="text-lg  text-[#413A5A] dark:text-[#E6E0FA] ">
                           2
                         </p>
                       </div>
@@ -123,7 +127,9 @@ export function Top() {
                         />
                       </div>
                       <div>
-                        <p className="text-lg  text-[#E6E0FA]">Prmlrecords</p>
+                        <p className="text-lg  text-[#413A5A] dark:text-[#E6E0FA]">
+                          Prmlrecords
+                        </p>
                       </div>
                     </div>
                   </li>

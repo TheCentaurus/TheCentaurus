@@ -11,8 +11,8 @@ import { Tooltip } from "@chakra-ui/react";
 
 export function Footer() {
   return (
-    <div className="bg-[#120E17] z-20">
-      <footer className="text-[#8175A7] font-light text-sm z-20">
+    <div className="dark:bg-[#120E17] bg-[#e1eff0ad] z-20">
+      <footer className="dark:text-[#8175A7] text-[#413A5A] font-light text-sm z-20">
         <div className="container px-5 pt-20 pb-10 mx-auto z-20">
           <div className="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-6 z-20">
             <div className="w-full col-span-2 px-4 z-20">
@@ -23,7 +23,7 @@ export function Footer() {
                   className="object-contain h-16 m-auto mb-5 -mt-10 md:w-full md:-ml-5 "
                 />
               </div>
-              <p className="text-[#8175A7] text-justify ">
+              <p className="dark:text-[#8175A7] text-[#413A5A] text-justify ">
                 The Centaurus is All In ONE Decentralized Ecosystem with Enabled
                 Cross-Chain interoperability. The Centaurus offers a complete
                 NFT & Crypto lifecycle platform which allows anyone to securely
@@ -33,61 +33,79 @@ export function Footer() {
             </div>
 
             <div className="w-full col-span-2 md:col-span-1 px-4 text-center md:text-left z-20">
-              <h2 className="mb-3 text-lg font-medium tracking-widest text-[#8175A7] title-font">
+              <h2 className="mb-3 text-lg font-medium tracking-widest dark:text-[#8175A7] text-[#413A5A] title-font">
                 My Account
               </h2>
               <nav className="mb-10 list-none">
                 <li>
-                  <Link href="#" className="text-[#8175A7]">
+                  <Link href="#" className="dark:text-[#8175A7] text-[#413A5A]">
                     Profile
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-[#8175A7]">
+                  <Link href="#" className="dark:text-[#8175A7] text-[#413A5A]">
                     Settings
                   </Link>
                 </li>
               </nav>
             </div>
             <div className="w-full px-4 text-center md:text-left z-20 col-span-2 md:col-span-1">
-              <h2 className="mb-3 text-lg font-medium tracking-widest text-[#8175A7] title-font">
+              <h2 className="mb-3 text-lg font-medium tracking-widest dark:text-[#8175A7] text-[#413A5A] title-font">
                 Resources
               </h2>
               <nav className="mb-10 list-none">
                 <li>
-                  <Link href="/help" className="text-[#8175A7]">
+                  <Link
+                    href="/help"
+                    className="dark:text-[#8175A7] text-[#413A5A]"
+                  >
                     Help Contact
                   </Link>
                 </li>
                 <li>
-                  <Link href="/disclaimer" className="text-[#8175A7]">
+                  <Link
+                    href="/disclaimer"
+                    className="dark:text-[#8175A7] text-[#413A5A]"
+                  >
                     Disclaimer
                   </Link>
                 </li>
                 <li>
-                  <Link href="/terms" className="text-[#8175A7]">
+                  <Link
+                    href="/terms"
+                    className="dark:text-[#8175A7] text-[#413A5A]"
+                  >
                     Terms and Conditions
                   </Link>
                 </li>
                 <li>
-                  <Link href="/privacy" className="text-[#8175A7]">
+                  <Link
+                    href="/privacy"
+                    className="dark:text-[#8175A7] text-[#413A5A]"
+                  >
                     Privacy Policy
                   </Link>
                 </li>
                 <li>
-                  <Link href="/faq" className="text-[#8175A7]">
+                  <Link
+                    href="/faq"
+                    className="dark:text-[#8175A7] text-[#413A5A]"
+                  >
                     FAQ
                   </Link>
                 </li>
               </nav>
             </div>
             <div className="w-full px-4 text-center md:text-left z-20 col-span-2 md:col-span-1">
-              <h2 className="mb-3 text-lg font-medium tracking-widest text-[#8175A7] title-font">
+              <h2 className="mb-3 text-lg font-medium tracking-widest dark:text-[#8175A7] text-[#413A5A] title-font">
                 Company
               </h2>
               <nav className="mb-10 list-none">
                 <li>
-                  <Link href="/about" className="text-[#8175A7]">
+                  <Link
+                    href="/about"
+                    className="dark:text-[#8175A7] text-[#413A5A]"
+                  >
                     About
                   </Link>
                 </li>
@@ -249,7 +267,7 @@ export function Footer() {
           <div className="container flex flex-wrap items-center justify-between px-5 py-8 mx-auto">
             <div className="m-auto z-20">
               {" "}
-              <p className="text-sm text-center md:text-left text-[#8175A7] sm:text-left">
+              <p className="text-sm text-center md:text-left dark:text-[#8175A7] text-[#413A5A] sm:text-left">
                 © 2022 All Rights Reserved The Centaurus.io.
               </p>
             </div>

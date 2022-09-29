@@ -24,6 +24,7 @@ import { CoinbaseWalletConnector } from "wagmi/connectors/coinbaseWallet";
 import { InjectedConnector } from "wagmi/connectors/injected";
 import { MetaMaskConnector } from "wagmi/connectors/metaMask";
 import { WalletConnectConnector } from "wagmi/connectors/walletConnect";
+import { MyThemeContextProvider } from "./../store/themeContext";
 
 const alchemyId = process.env.NEXT_PUBLIC_ALCHEMY_ID;
 
@@ -123,8 +124,9 @@ function App({ Component, pageProps }: AppProps) {
       </NextHead>
       <ChakraProvider>
         {/* make google translate button */}
-
-        <Component {...pageProps} className="z-20" />
+        <MyThemeContextProvider>
+          <Component {...pageProps} className="z-20" />
+        </MyThemeContextProvider>
       </ChakraProvider>
     </WagmiConfig>
   );

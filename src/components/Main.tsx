@@ -58,7 +58,7 @@ export function Main() {
               initial={{ y: -20, x: 50, scale: 0.5 }}
               animate={{ y: 0, x: 0, scale: 1 }}
               transition={{ duration: 0.8, ease: [0.6, 0.05, -0.01, 0.9] }}
-              className="mb-4 text-transparent  bg-clip-text font-bold  text-3xl md:text-4xl bg-gradient-to-r from-[#CC67FC] via-[#c24cfc7a] to-[#F6D10B] lg:text-6xl 2xl:text-[45px] text-left z-20 w-fit"
+              className="mb-4 dark:text-transparent  bg-clip-text font-bold  text-3xl text-[#413A5A] md:text-4xl bg-gradient-to-r to-[#e7bc50] via[#06283D] from-[#2a243d] dark:from-[#CC67FC] dark:via-[#c24cfc7a] dark:to-[#F6D10B] lg:text-6xl 2xl:text-[45px] text-left z-20 w-fit"
             >
               All in ONE
             </motion.h1>
@@ -68,7 +68,7 @@ export function Main() {
               initial={{ y: 20, x: -20, scale: 0 }}
               animate={{ y: 0, x: 0, scale: 1 }}
               transition={{ duration: 0.8, ease: [0.6, 0.05, -0.01, 0.9] }}
-              className="mb-4 text-transparent text-left bg-clip-text font-bold  bg-gradient-to-r from-[#CC67FC] via-[#c24cfc7a] to-[#F6D10B] text-3xl md:text-4xl lg:text-6xl 2xl:text-[45px] z-20 w-fit "
+              className="mb-4 dark:text-transparent text-left bg-clip-text font-bold  text-[#413A5A] bg-gradient-to-r to-[#e75087] via[#06283D] from-[#36beff] dark:from-[#CC67FC] dark:via-[#c24cfc7a] dark:to-[#F6D10B] text-3xl md:text-4xl lg:text-6xl 2xl:text-[45px] z-20 w-fit "
             >
               NFT Paradise
             </motion.h1>
@@ -78,7 +78,7 @@ export function Main() {
               initial={{ y: -20 }}
               animate={{ y: 0 }}
               transition={{ duration: 1.5, ease: [0.6, 0.05, -0.01, 0.9] }}
-              className="mt-5 tracking-tight letter-spacing:-0.05em font-regular text-[#E6E0FA] text-[14px] lg:text-[24px] text-left z-20"
+              className="mt-5 tracking-tight letter-spacing:-0.05em font-regular text-[#413A5A] dark:text-[#E6E0FA] text-[14px] lg:text-[24px] text-left z-20"
             >
               Discover , Create, Buy and Sell.
             </motion.p>
@@ -97,7 +97,7 @@ export function Main() {
                   scale: 0.9,
                 }}
                 transition={{ duration: 0.2, ease: [0.6, 0.05, -0.01, 0.9] }}
-                className="px-6 flex items-center text-black cursor-pointer bg-gradient-to-t from-[#F6D10B] to-[#FFEB84]  rounded-xl z-20"
+                className="px-6 flex items-center text-[#413A5A] cursor-pointer bg-gradient-to-t from-[#F6D10B] to-[#FFEB84]  rounded-xl z-20"
                 onClick={() => router.push("/create")}
               >
                 Create
@@ -116,7 +116,7 @@ export function Main() {
                   scale: 0.9,
                 }}
                 transition={{ duration: 0.2, ease: [0.6, 0.05, -0.01, 0.9] }}
-                className="px-6 py-1  ml-4 text-lg text-[#F6D10B] cursor-pointer border-[1px] border-[#F6D10B]  rounded-xl bg-transparent z-20"
+                className="px-6 py-1  ml-4 text-lg border-[#2a243d] dark:text-[#F6D10B] cursor-pointer border-[1px] dark:border-[#F6D10B]  rounded-xl bg-transparent z-20"
                 onClick={() => router.push("/explore")}
               >
                 Explore

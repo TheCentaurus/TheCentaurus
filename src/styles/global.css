@@ -4,17 +4,19 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
 
-/* @font-face {
-  font-family: "Karla" ;
-  src: url("/Karla.ttf") ;
+@layer components {
+  .white-filter {
+    -webkit-filter: invert(100%);
+    /* Safari/Chrome */
+    filter: invert(100%);
+  }
+
+  .dark-filter {
+    -webkit-filter: invert(0%);
+    /* Safari/Chrome */
+    filter: invert(0%);
+  }
 }
-
-@font-face {
-  font-family: "Josefin Sans" ;
-  src: url("/JosefinSans.ttf") ;
-  font-weight: 700;
-} */
-
 html,
 body {
   /* font-family: "Karla", sans-serif; */
@@ -87,10 +89,11 @@ body {
     .goog-te-gadget-simple {
       background: #2a243d00 !important;
       color: #F6D10B !important;
-      border: 1px solid #F6D10B !important;
+      border: 0px solid #F6D10B !important;
       border-radius: 10px !important;
       padding-top: 10px !important;
       padding-bottom: 10px !important;
+      margin-left: 5px !important;
       
     }
     .goog-te-gadget-icon {

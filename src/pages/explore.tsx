@@ -65,11 +65,11 @@ export default function Explore() {
     <Layout>
       <div className="z-20 x-10 md:px-15 lg:px-20 pt-10 lg:pt-32 pb-16">
         <div className="z-20 max-w-2xl px-4 mx-auto sm:px-6 lg:max-w-7xl lg:px-8">
-          <h2 className="z-20 text-2xl font-bold text-[#E6E0FA] sm:text-4xl">
+          <h2 className="z-20 text-2xl font-bold dark:text-[#E6E0FA] text-[#413A5A] sm:text-4xl">
             Explore Exclusive Digital Assets
           </h2>
 
-          <div className="bg-[#2A243D] h-16 mt-12 rounded-xl w-full flex items-center p-2">
+          <div className="dark:bg-[#2A243D] bg-[#d5eef1ad] h-16 mt-12 rounded-xl w-full flex items-center p-2">
             <div className="z-20 flex items-center justify-around w-full md:w-5/12 lg:w-5/12 md:justify-between">
               <form className="z-20 w-full">
                 <label className="z-20 mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300">
@@ -96,7 +96,7 @@ export default function Explore() {
                   <input
                     type="search"
                     id="default-search"
-                    className="z-20 block p-3 pl-10 w-full md:w-auto text-sm text-gray-50  bg-[#221C30] placeholder:text-[#8175A7] rounded-lg border-none  border-[#8175A7] "
+                    className="z-20 block p-3 pl-10 w-full md:w-auto text-sm text-gray-50 bg-[#f1f1f1] dark:bg-[#221C30] placeholder:text-[#8175A7] rounded-lg border-none  border-[#8175A7] "
                     placeholder="Search "
                     required
                   />
@@ -109,7 +109,7 @@ export default function Explore() {
             {products.map((product) => (
               <div
                 key={product.id}
-                className="z-20 bg-[#2A243D] rounded-xl cursor-pointer"
+                className="z-20 dark:bg-[#2A243D] bg-[#fff] rounded-xl cursor-pointer"
                 onClick={() =>
                   router.push(
                     {
@@ -129,7 +129,7 @@ export default function Explore() {
                     />
                   </div>
                   <div className="z-20 relative mx-4 mt-4">
-                    <h3 className="z-20 text-xl font-semibold text-[#E6E0FA]">
+                    <h3 className="z-20 text-xl font-semibold dark:text-[#E6E0FA] text-[#413A5A]">
                       {product.name}
                     </h3>
                     <div className="flex items-center my-4 align-center">
@@ -140,7 +140,7 @@ export default function Explore() {
                           className="z-20 object-contain object-center w-8 h-8 bg-white rounded-lg"
                         />
                       </div>
-                      <p className="z-20 mt-1 ml-2 text-xs font-light tracking-widest text-white uppercase">
+                      <p className="z-20 mt-1 ml-2 text-xs font-light tracking-widest dark:text-white text-[#413A5A] uppercase">
                         @{product.url}
                       </p>
                     </div>
@@ -150,7 +150,7 @@ export default function Explore() {
                       aria-hidden="true"
                       className="z-20 absolute inset-x-0 bottom-0 opacity-50 h-36 bg-gradient-to-t from-black "
                     />
-                    <span className="flex items-center align-center bg-[#2A243D] p-1 rounded-full">
+                    <span className="flex items-center align-center dark:bg-[#2A243D] bg-[#fff] p-1 rounded-full">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -166,15 +166,19 @@ export default function Explore() {
                         />
                       </svg>
 
-                      <p className="z-20 relative text-sm font-semibold text-[#E6E0FA] ml-2">
+                      <p className="z-20 relative text-sm font-semibold dark:text-[#E6E0FA] text-[#413A5A] ml-2">
                         2
                       </p>
                     </span>
                   </div>
                 </div>
                 <div className="z-20 mx-4 my-6">
-                  <h1 className="text-[#E6E0FA]">Reserve Price</h1>
-                  <p className="text-white">{product.price} WBNB</p>
+                  <h1 className="dark:text-[#E6E0FA] text-[#413A5A]">
+                    Reserve Price
+                  </h1>
+                  <p className="dark:text-white text-[#413A5A]">
+                    {product.price} WBNB
+                  </p>
                 </div>
               </div>
             ))}

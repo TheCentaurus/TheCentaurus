@@ -45,7 +45,7 @@ export function Feature(props: any) {
         stiffness: 200,
         delay: 0.5,
       }}
-      className="w-5/6 lg:max-w-lg lg:w-full md:w-full bg-[#2A243D] rounded-xl p-5 m-auto"
+      className="w-5/6 lg:max-w-lg lg:w-full md:w-full bg-[#d5eef1ad] border dark:border-none dark:bg-[#2A243D] rounded-xl p-5 m-auto"
     >
       <div className="relative">
         <motion.img
@@ -71,13 +71,13 @@ export function Feature(props: any) {
               }}
               whileTap={{ scale: 0.9 }}
               onClick={previous}
-              className="bg-[#1B1324] cursor-pointer h-7 w-7 md:h-10 md:w-10 justify-center  p-2 flex items-center rounded-lg"
+              className="dark:bg-[#1B1324] bg-[#dcf0f1] border-[1px] border-[#1b13247a] dark:border-none cursor-pointer h-7 w-7 md:h-10 md:w-10 justify-center  p-2 flex items-center rounded-lg"
             >
-              <AiOutlineLeft color="#F6D10B" />
+              <AiOutlineLeft className="dark:text-[#F6D10B] text-[#000]" />
             </motion.div>
           ) : (
-            <div className="bg-[#1B1324] h-7 w-7 md:h-10 md:w-10 justify-center cursor-not-allowed  p-2 flex items-center rounded-lg">
-              <AiOutlineLeft color="#F6D10B" />
+            <div className="dark:bg-[#1B1324] bg-[#dcf0f1] border-[1px] border-[#1b13247a] dark:border-none h-7 w-7 md:h-10 md:w-10 justify-center cursor-not-allowed  p-2 flex items-center rounded-lg">
+              <AiOutlineLeft className="dark:text-[#F6D10B] text-[#000]" />
             </div>
           )}
           <motion.img
@@ -102,20 +102,20 @@ export function Feature(props: any) {
               }}
               whileTap={{ scale: 0.9 }}
               onClick={next}
-              className="bg-[#1B1324] h-7 w-7 md:h-10 cursor-pointer md:w-10 justify-center  p-2 flex items-center rounded-lg"
+              className="dark:bg-[#1B1324] bg-[#dcf0f1] border-[1px] border-[#1b13247a] dark:border-none  h-7 w-7 md:h-10 cursor-pointer md:w-10 justify-center  p-2 flex items-center rounded-lg"
             >
-              <AiOutlineRight color="#F6D10B" />
+              <AiOutlineRight className="dark:text-[#F6D10B] text-[#000]" />
             </motion.div>
           ) : (
-            <div className="bg-[#1B1324] h-7 w-7 md:h-10 md:w-10 justify-center  p-2 flex items-center rounded-lg cursor-not-allowed">
-              <AiOutlineRight color="#F6D10B" />
+            <div className="dark:bg-[#1B1324] bg-[#dcf0f1] border-[1px] border-[#1b13247a] dark:border-none  h-7 w-7 md:h-10 md:w-10 justify-center  p-2 flex items-center rounded-lg cursor-not-allowed">
+              <AiOutlineRight className="dark:text-[#F6D10B] text-[#000]" />
             </div>
           )}
         </div>
       </div>
       <div className="flex w-full justify-between items-center ">
         <div className="flex items-center">
-          <h1 className="text-[#E6E0FA] font-bold text-[14px] md:text-[24px] mr-2">
+          <h1 className="dark:text-[#E6E0FA] text-[#1B1324] font-bold text-[14px] md:text-[24px] mr-2">
             {state.urls[state.index].title}
           </h1>
           <img
@@ -131,7 +131,7 @@ export function Feature(props: any) {
               transition: { duration: 0.3 },
             }}
             whileTap={{ scale: 0.9 }}
-            className="px-6 py-1  ml-4 text-sx lg:text-lg text-[#F6D10B] border-[1px] border-[#F6D10B]  rounded-xl bg-transparent"
+            className="px-6 py-1  ml-4 text-sx lg:text-lg text-[#1B1324] border-[#1B1324] dark:text-[#F6D10B] border-[1px] dark:border-[#F6D10B]  rounded-xl bg-transparent"
           >
             Follow
           </motion.button>
@@ -140,7 +140,7 @@ export function Feature(props: any) {
       <div className="h-[1px] w-full bg-slate-400 my-5"></div>
       {/* <hr className="bg-slate-400 my-5" /> */}
       <div>
-        <p className="text-[#E6E0FA] text-sm md:text-md">
+        <p className="dark:text-[#E6E0FA] text-[#1B1324] text-sm md:text-md">
           {state.urls[state.index].description}
         </p>
       </div>

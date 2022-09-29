@@ -2,7 +2,9 @@ import { Nav } from "./Nav";
 import { Footer } from "./Footer";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
-import { useCallback } from "react";
+import { useCallback, useContext, useEffect } from "react";
+import { useCallbackRef } from "@chakra-ui/react";
+import MyThemeContext from "../store/themeContext";
 export function Layout({ children }) {
   const particlesInit = useCallback(async (engine: any) => {
     console.log(engine);
@@ -14,10 +16,30 @@ export function Layout({ children }) {
   const particlesLoaded = useCallback(async (container: any) => {
     await console.log(container);
   }, []);
+  const themeCtx: { isDarkTheme?: boolean; toggleThemeHandler: () => void } =
+    useContext(MyThemeContext);
+
+  function toggleThemeHandler(): void {
+    themeCtx.toggleThemeHandler();
+  }
+  // make a useeffect to check if the user has a dark theme preference
+  // if so, use the dark theme image
+  // otherwise, use the light theme image
+  console.log(themeCtx.isDarkTheme);
   return (
     <div
       style={{
-        backgroundImage: "url('cover.webp')",
+        // backgroundImage: `url(${
+        //   localStorage.getItem("isDarkTheme") === "true"
+        //     ? "cover.webp"
+        //     : "bg.jpeg"
+        //   })`,
+        // check if the user has a dark theme preference
+        // if so, use the dark theme image
+        // otherwise, use the light theme image
+        backgroundImage: `url(${
+          themeCtx.isDarkTheme === true ? "cover.webp" : "bg4.jpeg"
+        })`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         backgroundPosition: "center",
