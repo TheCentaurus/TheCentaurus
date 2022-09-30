@@ -125,7 +125,7 @@ export function Footer() {
                   alt=""
                   className="object-contain h-16  lg:m-auto mb-5 m-auto md:m-0 cursor-pointer lg:w-full"
                 />
-                {/* <li>
+                <li>
                   <div className="grid grid-cols-4 gap-2">
                     <Tooltip label="Ethereum">
                       <a
@@ -258,7 +258,7 @@ export function Footer() {
                       </a>
                     </Tooltip>
                   </div>
-                </li> */}
+                </li>
               </nav>
             </div>
           </div>

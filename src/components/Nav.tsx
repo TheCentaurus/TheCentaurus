@@ -56,7 +56,7 @@ export function Nav() {
   `;
 
   const DropDownContainer = styled("div")`
-    margin: 0 auto;
+    margin: 0;
   `;
 
   const DropDownHeader = styled("div")`
@@ -295,30 +295,24 @@ export function Nav() {
             {/* end menu item */}
           </div>
           {/* <div className="ml-5"></div> */}
-          <div>
-            {" "}
-            <button
-              type="button"
-              className="py-3 px-2 sm:px-5 mr-2 bg-zinc-800 text-white dark:bg-zinc-200 dark:text-black rounded-xl"
-              onClick={toggleThemeHandler}
-            >
-              <BsSun />
-            </button>
-          </div>
+
           {/* blockachain menu */}
-          {/* <DropDownContainer>
+          <DropDownContainer>
             <DropDownHeader
               onClick={toggling}
-              className="w-full border-[1px] bg-transparent border-yellow-300 cursor-pointer text-yellow-300 font-bold lg:text-sm text-[12px] rounded-xl px-[15px] py-[10px]"
+              className="w-full border-[1px] bg-transparent border-[#1b1324] dark:border-yellow-300 cursor-pointer text-yellow-300 font-bold lg:text-sm text-[12px] rounded-xl px-[15px] py-[10px]"
             >
-              <p className="text-yellow-300"> {selectedOption || "Ethereum"}</p>
+              <p className="dark:text-yellow-300 text-[#1b1324]">
+                {" "}
+                {selectedOption || "Ethereum"}
+              </p>
             </DropDownHeader>
             {isOpenDropdown && (
               <DropDownListContainer>
                 <DropDownList className="p-2 rounded-lg">
                   <li
                     onClick={onOptionClicked("Ethereum")}
-                    className="bg-[#1b1324] flex mb-3 items-center"
+                    className="dark:bg-[#1b1324] flex mb-3 items-center"
                   >
                     <img
                       src="ethereum.svg"
@@ -329,7 +323,7 @@ export function Nav() {
                   </li>
                   <li
                     onClick={onOptionClicked("BNB")}
-                    className="bg-[#1b1324] flex mb-3 items-center"
+                    className="dark:bg-[#1b1324] flex mb-3 items-center"
                   >
                     <img
                       src="bnb.svg"
@@ -351,7 +345,7 @@ export function Nav() {
                   </li>
                   <li
                     onClick={onOptionClicked("Avalanche")}
-                    className="bg-[#1b1324] flex mb-3 items-center"
+                    className="dark:bg-[#1b1324] flex mb-3 items-center"
                   >
                     <img
                       src="avalanche.svg"
@@ -362,7 +356,7 @@ export function Nav() {
                   </li>
                   <li
                     onClick={onOptionClicked("Moonriver")}
-                    className="bg-[#1b1324] flex mb-3 items-center"
+                    className="dark:bg-[#1b1324] flex mb-3 items-center"
                   >
                     <img
                       src="moonriver.png"
@@ -373,7 +367,7 @@ export function Nav() {
                   </li>
                   <li
                     onClick={onOptionClicked("Moonbeam")}
-                    className="bg-[#1b1324] flex mb-3 items-center"
+                    className="dark:bg-[#1b1324] flex mb-3 items-center"
                   >
                     <img
                       src="moonbeam.jpg"
@@ -385,9 +379,19 @@ export function Nav() {
                 </DropDownList>
               </DropDownListContainer>
             )}
-          </DropDownContainer> */}
+          </DropDownContainer>
 
           {/* end blockachain menu */}
+          <div>
+            {" "}
+            <button
+              type="button"
+              className="py-3 px-2 sm:px-5 mr-2 bg-zinc-800 text-white dark:bg-zinc-200 dark:text-black rounded-xl"
+              onClick={toggleThemeHandler}
+            >
+              <BsSun />
+            </button>
+          </div>
         </div>
       </div>
 

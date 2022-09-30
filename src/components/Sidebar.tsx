@@ -50,7 +50,7 @@ export function Sidebar(props: any) {
             </button>
           </div>
 
-          {/* <p className="dark:bg-[#1b1324] bg-white border-none dark:text-[#e6e0fa] text-[#1b1324]">
+          <p className="dark:bg-[#1b1324] bg-white border-none dark:text-[#e6e0fa] text-[#1b1324]">
             Ethereum
           </p>
           <p className="dark:bg-[#1b1324] bg-white border-none dark:text-[#e6e0fa] text-[#1b1324]">
@@ -67,7 +67,7 @@ export function Sidebar(props: any) {
           </p>
           <p className="dark:bg-[#1b1324] bg-white border-none dark:text-[#e6e0fa] text-[#1b1324]">
             Moonbeam
-          </p> */}
+          </p>
         </nav>
         <div
           className="absolute top-0 right-0 h-full"
