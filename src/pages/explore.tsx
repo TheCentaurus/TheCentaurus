@@ -109,7 +109,7 @@ export default function Explore() {
             {products.map((product) => (
               <div
                 key={product.id}
-                className="z-20 dark:bg-[#2A243D] bg-[#fff] rounded-xl cursor-pointer"
+                className="z-20 dark:bg-[#2A243D] bg-[#fff] border dark:border-none shadow-sm rounded-xl cursor-pointer"
                 onClick={() =>
                   router.push(
                     {

@@ -255,6 +255,20 @@ export function Nav() {
                     background: "#1b1324",
                     color: "teal.500",
                   }}
+                  onClick={() => {
+                    router.push("/profile");
+                  }}
+                >
+                  Profile
+                </MenuItem>
+                <MenuItem
+                  _focus={{
+                    background: "#1b1324",
+                  }}
+                  _hover={{
+                    background: "#1b1324",
+                    color: "teal.500",
+                  }}
                 >
                   DEX
                 </MenuItem>
