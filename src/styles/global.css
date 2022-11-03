@@ -184,3 +184,6 @@ body {
         body {
           top: 0px !important;
         }
+.content p {
+  margin-bottom: 30px;
+}

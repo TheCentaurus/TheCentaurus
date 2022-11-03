@@ -38,12 +38,18 @@ export function Footer() {
               </h2>
               <nav className="mb-10 list-none">
                 <li>
-                  <Link href="#" className="dark:text-[#8175A7] text-[#413A5A]">
+                  <Link
+                    href="/profile"
+                    className="dark:text-[#8175A7] text-[#413A5A]"
+                  >
                     Profile
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="dark:text-[#8175A7] text-[#413A5A]">
+                  <Link
+                    href="/settings"
+                    className="dark:text-[#8175A7] text-[#413A5A]"
+                  >
                     Settings
                   </Link>
                 </li>

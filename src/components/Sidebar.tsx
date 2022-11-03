@@ -3,6 +3,7 @@ import Link from "next/link";
 import Translate from "./Translate";
 import { BsSun } from "react-icons/bs";
 import MyThemeContext from "../store/themeContext";
+import { useRouter } from "next/router";
 
 export function Sidebar(props: any) {
   const themeCtx: { isDarkMode?: boolean; toggleThemeHandler: () => void } =
@@ -11,12 +12,13 @@ export function Sidebar(props: any) {
   function toggleThemeHandler(): void {
     themeCtx.toggleThemeHandler();
   }
+  const router = useRouter();
   return (
     <div
       className={
         props.showSidebar
           ? "flex fixed h-[100vh]  md:hidden inset-y-0 left-0 w-full bg-[#0000008c] transform -translate-x-full  md:relative  transition duration-200 ease-in-out"
-          : "transform -translate-x-0 duration-200 ease-in-out transition  fixed h-[100vh] inset-y-0 left-0 w-full bg-[#0000008c] block md:hidden z-50"
+          : "transform -translate-x-0 duration-200 ease-in-out transition  fixed h-[100vh] inset-y-0 left-0 w-full bg-[#0000008c] block lg:hidden z-50"
       }
     >
       <div className="sidebar bg-[#fff] dark:bg-[#1B1324] w-3/4 space-y-6 py-7 px-6 h-full ">
@@ -24,6 +26,28 @@ export function Sidebar(props: any) {
           onClick={props.handleShowSidebar}
           className="flex flex-col space-y-6 "
         >
+          <div>
+            <p
+              className="dark:text-[#e6e0fa] text-[#1b1324]"
+              onClick={() => {
+                router.push("/profile");
+              }}
+            >
+              {" "}
+              Profile
+            </p>
+          </div>
+          <div>
+            <p
+              className="dark:text-[#e6e0fa] text-[#1b1324]"
+              onClick={() => {
+                router.push("/settings");
+              }}
+            >
+              {" "}
+              Settings
+            </p>
+          </div>
           <div>
             <p className="dark:text-[#e6e0fa] text-[#1b1324]"> DEX</p>
           </div>

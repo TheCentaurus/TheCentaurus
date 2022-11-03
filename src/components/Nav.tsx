@@ -120,20 +120,20 @@ export function Nav() {
       <div
         className={
           navbar
-            ? ` dark:bg-[#261a2f] bg-[#ffffff] px-2 sshadow-lg md:hidden fixed top-0 left-0 right-0 py-0 z-30 pb-2`
-            : " dark:bg-[#230c2e02] bg-[#d5eef100] md:hidden fixed top-0 left-0 right-0 py-0 z-30 pb-2"
+            ? ` dark:bg-[#261a2f] bg-[#ffffff] px-2 sshadow-lg lg:hidden fixed top-0 left-0 right-0 py-0 z-30 pb-2`
+            : " dark:bg-[#230c2e02] bg-[#d5eef100] lg:hidden fixed top-0 left-0 right-0 py-0 z-30 pb-2"
         }
       >
-        <div className="items-center cursor-pointer md:hidden py-2 lg:py-0">
+        <div className="items-center cursor-pointer lg:hidden py-2 lg:py-0">
           <img
             onClick={() => router.push("/")}
             src={logo.src}
             alt=""
-            className="object-contain h-16 ml-5 md:w-full"
+            className="object-contain h-16 ml-5 lg:w-full"
           />
         </div>
 
-        <div className="flex items-center fixed top-5 z-40 right-5 py-2 sm:hidden w-[80px]">
+        <div className="flex items-center fixed top-5 z-40 right-5 py-2 lg:hidden w-[80px]">
           <div
             onClick={onOpen}
             className="h-7 w-7 dark:bg-[#1b1324] bg-[#f7ffff] border p-2 rounded-lg mr-5"
@@ -156,7 +156,7 @@ export function Nav() {
         showSidebar={showSidebar}
         handleShowSidebar={handleShowSidebar}
       />
-      <div className=" w-full  bg-transparent top-0 left-0 right-0 py-6 hidden md:flex z-20 items-center lg:px-[80px] 2xl:px-[200px] md:px-5  md:justify-between">
+      <div className=" w-full  bg-transparent top-0 left-0 right-0 py-6 hidden lg:flex z-20 items-center lg:px-[80px] 2xl:px-[200px] md:px-5  md:justify-between">
         <div className="items-center hidden cursor-pointer md:flex">
           <img
             onClick={() => router.push("/")}
@@ -224,7 +224,7 @@ export function Nav() {
               )}
             </a>
           </div>
-          <div className="ml-5">
+          <div className="ml-5 md:hidden lg:block">
             {/* menu item */}
 
             <Menu>
@@ -260,6 +260,34 @@ export function Nav() {
                   }}
                 >
                   Profile
+                </MenuItem>
+                <MenuItem
+                  _focus={{
+                    background: "#1b1324",
+                  }}
+                  _hover={{
+                    background: "#1b1324",
+                    color: "teal.500",
+                  }}
+                  onClick={() => {
+                    router.push("/settings");
+                  }}
+                >
+                  Settings
+                </MenuItem>
+                <MenuItem
+                  _focus={{
+                    background: "#1b1324",
+                  }}
+                  _hover={{
+                    background: "#1b1324",
+                    color: "teal.500",
+                  }}
+                  onClick={() => {
+                    router.push("/profile");
+                  }}
+                >
+                  Activity
                 </MenuItem>
                 <MenuItem
                   _focus={{
@@ -311,7 +339,7 @@ export function Nav() {
           {/* <div className="ml-5"></div> */}
 
           {/* blockachain menu */}
-          <DropDownContainer>
+          <DropDownContainer className="md:hidden lg:block">
             <DropDownHeader
               onClick={toggling}
               className="w-full border-[1px] bg-transparent border-[#1b1324] dark:border-yellow-300 cursor-pointer text-yellow-300 font-bold lg:text-sm text-[12px] rounded-xl px-[15px] py-[10px]"

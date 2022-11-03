@@ -45,7 +45,7 @@ export function Feature(props: any) {
         stiffness: 200,
         delay: 0.5,
       }}
-      className="w-5/6 lg:max-w-lg lg:w-full md:w-full bg-[#d5eef1ad] border dark:border-none dark:bg-[#2A243D] rounded-xl p-5 m-auto"
+      className="w-5/6 lg:max-w-lg lg:w-full md:w-10/12 bg-[#d5eef1ad] border dark:border-none dark:bg-[#2A243D] rounded-xl p-5 m-auto"
     >
       <div className="relative">
         <motion.img
