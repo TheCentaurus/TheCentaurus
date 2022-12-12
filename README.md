@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @TheCentaurus
 - 👀 I’m interested in... Multi-chain and Cross-chain Interoperebility
-- 🌱 I’m currently learning... Front end developing
+- 🌱 I’m currently under the Devlopment.
 - 💞️ I’m looking to collaborate on our platform for Artists and Creators.
 - 📫 How to reach me ... Shakersangam@thecentaurus.io
 
