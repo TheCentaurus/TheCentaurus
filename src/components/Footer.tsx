@@ -20,7 +20,7 @@ export function Footer() {
                 <img
                   src={logo.src}
                   alt=""
-                  className="object-contain h-16 m-auto mb-5 -mt-10 md:w-full md:-ml-5 "
+                  className="object-contain h-16 m-auto mb-5 -mt-10 md:w-full md:-ml-5"
                 />
               </div>
               <p className="dark:text-[#8175A7] text-[#413A5A] text-justify ">

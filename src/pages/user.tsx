@@ -6,6 +6,7 @@ import { FormControl, FormLabel, Stack, Switch } from "@chakra-ui/react";
 import Filters from "../components/Filters";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import ProfileCards from "../components/ProfileCards";
+import { MdOutlineReport } from "react-icons/md";
 import { useRouter } from "next/router";
 function Profile() {
   const [value, setValue] = React.useState("1");
@@ -16,6 +17,11 @@ function Profile() {
     setImage(e.target.files[0]);
     // @ts-ignore
     setImagePreview(URL.createObjectURL(e.target.files[0]));
+  };
+  // make a function to togfle between follow and unfollow
+  const [follow, setFollow] = React.useState(false);
+  const handleFollow = () => {
+    setFollow(!follow);
   };
   const products = [
     {
@@ -210,6 +216,21 @@ function Profile() {
             <p className="z-20 lg:ml-2 text-sm my-3 mx-7">0xa929c6b...0ce7</p>
             <hr className="z-20 lg:mx-2 my-3 mx-7" />
             <p className="z-20 lg:ml-2 mb-2 mx-7">0 followers</p>
+            <div className="m-2 flex justify-between">
+              <button
+                onClick={handleFollow}
+                type="button"
+                className="z-20 text-xs rounded-lg border-yellow-300 text-yellow-300 border-[1px] py-2 px-4"
+              >
+                {!follow ? "Follow" : "Unfollow"}
+              </button>
+              <button title="Report User">
+                <MdOutlineReport
+                  size={30}
+                  className="z-20 text-red-500 text-xl"
+                />
+              </button>
+            </div>
           </div>
           <div className="w-full p-5">
             <div

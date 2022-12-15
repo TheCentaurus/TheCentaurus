@@ -22,6 +22,7 @@ export function Main() {
         elipsePic: {
           src: elipsePic,
         },
+        id: 1,
       },
       {
         title: "Shaker Sangam",
@@ -33,6 +34,7 @@ export function Main() {
         elipsePic: {
           src: shakerElipsePic,
         },
+        id: 2,
       },
       {
         title: "Prmlrecords",
@@ -44,6 +46,7 @@ export function Main() {
         elipsePic: {
           src: prmElipsePic,
         },
+        id: 3,
       },
     ],
   };

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import verified from "../assets/verified.png";
 import { motion } from "framer-motion";
+import { useRouter } from "next/router";
 export function Feature(props: any) {
   console.log(props.data, "data");
   // this is the state in which you will store data from props inorder to render it in the feature carousel
@@ -33,7 +34,7 @@ export function Feature(props: any) {
       urls: [...props.data.data],
     }));
   }, [props.data.data]);
-
+  const router = useRouter();
   return (
     <motion.div
       initial={{ opacity: 0, y: -100, scale: 0.5 }}
@@ -115,7 +116,12 @@ export function Feature(props: any) {
       </div>
       <div className="flex w-full justify-between items-center ">
         <div className="flex items-center">
-          <h1 className="dark:text-[#E6E0FA] text-[#1B1324] font-bold text-[14px] md:text-[24px] mr-2">
+          <h1
+            onClick={() => {
+              router.push("/profile");
+            }}
+            className="dark:text-[#E6E0FA] cursor-pointer text-[#1B1324] font-bold text-[14px] md:text-[24px] mr-2"
+          >
             {state.urls[state.index].title}
           </h1>
           <img
