@@ -1,4 +1,3 @@
-import { parseIneligibility } from '@/utils/parse-ineligibility'
 import {
   useActiveClaimConditionForWallet,
   useAddress,
@@ -12,6 +11,7 @@ import {
 } from '@thirdweb-dev/react'
 import { BigNumber, utils } from 'ethers'
 import { useMemo, useState } from 'react'
+import { parseIneligibility } from '../utils/parseIneligibility'
 
 export default function useMint() {
   const myNftDropContractAddress = '0x7DbeAa339A5e35Bd39C311824e0253be2c240830'
