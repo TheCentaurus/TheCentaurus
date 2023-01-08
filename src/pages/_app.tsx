@@ -13,53 +13,8 @@ import { useCallback } from 'react'
 // 1. import `ChakraProvider` component
 import { ChakraProvider } from '@chakra-ui/react'
 
-import {
-  WagmiConfig,
-  configureChains,
-  createClient,
-  defaultChains
-} from 'wagmi'
-import { alchemyProvider } from 'wagmi/providers/alchemy'
-import { CoinbaseWalletConnector } from 'wagmi/connectors/coinbaseWallet'
-import { InjectedConnector } from 'wagmi/connectors/injected'
-import { MetaMaskConnector } from 'wagmi/connectors/metaMask'
-import { WalletConnectConnector } from 'wagmi/connectors/walletConnect'
 import { MyThemeContextProvider } from './../store/themeContext'
 import { ChainId, ThirdwebProvider } from '@thirdweb-dev/react'
-
-const alchemyId = process.env.NEXT_PUBLIC_ALCHEMY_ID
-
-const { chains, provider, webSocketProvider } = configureChains(defaultChains, [
-  alchemyProvider({ alchemyId })
-])
-
-const client = createClient({
-  autoConnect: true,
-  connectors: [
-    new MetaMaskConnector({ chains }),
-    new CoinbaseWalletConnector({
-      chains,
-      options: {
-        appName: 'wagmi'
-      }
-    }),
-    new WalletConnectConnector({
-      chains,
-      options: {
-        qrcode: true
-      }
-    }),
-    new InjectedConnector({
-      chains,
-      options: {
-        name: 'Injected',
-        shimDisconnect: true
-      }
-    })
-  ],
-  provider,
-  webSocketProvider
-})
 
 function App({ Component, pageProps }: AppProps) {
   const particlesInit = useCallback(async (engine: any) => {
@@ -104,33 +59,31 @@ function App({ Component, pageProps }: AppProps) {
 
   return (
     <ThirdwebProvider desiredChainId={ChainId.Mumbai}>
-      <WagmiConfig client={client}>
-        <NextHead>
-          <title>Centaurus | Mint</title>
-          <link rel='shortcut icon' href='favicon.ico' />
+      <NextHead>
+        <title>Centaurus | Mint</title>
+        <link rel='shortcut icon' href='favicon.ico' />
 
-          <link
-            rel='preload'
-            href='/JosefinSans.ttf'
-            as='font'
-            type='font/woff'
-            crossOrigin=''
-          />
-          <link
-            rel='preload'
-            href='/Karla.ttf'
-            as='font'
-            type='font/woff'
-            crossOrigin=''
-          />
-        </NextHead>
-        <ChakraProvider>
-          {/* make google translate button */}
-          <MyThemeContextProvider>
-            <Component {...pageProps} className='z-20' />
-          </MyThemeContextProvider>
-        </ChakraProvider>
-      </WagmiConfig>
+        <link
+          rel='preload'
+          href='/JosefinSans.ttf'
+          as='font'
+          type='font/woff'
+          crossOrigin=''
+        />
+        <link
+          rel='preload'
+          href='/Karla.ttf'
+          as='font'
+          type='font/woff'
+          crossOrigin=''
+        />
+      </NextHead>
+      <ChakraProvider>
+        {/* make google translate button */}
+        <MyThemeContextProvider>
+          <Component {...pageProps} className='z-20' />
+        </MyThemeContextProvider>
+      </ChakraProvider>
     </ThirdwebProvider>
   )
 }

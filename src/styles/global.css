@@ -2,23 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 @layer components {
+  body {
+    @apply font-sans !important;
+  }
   .white-filter {
     -webkit-filter: invert(100%);
-    /* Safari/Chrome */
     filter: invert(100%);
   }
 
   .dark-filter {
     -webkit-filter: invert(0%);
-    /* Safari/Chrome */
     filter: invert(0%);
   }
 
   .connect-wallet {
-    @apply focus:after:border-0 rounded-xl w-full font-sans p-0 gap-0 text-xs sm:text-sm bg-transparent border border-black hover:border-yellow-300 dark:border-yellow-300 text-black dark:text-yellow-300 dark:hover:text-black hover:bg-yellow-300 !important;
+    @apply focus:after:border-0 rounded-xl w-full font-sans p-0 gap-0 text-xs sm:text-sm bg-transparent border border-black hover:border-yellow-300 dark:border-yellow-300 text-black dark:text-yellow-300 dark:hover:text-black hover:bg-yellow-300 font-bold !important;
   }
 
   .css-10l6w0j {
@@ -27,9 +28,8 @@
 }
 html,
 body {
-  /* font-family: "Karla", sans-serif; */
   font-family: 'Inter', sans-serif;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 .only {
@@ -162,7 +162,6 @@ body {
 }
 
 /* google translate banner-frame */
-
 .goog-te-banner-frame {
   display: none !important;
 }
@@ -196,4 +195,10 @@ body {
 
 .connect-wallet {
   height: 42px !important;
+  min-width: 100px !important;
+  width: 165px !important;
+}
+
+.css-10l6w0j {
+  font-size: 0.875rem !important;
 }

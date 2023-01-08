@@ -1,15 +1,19 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    prefix: '',
+  prefix: '',
   important: true,
   content: [
-    "./src/pages/*.{js,ts,jsx,tsx}",
-    "./src/components/*.{js,ts,jsx,tsx}",
-    "./node_modules/flowbite/**/*.js",
+    './src/pages/*.{js,ts,jsx,tsx}',
+    './src/components/*.{js,ts,jsx,tsx}',
+    './node_modules/flowbite/**/*.js'
   ],
-   darkMode: 'class',
+  darkMode: 'class',
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['Inter', 'sans-serif']
+      }
+    }
   },
-  plugins: [require("tailwind-scrollbar"), require("flowbite/plugin")],
-};
+  plugins: [require('tailwind-scrollbar'), require('flowbite/plugin')]
+}
