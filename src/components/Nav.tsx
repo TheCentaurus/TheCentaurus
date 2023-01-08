@@ -92,8 +92,6 @@ export function Nav() {
   //navbar scroll when active state
   const [navbar, setNavbar] = useState(false)
 
-  const { address, isConnected } = useAccount()
-
   //navbar scroll changeBackground function
   const changeBackground = () => {
     console.log(window.scrollY)
@@ -121,7 +119,7 @@ export function Nav() {
       <div
         className={
           navbar
-            ? ` dark:bg-[#261a2f] bg-[#ffffff] px-2 sshadow-lg lg:hidden fixed top-0 left-0 right-0 py-0 z-30 pb-2`
+            ? ` dark:bg-[#261a2f] bg-[#ffffff] px-2 shadow-lg lg:hidden fixed top-0 left-0 right-0 py-0 z-30 pb-2`
             : ' dark:bg-[#230c2e02] bg-[#d5eef100] lg:hidden fixed top-0 left-0 right-0 py-0 z-30 pb-2'
         }
       >
@@ -157,15 +155,16 @@ export function Nav() {
         showSidebar={showSidebar}
         handleShowSidebar={handleShowSidebar}
       />
-      <div className=' w-full  bg-transparent top-0 left-0 right-0 py-6 hidden lg:flex z-20 items-center lg:px-[80px] 2xl:px-[200px] md:px-5  md:justify-between'>
+      <div className='w-full bg-transparent top-0 left-0 right-0 py-6 hidden lg:flex z-20 items-center lg:px-[80px] 2xl:px-[200px] md:px-5 md:justify-between'>
         <div className='items-center hidden cursor-pointer md:flex'>
           <img
             onClick={() => router.push('/')}
             src={logo.src}
-            alt=''
+            alt='logo'
             className='w-40'
           />
         </div>
+
         <div className='flex items-center justify-around w-full md:w-5/12 lg:w-4/12 md:justify-between'>
           <form className='w-full'>
             <label className='mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300'>
@@ -200,58 +199,28 @@ export function Nav() {
           </form>
         </div>
 
-        <div className='flex items-center justify-between md:w-4/12 lg:w-5/12'>
+        <div className='flex items-center justify-end md:w-1/3 space-x-5'>
           <div className=' dark:text-[#E6E0FA] text-[#261a2f]'>
-            <IoNotifications
-              size={25}
-              className='mr-2 text-center text-gray-600'
-            />
+            <IoNotifications size={25} className='text-center text-gray-600' />
           </div>
 
-          <div className='max-w-[200px] flex items-center justify-center text-yellow-300 font-bold max-h-[60px] rounded-sm py-[3px] px-[2px] button-custom'>
-            {/* <a
-              href='/connect'
-              className='w-full h-full relative border-[1px] dark:border-yellow-300 border-[#261a2f] text-[#261a2f] cursor-pointer dark:text-yellow-300 font-bold lg:text-xs text-[12px] rounded-xl px-[15px] py-[10px] '
-            >
-              {isConnected ? (
-                address !== undefined ? (
-                  <span className='inline-block ml-2 '>
-                    {address.substring(0, 8)} ...
-                    {address.substring(address.length - 4, address.length)}
-                  </span>
-                ) : null
-              ) : (
-                'Connect Wallet'
-              )}
-            </a> */}
-
+          <div className='flex items-center justify-center text-yellow-300 font-bold max-h-[60px] rounded-sm py-[3px] px-[2px] button-custom'>
             <ConnectWallet
               className='connect-wallet'
               colorMode='light'
               accentColor='#fff'
             />
           </div>
-          <div className='ml-5 md:hidden lg:block'>
-            {/* menu item */}
 
+          <div className='md:hidden lg:block'>
             <Menu>
               <MenuButton className='border-[1px] dark:border-yellow-300 border-[#261a2f] cursor-pointer dark:text-[#E6E0FA] text-[#261a2f] font-bold lg:text-sm text-[12px] rounded-xl px-[15px] py-[10px]'>
-                {' '}
                 <FiMoreHorizontal
                   size={20}
                   className='text-center dark:text-yellow-300 text-[#261a2f]'
                 />
               </MenuButton>
               <MenuList border={'none'} bg={'#1b1324a1'} color={'#E6E0FA'}>
-                {/* <MenuItem
-                  _focus={{
-                    background: "#1b1324",
-                  }}
-                  _hover={{
-                    background: "#1b1324",
-                    color: "teal.500",
-                  }}
-                > */}
                 <Translate />
                 {/* </MenuItem> */}
                 <MenuItem
@@ -267,20 +236,6 @@ export function Nav() {
                   }}
                 >
                   Profile
-                </MenuItem>
-                <MenuItem
-                  _focus={{
-                    background: '#1b1324'
-                  }}
-                  _hover={{
-                    background: '#1b1324',
-                    color: 'teal.500'
-                  }}
-                  onClick={() => {
-                    router.push('/settings')
-                  }}
-                >
-                  Settings
                 </MenuItem>
                 <MenuItem
                   _focus={{
@@ -341,9 +296,7 @@ export function Nav() {
                 </MenuItem>
               </MenuList>
             </Menu>
-            {/* end menu item */}
           </div>
-          {/* <div className="ml-5"></div> */}
 
           {/* blockachain menu */}
           <DropDownContainer className='md:hidden lg:block'>
@@ -431,8 +384,8 @@ export function Nav() {
           </DropDownContainer>
 
           {/* end blockachain menu */}
+
           <div>
-            {' '}
             <button
               type='button'
               className='py-3 px-2 sm:px-5 mr-2 bg-zinc-800 text-white dark:bg-zinc-200 dark:text-black rounded-xl'
