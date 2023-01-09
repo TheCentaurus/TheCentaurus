@@ -19,6 +19,7 @@
     "animate.css": "^4.1.1",
     "aos": "^2.3.4",
     "axios": "^0.27.2",
+    "clsx": "^1.2.1",
     "ethers": "^5.7.2",
     "flowbite": "^1.5.1",
     "framer-motion": "^6.4.3",
