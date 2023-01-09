@@ -25,9 +25,13 @@ export default function Explore() {
                   key={nft?.asset?.id}
                   className='z-20 dark:bg-[#2A243D] bg-[#fff] border dark:border-none shadow-sm rounded-xl cursor-pointer'
                   onClick={() =>
-                    router.push({
-                      pathname: '/collections'
-                    })
+                    router.push(
+                      {
+                        pathname: '/collections',
+                        query: nft.asset
+                      },
+                      '/collections'
+                    )
                   }
                 >
                   <div className='z-20 relative mb-5'>
