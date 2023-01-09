@@ -8,7 +8,7 @@ function Profile() {
   const address = useAddress()
   return (
     <Layout>
-      <div className='lg:pt-7gbg xl:pt-[7.1rem]'>
+      <div className='lg:pt-7 xl:pt-[7.1rem]'>
         <div className='relative'>
           <img
             src='/profile-bg.jpg'
