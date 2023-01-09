@@ -25,6 +25,18 @@
   .css-10l6w0j {
     @apply shadow-lg shadow-black/50 border-2 border-black !important;
   }
+
+  .paddings {
+    @apply sm:p-16 px-6 py-12 mx-auto;
+  }
+
+  .x-paddings {
+    @apply sm:px-16 px-6;
+  }
+
+  .inner-width {
+    @apply container mx-auto;
+  }
 }
 html,
 body {
@@ -201,4 +213,22 @@ body {
 
 .css-10l6w0j {
   font-size: 0.875rem !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  #profile-tabs .css-1nkhon {
+    border-bottom: 2px solid rgba(53, 56, 64, 0.1) !important;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  #profile-tabs .css-1nkhon {
+    border-bottom: 2px solid rgba(53, 56, 64, 0.1) !important;
+  }
+}
+
+.css-c2k196[aria-selected='true'],
+.css-c2k196[data-selected] {
+  color: #faca15 !important;
+  border-color: currentColor;
 }
