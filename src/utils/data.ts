@@ -3,7 +3,7 @@ export const products = [
     id: 1,
     name: 'The Centaurus Elite',
     url: 'The Centaurus ',
-    imageSrc: '/images/1.png',
+    imageSrc: '/images/cloud.jpeg',
     price: '5.0'
   },
   {

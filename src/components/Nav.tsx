@@ -1,15 +1,13 @@
-import React, { useState, useEffect, useContext } from 'react'
-import logo from '../assets/logo.svg'
-import { BsSearch, BsSun } from 'react-icons/bs'
-import { IoNotifications } from 'react-icons/io5'
+import { useContext, useEffect, useState } from 'react'
 import { AiOutlineMenu } from 'react-icons/ai'
-import { Sidebar } from './Sidebar'
+import { BsSearch, BsSun } from 'react-icons/bs'
 import { FiMoreHorizontal } from 'react-icons/fi'
-import { useAccount } from 'wagmi'
-import CustomSelect from './Select'
-import Translate from './Translate'
-import MyThemeContext from '../store/themeContext'
+import { IoNotifications } from 'react-icons/io5'
 import styled from 'styled-components'
+import logo from '../assets/logo.svg'
+import MyThemeContext from '../store/themeContext'
+import { Sidebar } from './Sidebar'
+import Translate from './Translate'
 
 import {
   Menu,
@@ -23,12 +21,10 @@ import {
   ModalFooter,
   ModalHeader,
   ModalOverlay,
-  Select,
   useDisclosure
 } from '@chakra-ui/react'
-import Link from 'next/link'
+import { ConnectWallet, useAddress } from '@thirdweb-dev/react'
 import { useRouter } from 'next/router'
-import { ConnectWallet } from '@thirdweb-dev/react'
 
 export function Nav() {
   const themeCtx: { isDarkMode?: boolean; toggleThemeHandler: () => void } =
@@ -108,6 +104,8 @@ export function Nav() {
     window.addEventListener('scroll', changeBackground)
   })
   const router = useRouter()
+  const address = useAddress()
+
   return (
     <div
       className={
@@ -151,10 +149,12 @@ export function Nav() {
           </h1>
         </div>
       </div>
+
       <Sidebar
         showSidebar={showSidebar}
         handleShowSidebar={handleShowSidebar}
       />
+
       <div className='w-full bg-transparent top-0 left-0 right-0 py-6 hidden lg:flex z-20 items-center lg:px-[80px] 2xl:px-[200px] md:px-5 md:justify-between'>
         <div className='items-center hidden cursor-pointer md:flex'>
           <img
@@ -165,7 +165,7 @@ export function Nav() {
           />
         </div>
 
-        <div className='flex items-center justify-around w-full md:w-5/12 lg:w-4/12 md:justify-between'>
+        <div className='flex items-center justify-around w-full lg:w-3/12 2xl:w-4/12 md:justify-between'>
           <form className='w-full'>
             <label className='mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300'>
               Search
@@ -191,7 +191,7 @@ export function Nav() {
               <input
                 type='search'
                 id='default-search'
-                className='block p-3 pl-10 w-full text-sm text-gray-50 bg-[#f3f3f3ae] border-[1px] border-[#261a2fb5] dark:border-none dark:bg-[#221C30]  dark:placeholder:text-[#8175A7] rounded-lg '
+                className='block p-3 pl-10 w-full text-sm text-gray-50 bg-[#f3f3f3ae] border-[1px] border-[#261a2fb5] dark:border-none dark:bg-[#221C30]  dark:placeholder:text-[#8175A7] rounded-lg focus:outline-none focus:border-0 focus:ring-primary'
                 placeholder='Search by collection, NFT or User'
                 required
               />
@@ -199,7 +199,7 @@ export function Nav() {
           </form>
         </div>
 
-        <div className='flex items-center justify-end md:w-1/3 space-x-5'>
+        <div className='flex items-center justify-end md:w-1/3 space-x-3 2xl:space-x-5'>
           <div className=' dark:text-[#E6E0FA] text-[#261a2f]'>
             <IoNotifications size={25} className='text-center text-gray-600' />
           </div>
@@ -223,20 +223,22 @@ export function Nav() {
               <MenuList border={'none'} bg={'#1b1324a1'} color={'#E6E0FA'}>
                 <Translate />
                 {/* </MenuItem> */}
-                <MenuItem
-                  _focus={{
-                    background: '#1b1324'
-                  }}
-                  _hover={{
-                    background: '#1b1324',
-                    color: 'teal.500'
-                  }}
-                  onClick={() => {
-                    router.push('/profile')
-                  }}
-                >
-                  Profile
-                </MenuItem>
+                {address && (
+                  <MenuItem
+                    _focus={{
+                      background: '#1b1324'
+                    }}
+                    _hover={{
+                      background: '#1b1324',
+                      color: 'teal.500'
+                    }}
+                    onClick={() => {
+                      router.push('/profile')
+                    }}
+                  >
+                    Profile
+                  </MenuItem>
+                )}
                 <MenuItem
                   _focus={{
                     background: '#1b1324'
