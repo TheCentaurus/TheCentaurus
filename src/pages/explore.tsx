@@ -28,7 +28,15 @@ export default function Explore() {
                     router.push(
                       {
                         pathname: "/collections",
-                        query: nft.asset,
+                        query: {
+                          price: nft.buyoutCurrencyValuePerToken?.displayValue,
+                          name: nft?.asset?.name,
+                          description: nft?.asset?.description,
+                          image: nft?.asset?.image,
+                          id: nft?.asset?.id,
+                          uri: nft?.asset?.uri,
+                          collectionAddress: nft?.assetContractAddress,
+                        },
                       },
                       "/collections"
                     )
@@ -52,9 +60,14 @@ export default function Explore() {
                             className="z-20 object-cover object-center w-16 h-16 aspect-square bg-white rounded-lg ring-2 dark:ring-[#2A243D] ring-[#fff]"
                           />
                         </div>
-                        <p className="z-20 mt-12 ml-4 text-base font-bold dark:text-white text-[#413A5A] truncate">
-                          {nft?.asset?.description}
-                        </p>
+                        <div>
+                          <p className="z-20 mt-12 ml-4 text-base font-bold dark:text-white text-[#413A5A] truncate">
+                            {nft?.asset?.description}
+                          </p>
+                          <p className="z-20  ml-4 text-base font-bold dark:text-white text-[#413A5A] truncate">
+                            {nft.buyoutCurrencyValuePerToken?.displayValue} ETH
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>

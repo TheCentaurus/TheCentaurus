@@ -29,19 +29,32 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import { products } from "@/utils/data";
+import { useContract } from "@thirdweb-dev/react";
+import { BigNumber } from "ethers";
 import "swiper/css";
 import { Layout } from "../components/Layout";
 
 function Collections(props: any) {
   const router = useRouter();
   const query: any = router.query;
-  console.log({ query });
+  console.log({ query }, "ttt");
   const { isOpen, onOpen, onClose } = useDisclosure();
   const {
     isOpen: isOpenBuy,
     onOpen: onOpenBuy,
     onClose: onCloseBuy,
   } = useDisclosure();
+  const { contract } = useContract(
+    "0x5eD63e53c857fCd5D41c1D49382428e012a6975A",
+    "marketplace"
+  );
+  const buyoutListing = async () => {
+    try {
+      await contract?.buyoutListing(BigNumber.from(query?.id), 1);
+    } catch (e) {
+      alert(e);
+    }
+  };
   return (
     <div>
       <Layout>
@@ -91,7 +104,7 @@ function Collections(props: any) {
             </div>
             <div className="z-20 my-5">
               <p>
-                {query.price} WBNB{" "}
+                {query?.buyoutCurrencyValuePerToken?.displayValue} WBNB{" "}
                 <span className="z-20 text-gray-500">($ 1328.35)</span>
               </p>
               <p className="z-20 font-normal mt-3">{query?.description}</p>
@@ -106,9 +119,7 @@ function Collections(props: any) {
                     className="z-20 h-12 w-12 rounded-lg object-cover mr-2"
                     alt=""
                   />
-                  <p className="z-20 font-normal cursor-pointer">
-                    @{query.url}
-                  </p>
+                  <p className="z-20 font-normal cursor-pointer">@Creator</p>
                 </div>
               </div>
               <div>
@@ -125,7 +136,7 @@ function Collections(props: any) {
                       Collection (NFT1155)
                     </p>
                     <p className="z-20 text-gray-500 font-bold">
-                      0x3A822D5B1976...0CAa
+                      {query?.collectionId}
                     </p>
                   </div>
                 </div>
@@ -145,7 +156,7 @@ function Collections(props: any) {
                       <div className="mr-2">
                         <img
                           //   @ts-ignore
-                          src={query.image}
+                          src={query?.image}
                           className="z-20 h-12 w-12 object-cover mr-2 rounded-lg"
                           alt=""
                         />
@@ -154,7 +165,7 @@ function Collections(props: any) {
                         <p className="z-20 font-normal">
                           Price updated at 25 days ago to 5.0
                         </p>
-                        <p className="z-20 font-normal">by @{query.name}</p>
+                        <p className="z-20 font-normal">by @{query?.name}</p>
                       </div>
                     </div>
                   </TabPanel>
@@ -167,13 +178,13 @@ function Collections(props: any) {
                       <div>
                         <img
                           //   @ts-ignore
-                          src={query.image}
+                          src={query?.image}
                           className="z-20 h-12 w-12 object-cover mr-2 rounded-lg"
                           alt=""
                         />
                       </div>
                       <div>
-                        <p className="z-20 font-normal"> @{query.name}</p>
+                        <p className="z-20 font-normal"> @{query?.name}</p>
                       </div>
                     </div>
                     <div className="z-20 my-3">
@@ -318,16 +329,16 @@ function Collections(props: any) {
               <div className="flex">
                 <img
                   //   @ts-ignore
-                  src={query.image}
+                  src={query?.image}
                   className="z-20 h-12 w-12 rounded-full object-cover mr-2"
                   alt=""
                 />
                 <div className="flex flex-col">
                   <h3 className="z-20 text-sm font-medium dark:text-[#E6E0FA] text-[#413A5A]">
-                    {query.name}
+                    {query?.name}
                   </h3>
                   <p className="z-20 text-xs font-light dark:text-[#fff] text-[#413A5A]">
-                    {query.url}
+                    {query?.url}
                   </p>
 
                   <div className="flex items-center mt-2">
@@ -335,7 +346,7 @@ function Collections(props: any) {
                       Reserve Price
                     </p>
                     <p className="z-20 text-xs font-light dark:text-[#fff] text-[#413A5A] ml-2">
-                      {query.price} WBNB
+                      {query?.price} WBNB
                     </p>
                   </div>
                 </div>
@@ -400,16 +411,16 @@ function Collections(props: any) {
               <div className="flex">
                 <img
                   //   @ts-ignore
-                  src={query.image}
+                  src={query?.image}
                   className="z-20 h-12 w-12 rounded-full object-cover mr-2"
                   alt=""
                 />
                 <div className="flex flex-col">
                   <h3 className="z-20 text-sm font-medium dark:text-[#E6E0FA] text-[#413A5A]">
-                    {query.name}
+                    {query?.name}
                   </h3>
                   <p className="z-20 text-xs font-light dark:text-[#fff] text-[#413A5A]">
-                    {query.url}
+                    {query?.url}
                   </p>
 
                   <div className="flex items-center mt-2">
@@ -417,7 +428,7 @@ function Collections(props: any) {
                       Reserve Price
                     </p>
                     <p className="z-20 text-xs font-light dark:text-[#fff] text-[#413A5A] ml-2">
-                      {query.price} WBNB
+                      {query?.price} WBNB
                     </p>
                   </div>
                 </div>
@@ -425,7 +436,10 @@ function Collections(props: any) {
             </ModalBody>
 
             <ModalFooter>
-              <button className="z-20 mr-5 rounded-lg border-yellow-300 text-yellow-300 border-[1px] px-8 p-2">
+              <button
+                onClick={buyoutListing}
+                className="z-20 mr-5 rounded-lg border-yellow-300 text-yellow-300 border-[1px] px-8 p-2"
+              >
                 Buy
               </button>
               <button
