@@ -160,7 +160,7 @@ export function Nav() {
             : " dark:bg-[#230c2e02] bg-[#d5eef100] lg:hidden fixed top-0 left-0 right-0 py-0 z-30 pb-2"
         }
       >
-        <div className="items-center cursor-pointer lg:hidden py-2 lg:py-0">
+        <div className="items-center py-2 cursor-pointer lg:hidden lg:py-0">
           <img
             onClick={() => router.push("/")}
             src={logo.src}
@@ -231,7 +231,7 @@ export function Nav() {
                 type="search"
                 id="default-search"
                 className="block p-3 pl-10 w-full text-sm text-gray-50 bg-[#f3f3f3ae] border-[1px] border-[#261a2fb5] dark:border-none dark:bg-[#221C30]  dark:placeholder:text-[#8175A7] rounded-lg focus:outline-none focus:border-0 focus:ring-primary"
-                placeholder="Search by collection, NFT or User"
+                placeholder="Search items,collections and accounts"
                 required
                 value={searchQuery}
                 onChange={handleSearch}
@@ -239,46 +239,17 @@ export function Nav() {
                 // value={search}
                 // onChange={(e) => setSearch(e.target.value)}
               />
-              {/* make a suggestions box */}
-              {/* <div className="absolute top-12 left-0 right-0 px-5 bg-white dark:bg-[#221C30] rounded-lg shadow-lg">
-                {filteredList?.map((item, index) => {
-                  return (
-                    <div className="card flex items-center my-2" key={index}>
-                      <div>
-                        <img
-                          src={item?.asset?.image}
-                          className="w-12 h-12 rounded-full object-cover"
-                        />
-                      </div>
-                      <div className="p-2">
-                        <p
-                          onClick={
-                            () =>
-                              router.push({
-                                pathname: "/collections",
-                                query: item?.asset,
-                              })
-                            // close the suggestions box
-                          }
-                          className="dark:text-[#E6E0FA] text-[#261a2f]s"
-                        >
-                          {item?.asset?.description}
-                        </p>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div> */}
+           
             </div>
           </form>
         </div>
 
-        <div className="flex items-center justify-end md:w-1/3 space-x-3 2xl:space-x-5">
+        <div className="flex items-center justify-end space-x-3 md:w-1/3 2xl:space-x-5">
           <div className=" dark:text-[#E6E0FA] text-[#261a2f]">
             <IoNotifications
               size={25}
               onClick={onOpenNotifications}
-              className="text-center cursor-pointer text-gray-600"
+              className="text-center text-gray-600 cursor-pointer"
             />
           </div>
 
@@ -484,7 +455,7 @@ export function Nav() {
           <div>
             <button
               type="button"
-              className="py-3 px-2 sm:px-5 mr-2 bg-zinc-800 text-white dark:bg-zinc-200 dark:text-black rounded-xl"
+              className="px-2 py-3 mr-2 text-white sm:px-5 bg-zinc-800 dark:bg-zinc-200 dark:text-black rounded-xl"
               onClick={toggleThemeHandler}
             >
               <BsSun />
@@ -528,7 +499,7 @@ export function Nav() {
                   type="search"
                   id="default-search"
                   className="block w-full p-3 pl-10 text-sm dark:bg-[#221C30] bg-[#f1f1f1] rounded-lg text-gray-50 "
-                  placeholder="Search by collection, NFT or User"
+                  placeholder="Search items,collections and accounts"
                   required
                   value={searchQuery}
                   onChange={handleSearch}
@@ -562,7 +533,7 @@ export function Nav() {
               <div className="mr-2">
                 <img
                   src="art.jpeg"
-                  className="rounded-full mx-auto w-10 h-10 object-cover"
+                  className="object-cover w-10 h-10 mx-auto rounded-full"
                   alt=""
                 />
               </div>
@@ -604,7 +575,7 @@ export function Nav() {
               type="search"
               id="default-search"
               className="block p-3 pl-10 w-full text-sm dark:text-gray-50 bg-[#f3f3f3ae] border-[1px] border-[#261a2fb5] dark:border-none dark:bg-[#221C30]  dark:placeholder:text-[#8175A7] rounded-lg focus:outline-none focus:border-0 focus:ring-primary"
-              placeholder="Search by collection, NFT or User"
+              placeholder="Search items,collections and accounts"
               required
               value={searchQuery}
               onChange={handleSearch}
@@ -622,7 +593,7 @@ export function Nav() {
                     <div>
                       <img
                         src={item?.asset?.image}
-                        className="w-12 h-12 rounded-full object-cover"
+                        className="object-cover w-12 h-12 rounded-full"
                       />
                     </div>
                     <div className="p-2">
@@ -644,7 +615,7 @@ export function Nav() {
                 );
               })
             ) : (
-              <div className="card text-center">
+              <div className="text-center card">
                 <div className="p-2">
                   <p className="dark:text-[#E6E0FA] text-[#261a2f]">
                     No results found
