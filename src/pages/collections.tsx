@@ -1,20 +1,11 @@
-import {
-  Tab,
-  TabList,
-  TabPanel,
-  TabPanels,
-  Tabs,
-  useDisclosure,
-} from "@chakra-ui/react";
-import { useRouter } from "next/router";
-import { BsTagsFill } from "react-icons/bs";
+import "swiper/css";
+
 import {
   FaFacebookF,
   FaLinkedin,
   FaTelegramPlane,
   FaTwitter,
 } from "react-icons/fa";
-import { FiMail } from "react-icons/fi";
 // Import Swiper React components
 import {
   Modal,
@@ -26,13 +17,23 @@ import {
   ModalOverlay,
 } from "@chakra-ui/react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import {
+  Tab,
+  TabList,
+  TabPanel,
+  TabPanels,
+  Tabs,
+  useDisclosure,
+} from "@chakra-ui/react";
 
+import { BigNumber } from "ethers";
+import { BsTagsFill } from "react-icons/bs";
+import { FiMail } from "react-icons/fi";
+import { Layout } from "../components/Layout";
 // Import Swiper styles
 import { products } from "@/utils/data";
 import { useContract } from "@thirdweb-dev/react";
-import { BigNumber } from "ethers";
-import "swiper/css";
-import { Layout } from "../components/Layout";
+import { useRouter } from "next/router";
 
 function Collections(props: any) {
   const router = useRouter();
@@ -55,6 +56,9 @@ function Collections(props: any) {
       alert(e);
     }
   };
+
+  console.log(props)
+
   return (
     <div>
       <Layout>

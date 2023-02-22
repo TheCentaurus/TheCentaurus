@@ -17,7 +17,7 @@ export default function Example() {
   return (
     <Layout>
       <main className="relative pt-32">
-        <div className="mx-auto max-w-screen-xl px-4 pb-6 sm:px-6 lg:px-8 lg:pb-16">
+        <div className="mx-auto max-w-screen-md px-4 pb-6 sm:px-6 lg:px-8 lg:pb-16">
           <div className="overflow-hidden rounded-lg dark:bg-[#1b1324] bg-[#fff] shadow">
             <div className="divide-y divide-gray-200  lg:divide-y-0 lg:divide-x">
               <form
@@ -205,6 +205,9 @@ export default function Example() {
                         className="z-20 w-full mt-2 dark:bg-[#1b1324] bg-[#fff] dark:text-white text-[#413A5A] border-[1px] dark:border-yellow-300 border rounded-xl py-2 px-8"
                       />
                     </div>
+                  </div>
+                  <div className="py-6 ">
+                    <button className=" float-right border bg-blue-600 text-white px-4 py-2 rounded-md ">Submit</button>
                   </div>
                 </div>
               </form>

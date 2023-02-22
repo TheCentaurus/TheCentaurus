@@ -1,7 +1,8 @@
-import Link from "next/link";
-import { Layout } from "../components/Layout";
-import { useRouter } from "next/router";
 import { BsImage, BsImages } from "react-icons/bs";
+
+import { Layout } from "../components/Layout";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function Create() {
   const router = useRouter();
@@ -32,7 +33,7 @@ export default function Create() {
           <div className="z-20 grid grid-cols-2 gap-4 my-5 justify-between mt-10">
             <div
               onClick={() => router.push("/create-single")}
-              className="z-20 flex dark:bg-transparent flex-col items-center justify-center w-full cursor-pointer rounded-xl"
+              className="z-20 flex dark:bg-transparent flex-col items-center justify-center w-full cursor-pointer rounded-xl transition duration-300 ease-in-out hover:scale-75"
             >
               <BsImage className="z-20 text-[100px] m-auto" color="#f6d10b" />
               <Link href="/create-single">
@@ -43,7 +44,7 @@ export default function Create() {
             </div>
             <div
               onClick={() => router.push("/create-multiple")}
-              className="z-20 flex flex-col items-center justify-center w-full cursor-pointer rounded-xl"
+              className="z-20 flex flex-col items-center justify-center w-full cursor-pointer rounded-xl  transition duration-300 ease-in-out hover:scale-75"
             >
               <BsImages className="z-20 text-[100px]" color="#f6d10b" />
               <Link href="/create-single">
