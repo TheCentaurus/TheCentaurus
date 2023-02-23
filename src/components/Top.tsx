@@ -1,9 +1,8 @@
-import prm from "../assets/plm.png";
+import { motion } from "framer-motion";
+
 import indigo from "../assets/indigo.png";
+import prm from "../assets/plm.png";
 import shaker from "../assets/shaker.png";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import { useEffect } from "react";
 export function Top() {
   return (
     <>
@@ -67,7 +66,7 @@ export function Top() {
                       </div>
                       <div>
                         <p className="text-lg  text-[#413A5A] dark:text-[#E6E0FA]">
-                          Indigo Bang
+                          indigo Bang
                         </p>
                       </div>
                     </div>
