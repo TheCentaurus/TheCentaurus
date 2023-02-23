@@ -1,11 +1,13 @@
-import { Container } from "@/components/Container";
 import { collection, products } from "@/utils/data";
 import { Tab, TabList, TabPanel, TabPanels, Tabs } from "@chakra-ui/react";
+
+import { Container } from "@/components/Container";
 import { useAddress } from "@thirdweb-dev/react";
 import { useRouter } from "next/router";
 import { FiEdit } from "react-icons/fi";
 import { Layout } from "../components/Layout";
 import ProfileCards from "../components/ProfileCards";
+
 function Profile() {
   const address = useAddress();
   const router = useRouter();
@@ -52,15 +54,17 @@ function Profile() {
                 </div>
               </div>
               <div className="flex space-x-5">
-                <FiEdit
+                <button
                   onClick={() =>
                     router.push({
                       pathname: "/edit-profile",
                       query: { address: address },
                     })
                   }
-                  className="cursor-pointer"
-                />
+                  className="px-4 py-2 flex items-center border-2 rounded-md"
+                >
+                  <FiEdit /> <span className="px-2">Edit Profile</span>
+                </button>
               </div>
             </div>
             <div

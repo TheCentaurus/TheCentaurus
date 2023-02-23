@@ -1,20 +1,11 @@
-import {
-  Tab,
-  TabList,
-  TabPanel,
-  TabPanels,
-  Tabs,
-  useDisclosure,
-} from "@chakra-ui/react";
-import { useRouter } from "next/router";
-import { BsTagsFill } from "react-icons/bs";
+import "swiper/css";
+
 import {
   FaFacebookF,
   FaLinkedin,
   FaTelegramPlane,
   FaTwitter,
 } from "react-icons/fa";
-import { FiMail } from "react-icons/fi";
 // Import Swiper React components
 import {
   Modal,
@@ -24,15 +15,23 @@ import {
   ModalFooter,
   ModalHeader,
   ModalOverlay,
+  Tab,
+  TabList,
+  TabPanel,
+  TabPanels,
+  Tabs,
+  useDisclosure,
 } from "@chakra-ui/react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
+import { BigNumber } from "ethers";
+import { BsTagsFill } from "react-icons/bs";
+import { FiMail } from "react-icons/fi";
+import { Layout } from "../components/Layout";
 // Import Swiper styles
 import { products } from "@/utils/data";
 import { useContract } from "@thirdweb-dev/react";
-import { BigNumber } from "ethers";
-import "swiper/css";
-import { Layout } from "../components/Layout";
+import { useRouter } from "next/router";
 
 function Collections(props: any) {
   const router = useRouter();
@@ -55,6 +54,9 @@ function Collections(props: any) {
       alert(e);
     }
   };
+
+  console.log(props);
+
   return (
     <div>
       <Layout>
@@ -62,7 +64,8 @@ function Collections(props: any) {
           <div className="z-20 bg-[#d5eef1ad] dark:bg-[#2A243D] h-fit w-fit rounded-xl p-2">
             <img
               //   @ts-ignore
-              src={query?.image}
+              // src={query?.image}
+              src="https://res.cloudinary.com/daily-now/image/upload/f_auto,q_auto/v1/posts/d7f7f16ca8b2f49fbe96744df939d5c2"
               alt=""
               className="z-20 h-96 rounded object-contain"
             />
@@ -115,7 +118,8 @@ function Collections(props: any) {
                 <div className="z-20 flex items-center">
                   <img
                     //   @ts-ignore
-                    src={query?.image}
+                    // src={query?.image}
+                    src="https://res.cloudinary.com/daily-now/image/upload/f_auto,q_auto/v1/posts/d7f7f16ca8b2f49fbe96744df939d5c2"
                     className="z-20 h-12 w-12 rounded-lg object-cover mr-2"
                     alt=""
                   />
@@ -127,7 +131,8 @@ function Collections(props: any) {
                 <div className="z-20 flex items-center">
                   <img
                     //   @ts-ignore
-                    src={query?.image}
+                    // src={query?.image}
+                    src="https://res.cloudinary.com/daily-now/image/upload/f_auto,q_auto/v1/posts/d7f7f16ca8b2f49fbe96744df939d5c2"
                     className="z-20 h-12 w-12 object-cover rounded-lg mr-2"
                     alt=""
                   />
@@ -156,7 +161,8 @@ function Collections(props: any) {
                       <div className="mr-2">
                         <img
                           //   @ts-ignore
-                          src={query?.image}
+                          // src={query?.image}
+                          src="https://res.cloudinary.com/daily-now/image/upload/f_auto,q_auto/v1/posts/d7f7f16ca8b2f49fbe96744df939d5c2"
                           className="z-20 h-12 w-12 object-cover mr-2 rounded-lg"
                           alt=""
                         />
@@ -198,7 +204,7 @@ function Collections(props: any) {
                   </TabPanel>
                 </TabPanels>
               </Tabs>
-              <div className="z-20 flex justify-between mb-5 lg:w-1/2">
+              <div className="z-20 flex space-x-4 mb-5 ">
                 <button
                   onClick={onOpenBuy}
                   className="z-20 rounded-lg border-yellow-300 text-yellow-300 border-[1px] p-2"
@@ -210,6 +216,14 @@ function Collections(props: any) {
                   className="z-20 rounded-lg border-yellow-300 text-yellow-300 border-[1px] p-2"
                 >
                   Place a bid
+                </button>
+
+                {/* LIsting */}
+                <button
+                  onClick={() => router.push("/create-listing")}
+                  className="z-20 rounded-lg border-yellow-300 text-yellow-300 border-[1px] p-2"
+                >
+                  Create Listing
                 </button>
               </div>
             </div>
@@ -232,7 +246,7 @@ function Collections(props: any) {
                 slidesPerView: 4,
               },
               1024: {
-                slidesPerView: 6,
+                slidesPerView: 4,
               },
             }}
             onSlideChange={() => console.log("slide change")}
@@ -258,7 +272,7 @@ function Collections(props: any) {
                       <img
                         src={product.imageSrc}
                         alt={product.name}
-                        className="z-20 object-contain object-cover w-full h-full"
+                        className="z-20  object-cover w-full h-full"
                       />
                     </div>
                     <div className="z-20 relative mx-4 mt-4">
