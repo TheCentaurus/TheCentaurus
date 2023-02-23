@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 
+import indigo from "../assets/indigo.png";
 import prm from "../assets/plm.png";
 import shaker from "../assets/shaker.png";
-import yellow from "../assets/yellow.png";
 export function Top() {
   return (
     <>
@@ -59,14 +59,14 @@ export function Top() {
                       </div>
                       <div className="flex-shrink-0">
                         <img
-                          src={yellow.src}
+                          src={indigo.src}
                           alt=""
                           className="h-12 w-12 rounded-lg object-contain"
                         />
                       </div>
                       <div>
                         <p className="text-lg  text-[#413A5A] dark:text-[#E6E0FA]">
-                          yellow Bang
+                          indigo Bang
                         </p>
                       </div>
                     </div>

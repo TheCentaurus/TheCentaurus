@@ -42,7 +42,7 @@ export function Nav() {
   const [selectedOption, setSelectedOption] = useState(null);
   const [search, setSearch] = useState("");
   const [data, setData] = useState([]);
-  const [filteredList, setFilteredList] = useState([]);
+  const [filteredList, setFilteredList] = useState<any>([]);
   const [searchQuery, setSearchQuery] = useState("");
   const toggling = () => setIsOpenDropdown(!isOpenDropdown);
 
@@ -142,6 +142,7 @@ export function Nav() {
       );
     });
     console.log(searchList, "llll");
+    // @ts-ignore
     setFilteredList(searchList);
   };
 
