@@ -17,16 +17,16 @@ export default function Example() {
   return (
     <Layout>
       <main className="relative pt-32">
-        <div className="mx-auto max-w-screen-md px-4 pb-6 sm:px-6 lg:px-8 lg:pb-16">
+        <div className="max-w-screen-md px-4 pb-6 mx-auto sm:px-6 lg:px-8 lg:pb-16">
           <div className="overflow-hidden rounded-lg dark:bg-[#1b1324] bg-[#fff] shadow">
-            <div className="divide-y divide-gray-200  lg:divide-y-0 lg:divide-x">
+            <div className="divide-y divide-gray-200 lg:divide-y-0 lg:divide-x">
               <form
                 className="divide-y divide-gray-200 lg:col-span-9"
                 action="#"
                 method="POST"
               >
                 {/* Profile section */}
-                <div className="py-6 px-4 sm:p-6 lg:pb-8">
+                <div className="px-4 py-6 sm:p-6 lg:pb-8">
                   <div>
                     <h2 className="text-lg font-medium leading-6 dark:text-white text-[#413A5A]">
                       Profile
@@ -37,7 +37,7 @@ export default function Example() {
                     </p>
                   </div>
 
-                  <div className="mt-6 flex flex-col lg:flex-row">
+                  <div className="flex flex-col mt-6 lg:flex-row">
                     <div className="flex-grow space-y-6">
                       <div>
                         <label
@@ -46,13 +46,13 @@ export default function Example() {
                         >
                           Username
                         </label>
-                        <div className="mt-1 flex rounded-md shadow-sm">
+                        <div className="flex mt-1 rounded-md shadow-sm">
                           <input
                             type="text"
                             name="username"
                             id="username"
                             autoComplete="username"
-                            className="z-20 w-full mt-2 dark:bg-[#1b1324] bg-[#fff] dark:text-white text-[#413A5A] border-[1px] dark:border-yellow-300 border rounded-xl py-2 px-8"
+                            className="block w-full mt-1 bg-white border-gray-300 rounded-md shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm dark:bg-[#1b1324]"
                           />
                         </div>
                       </div>
@@ -69,7 +69,7 @@ export default function Example() {
                             id="about"
                             name="about"
                             rows={3}
-                            className="z-20 w-full mt-2 dark:bg-[#1b1324] bg-[#fff] dark:text-white text-[#413A5A] border-[1px] dark:border-yellow-300 border rounded-xl py-2 px-8"
+                            className="block w-full mt-1 bg-white border-gray-300 rounded-md shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm dark:bg-[#1b1324]"
                             defaultValue={""}
                           />
                         </div>
@@ -80,7 +80,7 @@ export default function Example() {
                       </div>
                     </div>
 
-                    <div className="mt-6 flex-grow lg:mt-0 lg:ml-6 lg:flex-shrink-0 lg:flex-grow-0">
+                    <div className="flex-grow mt-6 lg:mt-0 lg:ml-6 lg:flex-shrink-0 lg:flex-grow-0">
                       <p
                         className="text-sm font-medium dark:text-white text-[#413A5A]"
                         aria-hidden="true"
@@ -90,17 +90,17 @@ export default function Example() {
                       <div className="mt-1 lg:hidden">
                         <div className="flex items-center">
                           <div
-                            className="inline-block h-12 w-12 flex-shrink-0 overflow-hidden rounded-full"
+                            className="flex-shrink-0 inline-block w-12 h-12 overflow-hidden rounded-full"
                             aria-hidden="true"
                           >
                             <img
-                              className="h-full w-full rounded-full"
+                              className="w-full h-full rounded-full"
                               src={user.imageUrl}
                               alt=""
                             />
                           </div>
                           <div className="ml-5 rounded-md shadow-sm">
-                            <div className="group relative flex items-center justify-center rounded-md border border-gray-300 py-2 px-3 focus-within:ring-2 focus-within:ring-sky-500 focus-within:ring-offset-2 hover:bg-gray-50">
+                            <div className="relative flex items-center justify-center px-3 py-2 border border-gray-300 rounded-md group focus-within:ring-2 focus-within:ring-sky-500 focus-within:ring-offset-2 hover:bg-gray-50">
                               <label
                                 htmlFor="mobile-user-photo"
                                 className="pointer-events-none relative text-sm font-medium leading-4 dark:text-white text-[#413A5A]"
@@ -112,7 +112,7 @@ export default function Example() {
                                 id="mobile-user-photo"
                                 name="user-photo"
                                 type="file"
-                                className="absolute h-full w-full cursor-pointer rounded-md border-gray-300 opacity-0"
+                                className="absolute w-full h-full border-gray-300 rounded-md opacity-0 cursor-pointer"
                               />
                             </div>
                           </div>
@@ -121,13 +121,13 @@ export default function Example() {
 
                       <div className="relative hidden overflow-hidden rounded-full lg:block">
                         <img
-                          className="relative h-40 w-40 rounded-full"
+                          className="relative w-40 h-40 rounded-full"
                           src={user.imageUrl}
                           alt=""
                         />
                         <label
                           htmlFor="desktop-user-photo"
-                          className="absolute inset-0 flex h-full w-full items-center justify-center bg-black bg-opacity-75 text-sm font-medium text-white opacity-0 focus-within:opacity-100 hover:opacity-100"
+                          className="absolute inset-0 flex items-center justify-center w-full h-full text-sm font-medium text-white bg-black bg-opacity-75 opacity-0 focus-within:opacity-100 hover:opacity-100"
                         >
                           <span>Change</span>
                           <span className="sr-only"> user photo</span>
@@ -135,14 +135,14 @@ export default function Example() {
                             type="file"
                             id="desktop-user-photo"
                             name="user-photo"
-                            className="absolute inset-0 h-full w-full cursor-pointer rounded-md border-gray-300 opacity-0"
+                            className="absolute inset-0 w-full h-full border-gray-300 rounded-md opacity-0 cursor-pointer"
                           />
                         </label>
                       </div>
                     </div>
                   </div>
 
-                  <div className="mt-6 grid grid-cols-12 gap-6">
+                  <div className="grid grid-cols-12 gap-6 mt-6">
                     <div className="col-span-12 sm:col-span-6">
                       <label
                         htmlFor="first-name"
@@ -155,7 +155,7 @@ export default function Example() {
                         name="first-name"
                         id="first-name"
                         autoComplete="given-name"
-                        className="z-20 w-full mt-2 dark:bg-[#1b1324] bg-[#fff] dark:text-white text-[#413A5A] border-[1px] dark:border-yellow-300 border rounded-xl py-2 px-8"
+                        className="block w-full mt-1 bg-white border-gray-300 rounded-md shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm dark:bg-[#1b1324]"
                       />
                     </div>
 
@@ -171,7 +171,7 @@ export default function Example() {
                         name="last-name"
                         id="last-name"
                         autoComplete="family-name"
-                        className="z-20 w-full mt-2 dark:bg-[#1b1324] bg-[#fff] dark:text-white text-[#413A5A] border-[1px] dark:border-yellow-300 border rounded-xl py-2 px-8"
+                        className="block w-full mt-1 bg-white border-gray-300 rounded-md shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm dark:bg-[#1b1324]"
                       />
                     </div>
 
@@ -186,14 +186,14 @@ export default function Example() {
                         type="text"
                         name="url"
                         id="url"
-                        className="z-20 w-full mt-2 dark:bg-[#1b1324] bg-[#fff] dark:text-white text-[#413A5A] border-[1px] dark:border-yellow-300 border rounded-xl py-2 px-8"
+                        className="block w-full mt-1 bg-white border-gray-300 rounded-md shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm dark:bg-[#1b1324]"
                       />
                     </div>
 
                     <div className="col-span-12 sm:col-span-6">
                       <label
                         htmlFor="company"
-                        className="block text-sm font-medium text-gray-700"
+                        className="block text-sm font-medium dark:text-white text-[#413A5A]"
                       >
                         Email
                       </label>
@@ -202,12 +202,12 @@ export default function Example() {
                         name="email"
                         id="email"
                         autoComplete="email"
-                        className="z-20 w-full mt-2 dark:bg-[#1b1324] bg-[#fff] dark:text-white text-[#413A5A] border-[1px] dark:border-yellow-300 border rounded-xl py-2 px-8"
+                        className="block w-full mt-1 bg-white border-gray-300 rounded-md shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm dark:bg-[#1b1324]"
                       />
                     </div>
                   </div>
                   <div className="py-6 ">
-                    <button className=" float-right border bg-yellow-400 text-white px-4 py-2 rounded-md ">
+                    <button className="float-right px-4 py-2 text-white bg-yellow-400 rounded-md ">
                       Submit
                     </button>
                   </div>

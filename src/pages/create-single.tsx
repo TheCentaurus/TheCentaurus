@@ -27,20 +27,20 @@ export default function CreateSingle() {
   return (
     <Layout>
       <div className="flex justify-center ">
-        <div className="z-20 px-8 pt-10 my-16 md:px-15 lg:px-20 lg:pt-32  max-w-screen-lg">
+        <div className="z-20 max-w-screen-lg px-8 pt-10 my-16 md:px-15 lg:px-20 lg:pt-32">
           <div className="py-2">
             <h1 className="text-3xl font-bold text-yellow-300">
               Create New Item
             </h1>
           </div>
-          <p className="py-2 text-white dark:text-black">
+          <p className="py-2 text-black dark:text-white">
             <span className="text-red-500"> *</span> Required fields
           </p>
           <form className="space-y-6" action="#" method="POST">
-            <div className="px-4 py-5 bg-white shadow sm:rounded-lg sm:p-6">
+            <div className="px-4 py-5 dark:bg-[#1b1324] bg-[#fff]  shadow sm:rounded-lg sm:p-6">
               <div className="md:grid md:grid-cols-3 md:gap-6">
                 <div className="md:col-span-1">
-                  <h3 className="text-lg font-medium leading-6 text-gray-900">
+                  <h3 className="text-lg font-medium leading-6 text-gray-900 dark:text-white">
                     Image, Video,Audio, or 3D Model *
                   </h3>
                   <p className="mt-1 text-sm text-gray-500">
@@ -51,7 +51,7 @@ export default function CreateSingle() {
                 </div>
                 <div className="md:col-span-2">
                   <div>
-                    <div className="flex justify-center w-full px-6 pt-5 pb-6 mt-1 border-2 border-gray-300 border-dashed rounded-md">
+                    <div className="flex justify-center w-full px-6 pt-5 pb-6 mt-1 border-2 dark:bg-[#1b1324] bg-[#fff] border-dashed rounded-md">
                       <div className="space-y-1 text-center">
                         <svg
                           className="w-12 h-12 mx-auto text-gray-400"
@@ -92,10 +92,10 @@ export default function CreateSingle() {
               </div>
             </div>
 
-            <div className="px-4 py-5 bg-white shadow sm:rounded-lg sm:p-6">
+            <div className="px-4 py-5 dark:bg-[#1b1324] bg-[#fff] shadow sm:rounded-lg sm:p-6">
               <div className="md:grid md:grid-cols-3 md:gap-6">
                 <div className="md:col-span-1">
-                  <h3 className="text-lg font-medium leading-6 text-gray-900">
+                  <h3 className="text-lg font-medium leading-6 text-gray-900 dark:text-white">
                     Information
                   </h3>
                 </div>
@@ -104,7 +104,7 @@ export default function CreateSingle() {
                     <div className="col-span-6 sm:col-span-3">
                       <label
                         htmlFor="first-name"
-                        className="block text-sm font-medium text-gray-700"
+                        className="block text-sm font-medium text-gray-900 dark:text-white"
                       >
                         Name
                       </label>
@@ -113,14 +113,14 @@ export default function CreateSingle() {
                         name="first-name"
                         id="first-name"
                         autoComplete="given-name"
-                        className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm"
+                        className="block w-full mt-1 dark:bg-[#1b1324] bg-[#fff] rounded-md shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm"
                       />
                     </div>
 
                     <div className="col-span-6 sm:col-span-3">
                       <label
                         htmlFor="last-name"
-                        className="block text-sm font-medium text-gray-700"
+                        className="block text-sm font-medium text-gray-900 dark:text-white"
                       >
                         External Link (optional)
                       </label>
@@ -129,14 +129,14 @@ export default function CreateSingle() {
                         name="last-name"
                         id="last-name"
                         autoComplete="family-name"
-                        className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm"
+                        className="block w-full mt-1 dark:bg-[#1b1324] bg-[#fff] rounded-md shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm"
                       />
                     </div>
 
                     <div className="col-span-6 sm:col-span-4">
                       <label
                         htmlFor="email-address"
-                        className="block text-sm font-medium text-gray-700"
+                        className="block text-sm font-medium text-gray-900 dark:text-white"
                       >
                         Description
                       </label>
@@ -144,25 +144,25 @@ export default function CreateSingle() {
                         name="email-address"
                         id="email-address"
                         autoComplete="email"
-                        className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm"
+                        className="block w-full mt-1 dark:bg-[#1b1324] bg-[#fff] rounded-md shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm"
                       />
                     </div>
 
                     <div className="col-span-6 sm:col-span-4">
                       <label
                         htmlFor="country"
-                        className="block text-sm font-medium text-gray-700"
+                        className="block text-sm font-medium text-gray-900 dark:text-white"
                       >
                         Collection
                       </label>
-                      <p className="text-sm text-gray-400">
+                      <p className="text-sm text-gray-400 dark:text-white">
                         This is where your item will appear
                       </p>
                       <select
                         id="country"
                         name="country"
                         autoComplete="country-name"
-                        className="block w-full px-3 py-2 mt-1 bg-white border border-gray-300 rounded-md shadow-sm focus:border-yellow-500 focus:outline-none focus:ring-yellow-500 sm:text-sm"
+                        className="block w-full px-3 py-2 mt-1  border dark:bg-[#1b1324] bg-[#fff] rounded-md shadow-sm focus:border-yellow-500 focus:outline-none focus:ring-yellow-500 sm:text-sm text-gray-900 dark:text-white"
                       >
                         <option>Select collection</option>
                         <option>Collection Name</option>
@@ -175,7 +175,7 @@ export default function CreateSingle() {
                     <div className="col-span-6">
                       <label
                         htmlFor="street-address"
-                        className="block text-sm font-medium text-gray-700"
+                        className="block text-sm font-medium text-gray-900 dark:text-white"
                       >
                         Supply
                       </label>
@@ -184,13 +184,13 @@ export default function CreateSingle() {
                         name="street-address"
                         id="street-address"
                         autoComplete="street-address"
-                        className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm"
+                        className="block w-full mt-1 dark:bg-[#1b1324] bg-[#fff] rounded-md shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm"
                       />
                     </div>
                     <div className="col-span-6 sm:col-span-3">
                       <label
                         htmlFor="country"
-                        className="block text-sm font-medium text-gray-700"
+                        className="block text-sm font-medium text-gray-900 dark:text-white"
                       >
                         Blockchain
                       </label>
@@ -198,7 +198,7 @@ export default function CreateSingle() {
                         id="country"
                         name="country"
                         autoComplete="country-name"
-                        className="block w-full px-3 py-2 mt-1 bg-white border border-gray-300 rounded-md shadow-sm focus:border-yellow-500 focus:outline-none focus:ring-yellow-500 sm:text-sm"
+                        className="block w-full px-3 py-2 mt-1 text-gray-900 dark:text-white border dark:bg-[#1b1324] bg-[#fff] rounded-md shadow-sm focus:border-yellow-500 focus:outline-none focus:ring-yellow-500 sm:text-sm"
                       >
                         <option>Ethereum</option>
                         <option>Canada</option>
@@ -215,16 +215,14 @@ export default function CreateSingle() {
                     value={selectedMailingLists}
                     onChange={setSelectedMailingLists}
                   >
-                    <div className="grid grid-cols-2 mt-4 gap-y-6  sm:gap-x-4">
+                    <div className="grid grid-cols-2 mt-4 gap-y-6 sm:gap-x-4">
                       {mailingLists.map((mailingList) => (
                         <RadioGroup.Option
                           key={mailingList.id}
                           value={mailingList}
                           className={({ checked, active }) =>
                             classNames(
-                              checked
-                                ? "border-transparent"
-                                : "border-gray-300",
+                              checked ? "border-transparent" : " bg-[#fff]",
                               active
                                 ? "border-yellow-500 ring-2 ring-yellow-500"
                                 : "",

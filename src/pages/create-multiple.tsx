@@ -27,20 +27,20 @@ export default function CreateMultiple() {
   return (
     <Layout>
       <div className="flex justify-center ">
-        <div className="z-20 px-8 pt-10 my-16 md:px-15 lg:px-20 lg:pt-32 max-w-screen-lg">
+        <div className="z-20 max-w-screen-lg px-8 pt-10 my-16 md:px-15 lg:px-20 lg:pt-32">
           <div className="py-2">
             <h1 className="text-3xl font-bold text-yellow-300">
               Create Collection
             </h1>
           </div>
-          <p className="py-2 ">
+          <p className="py-2 text-black dark:text-white ">
             <span className="text-red-500"> *</span> Required fields
           </p>
           <form className="space-y-6" action="#" method="POST">
-            <div className="px-4 py-5 bg-white shadow sm:rounded-lg sm:p-6">
+            <div className="px-4 py-5 dark:bg-[#1b1324] bg-[#fff]  shadow sm:rounded-lg sm:p-6">
               <div className="md:grid md:grid-cols-3 md:gap-6">
                 <div className="md:col-span-1">
-                  <h3 className="text-lg font-medium leading-6 text-gray-900">
+                  <h3 className="text-lg font-medium leading-6 text-black dark:text-white">
                     Logo Image*
                   </h3>
                   <p className="mt-1 text-sm text-gray-500">
@@ -91,7 +91,7 @@ export default function CreateMultiple() {
               </div>
               <div className="md:grid md:grid-cols-3 md:gap-6">
                 <div className="md:col-span-1">
-                  <h3 className="text-lg font-medium leading-6 text-gray-900">
+                  <h3 className="text-lg font-medium leading-6 text-black dark:text-white">
                     Banner Image
                   </h3>
                   <p className="mt-1 text-sm text-gray-500">
@@ -142,7 +142,7 @@ export default function CreateMultiple() {
               </div>
               <div className="md:grid md:grid-cols-3 md:gap-6">
                 <div className="md:col-span-1">
-                  <h3 className="text-lg font-medium leading-6 text-gray-900">
+                  <h3 className="text-lg font-medium leading-6 text-black dark:text-white">
                     Featured Image
                   </h3>
                   <p className="mt-1 text-sm text-gray-500">
@@ -193,10 +193,10 @@ export default function CreateMultiple() {
               </div>
             </div>
 
-            <div className="px-4 py-5 bg-white shadow sm:rounded-lg sm:p-6">
+            <div className="px-4 py-5 dark:bg-[#1b1324] bg-[#fff]  shadow sm:rounded-lg sm:p-6">
               <div className="md:grid md:grid-cols-3 md:gap-6">
                 <div className="md:col-span-1">
-                  <h3 className="text-lg font-medium leading-6 text-gray-900">
+                  <h3 className="text-lg font-medium leading-6 text-black dark:text-white">
                     Information
                   </h3>
                 </div>
@@ -205,7 +205,7 @@ export default function CreateMultiple() {
                     <div className="col-span-6 sm:col-span-3">
                       <label
                         htmlFor="first-name"
-                        className="block text-sm font-medium text-gray-700"
+                        className="block text-sm font-medium text-black dark:text-white"
                       >
                         Name
                       </label>
@@ -221,7 +221,7 @@ export default function CreateMultiple() {
                     <div className="col-span-6 sm:col-span-3">
                       <label
                         htmlFor="last-name"
-                        className="block text-sm font-medium text-gray-700"
+                        className="block text-sm font-medium text-black dark:text-white"
                       >
                         URL (optional)
                       </label>
@@ -237,7 +237,7 @@ export default function CreateMultiple() {
                     <div className="col-span-6 sm:col-span-4">
                       <label
                         htmlFor="email-address"
-                        className="block text-sm font-medium text-gray-700"
+                        className="block text-sm font-medium text-black dark:text-white"
                       >
                         Description
                       </label>
@@ -252,7 +252,7 @@ export default function CreateMultiple() {
                     <div className="col-span-6 sm:col-span-3">
                       <label
                         htmlFor="country"
-                        className="block text-sm font-medium text-gray-700"
+                        className="block text-sm font-medium text-black dark:text-white"
                       >
                         Category and tags
                       </label>
@@ -271,7 +271,7 @@ export default function CreateMultiple() {
                     <div className="col-span-6">
                       <label
                         htmlFor="street-address"
-                        className="block text-sm font-medium text-gray-700"
+                        className="block text-sm font-medium text-black dark:text-white"
                       >
                         Supply
                       </label>
@@ -286,7 +286,7 @@ export default function CreateMultiple() {
                     <div className="col-span-6 sm:col-span-3">
                       <label
                         htmlFor="country"
-                        className="block text-sm font-medium text-gray-700"
+                        className="block text-sm font-medium text-black dark:text-white"
                       >
                         Blockchain
                       </label>
@@ -311,7 +311,7 @@ export default function CreateMultiple() {
                     value={selectedMailingLists}
                     onChange={setSelectedMailingLists}
                   >
-                    <div className="grid grid-cols-1 mt-4 gap-y-6 sm:grid-cols-3 sm:gap-x-4">
+                    <div className="grid grid-cols-2 mt-4 gap-y-6 sm:gap-x-4">
                       {mailingLists.map((mailingList) => (
                         <RadioGroup.Option
                           key={mailingList.id}
@@ -334,7 +334,7 @@ export default function CreateMultiple() {
                                 <span className="flex flex-col">
                                   <RadioGroup.Label
                                     as="span"
-                                    className="block text-sm font-medium text-gray-900"
+                                    className="block text-sm font-medium text-black "
                                   >
                                     {mailingList.title}
                                   </RadioGroup.Label>
