@@ -35,7 +35,7 @@ export default function Example() {
                 name="notification-method"
                 type="radio"
                 defaultChecked={notificationMethod.id === "email"}
-                className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                className="h-4 w-4 border-gray-300 text-yellow-400 focus:ring-yellow-500"
               />
               <label
                 htmlFor={notificationMethod.id}

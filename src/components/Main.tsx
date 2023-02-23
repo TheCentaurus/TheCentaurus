@@ -1,21 +1,19 @@
-import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
-import cardpic from "../assets/cardpic.png";
-import elipsePic from "../assets/EllipseCardPic.png";
-import verified from "../assets/verified.png";
-import shakerElipsePic from "../assets/shaker-elipse.png";
-import shakerCardPic from "../assets/shaker-rect.png";
-import prmElipsePic from "../assets/plm-eclipse.png";
-import prmCardPic from "../assets/plm-rect.png";
-import { Feature } from "./Feature";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
+import elipsePic from "../assets/EllipseCardPic.png";
+import cardpic from "../assets/cardpic.png";
+import prmElipsePic from "../assets/plm-eclipse.png";
+import prmCardPic from "../assets/plm-rect.png";
+import shakerElipsePic from "../assets/shaker-elipse.png";
+import shakerCardPic from "../assets/shaker-rect.png";
+import { Feature } from "./Feature";
 export function Main() {
   const sampleData = {
     data: [
       {
-        title: "Indigo Bang",
+        title: "yellow Bang",
         description:
-          "Indigo Bang is a platform for the people to connect and share their ideas and experiences with the world.",
+          "yellow Bang is a platform for the people to connect and share their ideas and experiences with the world.",
         pic: {
           src: cardpic,
         },

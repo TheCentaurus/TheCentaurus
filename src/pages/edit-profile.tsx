@@ -207,7 +207,9 @@ export default function Example() {
                     </div>
                   </div>
                   <div className="py-6 ">
-                    <button className=" float-right border bg-blue-600 text-white px-4 py-2 rounded-md ">Submit</button>
+                    <button className=" float-right border bg-yellow-400 text-white px-4 py-2 rounded-md ">
+                      Submit
+                    </button>
                   </div>
                 </div>
               </form>

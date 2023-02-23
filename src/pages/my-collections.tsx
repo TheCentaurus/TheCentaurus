@@ -27,7 +27,6 @@ function MyCollections() {
               <Tab className="text-xs md:text-md dark:text-[#E6E0FA] text-[#413A5A]">
                 Listings
               </Tab>
-
             </TabList>
 
             <TabPanels>
@@ -44,12 +43,14 @@ function MyCollections() {
                       <img
                         src="https://cdn.hashnode.com/res/hashnode/image/upload/v1671024284920/Ak-mF6Kjh.png?w=500&h=262&fit=crop&crop=entropy&auto=compress,format&format=webp"
                         className="rounded-xl h-[250px] w-full object-cover"
-                        alt=""/>
+                        alt=""
+                      />
                       <div className="p-4 w-full flex space-x-5 -mt-8">
                         <img
                           src="https://flowbite.com/docs/images/people/profile-picture-3.jpg"
                           className="rounded-lg h-14 w-14 object-cover ring-2 ring-white dark:ring-dark shadow-lg shadow-black/20"
-                          alt=""/>
+                          alt=""
+                        />
                         <p className="text-darkest dark:text-white font-semibold text-sm md:text-base mt-7">
                           Detail
                         </p>

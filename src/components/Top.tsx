@@ -1,9 +1,8 @@
+import { motion } from "framer-motion";
+
 import prm from "../assets/plm.png";
-import indigo from "../assets/indigo.png";
 import shaker from "../assets/shaker.png";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import { useEffect } from "react";
+import yellow from "../assets/yellow.png";
 export function Top() {
   return (
     <>
@@ -60,14 +59,14 @@ export function Top() {
                       </div>
                       <div className="flex-shrink-0">
                         <img
-                          src={indigo.src}
+                          src={yellow.src}
                           alt=""
                           className="h-12 w-12 rounded-lg object-contain"
                         />
                       </div>
                       <div>
                         <p className="text-lg  text-[#413A5A] dark:text-[#E6E0FA]">
-                          Indigo Bang
+                          yellow Bang
                         </p>
                       </div>
                     </div>
