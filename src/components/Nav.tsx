@@ -112,7 +112,7 @@ export function Nav() {
   const router = useRouter();
   const address = useAddress();
 
-  // make a funtion to search and filter an object
+  // make a funtion to search and filter an object..
 
   const {
     isOpen: isOpenNotifications,
@@ -240,7 +240,6 @@ export function Nav() {
                 // value={search}
                 // onChange={(e) => setSearch(e.target.value)}
               />
-           
             </div>
           </form>
         </div>
