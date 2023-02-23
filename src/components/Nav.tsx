@@ -236,10 +236,10 @@ export function Nav() {
                 value={searchQuery}
                 onChange={handleSearch}
                 onClick={onOpenSuggestions}
-                // value={search}
-                // onChange={(e) => setSearch(e.target.value)}
+              // value={search}
+              // onChange={(e) => setSearch(e.target.value)}
               />
-           
+
             </div>
           </form>
         </div>
@@ -580,8 +580,8 @@ export function Nav() {
               value={searchQuery}
               onChange={handleSearch}
 
-              // value={search}
-              // onChange={(e) => setSearch(e.target.value)}
+            // value={search}...
+            // onChange={(e) => setSearch(e.target.value)}
             />
             {filteredList?.length > 0 ? (
               filteredList?.map((item, index) => {
