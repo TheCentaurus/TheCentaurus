@@ -1,42 +1,45 @@
-import { useRouter } from 'next/router'
-import { useCallback, useContext } from 'react'
-import Particles from 'react-tsparticles'
-import { loadFull } from 'tsparticles'
-import MyThemeContext from '../store/themeContext'
-import { Footer } from './Footer'
-import { Nav } from './Nav'
+import { useRouter } from "next/router";
+import { useCallback, useContext } from "react";
+import Particles from "react-tsparticles";
+import { loadFull } from "tsparticles";
+import bg from "../assets/bg4.jpeg";
+import cover from "../assets/cover.webp";
+import MyThemeContext from "../store/themeContext";
+import { Footer } from "./Footer";
+import { Nav } from "./Nav";
+
 export function Layout({ children }) {
   const particlesInit = useCallback(async (engine: any) => {
-    console.log(engine)
-    await loadFull(engine)
-  }, [])
+    console.log(engine);
+    await loadFull(engine);
+  }, []);
   const particlesLoaded = useCallback(async (container: any) => {
-    await console.log(container)
-  }, [])
+    await console.log(container);
+  }, []);
   const themeCtx: { isDarkTheme?: boolean; toggleThemeHandler: () => void } =
-    useContext(MyThemeContext)
+    useContext(MyThemeContext);
 
   function toggleThemeHandler(): void {
-    themeCtx.toggleThemeHandler()
+    themeCtx.toggleThemeHandler();
   }
-  const router = useRouter()
+  const router = useRouter();
 
   return (
     <div
       style={{
         backgroundImage: `url(${
-          themeCtx.isDarkTheme === true ? 'cover.webp' : 'bg4.jpeg'
+          themeCtx.isDarkTheme === true ? cover.src : bg.src
         })`,
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        minHeight: '100vh'
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        minHeight: "100vh",
       }}
-      className='bg-cover min-h-[100vh] bg-center relative'
+      className="bg-cover min-h-[100vh] bg-center relative"
     >
-      {router.pathname === '/' && (
+      {router.pathname === "/" && (
         <Particles
-          id='tsparticles'
+          id="tsparticles"
           init={particlesInit}
           loaded={particlesLoaded}
           options={{
@@ -45,73 +48,73 @@ export function Layout({ children }) {
               events: {
                 onClick: {
                   enable: false,
-                  mode: 'push'
+                  mode: "push",
                 },
                 onHover: {
                   enable: false,
-                  mode: 'repulse'
+                  mode: "repulse",
                 },
-                resize: true
+                resize: true,
               },
               modes: {
                 push: {
-                  quantity: 4
+                  quantity: 4,
                 },
                 repulse: {
                   distance: 200,
-                  duration: 0.1
-                }
-              }
+                  duration: 0.1,
+                },
+              },
             },
             particles: {
               color: {
-                value: '#473275'
+                value: "#473275",
               },
               links: {
-                color: '#5b4984',
+                color: "#5b4984",
                 distance: 150,
                 enable: true,
                 opacity: 0.5,
-                width: 1
+                width: 1,
               },
               collisions: {
-                enable: true
+                enable: true,
               },
               move: {
                 //@ts-ignore
-                directions: 'none',
+                directions: "none",
                 enable: true,
                 outModes: {
-                  default: 'bounce'
+                  default: "bounce",
                 },
                 random: false,
                 speed: 1,
-                straight: false
+                straight: false,
               },
               number: {
                 density: {
                   enable: true,
-                  area: 800
+                  area: 800,
                 },
-                value: 80
+                value: 80,
               },
               opacity: {
-                value: 0.5
+                value: 0.5,
               },
               shape: {
-                type: 'circle'
+                type: "circle",
               },
               size: {
-                value: { min: 1, max: 5 }
-              }
+                value: { min: 1, max: 5 },
+              },
             },
-            detectRetina: true
+            detectRetina: true,
           }}
         />
       )}
       <Nav />
-      <main className=''>{children}</main>
+      <main className="">{children}</main>
       <Footer />
     </div>
-  )
+  );
 }
