@@ -25,7 +25,7 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 
-import { ConnectWallet, useAddress } from "@thirdweb-dev/react";
+import { useAddress } from "@thirdweb-dev/react";
 import { useRouter } from "next/router";
 
 export function Nav() {
@@ -237,10 +237,9 @@ export function Nav() {
                 value={searchQuery}
                 onChange={handleSearch}
                 onClick={onOpenSuggestions}
-              // value={search}
-              // onChange={(e) => setSearch(e.target.value)}
+                // value={search}
+                // onChange={(e) => setSearch(e.target.value)}
               />
-
             </div>
           </form>
         </div>
@@ -255,11 +254,12 @@ export function Nav() {
           </div>
 
           <div className="flex items-center justify-center text-yellow-300 font-bold max-h-[60px] rounded-sm py-[3px] px-[2px] button-custom">
-            <ConnectWallet
-              className="connect-wallet"
-              colorMode="light"
-              accentColor="#fff"
-            />
+            <button
+              onClick={() => router.push("/connect")}
+              className="border-[1px] dark:border-yellow-300 border-[#261a2f] cursor-pointer dark:text-[#E6E0FA] text-[#261a2f] font-bold lg:text-sm text-[12px] px-2 rounded-xl  py-[10px]"
+            >
+              Connect Wallet
+            </button>
           </div>
 
           <div className="md:hidden lg:block">
@@ -382,7 +382,7 @@ export function Nav() {
                 <DropDownList className="p-2 rounded-lg">
                   <li
                     onClick={onOptionClicked("Ethereum")}
-                    className="dark:bg-[#1b1324] flex mb-3 items-center"
+                    className="dark:bg-[#1b1324]  flex mb-3 items-center"
                   >
                     <img
                       src="ethereum.svg"
@@ -581,8 +581,8 @@ export function Nav() {
               value={searchQuery}
               onChange={handleSearch}
 
-            // value={search}...
-            // onChange={(e) => setSearch(e.target.value)}
+              // value={search}...
+              // onChange={(e) => setSearch(e.target.value)}
             />
             {filteredList?.length > 0 ? (
               filteredList?.map((item, index) => {

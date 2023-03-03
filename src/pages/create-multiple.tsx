@@ -214,14 +214,14 @@ export default function CreateMultiple() {
                         name="first-name"
                         id="first-name"
                         autoComplete="given-name"
-                        className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm"
+                        className="block w-full mt-1 border-gray-300 dark:bg-[#2A243D] dark:border-transparent rounded-md shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm"
                       />
                     </div>
 
                     <div className="col-span-6 sm:col-span-3">
                       <label
                         htmlFor="last-name"
-                        className="block text-sm font-medium text-black dark:text-white"
+                        className="block text-sm font-medium text-black  dark:text-white"
                       >
                         URL (optional)
                       </label>
@@ -230,7 +230,7 @@ export default function CreateMultiple() {
                         name="last-name"
                         id="last-name"
                         autoComplete="family-name"
-                        className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm"
+                        className="block w-full mt-1 border-gray-300 dark:bg-[#2A243D] dark:border-transparent rounded-md shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm"
                       />
                     </div>
 
@@ -245,7 +245,7 @@ export default function CreateMultiple() {
                         name="email-address"
                         id="email-address"
                         autoComplete="email"
-                        className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm"
+                        className="block w-full mt-1 border-gray-300 dark:bg-[#2A243D] dark:border-transparent rounded-md shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm"
                       />
                     </div>
 
@@ -260,7 +260,7 @@ export default function CreateMultiple() {
                         id="country"
                         name="country"
                         autoComplete="country-name"
-                        className="block w-full px-3 py-2 mt-1 bg-white border border-gray-300 rounded-md shadow-sm focus:border-yellow-500 focus:outline-none focus:ring-yellow-500 sm:text-sm"
+                        className="block w-full px-3 py-2 mt-1 dark:text-white bg-white dark:bg-[#2A243D] dark:border-transparent border border-gray-300 rounded-md shadow-sm focus:border-yellow-500 focus:outline-none focus:ring-yellow-500 sm:text-sm"
                       >
                         <option>Select a category</option>
                         <option>Canada</option>
@@ -280,7 +280,7 @@ export default function CreateMultiple() {
                         name="street-address"
                         id="street-address"
                         autoComplete="street-address"
-                        className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm"
+                        className="block w-full mt-1 border-gray-300 dark:bg-[#2A243D] dark:border-transparent rounded-md shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm"
                       />
                     </div>
                     <div className="col-span-6 sm:col-span-3">
@@ -294,7 +294,7 @@ export default function CreateMultiple() {
                         id="country"
                         name="country"
                         autoComplete="country-name"
-                        className="block w-full px-3 py-2 mt-1 bg-white border border-gray-300 rounded-md shadow-sm focus:border-yellow-500 focus:outline-none focus:ring-yellow-500 sm:text-sm"
+                        className="block w-full dark:text-white px-3 py-2 mt-1 bg-white dark:bg-[#2A243D] dark:border-transparent border border-gray-300 rounded-md shadow-sm focus:border-yellow-500 focus:outline-none focus:ring-yellow-500 sm:text-sm"
                       >
                         <option>Ethereum</option>
                         <option>Canada</option>
@@ -311,7 +311,7 @@ export default function CreateMultiple() {
                     value={selectedMailingLists}
                     onChange={setSelectedMailingLists}
                   >
-                    <div className="grid grid-cols-2 mt-4 gap-y-6 sm:gap-x-4">
+                    <div className="grid grid-cols-2 dark:text-white mt-4 gap-y-6 sm:gap-x-4">
                       {mailingLists.map((mailingList) => (
                         <RadioGroup.Option
                           key={mailingList.id}
@@ -324,7 +324,7 @@ export default function CreateMultiple() {
                               active
                                 ? "border-yellow-500 ring-2 ring-yellow-500"
                                 : "",
-                              "relative flex cursor-pointer rounded-lg border bg-white p-4 shadow-sm focus:outline-none"
+                              "relative flex cursor-pointer rounded-lg border dark:text-white dark:bg-[#2A243D] dark:border-transparent bg-white p-4 shadow-sm focus:outline-none"
                             )
                           }
                         >
@@ -334,7 +334,7 @@ export default function CreateMultiple() {
                                 <span className="flex flex-col">
                                   <RadioGroup.Label
                                     as="span"
-                                    className="block text-sm font-medium text-black "
+                                    className="block text-sm font-medium dark:text-white text-black "
                                   >
                                     {mailingList.title}
                                   </RadioGroup.Label>

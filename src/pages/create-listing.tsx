@@ -31,14 +31,15 @@ export default function CreateListing() {
               Create a Listing
             </h1>
           </div>
-          <p className="py-2 ">
-            <span className="text-red-500"> *</span> Required fields
-          </p>
+
           <form className="space-y-6" action="#" method="POST">
-            <div className="px-4 py-5 bg-white shadow sm:rounded-lg sm:p-6">
+            <div className="px-4 py-5 bg-white dark:bg-[#1B1324] dark:text-white shadow sm:rounded-lg sm:p-6">
+              <p className="py-2 dark:text-[#8175A7] text-[#413A5A]">
+                <span className="text-red-500"> *</span> Required fields
+              </p>
               <div className="md:grid md:grid-cols-3 md:gap-6">
                 <div className="md:col-span-2">
-                  <h3 className="text-lg font-medium leading-6 text-gray-900">
+                  <h3 className="text-lg font-medium leading-6 dark:text-[#] dark:text-[#8175A7] text-[#413A5A]">
                     Choose a type of Sale
                   </h3>
 
@@ -59,7 +60,7 @@ export default function CreateListing() {
                               active
                                 ? "border-yellow-500 ring-2 ring-yellow-500"
                                 : "",
-                              "relative flex cursor-pointer rounded-lg border bg-white p-4 shadow-sm focus:outline-none"
+                              "relative flex cursor-pointer rounded-lg border bg-white dark:bg-[#2A243D] p-4 shadow-sm focus:outline-none"
                             )
                           }
                         >
@@ -69,7 +70,7 @@ export default function CreateListing() {
                                 <span className="flex flex-col">
                                   <RadioGroup.Label
                                     as="span"
-                                    className="block text-sm font-medium text-gray-900"
+                                    className="block text-sm font-medium dark:text-[#8175A7] text-[#413A5A]"
                                   >
                                     {option.title}
                                   </RadioGroup.Label>
@@ -129,9 +130,9 @@ export default function CreateListing() {
                   </div>
                 </div>
               </div>
-              <div className="md:grid md:grid-cols-3 md:gap-6  mb-4">
+              <div className="md:grid md:grid-cols-3 md:gap-6 lg:-mt-24 mb-4">
                 <div className="md:col-span-2">
-                  <h3 className="text-lg font-medium leading-6 text-gray-900">
+                  <h3 className="text-lg font-medium leading-6 dark:text-[#8175A7] text-[#413A5A]">
                     Set a Price
                   </h3>
                   <p className="mt-1 text-sm text-gray-500">
@@ -144,20 +145,20 @@ export default function CreateListing() {
                     name="set-price"
                     id="set-price"
                     autoComplete="set-price"
-                    className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm"
+                    className="block w-full mt-1 border-gray-300 dark:bg-[#2A243D] rounded-md shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm"
                   />
                 </div>
               </div>
 
               <div className="md:grid md:grid-cols-3 md:gap-6 mb-4">
                 <div className="md:col-span-2">
-                  <h3 className="text-lg font-medium leading-6 text-gray-900">
+                  <h3 className="text-lg font-medium  leading-6 dark:text-[#8175A7] text-[#413A5A]">
                     Set Duration
                   </h3>
 
                   <select
                     id="countries"
-                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-yellow-500 dark:focus:border-yellow-500"
+                    className=" border border-gray-300 dark:text-[#8175A7] text-[#413A5A] text-sm rounded-lg focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5 dark:bg-[#2A243D] dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-yellow-500 dark:focus:border-yellow-500"
                   >
                     <option selected>Choose a country</option>
                     <option value="1 months">1 month</option>
@@ -170,11 +171,11 @@ export default function CreateListing() {
               {/* more fields belowe */}
 
               <div>
-                <h3 className="text-lg font-medium leading-6 text-gray-900">
+                <h3 className="text-lg font-medium leading-6 dark:text-[#8175A7] text-[#413A5A]">
                   Summary
                 </h3>
                 <div className="md:grid md:grid-cols-2 md:gap-6 mb-4">
-                  <ul className="md:col-span-2  flex  gap-4">
+                  <ul className="md:col-span-2  flex   gap-4">
                     <li>Listing : 100 BNB</li>
                     <li>Service Fee : 2.4%</li>
                     <li>Creator Fee : 0%</li>
@@ -190,7 +191,7 @@ export default function CreateListing() {
                     <div className=" ">
                       <button
                         type="submit"
-                        className="inline-flex justify-center px-4 py-2 ml-3 text-sm font-medium text-white bg-yellow-400 border border-transparent rounded-md shadow-sm hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2"
+                        className="inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-yellow-400 border border-transparent rounded-md shadow-sm hover:bg-yellow-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2"
                       >
                         Create
                       </button>
