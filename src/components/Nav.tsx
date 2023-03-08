@@ -473,7 +473,7 @@ export function Nav() {
           <div>
             <button
               type="button"
-              className="px-2 py-3 mr-2 text-white sm:px-5 dark:bg-[#231C31] bg-zinc-200 dark:text-yellow-400 rounded-xl"
+              className="px-2 py-3 mr-2 border-[1px] border-[#231C31] sm:px-5 dark:bg-[#231C31]  dark:text-yellow-400 rounded-xl"
               onClick={toggleThemeHandler}
             >
               <BsSun />
