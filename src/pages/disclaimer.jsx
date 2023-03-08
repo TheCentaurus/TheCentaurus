@@ -8,7 +8,7 @@ function Disclaimer() {
         <h1 className="my-5 text-3xl lg:text-5xl text-black dark:text-white">
           Disclaimer
         </h1>
-        <p className="dark:text-[#8175a7] text-[#413A5A]">
+        <p className="dark:text-[#8175a7] md:text-justify text-[#413A5A]">
           The Centaurus including but not limited to the overall project, the
           token, website, smart contracts and any apps (“CENTAURUS”) as
           presented in this conceptual paper is not a licensed, unlicensed or

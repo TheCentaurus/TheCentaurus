@@ -5,6 +5,8 @@ import { FiMoreHorizontal } from "react-icons/fi";
 import { IoNotifications } from "react-icons/io5";
 import styled from "styled-components";
 import logo from "../assets/logo.svg";
+import solana from "../assets/solana.svg";
+import tezos from "../assets/tezos.svg";
 import MyThemeContext from "../store/themeContext";
 import { Sidebar } from "./Sidebar";
 import Translate from "./Translate";
@@ -201,7 +203,7 @@ export function Nav() {
             onClick={() => router.push("/")}
             src={logo.src}
             alt="logo"
-            className="w-60"
+            className="w-50 -mt-2"
           />
         </div>
 
@@ -256,7 +258,7 @@ export function Nav() {
           <div className="flex items-center justify-center text-yellow-300 font-bold max-h-[60px] rounded-sm py-[3px] px-[2px] button-custom">
             <button
               onClick={() => router.push("/connect")}
-              className="border-[1px] dark:border-yellow-300 border-[#261a2f] cursor-pointer dark:text-[#E6E0FA] text-[#261a2f] font-bold lg:text-sm text-[12px] px-4 rounded-xl  py-[10px]"
+              className="border-[1px] dark:border-yellow-300 border-[#261a2f] cursor-pointer dark:text-yellow-300 text-[#261a2f] font-bold lg:text-sm text-[12px] px-4 rounded-xl  py-[10px]"
             >
               Connect Wallet
             </button>
@@ -366,7 +368,7 @@ export function Nav() {
             </DropDownHeader>
             {isOpenDropdown && (
               <DropDownListContainer>
-                <DropDownList className="p-2 rounded-lg">
+                <DropDownList className="p-2 rounded-lg w-[200px]">
                   <li
                     onClick={onOptionClicked("Ethereum")}
                     className="dark:bg-[#1b1324]  flex mb-3 items-center"
@@ -401,37 +403,65 @@ export function Nav() {
                     Polygon
                   </li>
                   <li
-                    onClick={onOptionClicked("Avalanche")}
+                    onClick={onOptionClicked("Bitcoin Oridnals")}
                     className="dark:bg-[#1b1324] flex mb-3 items-center"
                   >
                     <img
-                      src="avalanche.svg"
+                      // bitcoin logo from the cloud
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/1200px-Bitcoin.svg.png"
                       className="object-contain mr-2 h-7 "
                       alt=""
                     />
-                    Avalanche
+                    Bitcoin Oridnals
                   </li>
                   <li
-                    onClick={onOptionClicked("Moonriver")}
+                    onClick={onOptionClicked("Solana")}
                     className="dark:bg-[#1b1324] flex mb-3 items-center"
                   >
                     <img
-                      src="moonriver.png"
-                      className="object-contain mr-2 h-7 "
+                      // solana logo from the cloud
+                      src={solana.src}
+                      className="object-contain mr-2 h-6 "
                       alt=""
                     />
-                    Moonriver
+                    Solana
                   </li>
                   <li
-                    onClick={onOptionClicked("Moonbeam")}
+                    onClick={onOptionClicked("Tezos")}
                     className="dark:bg-[#1b1324] flex mb-3 items-center"
                   >
                     <img
-                      src="moonbeam.jpg"
+                      src={tezos.src}
                       className="object-contain mr-2 h-7 "
                       alt=""
                     />
-                    Moonbeam
+                    Tezos
+                  </li>
+                  <li
+                    onClick={onOptionClicked("Cardano")}
+                    className="dark:bg-[#1b1324] flex mb-3 items-center"
+                  >
+                    <img
+                      src={
+                        "https://cryptologos.cc/logos/cardano-ada-logo.svg?v=024"
+                      }
+                      className="object-contain mr-2 h-7 "
+                      alt=""
+                    />
+                    Cardano
+                  </li>
+                  <li
+                    onClick={onOptionClicked("Flow")}
+                    className="dark:bg-[#1b1324] flex mb-3 items-center"
+                  >
+                    <img
+                      src={
+                        "https://cryptologos.cc/logos/flow-flow-logo.svg?v=024"
+                      }
+                      className="object-contain mr-2 h-7 "
+                      alt=""
+                    />
+                    Flow
                   </li>
                 </DropDownList>
               </DropDownListContainer>
@@ -443,7 +473,7 @@ export function Nav() {
           <div>
             <button
               type="button"
-              className="px-2 py-3 mr-2 text-white sm:px-5 bg-zinc-800 dark:bg-zinc-200 dark:text-black rounded-xl"
+              className="px-2 py-3 mr-2 text-white sm:px-5 dark:bg-[#231C31] bg-zinc-200 dark:text-yellow-400 rounded-xl"
               onClick={toggleThemeHandler}
             >
               <BsSun />

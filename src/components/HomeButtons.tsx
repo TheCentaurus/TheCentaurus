@@ -1,14 +1,11 @@
-import { FaEthereum } from "react-icons/fa";
-import solana from "../assets/solana.svg";
-import polygon from "../assets/polygon-w.svg";
-import tezos from "../assets/tezos.svg";
-import { BiChevronDown } from "react-icons/bi";
 import { motion } from "framer-motion";
+import { BiChevronDown } from "react-icons/bi";
+import { FaBitcoin } from "react-icons/fa";
 export function HomeButtons() {
   return (
     <>
       <div className="mb-24">
-        <motion.div className="flex flex-wrap justify-between w-9/12 m-auto lg:w-5/12 z-20">
+        <motion.div className="flex flex-wrap justify-between w-9/12 m-auto lg:w-6/12 z-20">
           <motion.a
             href="/connect"
             initial={{ x: -20, y: 60 }}
@@ -30,11 +27,11 @@ export function HomeButtons() {
             type="button"
             className="flex items-center lg:py-2.5 lg:px-5 py-1 px-3 mr-2 mb-2 lg:text-sm  font-medium text-[#E6E0FA] z-20 focus:outline-none bg-[#2A243D] rounded-full    -gray-200  hover:bg-[#2e293d] hover:text-gray-200 focus:z-10 focus:ring-1 focus:ring-gray-200 "
           >
-            <FaEthereum
+            <FaBitcoin
               size={20}
-              className="bg-[#302A43] mr-2 p-1 rounded-full"
+              className="bg-yellow-400 mr-2 p-1 rounded-full"
             />{" "}
-            Ethereum
+            Bitcoin Ordinals
           </motion.a>
 
           <motion.a
@@ -60,11 +57,13 @@ export function HomeButtons() {
             className="flex items-center lg:py-2.5 lg:px-5 py-1 px-3  mr-2 mb-2 lg:text-sm  font-medium text-[#E6E0FA] z-20 focus:outline-none bg-[#2A243D] rounded-full    -gray-200  hover:bg-[#2e293d] hover:text-gray-200 focus:z-10 focus:ring-1 focus:ring-gray-200 "
           >
             <img
-              src={solana.src}
-              className="flex items-center bg-[#302A43] w-[20px] h-[20px] mr-2 p-1 rounded-full"
+              src={
+                "https://cryptologos.cc/logos/binance-coin-bnb-logo.svg?v=002"
+              }
+              className="flex items-center  w-[20px] h-[20px] mr-2  rounded-full"
               alt=""
             />
-            Solana
+            Binance
           </motion.a>
           <motion.a
             href="/connect"
@@ -88,11 +87,11 @@ export function HomeButtons() {
             className="flex items-center lg:py-2.5 lg:px-5 py-1 px-3 mr-2 mb-2 lg:text-sm   font-medium text-[#E6E0FA] z-20 focus:outline-none bg-[#2A243D] rounded-full    -gray-200  hover:bg-[#2e293d] hover:text-gray-200 focus:z-10 focus:ring-1 focus:ring-gray-200 "
           >
             <img
-              src={polygon.src}
-              className="bg-[#302A43] w-[20px] h-[20px] mr-2 p-1 rounded-full"
+              src={"https://cryptologos.cc/logos/cardano-ada-logo.svg?v=024"}
+              className=" w-[20px] h-[20px] mr-2 rounded-full"
               alt=""
             />
-            Polygon
+            Cardinals
           </motion.a>
           <motion.a
             href="/connect"
@@ -116,11 +115,11 @@ export function HomeButtons() {
             className="flex items-center lg:py-2.5 lg:px-5 py-1 px-3 mr-2 mb-2 lg:text-sm   font-medium text-[#E6E0FA] z-20 focus:outline-none bg-[#2A243D] rounded-full    -gray-200  hover:bg-[#2e293d] hover:text-gray-200 focus:z-10 focus:ring-1 focus:ring-gray-200 "
           >
             <img
-              src={tezos.src}
-              className="bg-[#302A43] w-[20px] h-[20px] mr-2 p-1 rounded-full"
+              src={"https://cryptologos.cc/logos/flow-flow-logo.svg?v=024"}
+              className=" w-[20px] h-[20px] mr-2 rounded-full"
               alt=""
             />
-            Tezos
+            Flow
           </motion.a>
           <motion.a
             href="/connect"

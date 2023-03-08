@@ -1,26 +1,24 @@
-import logo from "../assets/logo.svg";
-import audit from "../assets/audit.png";
-import binance from "../assets/binance.png";
-import flo from "../assets/FLO.png";
+import { Tooltip } from "@chakra-ui/react";
 import Link from "next/link";
 import { AiOutlineFacebook, AiOutlineInstagram } from "react-icons/ai";
-import { TbBrandTelegram, TbBrandDiscord } from "react-icons/tb";
 import { FaMediumM } from "react-icons/fa";
 import { FiTwitter } from "react-icons/fi";
-import { Tooltip } from "@chakra-ui/react";
+import { TbBrandDiscord, TbBrandTelegram } from "react-icons/tb";
+import audit from "../assets/audit.png";
+import logo from "../assets/logo.svg";
 
 export function Footer() {
   return (
     <div className="dark:bg-[#120E17] bg-[#e1eff0ad] z-20">
       <footer className="dark:text-[#8175A7] text-[#413A5A] font-light text-sm z-20">
-        <div className="container px-5 pt-20 pb-10 mx-auto z-20">
+        <div className="container px-5 pt-10 pb-5 mx-auto z-20">
           <div className="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-6 z-20">
             <div className="w-full col-span-2 px-4 z-20">
               <div className="flex justify-center w-full">
                 <img
                   src={logo.src}
                   alt=""
-                  className="object-contain h-16 m-auto mb-5 -mt-10 md:w-full md:-ml-5"
+                  className="object-contain h-16 m-auto mb-5 -mt-5 md:w-full md:-ml-5"
                 />
               </div>
               <p className="dark:text-[#8175A7] text-[#413A5A] text-justify ">
@@ -126,11 +124,7 @@ export function Footer() {
                     className="object-contain h-16 m-auto md:m-0 lg:m-auto mb-5 cursor-pointer lg:w-full"
                   />
                 </li>
-                <img
-                  src="bsc.svg"
-                  alt=""
-                  className="object-contain h-16  lg:m-auto mb-5 m-auto md:m-0 cursor-pointer lg:w-full"
-                />
+
                 <li>
                   <div className="grid grid-cols-4 gap-2">
                     <Tooltip label="Ethereum">
@@ -197,16 +191,16 @@ export function Footer() {
                         </div>
                       </a>
                     </Tooltip>
-                    <Tooltip label="Fantom">
+                    <Tooltip label="Cardano">
                       <a
-                        href="https://fantom.foundation/"
+                        href="https://www.cardano.org/en/home/"
                         target="_blank"
                         rel="noreferrer"
                       >
                         {" "}
                         <div className="flex items-center w-full h-12 p-1 m-auto align-middle rounded-full">
                           <img
-                            src="/fantom.svg"
+                            src="https://cryptologos.cc/logos/cardano-ada-logo.svg?v=024"
                             alt=""
                             className="object-contain w-6 h-6 m-auto"
                           />
@@ -247,16 +241,16 @@ export function Footer() {
                       </a>
                     </Tooltip>
 
-                    <Tooltip label="Avax">
+                    <Tooltip label="Flow">
                       <a
-                        href="https://www.avax.network/"
+                        href="https://www.onflow.org/"
                         target="_blank"
                         rel="noreferrer"
                       >
                         {" "}
                         <div className="flex items-center w-full h-12 p-1 m-auto align-middle rounded-full">
                           <img
-                            src="/avax.svg"
+                            src="https://cryptologos.cc/logos/flow-flow-logo.svg?v=024"
                             alt=""
                             className="object-contain w-6 h-6 m-auto"
                           />
@@ -274,7 +268,7 @@ export function Footer() {
             <div className="m-auto z-20">
               {" "}
               <p className="text-sm text-center md:text-left dark:text-[#8175A7] text-[#413A5A] sm:text-left">
-                © 2022 All Rights Reserved The Centaurus.io.
+                © 2023 All Rights Reserved The Centaurus.io
               </p>
             </div>
             <div className="m-auto mt-5 md:mt-0 z-20">
