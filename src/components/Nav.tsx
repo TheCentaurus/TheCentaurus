@@ -201,7 +201,7 @@ export function Nav() {
             onClick={() => router.push("/")}
             src={logo.src}
             alt="logo"
-            className="w-40"
+            className="w-60"
           />
         </div>
 
@@ -244,7 +244,7 @@ export function Nav() {
           </form>
         </div>
 
-        <div className="flex items-center justify-end space-x-3 md:w-1/3 2xl:space-x-5">
+        <div className="flex items-center justify-between space-x-3 md:w-5/12 2xl:space-x-5">
           <div className=" dark:text-[#E6E0FA] text-[#261a2f]">
             <IoNotifications
               size={25}
@@ -256,7 +256,7 @@ export function Nav() {
           <div className="flex items-center justify-center text-yellow-300 font-bold max-h-[60px] rounded-sm py-[3px] px-[2px] button-custom">
             <button
               onClick={() => router.push("/connect")}
-              className="border-[1px] dark:border-yellow-300 border-[#261a2f] cursor-pointer dark:text-[#E6E0FA] text-[#261a2f] font-bold lg:text-sm text-[12px] px-2 rounded-xl  py-[10px]"
+              className="border-[1px] dark:border-yellow-300 border-[#261a2f] cursor-pointer dark:text-[#E6E0FA] text-[#261a2f] font-bold lg:text-sm text-[12px] px-4 rounded-xl  py-[10px]"
             >
               Connect Wallet
             </button>
@@ -305,20 +305,7 @@ export function Nav() {
                     </MenuItem>
                   </>
                 )}
-                <MenuItem
-                  _focus={{
-                    background: "#1b1324",
-                  }}
-                  _hover={{
-                    background: "#1b1324",
-                    color: "teal.500",
-                  }}
-                  onClick={() => {
-                    router.push("/profile");
-                  }}
-                >
-                  Activity
-                </MenuItem>
+
                 <MenuItem
                   _focus={{
                     background: "#1b1324",
@@ -352,7 +339,7 @@ export function Nav() {
                     color: "teal.500",
                   }}
                 >
-                  Resources
+                  RESOURCES
                 </MenuItem>
                 <MenuItem
                   _hover={{
@@ -360,7 +347,7 @@ export function Nav() {
                     color: "teal.500",
                   }}
                 >
-                  Help
+                  HELP
                 </MenuItem>
               </MenuList>
             </Menu>

@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -39,9 +39,16 @@
     @apply container mx-auto;
   }
 }
+.goog-te-gadget-simple .VIpgJd-ZVi9od-xl07Ob-lTBxed span {
+  color: #d5d1e7 !important;
+  font-size: 16px !important;
+}
+.VIpgJd-ZVi9od-xl07Ob-lTBxed {
+  display: flex;
+}
 html,
 .only {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 .hide-scroll-bar {
@@ -223,7 +230,7 @@ body {
   }
 }
 
-.css-c2k196[aria-selected='true'],
+.css-c2k196[aria-selected="true"],
 .css-c2k196[data-selected] {
   color: #faca15 !important;
   border-color: currentColor;
@@ -242,7 +249,7 @@ body {
   animation: rotation 1s linear infinite;
 }
 .loader::after {
-  content: '';
+  content: "";
   box-sizing: border-box;
   position: absolute;
   left: 0;

@@ -51,8 +51,16 @@ export function Layout({ children }) {
                   mode: "push",
                 },
                 onHover: {
-                  enable: false,
+                  enable: true,
                   mode: "repulse",
+
+                  // change how much the particles repulse
+                  // @ts-ignore
+                  parallax: {
+                    enable: true,
+                    force: 600,
+                    smooth: 10,
+                  },
                 },
                 resize: true,
               },
