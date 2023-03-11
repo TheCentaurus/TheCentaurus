@@ -32,13 +32,13 @@ function Profile() {
       </div>
       <Container>
         <div className="z-20 flex flex-col items-center justify-between mt-10 lg:items-stretch lg:flex-row">
-          <div className="w-full pb-5">
-            <div className="flex justify-between my-5 ml-5">
+          <div className="w-full z-20 pb-5">
+            <div className="flex z-20 justify-between my-5 ml-5">
               <div>
                 <h1 className="font-semibold text-2xl text-[#413A5A] dark:text-white">
                   John Doe
                 </h1>
-                <div className="flex space-x-5">
+                <div className="flex z-20 space-x-5">
                   <h3 className="font-medium text-sm text-[#413A5A] dark:text-white">
                     {address
                       ? `${address?.substring(0, 5)}...${address?.substring(
@@ -53,7 +53,7 @@ function Profile() {
                   )}
                 </div>
               </div>
-              <div className="flex space-x-5">
+              <div className="flex z-20 space-x-5">
                 <button
                   onClick={() =>
                     router.push({
