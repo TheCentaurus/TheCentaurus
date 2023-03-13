@@ -3,80 +3,37 @@ import { Layout } from "@/components/Layout";
 import { Spinner, Toast } from "@chakra-ui/react";
 import { useAddress } from "@thirdweb-dev/react";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import { useState } from "react";
+const user = {
+  name: "User Name",
+  handle: "username",
+  email: "user@example.com",
+  imageUrl: "avatar.jpg",
+};
 
 export default function Example() {
   const [availableToHire, setAvailableToHire] = useState(true);
   const [privateAccount, setPrivateAccount] = useState(false);
   const [allowCommenting, setAllowCommenting] = useState(true);
   const [allowMentions, setAllowMentions] = useState(true);
-  const [user, setUser] = useState(null);
-  const address = useAddress();
-  const [data, setData] = useState<ProfileData | null>(null);
-  const [firstName, setFirstName] = useState(data?.firstName);
-  const [lastName, setLastName] = useState(data?.lastName);
-  const [username, setUsername] = useState(data?.username);
-  const [bio, setBio] = useState(data?.bio);
-  const [website, setWebsite] = useState(data?.website);
-  const [location, setLocation] = useState(data?.location);
-  const [avatar, setAvatar] = useState(data?.avatar);
-  const [coverImage, setCoverImage] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [email, setEmail] = useState(data?.email);
+  const [username, setUsername] = useState("");
+  const [about, setAbout] = useState("");
+  const [website, setWebsite] = useState("");
   const [image, setImage] = useState("");
-  const [id, setId] = useState(data?.id);
-
-  interface ProfileData {
-    firstName: string;
-    lastName: string;
-    username: string;
-    bio: string;
-    website: string;
-    location: string;
-    avatar: string;
-    coverImage: string;
-    email: string;
-    id: string;
-    image: string;
-    // Add any other properties here
-  }
-
-  useEffect(() => {
-    profileService.getProfile(address).then((res) => {
-      console.log(res?.data[0], "res");
-
-      setData(res?.data[0]);
-      alert("Profile fetched successfully");
-    });
-  }, []);
-
-  useEffect(() => {
-    setLoading(true);
-
-    if (data) {
-      // add null check here
-      setFirstName(data.firstName || "");
-      setLastName(data.lastName || "");
-      setUsername(data.username || "");
-      setEmail(data.email || "");
-      setBio(data.bio || "");
-      setWebsite(data.website || "");
-      setLocation(data.location || "");
-      setAvatar(data.avatar || "");
-      setCoverImage(data.coverImage || "");
-      setId(data.id || "");
-    }
-
-    setLoading(false);
-  }, [data]);
-
-  console.log(user, "user");
-
+  const [loading, setLoading] = useState(false);
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
+  const [showError, setShowError] = useState(false);
+  const address = useAddress();
+  const router = useRouter();
   function handleChangeFile(e: any) {
     setImage(e.target.files[0]);
     console.log(e.target.files[0], "kkkkkk");
   }
-
+  console.log(image, "kkkkkk");
   const handleSubmit = async (e: any) => {
     setLoading(true);
     e.preventDefault();
@@ -96,24 +53,17 @@ export default function Example() {
           email: email,
           walletAddress: address,
           username: username,
-          about: bio,
+          about: about,
           website: website,
           avatar: imageUrl,
-          user_id: id,
         };
         console.log(data, "data");
         profileService
-          .updateProfile(data)
+          .createProfile(data)
           .then((res) => {
             setLoading(false);
             localStorage.setItem("profile", JSON.stringify(res.data));
-            Toast({
-              title: "Success",
-              description: "Profile updated successfully",
-              status: "success",
-              duration: 9000,
-              isClosable: true,
-            });
+            router.push("/profile");
             console.log(res.data);
           })
           .catch((err) => {
@@ -190,8 +140,8 @@ export default function Example() {
                         <div className="mt-1">
                           <textarea
                             id="about"
-                            value={bio}
-                            onChange={(e) => setBio(e.target.value)}
+                            value={about}
+                            onChange={(e) => setAbout(e.target.value)}
                             name="about"
                             rows={3}
                             className="block dark:text-white w-full mt-1 bg-white border-gray-300 rounded-md shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm dark:bg-[#1b1324]"
@@ -220,7 +170,7 @@ export default function Example() {
                           >
                             <img
                               className="w-full h-full rounded-full"
-                              src={avatar ? avatar : data?.avatar}
+                              src={image ? image : user.imageUrl}
                               alt=""
                             />
                           </div>
@@ -248,7 +198,7 @@ export default function Example() {
                       <div className="relative hidden overflow-hidden rounded-full lg:block">
                         <img
                           className="relative w-40 h-40 rounded-full"
-                          src={avatar ? avatar : data?.avatar}
+                          src={image ? image : user.imageUrl}
                           alt=""
                         />
                         <label

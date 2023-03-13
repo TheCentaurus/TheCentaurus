@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { BsSearch, BsSun } from "react-icons/bs";
-import { FiMoreHorizontal } from "react-icons/fi";
 import { IoNotifications } from "react-icons/io5";
 import styled from "styled-components";
 import logo from "../assets/logo.svg";
@@ -13,6 +12,7 @@ import Translate from "./Translate";
 
 import useMarketplace from "@/hooks/useMarketplace";
 import {
+  Avatar,
   Menu,
   MenuButton,
   MenuItem,
@@ -27,6 +27,7 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 
+import profileService from "@/api/profile.service";
 import { useAddress } from "@thirdweb-dev/react";
 import { useRouter } from "next/router";
 
@@ -46,6 +47,14 @@ export function Nav() {
   const [data, setData] = useState([]);
   const [filteredList, setFilteredList] = useState<any>([]);
   const [searchQuery, setSearchQuery] = useState("");
+  const [avatar, setAvatar] = useState("");
+  const [username, setUsername] = useState("");
+
+  interface ProfileData {
+    avatar: string;
+    username: string;
+  }
+
   const toggling = () => setIsOpenDropdown(!isOpenDropdown);
 
   const onOptionClicked = (value) => () => {
@@ -113,6 +122,16 @@ export function Nav() {
   });
   const router = useRouter();
   const address = useAddress();
+
+  useEffect(() => {
+    profileService.getProfile(address).then((res) => {
+      console.log(res.data[0], "res");
+
+      setData(res.data[0]);
+      setAvatar(res.data[0]?.avatar);
+      setUsername(res.data[0]?.username);
+    });
+  }, [address]);
 
   // make a funtion to search and filter an object..
 
@@ -255,105 +274,104 @@ export function Nav() {
             />
           </div>
 
-          <div className="flex items-center justify-center text-yellow-300 font-bold max-h-[60px] rounded-sm py-[3px] px-[2px] button-custom">
-            <button
-              onClick={() => router.push("/connect")}
-              className="border-[1px] dark:border-yellow-300 border-[#261a2f] cursor-pointer dark:text-yellow-300 text-[#261a2f] font-bold lg:text-sm text-[12px] px-4 rounded-xl  py-[10px]"
-            >
-              Connect Wallet
-            </button>
-          </div>
+          {!address ? (
+            <div className="flex items-center justify-center text-yellow-300 font-bold max-h-[60px] rounded-sm py-[3px] px-[2px] button-custom">
+              <button
+                onClick={() => router.push("/connect")}
+                className="border-[1px] dark:border-yellow-300 border-[#261a2f] cursor-pointer dark:text-yellow-300 text-[#261a2f] font-bold lg:text-sm text-[12px] px-4 rounded-xl  py-[10px]"
+              >
+                Connect Wallet
+              </button>
+            </div>
+          ) : (
+            <div className="md:hidden lg:block">
+              <Menu>
+                <MenuButton className=" cursor-pointer dark:text-[#E6E0FA] text-[#261a2f] font-bold lg:text-sm text-[12px] rounded-xl">
+                  <Avatar size="sm" src={avatar} name={username} />
+                </MenuButton>
+                <MenuList border={"none"} bg={"#1b1324a1"} color={"#E6E0FA"}>
+                  <Translate />
+                  {/* </MenuItem> */}
+                  {address && (
+                    <>
+                      <MenuItem
+                        _focus={{
+                          background: "#1b1324",
+                        }}
+                        _hover={{
+                          background: "#1b1324",
+                          color: "teal.500",
+                        }}
+                        onClick={() => {
+                          router.push("/profile");
+                        }}
+                      >
+                        Profile
+                      </MenuItem>
+                      <MenuItem
+                        _focus={{
+                          background: "#1b1324",
+                        }}
+                        _hover={{
+                          background: "#1b1324",
+                          color: "teal.500",
+                        }}
+                        onClick={() => {
+                          router.push("/my-collections");
+                        }}
+                      >
+                        My Collection
+                      </MenuItem>
+                    </>
+                  )}
 
-          <div className="md:hidden lg:block">
-            <Menu>
-              <MenuButton className="border-[1px] dark:border-yellow-300 border-[#261a2f] cursor-pointer dark:text-[#E6E0FA] text-[#261a2f] font-bold lg:text-sm text-[12px] rounded-xl px-[15px] py-[10px]">
-                <FiMoreHorizontal
-                  size={20}
-                  className="text-center dark:text-yellow-300 text-[#261a2f]"
-                />
-              </MenuButton>
-              <MenuList border={"none"} bg={"#1b1324a1"} color={"#E6E0FA"}>
-                <Translate />
-                {/* </MenuItem> */}
-                {address && (
-                  <>
-                    <MenuItem
-                      _focus={{
-                        background: "#1b1324",
-                      }}
-                      _hover={{
-                        background: "#1b1324",
-                        color: "teal.500",
-                      }}
-                      onClick={() => {
-                        router.push("/profile");
-                      }}
-                    >
-                      Profile
-                    </MenuItem>
-                    <MenuItem
-                      _focus={{
-                        background: "#1b1324",
-                      }}
-                      _hover={{
-                        background: "#1b1324",
-                        color: "teal.500",
-                      }}
-                      onClick={() => {
-                        router.push("/my-collections");
-                      }}
-                    >
-                      My Collection
-                    </MenuItem>
-                  </>
-                )}
-
-                <MenuItem
-                  _focus={{
-                    background: "#1b1324",
-                  }}
-                  _hover={{
-                    background: "#1b1324",
-                    color: "teal.500",
-                  }}
-                >
-                  DEX
-                </MenuItem>
-                <MenuItem
-                  _hover={{
-                    background: "#1b1324",
-                    color: "teal.500",
-                  }}
-                >
-                  $CENT
-                </MenuItem>
-                <MenuItem
-                  _hover={{
-                    background: "#1b1324",
-                    color: "teal.500",
-                  }}
-                >
-                  WALLET
-                </MenuItem>
-                <MenuItem
-                  _hover={{
-                    background: "#1b1324",
-                    color: "teal.500",
-                  }}
-                >
-                  RESOURCES
-                </MenuItem>
-                <MenuItem
-                  _hover={{
-                    background: "#1b1324",
-                    color: "teal.500",
-                  }}
-                >
-                  HELP
-                </MenuItem>
-              </MenuList>
-            </Menu>
-          </div>
+                  <MenuItem
+                    _focus={{
+                      background: "#1b1324",
+                    }}
+                    _hover={{
+                      background: "#1b1324",
+                      color: "teal.500",
+                    }}
+                  >
+                    DEX
+                  </MenuItem>
+                  <MenuItem
+                    _hover={{
+                      background: "#1b1324",
+                      color: "teal.500",
+                    }}
+                  >
+                    $CENT
+                  </MenuItem>
+                  <MenuItem
+                    _hover={{
+                      background: "#1b1324",
+                      color: "teal.500",
+                    }}
+                  >
+                    WALLET
+                  </MenuItem>
+                  <MenuItem
+                    _hover={{
+                      background: "#1b1324",
+                      color: "teal.500",
+                    }}
+                  >
+                    RESOURCES
+                  </MenuItem>
+                  <MenuItem
+                    _hover={{
+                      background: "#1b1324",
+                      color: "teal.500",
+                    }}
+                  >
+                    HELP
+                  </MenuItem>
+                </MenuList>
+              </Menu>
+            </div>
+          )}
 
           {/* blockachain menu */}
           <DropDownContainer className="md:hidden lg:block">

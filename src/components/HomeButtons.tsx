@@ -91,7 +91,7 @@ export function HomeButtons() {
               className=" w-[20px] h-[20px] mr-2 rounded-full"
               alt=""
             />
-            Cardinals
+            Cardano
           </motion.a>
           <motion.a
             href="/connect"

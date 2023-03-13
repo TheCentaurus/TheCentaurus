@@ -1,9 +1,11 @@
 import {
+  useAddress,
   useCoinbaseWallet,
   useMetamask,
   useWalletConnect,
 } from "@thirdweb-dev/react";
 import { useRouter } from "next/router";
+import { useEffect } from "react";
 import bg from "../assets/bgcoin.jpeg";
 import logo from "../assets/logo.svg";
 
@@ -11,8 +13,19 @@ export default function ConnectPage() {
   const connectWithCoinbaseWallet = useCoinbaseWallet();
   const connectWithMetamask = useMetamask();
   const connectWithWalletConnect = useWalletConnect();
+  const address = useAddress();
 
   const router = useRouter();
+
+  // check if the user is connected to a wallet
+
+  // check if user is registered
+
+  useEffect(() => {
+    if (address) {
+      router.push(`/create-profile?address=${address}`);
+    }
+  }, [address]);
 
   return (
     <div className="lg:flex bg-[#d5eef1ad] min-h-screen dark:bg-[#2A243D] ">
@@ -42,7 +55,7 @@ export default function ConnectPage() {
         <div className="w-full flex flex-col space-y-5">
           <button
             onClick={() => connectWithMetamask()}
-            className="hover:scale-105 transform transition duration-300 px-6 py-1 text-lg border-[#2a243d] dark:text-[#2a243d] cursor-pointer border-[1px] dark:border-[#f6d30b8f] flex space-x-3 rounded-xl dark:bg-[#2A243D] bg-transparent z-20"
+            className="hover:scale-105 transform transition duration-300 px-6 py-1 text-lg border-[#2a243d] dark:text-[#2a243d] cursor-pointer border-[1px] dark:border-[#f6d30b00] flex space-x-3 rounded-xl dark:bg-[#2d2939] bg-transparent z-20"
           >
             <img src="metamask.svg" className="w-7" alt="" />
             <span className="dark:text-[#fff] text-[#413A5A]">MetaMask</span>

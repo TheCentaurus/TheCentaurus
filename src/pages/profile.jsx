@@ -6,11 +6,35 @@ import { useRouter } from "next/router";
 import { FiEdit } from "react-icons/fi";
 import { Layout } from "../components/Layout";
 
+import profileService from "@/api/profile.service";
 import ProfileCards from "@/components/ProfileCards";
+import { useEffect, useState } from "react";
 
 function Profile() {
   const address = useAddress();
   const router = useRouter();
+  const [data, setData] = useState({});
+  const [profile, setProfile] = useState({
+    name: "",
+    address: "",
+    bio: "",
+    avatar: "",
+    cover: "",
+    website: "",
+  });
+
+  console.log(address, "address");
+
+  // fetch data from backend
+  useEffect(() => {
+    profileService.getProfile(address).then((res) => {
+      console.log(res.data[0], "res");
+      
+      setData(res.data[0]);
+    });
+  }, [address]);
+  console.log(profile, "profile");
+
   return (
     <Layout>
       <div className="lg:pt-7 xl:pt-[7.1rem]">
@@ -23,7 +47,13 @@ function Profile() {
 
           <Container>
             <img
-              src="/avatar.jpg"
+              src={
+                data?.avatar ? (
+                  data.avatar
+                ) : (
+                  <div className="animate-pulse bg-[#413A5A] dark:bg-[#E6E0FA] h-[80px] w-[80px] md:h-[100px] md:w-[100px] xl:h-[180px] xl:w-[180px] rounded-md"></div>
+                )
+              }
               className="rounded-full h-[80px] w-[80px] md:h-[100px] md:w-[100px] xl:h-[180px] xl:w-[180px] object-cover -mt-16 md:-mt-20 xl:-mt-36 ring-4 lg:ring-[6px] ring-[#f0fbef] dark:ring-secondary absolute"
               alt=""
             />
@@ -36,19 +66,25 @@ function Profile() {
             <div className="flex z-20 justify-between my-5 ml-5">
               <div>
                 <h1 className="font-semibold text-2xl text-[#413A5A] dark:text-white">
-                  John Doe
+                  {data?.username ? (
+                    data.username
+                  ) : (
+                    <div className="animate-pulse bg-[#413A5A] dark:bg-[#E6E0FA] h-4 w-40 rounded-md"></div>
+                  )}
                 </h1>
                 <div className="flex z-20 space-x-5">
                   <h3 className="font-medium text-sm text-[#413A5A] dark:text-white">
-                    {address
-                      ? `${address?.substring(0, 5)}...${address?.substring(
-                          address?.length - 5
-                        )}`
-                      : `You're not logged in`}
+                    {data?.walletAddress ? (
+                      data.walletAddress.slice(0, 6) +
+                      "..." +
+                      data.walletAddress.slice(-4)
+                    ) : (
+                      <div className="animate-pulse mt-1 bg-[#413A5A] dark:bg-[#E6E0FA] h-4 w-40 rounded-md"></div>
+                    )}
                   </h3>
-                  {address && (
+                  {data?.createdAt && (
                     <h3 className="font-medium text-sm text-[#413A5A] dark:text-white">
-                      Joined January 2023
+                      Joined {profile?.createdAt ? data.createdAt : "2021"}
                     </h3>
                   )}
                 </div>
