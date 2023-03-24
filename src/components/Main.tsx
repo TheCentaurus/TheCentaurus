@@ -11,9 +11,9 @@ export function Main() {
   const sampleData = {
     data: [
       {
-        title: "yellow Bang",
+        title: "Yellow Bang",
         description:
-          "yellow Bang is a platform for the people to connect and share their ideas and experiences with the world.",
+          "Yellow Bang is a platform for the people to connect and share their ideas and experiences with the world.",
         pic: {
           src: cardpic,
         },
@@ -117,7 +117,7 @@ export function Main() {
                   scale: 0.9,
                 }}
                 transition={{ duration: 0.2, ease: [0.6, 0.05, -0.01, 0.9] }}
-                className="px-6 py-1  ml-8 text-lg border-[#2a243d] dark:text-[#F6D10B] cursor-pointer border-[1px] dark:border-[#F6D10B]  rounded-xl bg-transparent z-20"
+                className="px-6 py-1  ml-8 text-lg border-[#2a243d] dark:text-[#F6D10B] cursor-pointer border-[2px] dark:border-[#F6D10B]  rounded-xl bg-transparent z-20"
                 onClick={() => router.push("/explore")}
               >
                 Explore

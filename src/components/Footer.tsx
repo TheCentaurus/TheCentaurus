@@ -1,4 +1,5 @@
 import { Tooltip } from "@chakra-ui/react";
+import { useAddress } from "@thirdweb-dev/react";
 import Link from "next/link";
 import { AiOutlineFacebook, AiOutlineInstagram } from "react-icons/ai";
 import { FaMediumM } from "react-icons/fa";
@@ -8,6 +9,7 @@ import audit from "../assets/audit.png";
 import logo from "../assets/logo.svg";
 
 export function Footer() {
+  const address = useAddress();
   return (
     <div className="dark:bg-[#120E17] bg-[#e1eff0ad] z-20">
       <footer className="dark:text-[#8175A7] text-[#413A5A] font-light text-sm z-20">
@@ -37,7 +39,7 @@ export function Footer() {
               <nav className="mb-10 list-none">
                 <li>
                   <Link
-                    href="/profile"
+                    href={address?.length ? "/profile" : "/connect"}
                     className="dark:text-[#8175A7] text-[#413A5A]"
                   >
                     Profile
@@ -45,7 +47,7 @@ export function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="/settings"
+                    href={address?.length ? "/profile" : "/connect"}
                     className="dark:text-[#8175A7] text-[#413A5A]"
                   >
                     Settings
@@ -208,16 +210,15 @@ export function Footer() {
                       </a>
                     </Tooltip>
 
-                    <Tooltip label="Lighting">
+                    <Tooltip label="Bitcoin Ordinals">
                       <a
-                        href="https://lightning.network/"
+                        href="https://bitcoinordinals.com/"
                         target="_blank"
                         rel="noreferrer"
                       >
-                        {" "}
                         <div className="flex items-center w-full h-12 p-1 m-auto align-middle rounded-full">
                           <img
-                            src="/lighting.svg"
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/1200px-Bitcoin.svg.png"
                             alt=""
                             className="object-contain w-6 h-6 m-auto"
                           />
@@ -268,7 +269,7 @@ export function Footer() {
             <div className="m-auto z-20">
               {" "}
               <p className="text-sm text-center md:text-left dark:text-[#8175A7] text-[#413A5A] sm:text-left">
-                © 2023 All Rights Reserved The Centaurus.io
+                © 2023 All Rights Reserved thecentaurus.io
               </p>
             </div>
             <div className="m-auto mt-5 md:mt-0 z-20">

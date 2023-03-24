@@ -10,7 +10,7 @@ function Privacy() {
             <div className="content">
               <div className="nft_static12">
                 <h1 className="my-5 text-3xl lg:text-5xl text-black dark:text-white">
-                  PRIVACY POLICY
+                  Privacy Policy
                 </h1>
 
                 <p>

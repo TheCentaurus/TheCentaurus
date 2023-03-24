@@ -1,13 +1,11 @@
+import { Tab, TabList, TabPanel, TabPanels, Tabs } from "@chakra-ui/react";
+import { useRouter } from "next/router";
 import React from "react";
 import { BsImage } from "react-icons/bs";
-import { FaUser } from "react-icons/fa";
-import { Layout } from "../components/Layout";
-import { FormControl, FormLabel, Stack, Switch } from "@chakra-ui/react";
-import Filters from "../components/Filters";
-import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
-import ProfileCards from "../components/ProfileCards";
 import { MdOutlineReport } from "react-icons/md";
-import { useRouter } from "next/router";
+import Filters from "../components/Filters";
+import { Layout } from "../components/Layout";
+import ProfileCards from "../components/ProfileCards";
 function Profile() {
   const [value, setValue] = React.useState("1");
   // make a preview of the image
@@ -220,7 +218,7 @@ function Profile() {
               <button
                 onClick={handleFollow}
                 type="button"
-                className="z-20 text-xs rounded-lg border-yellow-300 text-yellow-300 border-[1px] py-2 px-4"
+                className="z-20 text-xs rounded-lg border-yellow-300 text-yellow-300 border-[2px] py-2 px-4"
               >
                 {!follow ? "Follow" : "Unfollow"}
               </button>

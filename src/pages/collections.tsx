@@ -207,13 +207,13 @@ function Collections(props: any) {
               <div className="z-20 flex space-x-4 mb-5 ">
                 <button
                   onClick={onOpenBuy}
-                  className="z-20 rounded-lg border-yellow-300 text-yellow-300 border-[1px] p-2"
+                  className="z-20 rounded-lg border-yellow-300 text-yellow-300 border-[2px] p-2"
                 >
                   Buy now
                 </button>
                 <button
                   onClick={onOpen}
-                  className="z-20 rounded-lg border-yellow-300 text-yellow-300 border-[1px] p-2"
+                  className="z-20 rounded-lg border-yellow-300 text-yellow-300 border-[2px] p-2"
                 >
                   Place a bid
                 </button>
@@ -221,7 +221,7 @@ function Collections(props: any) {
                 {/* LIsting */}
                 <button
                   onClick={() => router.push("/create-listing")}
-                  className="z-20 rounded-lg border-yellow-300 text-yellow-300 border-[1px] p-2"
+                  className="z-20 rounded-lg border-yellow-300 text-yellow-300 border-[2px] p-2"
                 >
                   Create Listing
                 </button>
@@ -390,7 +390,7 @@ function Collections(props: any) {
                 </p>
                 <div className="flex items-center mt-2">
                   <input
-                    className="z-20 w-full rounded-lg border-[1px] border-[#413A5A] dark:border-[#f1f1f187] dark:bg-[#2A243D] dark:text-[#fff] text-[#413A5A] p-2"
+                    className="z-20 w-full rounded-lg border-[2px] border-[#413A5A] dark:border-[#f1f1f187] dark:bg-[#2A243D] dark:text-[#fff] text-[#413A5A] p-2"
                     type="text"
                     placeholder="0.00"
                   />
@@ -402,11 +402,11 @@ function Collections(props: any) {
             </ModalBody>
 
             <ModalFooter>
-              <button className="z-20 mr-5 rounded-lg border-yellow-300 text-yellow-300 border-[1px] px-8 p-2">
+              <button className="z-20 mr-5 rounded-lg border-yellow-300 text-yellow-300 border-[2px] px-8 p-2">
                 Make Offer
               </button>
               <button
-                className="z-20 rounded-lg border-yellow-300 text-yellow-300 border-[1px] p-2"
+                className="z-20 rounded-lg border-yellow-300 text-yellow-300 border-[2px] p-2"
                 onClick={onClose}
               >
                 Close
@@ -452,12 +452,12 @@ function Collections(props: any) {
             <ModalFooter>
               <button
                 onClick={buyoutListing}
-                className="z-20 mr-5 rounded-lg border-yellow-300 text-yellow-300 border-[1px] px-8 p-2"
+                className="z-20 mr-5 rounded-lg border-yellow-300 text-yellow-300 border-[2px] px-8 p-2"
               >
                 Buy
               </button>
               <button
-                className="z-20 rounded-lg border-yellow-300 text-yellow-300 border-[1px] px-8 p-2"
+                className="z-20 rounded-lg border-yellow-300 text-yellow-300 border-[2px] px-8 p-2"
                 onClick={onCloseBuy}
               >
                 Close
