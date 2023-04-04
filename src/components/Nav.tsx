@@ -10,7 +10,6 @@ import MyThemeContext from "../store/themeContext";
 import { Sidebar } from "./Sidebar";
 import Translate from "./Translate";
 
-import useMarketplace from "@/hooks/useMarketplace";
 import {
   Avatar,
   Menu,
@@ -38,7 +37,7 @@ export function Nav() {
   function toggleThemeHandler(): void {
     themeCtx.toggleThemeHandler();
   }
-  const { nfts, isLoading } = useMarketplace();
+
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [showSidebar, setShowSidebar] = useState(true);
   const [isOpenDropdown, setIsOpenDropdown] = useState(false);
@@ -156,15 +155,15 @@ export function Nav() {
       return;
     }
 
-    const searchList = nfts?.filter((item) => {
-      return (
-        item?.asset?.description?.toLowerCase().indexOf(query.toLowerCase()) !==
-        -1
-      );
-    });
-    console.log(searchList, "llll");
-    // @ts-ignore
-    setFilteredList(searchList);
+    // const searchList = nfts?.filter((item) => {
+    //   return (
+    //     item?.asset?.description?.toLowerCase().indexOf(query.toLowerCase()) !==
+    //     -1
+    //   );
+    // });
+    // console.log(searchList, "llll");
+    // // @ts-ignore
+    // setFilteredList(searchList);
   };
 
   return (
@@ -265,7 +264,7 @@ export function Nav() {
           </form>
         </div>
 
-        <div className="flex items-center justify-between space-x-3 md:w-5/12 2xl:space-x-5">
+        <div className="flex items-center justify-between space-x-3 md:w-6/12 2xl:space-x-5">
           <div className=" dark:text-[#E6E0FA] text-[#261a2f]">
             <IoNotifications
               size={25}

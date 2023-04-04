@@ -1,7 +1,6 @@
 import { Container } from "@/components/Container";
 import { collection, products } from "@/utils/data";
 import { Tab, TabList, TabPanel, TabPanels, Tabs } from "@chakra-ui/react";
-import { useAddress } from "@thirdweb-dev/react";
 import { useRouter } from "next/router";
 import { FiEdit } from "react-icons/fi";
 import { Layout } from "../components/Layout";
@@ -11,7 +10,8 @@ import ProfileCards from "@/components/ProfileCards";
 import { useEffect, useState } from "react";
 
 function Profile() {
-  const address = useAddress();
+  // get address from wagmi
+
   const router = useRouter();
   const [data, setData] = useState({});
   const [profile, setProfile] = useState({
@@ -23,16 +23,17 @@ function Profile() {
     website: "",
   });
 
+  let address = localStorage.getItem("address");
   console.log(address, "address");
 
   // fetch data from backend
   useEffect(() => {
     profileService.getProfile(address).then((res) => {
       console.log(res.data[0], "res");
-      
-      setData(res.data[0]);
+
+      setData(res.data);
     });
-  }, [address]);
+  }, []);
   console.log(profile, "profile");
 
   return (
