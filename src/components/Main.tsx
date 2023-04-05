@@ -6,6 +6,7 @@ import prmElipsePic from "../assets/plm-eclipse.png";
 import prmCardPic from "../assets/plm-rect.png";
 import shakerElipsePic from "../assets/shaker-elipse.png";
 import shakerCardPic from "../assets/shaker-rect.png";
+import shiny from "../assets/shiny.png";
 import { Feature } from "./Feature";
 export function Main() {
   const sampleData = {
@@ -98,11 +99,17 @@ export function Main() {
                   scale: 0.9,
                 }}
                 transition={{ duration: 0.2, ease: [0.6, 0.05, -0.01, 0.9] }}
-                className="px-6 flex items-center text-[#413A5A] cursor-pointer bg-gradient-to-t from-[#F6D10B] to-[#FFEB84]  rounded-xl z-20"
+                className="px-6 bg-[#F6D10B] flex relative items-center text-[#413A5A] cursor-pointer rounded-xl z-20"
                 onClick={() => router.push("/create")}
               >
+                <img
+                  src={shiny.src}
+                  alt=""
+                  className="absolute top-[2px] w-[94%] h-[18px] right-[2px] z-[-1]"
+                />
                 Create
               </motion.p>
+
               <motion.p
                 initial={{ x: -20, y: 200 }}
                 animate={{
@@ -117,7 +124,7 @@ export function Main() {
                   scale: 0.9,
                 }}
                 transition={{ duration: 0.2, ease: [0.6, 0.05, -0.01, 0.9] }}
-                className="px-6 py-1  ml-8 text-lg border-[#2a243d] dark:text-[#F6D10B] cursor-pointer border-[2px] dark:border-[#F6D10B]  rounded-xl bg-transparent z-20"
+                className="px-6 py-1  ml-8 text-lg border-[#2a243d] dark:text-[#F6D10B] cursor-pointer border-[1px] dark:border-[#F6D10B]  rounded-xl bg-transparent z-20"
                 onClick={() => router.push("/explore")}
               >
                 Explore

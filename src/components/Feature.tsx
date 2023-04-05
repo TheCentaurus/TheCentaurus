@@ -72,12 +72,12 @@ export function Feature(props: any) {
               }}
               whileTap={{ scale: 0.9 }}
               onClick={previous}
-              className="dark:bg-[#1B1324] bg-[#dcf0f1] border-[2px] border-[#1b13247a] dark:border-none cursor-pointer h-7 w-7 md:h-10 md:w-10 justify-center  p-2 flex items-center rounded-lg"
+              className="dark:bg-[#1B1324] bg-[#dcf0f1] border-[1px] border-[#1b13247a] dark:border-none cursor-pointer h-7 w-7 md:h-10 md:w-10 justify-center  p-2 flex items-center rounded-lg"
             >
               <AiOutlineLeft className="dark:text-[#F6D10B] text-[#000]" />
             </motion.div>
           ) : (
-            <div className="dark:bg-[#1B1324] bg-[#dcf0f1] border-[2px] border-[#1b13247a] dark:border-none h-7 w-7 md:h-10 md:w-10 justify-center cursor-not-allowed  p-2 flex items-center rounded-lg">
+            <div className="dark:bg-[#1B1324] bg-[#dcf0f1] border-[1px] border-[#1b13247a] dark:border-none h-7 w-7 md:h-10 md:w-10 justify-center cursor-not-allowed  p-2 flex items-center rounded-lg">
               <AiOutlineLeft className="dark:text-[#F6D10B] text-[#000]" />
             </div>
           )}
@@ -103,12 +103,12 @@ export function Feature(props: any) {
               }}
               whileTap={{ scale: 0.9 }}
               onClick={next}
-              className="dark:bg-[#1B1324] bg-[#dcf0f1] border-[2px] border-[#1b13247a] dark:border-none  h-7 w-7 md:h-10 cursor-pointer md:w-10 justify-center  p-2 flex items-center rounded-lg"
+              className="dark:bg-[#1B1324] bg-[#dcf0f1] border-[1px] border-[#1b13247a] dark:border-none  h-7 w-7 md:h-10 cursor-pointer md:w-10 justify-center  p-2 flex items-center rounded-lg"
             >
               <AiOutlineRight className="dark:text-[#F6D10B] text-[#000]" />
             </motion.div>
           ) : (
-            <div className="dark:bg-[#1B1324] bg-[#dcf0f1] border-[2px] border-[#1b13247a] dark:border-none  h-7 w-7 md:h-10 md:w-10 justify-center  p-2 flex items-center rounded-lg cursor-not-allowed">
+            <div className="dark:bg-[#1B1324] bg-[#dcf0f1] border-[1px] border-[#1b13247a] dark:border-none  h-7 w-7 md:h-10 md:w-10 justify-center  p-2 flex items-center rounded-lg cursor-not-allowed">
               <AiOutlineRight className="dark:text-[#F6D10B] text-[#000]" />
             </div>
           )}
@@ -137,7 +137,7 @@ export function Feature(props: any) {
               transition: { duration: 0.3 },
             }}
             whileTap={{ scale: 0.9 }}
-            className="px-6 py-1  ml-4 text-sx lg:text-lg text-[#1B1324] border-[#1B1324] dark:text-[#F6D10B] border-[2px] dark:border-[#F6D10B]  rounded-xl bg-transparent"
+            className="px-6 py-1  ml-4 text-sx lg:text-lg text-[#1B1324] border-[#1B1324] dark:text-[#F6D10B] border-[1px] dark:border-[#F6D10B]  rounded-xl bg-transparent"
           >
             Follow
           </motion.button>

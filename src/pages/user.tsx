@@ -218,7 +218,7 @@ function Profile() {
               <button
                 onClick={handleFollow}
                 type="button"
-                className="z-20 text-xs rounded-lg border-yellow-300 text-yellow-300 border-[2px] py-2 px-4"
+                className="z-20 text-xs rounded-lg border-yellow-300 text-yellow-300 border-[1px] py-2 px-4"
               >
                 {!follow ? "Follow" : "Unfollow"}
               </button>

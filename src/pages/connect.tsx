@@ -104,7 +104,7 @@ export default function ConnectPage() {
         <div className="w-full flex flex-col space-y-5">
           <button
             onClick={() => handleAuth()}
-            className="hover:scale-105 transform transition duration-300 px-6 py-1 text-lg border-[#2a243d] dark:text-[#2a243d] cursor-pointer border-[2px] dark:border-[#f6d30b00] flex space-x-3 rounded-xl dark:bg-[#332b49] bg-transparent z-20"
+            className="hover:scale-105 transform transition duration-300 px-6 py-1 text-lg border-[#2a243d] dark:text-[#2a243d] cursor-pointer border-[1px] dark:border-[#f6d30b00] flex space-x-3 rounded-xl dark:bg-[#332b49] bg-transparent z-20"
           >
             <img src="metamask.svg" className="w-7" alt="" />
             <span className="dark:text-[#fff] text-[#413A5A]">MetaMask</span>
@@ -112,7 +112,7 @@ export default function ConnectPage() {
 
           <button
             // onClick={() => connectWithCoinbaseWallet()}
-            className="hover:scale-105 transform transition duration-300 px-6 py-1 text-lg border-[#2a243d] dark:text-[#2a243d] cursor-pointer border-[2px] dark:border-[#f6d30b00] flex space-x-3 rounded-xl dark:bg-[#332b49] bg-transparent z-20"
+            className="hover:scale-105 transform transition duration-300 px-6 py-1 text-lg border-[#2a243d] dark:text-[#2a243d] cursor-pointer border-[1px] dark:border-[#f6d30b00] flex space-x-3 rounded-xl dark:bg-[#332b49] bg-transparent z-20"
           >
             <img src="coinbase.svg" className="w-7" alt="" />
             <span className="dark:text-[#fff] text-[#413A5A]">
@@ -122,7 +122,7 @@ export default function ConnectPage() {
 
           <button
             // onClick={() => connectWithWalletConnect()}
-            className="hover:scale-105 transform transition duration-300 px-6 py-1 text-lg border-[#2a243d] dark:text-[#2a243d] cursor-pointer border-[2px] dark:border-[#f6d30b00] flex space-x-3 rounded-xl dark:bg-[#332b49] bg-transparent z-20"
+            className="hover:scale-105 transform transition duration-300 px-6 py-1 text-lg border-[#2a243d] dark:text-[#2a243d] cursor-pointer border-[1px] dark:border-[#f6d30b00] flex space-x-3 rounded-xl dark:bg-[#332b49] bg-transparent z-20"
           >
             <img src="walletconnect.svg" className="w-7" alt="" />
             <span className="dark:text-[#fff] text-[#413A5A]">

@@ -9,7 +9,8 @@ const user = {
   name: "User Name",
   handle: "username",
   email: "user@example.com",
-  imageUrl: "avatar.jpg",
+  imageUrl: "art.png",
+  bannerUrl: "art.png",
 };
 
 export default function Example() {
@@ -27,10 +28,27 @@ export default function Example() {
   const [email, setEmail] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const [showError, setShowError] = useState(false);
+  const [facebook, setFacebook] = useState("");
+  const [twitter, setTwitter] = useState("");
+  const [instagram, setInstagram] = useState("");
+  const [discord, setDiscord] = useState("");
+  const [banner, setBanner] = useState("");
+  const [previewUrl, setPreviewUrl] = useState("art.png");
+  const [previewUrlBanner, setPreviewUrlBanner] = useState("art.png");
+  console.log(previewUrl, "previewUrl");
   const address = useAddress();
   const router = useRouter();
+
   function handleChangeFile(e: any) {
+    // previewUrl
+    setPreviewUrl(URL.createObjectURL(e.target.files[0]));
     setImage(e.target.files[0]);
+    console.log(e.target.files[0], "kkkkkk");
+  }
+  function handleChangeFileBanner(e: any) {
+    // previewUrl
+    setPreviewUrlBanner(URL.createObjectURL(e.target.files[0]));
+    setBanner(e.target.files[0]);
     console.log(e.target.files[0], "kkkkkk");
   }
   console.log(image, "kkkkkk");
@@ -169,8 +187,8 @@ export default function Example() {
                             aria-hidden="true"
                           >
                             <img
-                              className="w-full h-full rounded-full"
-                              src={image ? image : user.imageUrl}
+                              className="w-full h-full object-cover rounded-full"
+                              src={previewUrl}
                               alt=""
                             />
                           </div>
@@ -197,8 +215,8 @@ export default function Example() {
 
                       <div className="relative hidden overflow-hidden rounded-full lg:block">
                         <img
-                          className="relative w-40 h-40 rounded-full"
-                          src={image ? image : user.imageUrl}
+                          className="relative w-40 h-40 object-cover rounded-full"
+                          src={previewUrl}
                           alt=""
                         />
                         <label
@@ -290,6 +308,88 @@ export default function Example() {
                         className="block dark:text-white w-full mt-1 bg-white border-gray-300 rounded-md shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm dark:bg-[#1b1324]"
                       />
                     </div>
+                    {/* social media inputs */}
+                    <div className="col-span-6">
+                      <label
+                        htmlFor="url"
+                        className="block text-sm font-medium dark:text-white text-[#413A5A]"
+                      >
+                        Facebook
+                      </label>
+                      <input
+                        value={facebook}
+                        onChange={(e) => setFacebook(e.target.value)}
+                        type="text"
+                        name="url"
+                        id="url"
+                        className="block dark:text-white w-full mt-1 bg-white border-gray-300 rounded-md shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm dark:bg-[#1b1324]"
+                      />
+                      <small className="block font-medium dark:text-white text-[#413A5A]">
+                        e.g https://www.facebook.com/user
+                      </small>
+                    </div>
+
+                    <div className="col-span-12 sm:col-span-6">
+                      <label
+                        htmlFor="company"
+                        className="block text-sm font-medium dark:text-white text-[#413A5A]"
+                      >
+                        Instagram
+                      </label>
+                      <input
+                        value={instagram}
+                        onChange={(e) => setInstagram(e.target.value)}
+                        type="email"
+                        name="email"
+                        id="email"
+                        autoComplete="email"
+                        className="block dark:text-white w-full mt-1 bg-white border-gray-300 rounded-md shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm dark:bg-[#1b1324]"
+                      />
+                      <small className="block font-medium dark:text-white text-[#413A5A]">
+                        e.g https://www.instagram.com/user
+                      </small>
+                    </div>
+                    <div className="col-span-6">
+                      <label
+                        htmlFor="url"
+                        className="block text-sm font-medium dark:text-white text-[#413A5A]"
+                      >
+                        Twitter
+                      </label>
+                      <input
+                        value={twitter}
+                        onChange={(e) => setTwitter(e.target.value)}
+                        type="text"
+                        name="url"
+                        id="url"
+                        className="block dark:text-white w-full mt-1 bg-white border-gray-300 rounded-md shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm dark:bg-[#1b1324]"
+                      />
+                      <small className="block font-medium dark:text-white text-[#413A5A]">
+                        e.g https://www.twitter.com/user
+                      </small>
+                    </div>
+
+                    <div className="col-span-12 sm:col-span-6">
+                      <label
+                        htmlFor="company"
+                        className="block text-sm font-medium dark:text-white text-[#413A5A]"
+                      >
+                        Discord
+                      </label>
+                      <input
+                        value={discord}
+                        onChange={(e) => setDiscord(e.target.value)}
+                        type="email"
+                        name="email"
+                        id="email"
+                        autoComplete="email"
+                        className="block dark:text-white w-full mt-1 bg-white border-gray-300 rounded-md shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm dark:bg-[#1b1324]"
+                      />
+                      <small className="block font-medium dark:text-white text-[#413A5A]">
+                        e.g https://www.discord.gg/tXdg..
+                      </small>
+                    </div>
+
                     <div className="col-span-12">
                       <label
                         htmlFor="url"
@@ -306,6 +406,68 @@ export default function Example() {
                         id="url"
                         className="block dark:text-white w-full mt-1 bg-white border-gray-300 rounded-md shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm dark:bg-[#1b1324]"
                       />
+                    </div>
+                  </div>
+                  <div className="flex-grow mt-6 lg:mt-6 lg:flex-shrink-0 lg:flex-grow-0">
+                    <p
+                      className="text-sm font-medium dark:text-white text-[#413A5A]"
+                      aria-hidden="true"
+                    >
+                      Banner
+                    </p>
+                    <div className="mt-1 lg:hidden">
+                      <div className="flex items-center">
+                        <div
+                          className="flex-shrink-0 inline-block w-12 h-12 overflow-hidden rounded-full"
+                          aria-hidden="true"
+                        >
+                          <img
+                            className="w-full h-full rounded-xl"
+                            src={previewUrlBanner}
+                            alt=""
+                          />
+                        </div>
+                        <div className="ml-5 rounded-md shadow-sm">
+                          <div className="relative flex items-center justify-center px-3 py-2 border border-gray-300 rounded-md group focus-within:ring-2 focus-within:ring-sky-500 focus-within:ring-offset-2 hover:bg-gray-50">
+                            <label
+                              htmlFor="mobile-user-photo"
+                              className="pointer-events-none relative text-sm font-medium leading-4 dark:text-white text-[#413A5A]"
+                            >
+                              <span>Change</span>
+                              <span className="sr-only"> user banner</span>
+                            </label>
+                            <input
+                              onChange={(e) => handleChangeFileBanner(e)}
+                              id="mobile-user-photo"
+                              name="user-photo"
+                              type="file"
+                              className="absolute w-full h-full border-gray-300 rounded-md opacity-0 cursor-pointer"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="relative hidden overflow-hidden rounded-lg lg:block">
+                      <img
+                        className="relative w-full h-40 rounded-lg object-cover"
+                        src={previewUrlBanner}
+                        alt=""
+                      />
+                      <label
+                        htmlFor="desktop-user-photo"
+                        className="absolute inset-0 flex items-center justify-center w-full h-full text-sm font-medium text-white bg-black bg-opacity-75 opacity-0 focus-within:opacity-100 hover:opacity-100"
+                      >
+                        <span>Change</span>
+                        <span className="sr-only"> user photo</span>
+                        <input
+                          onChange={(e) => handleChangeFileBanner(e)}
+                          type="file"
+                          id="desktop-user-photo"
+                          name="user-photo"
+                          className="absolute inset-0 w-full h-full border-gray-300 rounded-md opacity-0 cursor-pointer"
+                        />
+                      </label>
                     </div>
                   </div>
                   <div className="py-6 ">

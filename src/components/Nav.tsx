@@ -11,7 +11,6 @@ import { Sidebar } from "./Sidebar";
 import Translate from "./Translate";
 
 import {
-  Avatar,
   Menu,
   MenuButton,
   MenuItem,
@@ -48,6 +47,7 @@ export function Nav() {
   const [searchQuery, setSearchQuery] = useState("");
   const [avatar, setAvatar] = useState("");
   const [username, setUsername] = useState("");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   interface ProfileData {
     avatar: string;
@@ -277,7 +277,7 @@ export function Nav() {
             <div className="flex items-center justify-center text-yellow-300 font-bold max-h-[60px] rounded-sm py-[3px] px-[2px] button-custom">
               <button
                 onClick={() => router.push("/connect")}
-                className="border-[2px] dark:border-yellow-300 border-[#261a2f] cursor-pointer dark:text-yellow-300 text-[#261a2f] font-bold lg:text-sm text-[12px] px-4 rounded-xl  py-[10px]"
+                className="border-[1px] dark:border-yellow-300 border-[#261a2f] cursor-pointer dark:text-yellow-300 text-[#261a2f] font-bold lg:text-sm text-[12px] px-4 rounded-xl  py-[10px]"
               >
                 Connect Wallet
               </button>
@@ -285,17 +285,24 @@ export function Nav() {
           ) : (
             <div className="md:hidden lg:block">
               <Menu>
-                <MenuButton className=" cursor-pointer dark:text-[#E6E0FA] text-[#261a2f] font-bold lg:text-sm text-[12px] rounded-xl">
+                <MenuButton
+                  className="cursor-pointer dark:text-[#E6E0FA] text-[#261a2f] font-bold lg:text-sm text-[12px] rounded-xl"
+                  onMouseEnter={() => setIsMenuOpen(true)}
+                  onMouseLeave={() => setIsMenuOpen(false)}
+                >
                   <Avatar size="sm" src={avatar} name={username} />
                 </MenuButton>
-                <MenuList border={"none"} bg={"#1b1324a1"} color={"#E6E0FA"}>
-                  {/* </MenuItem> */}
+                <MenuList
+                  border="none"
+                  bg="#1b1324a1"
+                  color="#E6E0FA"
+                  display={isMenuOpen ? "block" : "none"}
+                  onMouseEnter={() => setIsMenuOpen(true)}
+                  onMouseLeave={() => setIsMenuOpen(false)}
+                >
                   {address && (
                     <>
                       <MenuItem
-                        _focus={{
-                          background: "#1b1324",
-                        }}
                         _hover={{
                           background: "#1b1324",
                           color: "teal.500",
@@ -307,9 +314,6 @@ export function Nav() {
                         Profile
                       </MenuItem>
                       <MenuItem
-                        _focus={{
-                          background: "#1b1324",
-                        }}
                         _hover={{
                           background: "#1b1324",
                           color: "teal.500",
@@ -324,9 +328,6 @@ export function Nav() {
                   )}
 
                   <MenuItem
-                    _focus={{
-                      background: "#1b1324",
-                    }}
                     _hover={{
                       background: "#1b1324",
                       color: "teal.500",
@@ -367,14 +368,26 @@ export function Nav() {
                   >
                     $CENT
                   </MenuItem>
+                  <MenuItem
+                    _hover={{
+                      background: "#1b1324",
+                      color: "teal.500",
+                    }}
+                  >
+                    Sign Out
+                  </MenuItem>
                 </MenuList>
               </Menu>
             </div>
           )}
           <DropDownContainer className="md:hidden lg:block">
             <DropDownHeader
+              onMouseEnter={toggling}
+              onMouseLeave={toggling}
+              // Threshhold for opening the dropdown
+
               onClick={toggling}
-              className="w-full border-[2px] bg-transparent border-[#1b1324] dark:border-yellow-300 cursor-pointer text-yellow-300 font-bold lg:text-sm text-[12px] rounded-xl px-[15px] py-[10px]"
+              className="w-full border-[1px] bg-transparent border-[#1b1324] dark:border-yellow-300 cursor-pointer text-yellow-300 font-bold lg:text-sm text-[12px] rounded-xl px-[15px] py-[10px]"
             >
               <p className="dark:text-yellow-300 text-[#1b1324]">
                 {" "}
@@ -382,8 +395,11 @@ export function Nav() {
               </p>
             </DropDownHeader>
             {isOpenDropdown && (
-              <DropDownListContainer>
-                <DropDownList className="p-2 rounded-lg w-[200px]">
+              <DropDownListContainer onMouseEnter={toggling}>
+                <DropDownList
+                  onMouseEnter={toggling}
+                  className="p-2 rounded-lg w-[200px]"
+                >
                   <li
                     onClick={onOptionClicked("Ethereum")}
                     className="dark:bg-[#1b1324]  flex mb-3 items-center"
@@ -488,7 +504,7 @@ export function Nav() {
           <div>
             <button
               type="button"
-              className="px-2 py-3 mr-2 border-[2px] border-[#231C31] sm:px-5 dark:bg-[#231C31]  dark:text-yellow-400 rounded-xl"
+              className="px-2 py-3 mr-2 border-[1px] border-[#231C31] sm:px-5 dark:bg-[#231C31]  dark:text-yellow-400 rounded-xl"
               onClick={toggleThemeHandler}
             >
               <BsSun />
@@ -544,7 +560,7 @@ export function Nav() {
 
           <ModalFooter className="dark:bg-[#1b1324]">
             <button
-              className="w-full rounded-xl border-[2px] border-yellow-300 px-8 py-2 dark:text-[#E6E0FA] text-[#261a2f]"
+              className="w-full rounded-xl border-[1px] border-yellow-300 px-8 py-2 dark:text-[#E6E0FA] text-[#261a2f]"
               onClick={onClose}
             >
               Search
@@ -585,7 +601,7 @@ export function Nav() {
 
           <ModalFooter>
             <button
-              className=" rounded-xl border-[2px] border-yellow-300 px-8 py-2 dark:text-[#E6E0FA] text-[#261a2f]"
+              className=" rounded-xl border-[1px] border-yellow-300 px-8 py-2 dark:text-[#E6E0FA] text-[#261a2f]"
               onClick={onCloseNotifications}
             >
               Close
@@ -608,7 +624,7 @@ export function Nav() {
             <input
               type="search"
               id="default-search"
-              className="block p-3 pl-10 w-full text-sm dark:text-gray-50 bg-[#f3f3f3ae] border-[2px] border-[#261a2fb5] dark:border-none dark:bg-[#221C30]  dark:placeholder:text-[#8175A7] rounded-lg focus:outline-none focus:border-0 focus:ring-primary"
+              className="block p-3 pl-10 w-full text-sm dark:text-gray-50 bg-[#f3f3f3ae] border-[1px] border-[#261a2fb5] dark:border-none dark:bg-[#221C30]  dark:placeholder:text-[#8175A7] rounded-lg focus:outline-none focus:border-0 focus:ring-primary"
               placeholder="Search items,collections and accounts"
               required
               value={searchQuery}
@@ -661,7 +677,7 @@ export function Nav() {
 
           {/* <ModalFooter>
             <button
-              className=" rounded-xl border-[2px] border-yellow-300 px-8 py-2 dark:text-[#E6E0FA] text-[#261a2f]"
+              className=" rounded-xl border-[1px] border-yellow-300 px-8 py-2 dark:text-[#E6E0FA] text-[#261a2f]"
               onClick={onCloseNotifications}
             >
               Close
