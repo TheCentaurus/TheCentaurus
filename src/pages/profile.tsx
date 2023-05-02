@@ -1,59 +1,41 @@
 import { Container } from "@/components/Container";
+import ProfileCards from "@/components/ProfileCards";
 import { collection, products } from "@/utils/data";
 import { Tab, TabList, TabPanel, TabPanels, Tabs } from "@chakra-ui/react";
+import { MediaRenderer, useUser } from "@thirdweb-dev/react";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 import { FiEdit } from "react-icons/fi";
 import { Layout } from "../components/Layout";
-
-import profileService from "@/api/profile.service";
-import ProfileCards from "@/components/ProfileCards";
-import { useEffect, useState } from "react";
-
 function Profile() {
-  // get address from wagmi
-
   const router = useRouter();
   const [data, setData] = useState({});
-  const [profile, setProfile] = useState({
-    name: "",
-    address: "",
-    bio: "",
-    avatar: "",
-    cover: "",
-    website: "",
-  });
+  const { user, isLoggedIn } = useUser();
 
-  let address = localStorage.getItem("address");
-  console.log(address, "address");
-
-  // fetch data from backend
   useEffect(() => {
-    profileService.getProfile(address).then((res) => {
-      console.log(res.data[0], "res");
-
-      setData(res.data);
-    });
-  }, []);
-  console.log(profile, "profile");
+    if (isLoggedIn) {
+      setData(user?.data);
+    }
+  }, [isLoggedIn]);
 
   return (
     <Layout>
-      <div className="lg:pt-7 xl:pt-[7.1rem]">
+      <div>
         <div className="relative">
-          <img
-            src="/profile-bg.jpg"
+          <MediaRenderer
+            src={
+              data?.banner ||
+              "https://flowbite.com/docs/images/blog/image-1.jpg"
+            }
             className="h-[150px] sm:h-[200px] xl:h-[320px] w-full object-cover"
             alt=""
           />
 
           <Container>
-            <img
+            <MediaRenderer
               src={
-                data?.avatar ? (
-                  data.avatar
-                ) : (
-                  <div className="animate-pulse bg-[#413A5A] dark:bg-[#E6E0FA] h-[80px] w-[80px] md:h-[100px] md:w-[100px] xl:h-[180px] xl:w-[180px] rounded-md"></div>
-                )
+                data?.avatar ||
+                "https://flowbite.com/docs/images/people/110/guy-6.jpg"
               }
               className="rounded-full h-[80px] w-[80px] md:h-[100px] md:w-[100px] xl:h-[180px] xl:w-[180px] object-cover -mt-16 md:-mt-20 xl:-mt-36 ring-4 lg:ring-[6px] ring-[#f0fbef] dark:ring-secondary absolute"
               alt=""
@@ -63,8 +45,8 @@ function Profile() {
       </div>
       <Container>
         <div className="z-20 flex flex-col items-center justify-between mt-10 lg:items-stretch lg:flex-row">
-          <div className="w-full z-20 pb-5">
-            <div className="flex z-20 justify-between my-5 ml-5">
+          <div className="z-20 w-full pb-5">
+            <div className="z-20 flex justify-between my-5 ml-5">
               <div>
                 <h1 className="font-semibold text-2xl text-[#413A5A] dark:text-white">
                   {data?.username ? (
@@ -73,31 +55,29 @@ function Profile() {
                     <div className="animate-pulse bg-[#413A5A] dark:bg-[#E6E0FA] h-4 w-40 rounded-md"></div>
                   )}
                 </h1>
-                <div className="flex z-20 space-x-5">
+                <div className="z-20 flex space-x-5">
                   <h3 className="font-medium text-sm text-[#413A5A] dark:text-white">
-                    {data?.walletAddress ? (
-                      data.walletAddress.slice(0, 6) +
+                    {user?.address ? (
+                      user?.address.slice(0, 12) +
                       "..." +
-                      data.walletAddress.slice(-4)
+                      user?.address.slice(-4)
                     ) : (
                       <div className="animate-pulse mt-1 bg-[#413A5A] dark:bg-[#E6E0FA] h-4 w-40 rounded-md"></div>
                     )}
                   </h3>
                   {data?.createdAt && (
                     <h3 className="font-medium text-sm text-[#413A5A] dark:text-white">
-                      Joined {profile?.createdAt ? data.createdAt : "2021"}
+                      Joined on{" "}
+                      {data?.createdAt
+                        ? new Date(data.createdAt).toLocaleDateString()
+                        : "01/05/2023"}
                     </h3>
                   )}
                 </div>
               </div>
-              <div className="flex z-20 space-x-5">
+              <div className="z-20 flex space-x-5">
                 <button
-                  onClick={() =>
-                    router.push({
-                      pathname: "/edit-profile",
-                      query: { address: address },
-                    })
-                  }
+                  onClick={() => router.push("/edit-profile")}
                   className="px-4 py-2 flex items-center border-2 rounded-md dark:bg-[#1b1324] bg-[#fff] dark:text-white text-black"
                 >
                   <FiEdit /> <span className="px-2">Edit Profile</span>

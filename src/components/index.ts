@@ -1,11 +1,8 @@
-export { Account } from './Account'
-export { Connect } from './Connect'
-export { NetworkSwitcher } from './NetworkSwitcher'
-export { Footer } from './Footer'
-export { Nav } from './Nav'
-export { Main } from './Main'
-export { CTA } from './CTA'
-export { Video } from './Video'
-export { Top } from './Top'
-export { HomeButtons } from './HomeButtons'
-export {Community} from './Community'
+export { CTA } from "./CTA";
+export { Community } from "./Community";
+export { Footer } from "./Footer";
+export { HomeButtons } from "./HomeButtons";
+export { Main } from "./Main";
+export { Nav } from "./Nav";
+export { Top } from "./Top";
+export { Video } from "./Video";

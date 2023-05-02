@@ -1,4 +1,3 @@
-import React from "react";
 import { Layout } from "../components/Layout";
 
 function Terms() {
@@ -10,7 +9,7 @@ function Terms() {
             <div className="">
               <div className="">
                 <div className="content">
-                  <h1 className="my-5 text-3xl lg:text-5xl text-black dark:text-white">
+                  <h1 className="my-5 text-3xl text-black lg:text-5xl dark:text-white">
                     Terms &amp; Conditions
                   </h1>
 

@@ -25,7 +25,7 @@ export default function CreateListing() {
   return (
     <Layout>
       <div className="flex justify-center ">
-        <div className="z-20 px-8 pt-10 my-16 md:px-15 lg:px-20 lg:pt-32 max-w-screen-lg">
+        <div className="z-20 max-w-screen-lg px-8 pt-10 my-16 md:px-15 lg:px-20 lg:pt-32">
           <div className="py-2">
             <h1 className="text-3xl font-bold text-yellow-300">
               Create a Listing
@@ -47,7 +47,7 @@ export default function CreateListing() {
                     value={selectedOptions}
                     onChange={setSelectedOptions}
                   >
-                    <div className="space-y-4 mt-4">
+                    <div className="mt-4 space-y-4">
                       {options.map((option) => (
                         <RadioGroup.Option
                           key={option.id}
@@ -106,22 +106,22 @@ export default function CreateListing() {
                     </div>
                   </RadioGroup>
                 </div>
-                <div className="md:col-span-1  mb-4">
+                <div className="mb-4 md:col-span-1">
                   <div>
                     <div>
-                      <div className="rounded-xl p-2 border border-custom">
+                      <div className="p-2 border rounded-xl border-custom">
                         <img
                           src="https://cdn.hashnode.com/res/hashnode/image/upload/v1671024284920/Ak-mF6Kjh.png?w=500&h=262&fit=crop&crop=entropy&auto=compress,format&format=webp"
                           className="rounded-xl h-[250px] w-full object-cover"
                           alt=""
                         />
-                        <div className="p-4 w-full flex space-x-5 -mt-8">
+                        <div className="flex w-full p-4 -mt-8 space-x-5">
                           <img
                             src="https://flowbite.com/docs/images/people/profile-picture-3.jpg"
-                            className="rounded-lg h-14 w-14 object-cover ring-2 ring-white dark:ring-dark shadow-lg shadow-black/20"
+                            className="object-cover rounded-lg shadow-lg h-14 w-14 ring-2 ring-white dark:ring-dark shadow-black/20"
                             alt=""
                           />
-                          <p className="text-darkest dark:text-white font-semibold text-sm md:text-base mt-7">
+                          <p className="text-sm font-semibold text-darkest dark:text-white md:text-base mt-7">
                             Detail
                           </p>
                         </div>
@@ -130,7 +130,7 @@ export default function CreateListing() {
                   </div>
                 </div>
               </div>
-              <div className="md:grid md:grid-cols-3 md:gap-6 lg:-mt-24 mb-4">
+              <div className="mb-4 md:grid md:grid-cols-3 md:gap-6 lg:-mt-24">
                 <div className="md:col-span-2">
                   <h3 className="text-lg font-medium leading-6 dark:text-[#8175A7] text-[#413A5A]">
                     Set a Price
@@ -150,7 +150,7 @@ export default function CreateListing() {
                 </div>
               </div>
 
-              <div className="md:grid md:grid-cols-3 md:gap-6 mb-4">
+              <div className="mb-4 md:grid md:grid-cols-3 md:gap-6">
                 <div className="md:col-span-2">
                   <h3 className="text-lg font-medium  leading-6 dark:text-[#8175A7] text-[#413A5A]">
                     Set Duration
@@ -174,21 +174,21 @@ export default function CreateListing() {
                 <h3 className="text-lg font-medium leading-6 dark:text-[#8175A7] text-[#413A5A]">
                   Summary
                 </h3>
-                <div className="md:grid md:grid-cols-2 md:gap-6 mb-4">
-                  <ul className="md:col-span-2  flex   gap-4">
+                <div className="mb-4 md:grid md:grid-cols-2 md:gap-6">
+                  <ul className="flex gap-4 md:col-span-2">
                     <li>Listing : 100 BNB</li>
                     <li>Service Fee : 2.4%</li>
                     <li>Creator Fee : 0%</li>
                   </ul>
 
                   <div className="w-full ">
-                    <div className=" w-2/3 flex justify-between  gap-4 border-t-2">
+                    <div className="flex justify-between w-2/3 gap-4 border-t-2 ">
                       <h1 className="font-bold">Potential Earnings</h1>{" "}
                       <h1 className="font-bold">97.5 BNB</h1>
                     </div>
                   </div>
-                  <div className="md:col-span-2  flex  w-full ">
-                    <div className=" ">
+                  <div className="flex w-full md:col-span-2 ">
+                    <div className="">
                       <button
                         type="submit"
                         className="inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-yellow-400 border border-transparent rounded-md shadow-sm hover:bg-yellow-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2"

@@ -221,7 +221,7 @@ export default function CreateMultiple() {
                     <div className="col-span-6 sm:col-span-3">
                       <label
                         htmlFor="last-name"
-                        className="block text-sm font-medium text-black  dark:text-white"
+                        className="block text-sm font-medium text-black dark:text-white"
                       >
                         URL (optional)
                       </label>
@@ -311,7 +311,7 @@ export default function CreateMultiple() {
                     value={selectedMailingLists}
                     onChange={setSelectedMailingLists}
                   >
-                    <div className="grid grid-cols-2 dark:text-white mt-4 gap-y-6 sm:gap-x-4">
+                    <div className="grid grid-cols-2 mt-4 dark:text-white gap-y-6 sm:gap-x-4">
                       {mailingLists.map((mailingList) => (
                         <RadioGroup.Option
                           key={mailingList.id}
@@ -334,7 +334,7 @@ export default function CreateMultiple() {
                                 <span className="flex flex-col">
                                   <RadioGroup.Label
                                     as="span"
-                                    className="block text-sm font-medium dark:text-white text-black "
+                                    className="block text-sm font-medium text-black dark:text-white "
                                   >
                                     {mailingList.title}
                                   </RadioGroup.Label>

@@ -4,8 +4,8 @@ import { Layout } from "../components/Layout";
 function Disclaimer() {
   return (
     <Layout>
-      <div className="py-32 px-8 md:px-15 lg:px-20 ">
-        <h1 className="my-5 text-3xl lg:text-5xl text-black dark:text-white">
+      <div className="px-8 py-32 md:px-15 lg:px-20 ">
+        <h1 className="my-5 text-3xl text-black lg:text-5xl dark:text-white">
           Disclaimer
         </h1>
         <p className="dark:text-[#8175a7] md:text-justify text-[#413A5A]">

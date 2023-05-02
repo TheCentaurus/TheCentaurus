@@ -1,8 +1,7 @@
-import { BsImage, BsImages } from "react-icons/bs";
-
-import { Layout } from "../components/Layout";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { BsImage, BsImages } from "react-icons/bs";
+import { Layout } from "../components/Layout";
 
 export default function Create() {
   const router = useRouter();
@@ -10,13 +9,13 @@ export default function Create() {
     <Layout>
       <div className="py-10 md:py-32">
         <div className="z-20 text-[#413A5A] bg-white dark:bg-transparent rounded-2xl py-10 dark:text-white md:w-1/2 m-auto  font-normal px-10 md:px-15 lg:px-20 ">
-          <div className="z-20 flex justify-between items-center ">
+          <div className="z-20 flex items-center justify-between ">
             {" "}
-            <h1 className="z-20 font-bold text-xl lg:text-3xl border-l px-2">
+            <h1 className="z-20 px-2 text-xl font-bold border-l lg:text-3xl">
               Create Collectible
             </h1>
             <p
-              className="z-20 cursor-pointer underline"
+              className="z-20 underline cursor-pointer"
               onClick={() => router.back()}
             >
               Go Back
@@ -30,10 +29,10 @@ export default function Create() {
             Choose “Single” if you want your collectible to be one of a kind or
             “Multiple” if you want to sell one collectible multiple times
           </p>
-          <div className="z-20 grid grid-cols-2 gap-4 my-5 justify-between mt-10">
+          <div className="z-20 grid justify-between grid-cols-2 gap-4 my-5 mt-10">
             <div
               onClick={() => router.push("/create-single")}
-              className="z-20 flex dark:bg-transparent flex-col items-center justify-center w-full cursor-pointer rounded-xl transition duration-300 ease-in-out hover:scale-75"
+              className="z-20 flex flex-col items-center justify-center w-full transition duration-300 ease-in-out cursor-pointer dark:bg-transparent rounded-xl hover:scale-75"
             >
               <BsImage className="z-20 text-[100px] m-auto" color="#f6d10b" />
               <Link href="/create-single">
@@ -44,7 +43,7 @@ export default function Create() {
             </div>
             <div
               onClick={() => router.push("/create-multiple")}
-              className="z-20 flex flex-col items-center justify-center w-full cursor-pointer rounded-xl  transition duration-300 ease-in-out hover:scale-75"
+              className="z-20 flex flex-col items-center justify-center w-full transition duration-300 ease-in-out cursor-pointer rounded-xl hover:scale-75"
             >
               <BsImages className="z-20 text-[100px]" color="#f6d10b" />
               <Link href="/create-single">

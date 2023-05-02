@@ -13,9 +13,9 @@ export function Footer() {
   return (
     <div className="dark:bg-[#120E17] bg-[#e1eff0ad] z-20">
       <footer className="dark:text-[#8175A7] text-[#413A5A] font-light text-sm z-20">
-        <div className="container px-5 pt-10 pb-5 mx-auto z-20">
-          <div className="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-6 z-20">
-            <div className="w-full col-span-2 px-4 z-20">
+        <div className="container z-20 px-5 pt-10 pb-5 mx-auto">
+          <div className="z-20 grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-6">
+            <div className="z-20 w-full col-span-2 px-4">
               <div className="flex justify-center w-full">
                 <img
                   src={logo.src}
@@ -32,7 +32,7 @@ export function Footer() {
               </p>
             </div>
 
-            <div className="w-full col-span-2 md:col-span-1 px-4 text-center md:text-left z-20">
+            <div className="z-20 w-full col-span-2 px-4 text-center md:col-span-1 md:text-left">
               <h2 className="mb-3 text-lg font-medium tracking-widest dark:text-[#8175A7] text-[#413A5A] title-font">
                 My Account
               </h2>
@@ -55,7 +55,7 @@ export function Footer() {
                 </li>
               </nav>
             </div>
-            <div className="w-full px-4 text-center md:text-left z-20 col-span-2 md:col-span-1">
+            <div className="z-20 w-full col-span-2 px-4 text-center md:text-left md:col-span-1">
               <h2 className="mb-3 text-lg font-medium tracking-widest dark:text-[#8175A7] text-[#413A5A] title-font">
                 Resources
               </h2>
@@ -102,7 +102,7 @@ export function Footer() {
                 </li>
               </nav>
             </div>
-            <div className="w-full px-4 text-center md:text-left z-20 col-span-2 md:col-span-1">
+            <div className="z-20 w-full col-span-2 px-4 text-center md:text-left md:col-span-1">
               <h2 className="mb-3 text-lg font-medium tracking-widest dark:text-[#8175A7] text-[#413A5A] title-font">
                 Company
               </h2>
@@ -117,13 +117,13 @@ export function Footer() {
                 </li>
               </nav>
             </div>
-            <div className="w-full px-4 text-center md:text-left z-20 col-span-2 md:col-span-1">
+            <div className="z-20 w-full col-span-2 px-4 text-center md:text-left md:col-span-1">
               <nav className="mb-10 list-none lg:m-auto">
                 <li>
                   <img
                     src={audit.src}
                     alt=""
-                    className="object-contain h-16 m-auto md:m-0 lg:m-auto mb-5 cursor-pointer lg:w-full"
+                    className="object-contain h-16 m-auto mb-5 cursor-pointer md:m-0 lg:m-auto lg:w-full"
                   />
                 </li>
 
@@ -266,20 +266,20 @@ export function Footer() {
         </div>
         <div className="border-t border-[#8175A7] z-20">
           <div className="container flex flex-wrap items-center justify-between px-5 py-8 mx-auto">
-            <div className="m-auto z-20">
+            <div className="z-20 m-auto">
               {" "}
               <p className="text-sm text-center md:text-left dark:text-[#8175A7] text-[#413A5A] sm:text-left">
                 © 2023 All Rights Reserved thecentaurus.io
               </p>
             </div>
-            <div className="m-auto mt-5 md:mt-0 z-20">
+            <div className="z-20 m-auto mt-5 md:mt-0">
               <ul className="flex">
                 <li className="mr-2 cursor-pointer">Disclaimer | </li>
                 <li className="mr-2 cursor-pointer"> Contact | </li>
                 <li className="mr-2 cursor-pointer"> FAQ </li>
               </ul>
             </div>
-            <div className="inline-flex justify-center w-full m-auto mt-6 lg:ml-auto lg:mt-0 md:justify-start md:w-auto z-20 text-yellow-300">
+            <div className="z-20 inline-flex justify-center w-full m-auto mt-6 text-yellow-300 lg:ml-auto lg:mt-0 md:justify-start md:w-auto">
               <a href="https://www.instagram.com/accounts/login/?next=/centaurusnft/">
                 {" "}
                 <AiOutlineInstagram className="w-5 h-5 mr-2 " />

@@ -1,12 +1,7 @@
-import React from "react";
-import { BsImage } from "react-icons/bs";
-import { FaUser } from "react-icons/fa";
-import { Layout } from "../components/Layout";
-import { FormControl, FormLabel, Stack, Switch } from "@chakra-ui/react";
-import Filters from "../components/Filters";
-import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
-import ProfileCards from "../components/ProfileCards";
+import { Tab, TabList, TabPanel, TabPanels, Tabs } from "@chakra-ui/react";
 import { useRouter } from "next/router";
+import React from "react";
+import { Layout } from "../components/Layout";
 function Profile() {
   const [value, setValue] = React.useState("1");
   // make a preview of the image

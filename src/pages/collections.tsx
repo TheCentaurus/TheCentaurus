@@ -60,46 +60,46 @@ function Collections(props: any) {
   return (
     <div>
       <Layout>
-        <div className="z-20 grid grid-cols-1 lg:grid-cols-2 gap-4 pt-16 lg:pt-32 px-8 md:px-15 lg:px-20 2xl:px-32">
+        <div className="z-20 grid grid-cols-1 gap-4 px-8 pt-16 lg:grid-cols-2 lg:pt-32 md:px-15 lg:px-20 2xl:px-32">
           <div className="z-20 bg-[#d5eef1ad] dark:bg-[#2A243D] h-fit w-fit rounded-xl p-2">
             <img
               //   @ts-ignore
               // src={query?.image}
               src="https://res.cloudinary.com/daily-now/image/upload/f_auto,q_auto/v1/posts/d7f7f16ca8b2f49fbe96744df939d5c2"
               alt=""
-              className="z-20 h-96 rounded object-contain"
+              className="z-20 object-contain rounded h-96"
             />
           </div>
           <div className="z-20 bg-white dark:bg-transparent p-5 rounded-xl dark:text-[#fff] text-[#413A5A]">
             <p className="z-20 text-3xl dark:text-[#fff] text-[#413A5A]">
               {query?.name}
             </p>
-            <div className="z-20 flex flex-col lg:flex-row justify-between">
-              <div className="z-20 bg-yellow-300 p-2 rounded-full flex items-center mt-5 mb-5 lg:mb-0">
+            <div className="z-20 flex flex-col justify-between lg:flex-row">
+              <div className="z-20 flex items-center p-2 mt-5 mb-5 bg-yellow-300 rounded-full lg:mb-0">
                 <BsTagsFill color="#fff" className="z-20 mr-2" />
                 <p className="z-20 text-xs dark:text-[#fff] text-[#413A5A]">
                   5 % of sales will go to creator
                 </p>
               </div>
-              <div className="z-20 flex justify-between items-center">
+              <div className="z-20 flex items-center justify-between">
                 <p className="z-20 mr-2">Share Via</p>
-                <a href="#" className="z-20 border p-2 rounded-lg mr-2">
+                <a href="#" className="z-20 p-2 mr-2 border rounded-lg">
                   {" "}
                   <FaFacebookF />
                 </a>
-                <a href="#" className="z-20 border p-2 rounded-lg mr-2">
+                <a href="#" className="z-20 p-2 mr-2 border rounded-lg">
                   {" "}
                   <FaTwitter />
                 </a>
-                <a href="#" className="z-20 border p-2 rounded-lg mr-2">
+                <a href="#" className="z-20 p-2 mr-2 border rounded-lg">
                   {" "}
                   <FaTelegramPlane />
                 </a>
-                <a href="#" className="z-20 border p-2 rounded-lg">
+                <a href="#" className="z-20 p-2 border rounded-lg">
                   {" "}
                   <FiMail />
                 </a>
-                <a href="#" className="z-20 border p-2 rounded-lg">
+                <a href="#" className="z-20 p-2 border rounded-lg">
                   {" "}
                   <FaLinkedin />
                 </a>
@@ -110,37 +110,37 @@ function Collections(props: any) {
                 {query?.buyoutCurrencyValuePerToken?.displayValue} WBNB{" "}
                 <span className="z-20 text-gray-500">($ 1328.35)</span>
               </p>
-              <p className="z-20 font-normal mt-3">{query?.description}</p>
+              <p className="z-20 mt-3 font-normal">{query?.description}</p>
             </div>
-            <div className="z-20 mb-5 grid grid-cols-1 md:grid-cols-2 gap-4 text-sm md:text-md">
+            <div className="z-20 grid grid-cols-1 gap-4 mb-5 text-sm md:grid-cols-2 md:text-md">
               <div>
-                <p className="z-20 font-normal text-sm">Creator</p>
+                <p className="z-20 text-sm font-normal">Creator</p>
                 <div className="z-20 flex items-center">
                   <img
                     //   @ts-ignore
                     // src={query?.image}
                     src="https://res.cloudinary.com/daily-now/image/upload/f_auto,q_auto/v1/posts/d7f7f16ca8b2f49fbe96744df939d5c2"
-                    className="z-20 h-12 w-12 rounded-lg object-cover mr-2"
+                    className="z-20 object-cover w-12 h-12 mr-2 rounded-lg"
                     alt=""
                   />
                   <p className="z-20 font-normal cursor-pointer">@Creator</p>
                 </div>
               </div>
               <div>
-                <p className="z-20 font-normal text-sm">Collection</p>
+                <p className="z-20 text-sm font-normal">Collection</p>
                 <div className="z-20 flex items-center">
                   <img
                     //   @ts-ignore
                     // src={query?.image}
                     src="https://res.cloudinary.com/daily-now/image/upload/f_auto,q_auto/v1/posts/d7f7f16ca8b2f49fbe96744df939d5c2"
-                    className="z-20 h-12 w-12 object-cover rounded-lg mr-2"
+                    className="z-20 object-cover w-12 h-12 mr-2 rounded-lg"
                     alt=""
                   />
                   <div>
                     <p className="z-20 font-normal cursor-pointer">
                       Collection (NFT1155)
                     </p>
-                    <p className="z-20 text-gray-500 font-bold">
+                    <p className="z-20 font-bold text-gray-500">
                       {query?.collectionId}
                     </p>
                   </div>
@@ -163,7 +163,7 @@ function Collections(props: any) {
                           //   @ts-ignore
                           // src={query?.image}
                           src="https://res.cloudinary.com/daily-now/image/upload/f_auto,q_auto/v1/posts/d7f7f16ca8b2f49fbe96744df939d5c2"
-                          className="z-20 h-12 w-12 object-cover mr-2 rounded-lg"
+                          className="z-20 object-cover w-12 h-12 mr-2 rounded-lg"
                           alt=""
                         />
                       </div>
@@ -185,7 +185,7 @@ function Collections(props: any) {
                         <img
                           //   @ts-ignore
                           src={query?.image}
-                          className="z-20 h-12 w-12 object-cover mr-2 rounded-lg"
+                          className="z-20 object-cover w-12 h-12 mr-2 rounded-lg"
                           alt=""
                         />
                       </div>
@@ -204,7 +204,7 @@ function Collections(props: any) {
                   </TabPanel>
                 </TabPanels>
               </Tabs>
-              <div className="z-20 flex space-x-4 mb-5 ">
+              <div className="z-20 flex mb-5 space-x-4 ">
                 <button
                   onClick={onOpenBuy}
                   className="z-20 rounded-lg border-yellow-300 text-yellow-300 border-[1px] p-2"
@@ -229,7 +229,7 @@ function Collections(props: any) {
             </div>
           </div>
         </div>
-        <hr className="z-20 mx-10 md:mx-15 mt-5 lg:mx-20" />
+        <hr className="z-20 mx-10 mt-5 md:mx-15 lg:mx-20" />
         <div className="z-20 px-10 md:px-15 lg:px-20 2xl:px-32">
           <h1 className="z-20 text-xl lg:text-3xl dark:text-[#fff] text-[#413A5A] my-5">
             Other Author Assets
@@ -267,15 +267,15 @@ function Collections(props: any) {
                     )
                   }
                 >
-                  <div className="z-20 relative">
+                  <div className="relative z-20">
                     <div className="relative w-full overflow-hidden rounded-xl aspect-square">
                       <img
                         src={product.imageSrc}
                         alt={product.name}
-                        className="z-20  object-cover w-full h-full"
+                        className="z-20 object-cover w-full h-full"
                       />
                     </div>
-                    <div className="z-20 relative mx-4 mt-4">
+                    <div className="relative z-20 mx-4 mt-4">
                       <h3 className="z-20 text-sm font-semibold dark:text-[#E6E0FA] text-[#413A5A]">
                         {product.name}
                       </h3>
@@ -292,10 +292,10 @@ function Collections(props: any) {
                         </p>
                       </div>
                     </div>
-                    <div className="z-20 absolute inset-x-0 top-0 flex items-end justify-end p-2 overflow-hidden rounded-xl aspect-square">
+                    <div className="absolute inset-x-0 top-0 z-20 flex items-end justify-end p-2 overflow-hidden rounded-xl aspect-square">
                       <div
                         aria-hidden="true"
-                        className="z-20 absolute inset-x-0 bottom-0 opacity-50 h-36 bg-gradient-to-t from-black "
+                        className="absolute inset-x-0 bottom-0 z-20 opacity-50 h-36 bg-gradient-to-t from-black "
                       />
                       <span className="z-20 flex items-center align-center bg-[#2A243D] p-1 rounded-full">
                         <svg
@@ -319,7 +319,7 @@ function Collections(props: any) {
                       </span>
                     </div>
                   </div>
-                  <div className="z-20 mx-4 my-6 pb-5">
+                  <div className="z-20 pb-5 mx-4 my-6">
                     <h1 className="z-20 text-sm dark:text-[#E6E0FA] text-[#413A5A]">
                       Reserve Price
                     </h1>
@@ -344,7 +344,7 @@ function Collections(props: any) {
                 <img
                   //   @ts-ignore
                   src={query?.image}
-                  className="z-20 h-12 w-12 rounded-full object-cover mr-2"
+                  className="z-20 object-cover w-12 h-12 mr-2 rounded-full"
                   alt=""
                 />
                 <div className="flex flex-col">
@@ -366,8 +366,8 @@ function Collections(props: any) {
                 </div>
               </div>
               <div className="mt-4 dark:text-[#fff] text-[#413A5A]">
-                <div className="border p-5 rounded-2xl">
-                  <div className="flex justify-between items-center">
+                <div className="p-5 border rounded-2xl">
+                  <div className="flex items-center justify-between">
                     <div>
                       <p>Floor price</p>
                     </div>
@@ -376,7 +376,7 @@ function Collections(props: any) {
                     </div>
                   </div>
 
-                  <div className="flex justify-between items-center">
+                  <div className="flex items-center justify-between">
                     <div>
                       <p> Best offer</p>
                     </div>
@@ -426,7 +426,7 @@ function Collections(props: any) {
                 <img
                   //   @ts-ignore
                   src={query?.image}
-                  className="z-20 h-12 w-12 rounded-full object-cover mr-2"
+                  className="z-20 object-cover w-12 h-12 mr-2 rounded-full"
                   alt=""
                 />
                 <div className="flex flex-col">

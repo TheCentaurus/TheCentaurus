@@ -1,5 +1,4 @@
 import { Container } from "@/components/Container";
-import Loader from "@/components/loader";
 import useMarketplace from "@/hooks/useMarketplace";
 import { useRouter } from "next/router";
 import { Layout } from "../components/Layout";
@@ -15,8 +14,6 @@ export default function Explore() {
           <h2 className="z-20 text-2xl font-bold dark:text-[#E6E0FA] text-[#413A5A] sm:text-4xl">
             Explore Collections
           </h2>
-
-          {isLoading && <Loader />}
 
           {!isLoading && (
             <div className="z-20 grid grid-cols-1 mt-8 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
@@ -42,8 +39,8 @@ export default function Explore() {
                     )
                   }
                 >
-                  <div className="z-20 relative mb-5">
-                    <div className="z-20 relative w-full overflow-hidden rounded-tl-xl rounded-tr-xl h-72">
+                  <div className="relative z-20 mb-5">
+                    <div className="relative z-20 w-full overflow-hidden rounded-tl-xl rounded-tr-xl h-72">
                       <img
                         src={nft?.asset?.image}
                         alt={nft?.asset?.name}

@@ -9,7 +9,7 @@ function Privacy() {
           <div className="col-md-12">
             <div className="content">
               <div className="nft_static12">
-                <h1 className="my-5 text-3xl lg:text-5xl text-black dark:text-white">
+                <h1 className="my-5 text-3xl text-black lg:text-5xl dark:text-white">
                   Privacy Policy
                 </h1>
 

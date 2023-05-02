@@ -79,10 +79,10 @@ function classNames(...classes) {
 export default function Example() {
   return (
     <Layout>
-      <div className="py-32 z-30 px-8 md:px-15 lg:px-20 ">
-        <div className="mx-auto z-20 max-w-7xl py-12 px-4 sm:py-16 sm:px-6 lg:px-8">
-          <div className="mx-auto z-20 max-w-3xl divide-y-2 divide-gray-200">
-            <h1 className="my-5 text-3xl z-30 lg:text-5xl text-black dark:text-white">
+      <div className="z-30 px-8 py-32 md:px-15 lg:px-20 ">
+        <div className="z-20 px-4 py-12 mx-auto max-w-7xl sm:py-16 sm:px-6 lg:px-8">
+          <div className="z-20 max-w-3xl mx-auto divide-y-2 divide-gray-200">
+            <h1 className="z-30 my-5 text-3xl text-black lg:text-5xl dark:text-white">
               Frequently asked questions
             </h1>
             <dl className="mt-6 space-y-6 divide-y divide-gray-200">
@@ -91,11 +91,11 @@ export default function Example() {
                   {({ open }) => (
                     <>
                       <dt className="text-lg">
-                        <Disclosure.Button className="flex w-full items-start justify-between text-left text-gray-400">
+                        <Disclosure.Button className="flex items-start justify-between w-full text-left text-gray-400">
                           <span className="font-medium dark:text-[#fff] text-[#413A5A]">
                             {faq.question}
                           </span>
-                          <span className="ml-6 flex h-7 items-center">
+                          <span className="flex items-center ml-6 h-7">
                             <ChevronDownIcon
                               className={classNames(
                                 open ? "-rotate-180" : "rotate-0",
@@ -106,7 +106,7 @@ export default function Example() {
                           </span>
                         </Disclosure.Button>
                       </dt>
-                      <Disclosure.Panel as="dd" className="mt-2 pr-12">
+                      <Disclosure.Panel as="dd" className="pr-12 mt-2">
                         <p className="text-base dark:text-[#fff] text-[#000]">
                           {faq.answer}
                         </p>

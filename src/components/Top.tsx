@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-
 import indigo from "../assets/indigo.png";
 import prm from "../assets/plm.png";
 import shaker from "../assets/shaker.png";
@@ -7,7 +6,7 @@ export function Top() {
   return (
     <>
       <div className="flex justify-center lg:pb-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 m-auto ">
+        <div className="grid grid-cols-1 gap-4 m-auto md:grid-cols-2 ">
           <motion.div
             initial={{ x: -20 }}
             whileInView={{
@@ -20,7 +19,7 @@ export function Top() {
               },
             }}
             viewport={{ amount: 0.8 }}
-            className="my-4 z-20"
+            className="z-20 my-4"
           >
             <motion.h1 className="text-3xl font-semibold text-[#413A5A] dark:text-[#E6E0FA]">
               Top Buyers
@@ -40,7 +39,7 @@ export function Top() {
                         <img
                           src={prm.src}
                           alt=""
-                          className="h-12 w-12 rounded-lg object-contain"
+                          className="object-contain w-12 h-12 rounded-lg"
                         />
                       </div>
                       <div>
@@ -61,7 +60,7 @@ export function Top() {
                         <img
                           src={indigo.src}
                           alt=""
-                          className="h-12 w-12 rounded-lg object-contain"
+                          className="object-contain w-12 h-12 rounded-lg"
                         />
                       </div>
                       <div>
@@ -81,7 +80,7 @@ export function Top() {
               x: 0,
             }}
             viewport={{ amount: 0.8 }}
-            className="my-4 z-20"
+            className="z-20 my-4"
           >
             {" "}
             <motion.h1 className="text-3xl font-semibold text-[#413A5A] dark:text-[#E6E0FA]">
@@ -101,7 +100,7 @@ export function Top() {
                         <img
                           src={shaker.src}
                           alt=""
-                          className="h-12 w-12 rounded-lg object-contain"
+                          className="object-contain w-12 h-12 rounded-lg"
                         />
                       </div>
                       <div>
@@ -122,7 +121,7 @@ export function Top() {
                         <img
                           src={prm.src}
                           alt=""
-                          className="h-12 w-12 rounded-lg object-contain"
+                          className="object-contain w-12 h-12 rounded-lg"
                         />
                       </div>
                       <div>

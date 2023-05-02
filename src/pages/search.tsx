@@ -65,47 +65,11 @@ export default function Explore() {
   console.log({ query }, "qweqewwe");
   return (
     <Layout>
-      <div className="z-20 px-6 md:px-15 lg:px-20 pt-10 lg:pt-32 pb-16">
+      <div className="z-20 px-6 pt-10 pb-16 md:px-15 lg:px-20 lg:pt-32">
         <div className="z-20 max-w-2xl px-4 mx-auto sm:px-6 lg:max-w-7xl lg:px-8">
           <h2 className="z-20 text-2xl font-bold dark:text-[#E6E0FA] text-[#413A5A] sm:text-4xl">
             Search Results
           </h2>
-
-          {/* <div className='dark:bg-[#2A243D] bg-[#fff] border dark:border-none h-16 mt-12 rounded-xl w-full flex items-center p-2'>
-            <div className='z-20 flex items-center justify-around w-full md:w-5/12 lg:w-5/12 md:justify-between'>
-              <form className='z-20 w-full'>
-                <label className='z-20 mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300'>
-                  Search
-                </label>
-                <div className='z-20 relative'>
-                  <div className='z-20 absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none'>
-                    <svg
-                      aria-hidden='true'
-                      className='z-20 w-5 h-5 text-gray-500 dark:text-gray-400'
-                      fill='none'
-                      stroke='currentColor'
-                      viewBox='0 0 24 24'
-                      xmlns='http://www.w3.org/2000/svg'
-                    >
-                      <path
-                        stroke-linecap='round'
-                        stroke-linejoin='round'
-                        stroke-width='2'
-                        d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'
-                      ></path>
-                    </svg>
-                  </div>
-                  <input
-                    type='search'
-                    id='default-search'
-                    className='z-20 block p-3 pl-10 w-full md:w-auto text-sm text-gray-50 bg-[#f1f1f1] dark:bg-[#221C30] placeholder:text-[#8175A7] rounded-lg border-none  border-[#8175A7] '
-                    placeholder='Search '
-                    required
-                  />
-                </div>
-              </form>
-            </div>
-          </div> */}
 
           <div className="z-20 grid grid-cols-1 mt-8 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
             {products.map((product) => (
@@ -122,15 +86,15 @@ export default function Explore() {
                   )
                 }
               >
-                <div className="z-20 relative">
-                  <div className="z-20 relative w-full overflow-hidden rounded-xl h-72">
+                <div className="relative z-20">
+                  <div className="relative z-20 w-full overflow-hidden rounded-xl h-72">
                     <img
                       src={product.imageSrc}
                       alt={product.name}
                       className="z-20 object-cover w-full h-full"
                     />
                   </div>
-                  <div className="z-20 relative mx-4 mt-4">
+                  <div className="relative z-20 mx-4 mt-4">
                     <h3 className="z-20 text-xl font-semibold dark:text-[#E6E0FA] text-[#413A5A]">
                       {product.name}
                     </h3>
@@ -147,10 +111,10 @@ export default function Explore() {
                       </p>
                     </div>
                   </div>
-                  <div className="z-20 absolute inset-x-0 top-0 flex items-end justify-end p-4 overflow-hidden rounded-lg h-72">
+                  <div className="absolute inset-x-0 top-0 z-20 flex items-end justify-end p-4 overflow-hidden rounded-lg h-72">
                     <div
                       aria-hidden="true"
-                      className="z-20 absolute inset-x-0 bottom-0 opacity-50 h-36 bg-gradient-to-t from-black "
+                      className="absolute inset-x-0 bottom-0 z-20 opacity-50 h-36 bg-gradient-to-t from-black "
                     />
                     <span className="flex items-center align-center dark:bg-[#2A243D] bg-[#fff] p-1 rounded-full">
                       <svg

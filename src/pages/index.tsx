@@ -1,19 +1,11 @@
 import * as React from "react";
-import { Layout } from '../components/Layout';
+import { Layout } from "../components/Layout";
 
-import {
-  Main,
-  HomeButtons,
-  Top,
-  CTA,
-  Video,
-  Community,
-} from "../components";
+import { CTA, Community, HomeButtons, Main, Top, Video } from "../components";
 
 function Page() {
   const [hasMounted, setHasMounted] = React.useState(false);
 
-  
   React.useEffect(() => {
     setHasMounted(true);
   }, []);

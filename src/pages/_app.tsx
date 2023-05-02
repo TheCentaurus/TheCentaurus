@@ -1,28 +1,15 @@
+import { ChakraProvider } from "@chakra-ui/react";
+import { ThirdwebProvider } from "@thirdweb-dev/react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import type { AppProps } from "next/app";
 import NextHead from "next/head";
 import { useEffect } from "react";
+import { Provider } from "react-redux";
 import "tailwindcss/tailwind.css";
+import store from "../store.js";
 import "../styles/global.css";
-// importing wagmi
-import { configureChains, createClient, WagmiConfig } from "wagmi";
-import { mainnet } from "wagmi/chains";
-import { publicProvider } from "wagmi/providers/public";
-const { provider, webSocketProvider } = configureChains(
-  [mainnet],
-  [publicProvider()]
-);
-
-const client = createClient({
-  provider,
-  webSocketProvider,
-  autoConnect: true,
-});
-// 1. import `ChakraProvider` component
-import { ChakraProvider } from "@chakra-ui/react";
-
-import { MyThemeContextProvider } from "./../store/themeContext";
+import { MyThemeContextProvider } from "../theme/themeContext.tsx";
 
 function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
@@ -31,7 +18,15 @@ function App({ Component, pageProps }: AppProps) {
   }, []);
 
   return (
-    <WagmiConfig client={client}>
+    <ThirdwebProvider
+      activeChain="ethereum"
+      authConfig={{
+        domain:
+          process.env.NEXT_PUBLIC_THIRDWEB_AUTH_DOMAIN ||
+          "http://localhost:3001",
+        authUrl: "http://localhost:8080/api/auth/web3",
+      }}
+    >
       <NextHead>
         <title>Centaurus | Mint</title>
         <link rel="shortcut icon" href="favicon.ico" />
@@ -52,11 +47,14 @@ function App({ Component, pageProps }: AppProps) {
         />
       </NextHead>
       <ChakraProvider>
-        <MyThemeContextProvider>
-          <Component {...pageProps} className="z-20" />
-        </MyThemeContextProvider>
+        {" "}
+        <Provider store={store}>
+          <MyThemeContextProvider>
+            <Component {...pageProps} className="z-20" />
+          </MyThemeContextProvider>
+        </Provider>
       </ChakraProvider>
-    </WagmiConfig>
+    </ThirdwebProvider>
   );
 }
 

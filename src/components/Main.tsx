@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
-import cardpic from "../assets/cardpic.png";
 import elipsePic from "../assets/EllipseCardPic.png";
+import cardpic from "../assets/cardpic.png";
 import prmElipsePic from "../assets/plm-eclipse.png";
 import prmCardPic from "../assets/plm-rect.png";
 import shakerElipsePic from "../assets/shaker-elipse.png";
@@ -54,7 +54,7 @@ export function Main() {
     <section className="py-10 text-gray-600 sm:pt-64 sm:pb-24 body-font md:px-20 xl:px-40 2xl:px-80 ">
       <div className="container flex flex-col items-center mx-auto 2xl:px-12 md:flex-row ">
         <div className="flex flex-col items-center mb-16 text-center lg:flex-grow w-[80%] md:w-1/2 md:items-start md:text-left md:mb-0">
-          <div className="w-full z-20">
+          <div className="z-20 w-full">
             {" "}
             <motion.h1
               initial={{ y: -20, x: 50, scale: 0.5 }}
@@ -65,7 +65,7 @@ export function Main() {
               All in ONE
             </motion.h1>
           </div>
-          <div className="w-full z-20">
+          <div className="z-20 w-full">
             <motion.h1
               initial={{ y: 20, x: -20, scale: 0 }}
               animate={{ y: 0, x: 0, scale: 1 }}
@@ -84,7 +84,7 @@ export function Main() {
             >
               Discover , Create, Buy and Sell.
             </motion.p>
-            <div className="flex justify-start mt-5 z-20">
+            <div className="z-20 flex justify-start mt-5">
               <motion.p
                 initial={{ x: -20, y: 200 }}
                 animate={{
@@ -132,7 +132,7 @@ export function Main() {
             </div>
           </div>
         </div>
-        <div className="lg:px-10 m-auto z-20">
+        <div className="z-20 m-auto lg:px-10">
           {/* <p className="font-semibold mb-1 text-lg text-[#E6E0FA] text-center lg:text-left">
             Featured Users
           </p> */}
