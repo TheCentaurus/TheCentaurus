@@ -1,11 +1,9 @@
 import { Avatar, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
 import { useLogout, useUser } from "@thirdweb-dev/react";
 import { useRouter } from "next/router";
-import { useState } from "react";
 
 const Profile = () => {
   const router = useRouter();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { isLoggedIn } = useUser();
   const { logout } = useLogout();
   return (
@@ -99,7 +97,7 @@ const Profile = () => {
                   background: "#1b1324",
                   color: "teal.500",
                 }}
-                onClick={logout}
+                onClick={() => logout()}
               >
                 Sign Out
               </MenuItem>
