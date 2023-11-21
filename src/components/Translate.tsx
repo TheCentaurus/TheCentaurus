@@ -5,6 +5,7 @@ import { FaGlobe } from "react-icons/fa";
 declare global {
   interface Window {
     googleTranslateElementInit?: () => void;
+    google: any;
   }
 }
 
@@ -15,7 +16,7 @@ function Translate() {
       new window.google.translate.TranslateElement(
         {
           pageLanguage: "en",
-          layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+          layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
         },
         "google_translate_element"
       );
