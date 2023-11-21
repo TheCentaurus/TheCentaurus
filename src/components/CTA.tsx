@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import { AiOutlineTag } from "react-icons/ai";
 import { BiImageAdd, BiWallet } from "react-icons/bi";
+import { useAddress, ConnectWallet, useDisconnect, } from "@thirdweb-dev/react";
 export function CTA() {
+  const address = useAddress();
   return (
     <div className="px-5 lg:px-0 lg:pb-10 z-20">
       <h1 className="text-2xl lg:text-4xl font-bold text-center dark:text-[#E6E0FA] text-[#413A5A] my-10 lg:mx-20">
@@ -34,10 +36,17 @@ export function CTA() {
             Once you have setup your wallet of your choice, connect it to
             Centuarus NFT marketplace by clicking this link.
           </p>
-
-          <a href="/connect" className="text-[#F6D10B] underline font-normal">
+          {!address?.length?
+            <div>
+              <ConnectWallet btnTitle="Connect Wallet" theme="dark" />
+            </div> :
+              <p className="text-[#F6D10B] underline font-normal">
+                Wallet connected
+              </p>
+            }
+          {/* <a href="/connect" className="text-[#F6D10B] underline font-normal">
             Connect My Wallet
-          </a>
+          </a> */}
         </motion.div>
 
         <motion.div

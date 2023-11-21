@@ -2,12 +2,14 @@ import { useEffect, useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { BsSearch } from "react-icons/bs";
 import { Sidebar } from ".././Sidebar";
+
 import Logo from "./Logo";
 
 const SidebarIcon = () => {
   //navbar scroll when active state
   const [navbar, setNavbar] = useState(false);
   const [showSidebar, setShowSidebar] = useState(true);
+  
   const handleShowSidebar = () => {
     setShowSidebar(!showSidebar);
   };
@@ -33,12 +35,13 @@ const SidebarIcon = () => {
       <div
         className={
           navbar
-            ? ` dark:bg-[#261a2f] bg-[#ffffff] px-2 shadow-lg lg:hidden fixed top-0 left-0 right-0 py-0 z-30 pb-2`
-            : " dark:bg-[#230c2e02] bg-[#d5eef100] lg:hidden fixed top-0 left-0 right-0 py-0 z-30 pb-2"
+            ? ` dark:bg-[#060308] bg-[#ffffff] px-2 shadow-lg w-full lg:hidden fixed top-0 left-0 right-0 py-0 z-30 pb-2`
+            : " dark:bg-[#02010202] bg-[#d5eef100] lg:hidden fixed w-full top-0 left-0 right-0 py-0 z-30 pb-2"
         }
       >
+        <div className=" flex justify-between px-4">
         <Logo />
-        <div className="flex items-center fixed top-5 z-40 right-5 py-2 lg:hidden w-[80px]">
+        <div className="flex items-center ">
           <div className="h-7 w-7 dark:bg-[#1b1324] bg-[#f7ffff] border p-2 rounded-lg mr-5">
             <BsSearch
               size={10}
@@ -54,7 +57,7 @@ const SidebarIcon = () => {
           </h1>
         </div>
       </div>
-
+      </div>
       <Sidebar
         // @ts-ignore
         showSidebar={showSidebar}

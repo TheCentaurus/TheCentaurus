@@ -32,8 +32,8 @@ export function Nav() {
     <div
       className={
         navbar
-          ? "dark:bg-[#261a2fa8] bg-[#d5eef16a] z-30 flex  items-center justify-between w-full fixed top-0 left-0 right-0 backdrop-blur-sm"
-          : "dark:bg-[#230c2e02] bg-[#d5eef100] z-30 flex items-center justify-between w-full fixed top-0 left-0 right-0 backdrop-blur-sm"
+          ? "dark:bg-[#0f0715a8] bg-[#d5eef16a] z-30 flex  items-center justify-between w-full fixed top-0 left-0 right-0 backdrop-blur-sm"
+          : "dark:bg-[#11071502] bg-[#d5eef100] z-30 flex items-center justify-between w-full fixed top-0 left-0 right-0 backdrop-blur-sm"
       }
     >
       <SidebarIcon />

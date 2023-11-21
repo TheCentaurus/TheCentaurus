@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import { useContext } from "react";
 import { BsSun } from "react-icons/bs";
 import MyThemeContext from "../theme/themeContext";
-
+import { useAddress, ConnectWallet, useDisconnect, } from "@thirdweb-dev/react";
 export function Sidebar(props: any) {
   const themeCtx: { isDarkMode?: boolean; toggleThemeHandler: () => void } =
     useContext(MyThemeContext);
@@ -11,6 +11,8 @@ export function Sidebar(props: any) {
     themeCtx.toggleThemeHandler();
   }
   const router = useRouter();
+  const address = useAddress();
+  const disconnect = useDisconnect();
   return (
     <div
       className={
@@ -79,6 +81,17 @@ export function Sidebar(props: any) {
           <p className="dark:bg-[#1b1324] bg-white border-none dark:text-[#e6e0fa] text-[#1b1324]">
             Moonbeam
           </p>
+
+          {!address?.length ? 
+            <div>
+              <ConnectWallet btnTitle="Login" theme="dark" />
+            </div> :
+            <div>
+          <p  onClick={() => disconnect()} 
+          className="dark:bg-[#1b1324] bg-white border-none dark:text-[#e6e0fa] text-[#1b1324]">
+            Logout
+          </p>
+            </div>}
         </nav>
         <div
           className="absolute top-0 right-0 h-full"
