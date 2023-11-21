@@ -32,7 +32,7 @@ export function Nav() {
     <div
       className={
         navbar
-          ? "dark:bg-[#261a2fa8] bg-[#d5eef16a] z-30 flex items-center justify-between w-full fixed top-0 left-0 right-0 backdrop-blur-sm"
+          ? "dark:bg-[#261a2fa8] bg-[#d5eef16a] z-30 flex  items-center justify-between w-full fixed top-0 left-0 right-0 backdrop-blur-sm"
           : "dark:bg-[#230c2e02] bg-[#d5eef100] z-30 flex items-center justify-between w-full fixed top-0 left-0 right-0 backdrop-blur-sm"
       }
     >
@@ -80,12 +80,13 @@ export function Nav() {
             </div>
           </form>
         </div>
-        <div className="flex items-center justify-between space-x-3 md:w-1/5">
+        <div className="flex items-center justify-between space-x-3 ">
           <Notifications />
           <Profile />
+          <TranslateIcon />
           <Network />
           <Theme />
-          <TranslateIcon />
+          
         </div>
       </div>
     </div>

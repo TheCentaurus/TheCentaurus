@@ -1,8 +1,9 @@
 import { Avatar, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
 import { useLogout, useUser } from "@thirdweb-dev/react";
+import Image from "next/image";
 import { useRouter } from "next/router";
-
-const Profile = () => {
+import Avataa from '../../assets/avataa.png'
+export const Profile = () => {
   const router = useRouter();
   const { isLoggedIn } = useUser();
   const { logout } = useLogout();
@@ -20,8 +21,10 @@ const Profile = () => {
       ) : (
         <div className="md:hidden lg:block">
           <Menu>
-            <MenuButton className="cursor-pointer bg-transparent dark:text-[#E6E0FA] text-[#261a2f] font-bold lg:text-sm text-[12px] rounded-xl">
-              <Avatar size="sm" src="" name="" />
+            
+            <MenuButton className="cursor-pointer bg-transparent dark:text-[#E6E0FA]  font-bold lg:text-sm text-[12px] rounded-xl">
+              {/* <Avatar size="lg" src="" name="" /> */}
+              <Image src={Avataa} alt="Avataa"/>
             </MenuButton>
             <MenuList border="none" bg="#1b1324a1" color="#E6E0FA">
               {isLoggedIn && (
@@ -108,5 +111,3 @@ const Profile = () => {
     </>
   );
 };
-
-export default Profile;

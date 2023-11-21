@@ -8,6 +8,7 @@ import { TbBrandDiscord, TbBrandTelegram } from "react-icons/tb";
 import audit from "../assets/audit.png";
 import logo from "../assets/logo.svg";
 
+
 export function Footer() {
   const address = useAddress();
   return (
@@ -39,7 +40,7 @@ export function Footer() {
               <nav className="mb-10 list-none">
                 <li>
                   <Link
-                    href={address?.length ? "/profile" : "/connect"}
+                    href={address?.length ? "/profile" : "/"}
                     className="dark:text-[#8175A7] text-[#413A5A]"
                   >
                     Profile
@@ -47,7 +48,7 @@ export function Footer() {
                 </li>
                 <li>
                   <Link
-                    href={address?.length ? "/profile" : "/connect"}
+                    href={address?.length ? "/profile" : "/"}
                     className="dark:text-[#8175A7] text-[#413A5A]"
                   >
                     Settings
@@ -129,6 +130,7 @@ export function Footer() {
 
                 <li>
                   <div className="grid grid-cols-4 gap-2">
+                    
                     <Tooltip label="Ethereum">
                       <a
                         href="https://ethereum.org/en/"

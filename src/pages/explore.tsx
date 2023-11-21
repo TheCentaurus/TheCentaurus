@@ -1,11 +1,11 @@
 import { Container } from "@/components/Container";
-import useMarketplace from "@/hooks/useMarketplace";
+// import useMarketplace from "@/hooks/useMarketplace";
 import { useRouter } from "next/router";
 import { Layout } from "../components/Layout";
 
 export default function Explore() {
   const router = useRouter();
-  const { nfts, isLoading } = useMarketplace();
+  // const { nfts, isLoading } = useMarketplace();
 
   return (
     <Layout>
@@ -15,7 +15,7 @@ export default function Explore() {
             Explore Collections
           </h2>
 
-          {!isLoading && (
+          {/* {!isLoading && (
             <div className="z-20 grid grid-cols-1 mt-8 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
               {nfts?.map((nft: any) => (
                 <div
@@ -71,7 +71,7 @@ export default function Explore() {
                 </div>
               ))}
             </div>
-          )}
+          )} */}
         </div>
       </Container>
     </Layout>

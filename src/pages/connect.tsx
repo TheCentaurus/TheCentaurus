@@ -11,6 +11,7 @@ import bg from "../assets/bgcoin.jpeg";
 import logo from "../assets/logo.svg";
 
 export default function ConnectPage() {
+  
   const router = useRouter();
   const address = useAddress();
   const { logout } = useLogout();
@@ -19,7 +20,7 @@ export default function ConnectPage() {
 
   useEffect(() => {
     if (isLoggedIn) {
-      user?.data.username ? null : router.push("/edit-profile");
+      // user?.data.username? null : router.push("/edit-profile");
     }
   }, [isLoggedIn]);
 

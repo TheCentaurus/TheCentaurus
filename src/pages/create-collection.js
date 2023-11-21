@@ -2,9 +2,10 @@ import { RadioGroup } from "@headlessui/react";
 import { CheckCircleIcon } from "@heroicons/react/20/solid";
 import { useState } from "react";
 import { Layout } from "../components/Layout";
-import postService from "@/api/post-services";
+import postService from "../api/post-services";
 import Loading from '../components/SelectValue/Loading'
 import { ToastContainer, toast } from 'react-toastify';
+import { useAddress } from "@thirdweb-dev/react";
 import 'react-toastify/dist/ReactToastify.css';
 const mailingLists = [
   {
@@ -27,23 +28,25 @@ export default function CreateMultiple() {
   const [selectedMailingLists, setSelectedMailingLists] = useState(
     mailingLists[0]
   );
+  
+  const address = useAddress();
   const [loading, setLoading] = useState(false)
-  // const [logo, setLogo] = useState<File | null>(null);
-  // const [banner, setBanner] = useState<File | null>(null);
-  // const [featuredImage, setFeatureImage] = useState<File | null>(null);
+  const [logo, setLogo] = useState(null);
+  const [banner, setBanner] = useState(null);
+  const [featuredImage, setFeatureImage] = useState(null);
   const [name, setName] = useState('')
   const[url, setUrl] = useState('')
   const [des, setDes] = useState('')
   const [cat,setCat] = useState('')
   const [supply, setSupply] = useState('')
-  const [chain, setChain] = useState('')
+  const [chain, setChain] = useState('eth')
   const [con, setCon] = useState('1')
   const submit = (e) =>{
     e.preventDefault()
     const formData = new FormData();
-    // formData.append('logo', logo?? '');
-    // formData.append('banner', banner?? '');
-    // formData.append('featured', featuredImage?? '');
+    formData.append('logo', logo?? '');
+    formData.append('banner', banner?? '');
+    formData.append('featured', featuredImage?? '');
     formData.append('name', name);
     formData.append('url', url);
     formData.append('description', des);
@@ -52,14 +55,21 @@ export default function CreateMultiple() {
     formData.append('blockchain', chain);
     formData.append('explicit', con);
     formData.append('unlockable', '0');
+    formData.append('secret', 'HwgGvrRwdTYUJuytr567jbHGftyI7TfvbnjUYTFVBNbvcGBHNhgdxcvbn985gb');
+    formData.append('userAddress', address);
     postService.createCollection(formData).then(
       (response) => {
-        toast.success('Collection created', {
+        if(response.data.message === 'Upload successful'){
+            toast.success(response.data.message, {
                              
-          onClose: () => {
-            window.location.reload()
-          }
-        })
+                onClose: () => {
+                  window.location.reload()
+                }
+              })
+        }else{
+            toast.error(response.data.message)
+        }
+       
       },
             (error) => {
                 setLoading(false)
@@ -70,9 +80,10 @@ export default function CreateMultiple() {
 
   return (
     <Layout>
-      <Loading
-      open={loading}
-      />
+      
+     <div>
+     
+      <ToastContainer/>
       <div className="flex justify-center ">
         <div className="z-20 max-w-screen-lg px-8 pt-10 my-16 md:px-15 lg:px-20 lg:pt-32">
           <div className="py-2">
@@ -124,12 +135,11 @@ export default function CreateMultiple() {
                               name="file-upload"
                               type="file"
                               required
-                            
-                              // onChange={(e) => setLogo(e.target.files ? e.target.files[0] : null)}
+                              onChange={(e) => setLogo(e.target.files ? e.target.files[0] : null)}
                               className="sr-only"
                             />
                           </label>
-                          {/* {logo && <p>Filename: {logo?.name}</p>} */}
+                          {logo && <p className=" pl-4">Filename: {logo?.name}</p>}
                           <p className="pl-1">or drag and drop</p>
                         </div>
                         <p className="text-xs text-gray-500">
@@ -170,20 +180,21 @@ export default function CreateMultiple() {
                         </svg>
                         <div className="flex text-sm text-gray-600">
                           <label
-                            htmlFor="file-upload"
+                            htmlFor="file-upload1"
                             className="relative font-medium text-yellow-400 bg-white rounded-md cursor-pointer focus-within:outline-none focus-within:ring-2 focus-within:ring-yellow-500 focus-within:ring-offset-2 hover:text-yellow-500"
                           >
                             <span>Upload a file</span>
                             <input
-                              id="file-upload"
-                              name="file-upload"
+                              id="file-upload1"
+                              name="file-upload1"
                               type="file"
                               required
-                              // value={banner?? ''}
-                              // onChange={(e) => setBanner(e.target.files ? e.target.files[0] : null)}
+                             
+                              onChange={(e) => setBanner(e.target.files ? e.target.files[0] : null)}
                               className="sr-only"
                             />
                           </label>
+                          {banner && <p className=" pl-4">Filename: {banner?.name}</p>}
                           <p className="pl-1">or drag and drop</p>
                         </div>
                         <p className="text-xs text-gray-500">
@@ -224,20 +235,21 @@ export default function CreateMultiple() {
                         </svg>
                         <div className="flex text-sm text-gray-600">
                           <label
-                            htmlFor="file-upload"
+                            htmlFor="file-upload2"
                             className="relative font-medium text-yellow-400 bg-white rounded-md cursor-pointer focus-within:outline-none focus-within:ring-2 focus-within:ring-yellow-500 focus-within:ring-offset-2 hover:text-yellow-500"
                           >
                             <span>Upload a file</span>
                             <input
-                              id="file-upload"
-                              name="file-upload"
+                              id="file-upload2"
+                              name="file-upload2"
                               type="file"
                               required
-                              // value={featuredImage?? ''}
-                              // onChange={(e) => setFeatureImage(e.target.files ? e.target.files[0] : null)}
+                             
+                              onChange={(e) => setFeatureImage(e.target.files ? e.target.files[0] : null)}
                               className="sr-only"
                             />
                           </label>
+                          {featuredImage && <p className=" pl-4">Filename: {featuredImage?.name}</p>}
                           <p className="pl-1">or drag and drop</p>
                         </div>
                         <p className="text-xs text-gray-500">
@@ -274,7 +286,7 @@ export default function CreateMultiple() {
                               value={name}
                               onChange={(e) => setName(e.target.value)}
                         autoComplete="given-name"
-                        className="block w-full mt-1 border-gray-300 dark:bg-[#2A243D] dark:border-transparent rounded-md shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm"
+                        className="block w-full mt-1 border-gray-300 dark:bg-[#2A243D] text-white dark:border-transparent rounded-md shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm"
                       />
                     </div>
 
@@ -293,7 +305,7 @@ export default function CreateMultiple() {
                         required
                         value={url}
                         onChange={(e) => setUrl(e.target.value)}
-                        className="block w-full mt-1 border-gray-300 dark:bg-[#2A243D] dark:border-transparent rounded-md shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm"
+                        className="block w-full mt-1 border-gray-300 text-white dark:bg-[#2A243D] dark:border-transparent rounded-md shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm"
                       />
                     </div>
 
@@ -307,8 +319,10 @@ export default function CreateMultiple() {
                       <textarea
                         name="description"
                         id="description"
+                        value={des}
+                        onChange={(e) => setDes(e.target.value)}
                         autoComplete="gg"
-                        className="block w-full mt-1 border-gray-300 dark:bg-[#2A243D] dark:border-transparent rounded-md shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm"
+                        className="block w-full mt-1 border-gray-300 text-white dark:bg-[#2A243D] dark:border-transparent rounded-md shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm"
                       />
                     </div>
 
@@ -329,8 +343,8 @@ export default function CreateMultiple() {
                         className="block w-full px-3 py-2 mt-1 dark:text-white bg-white dark:bg-[#2A243D] dark:border-transparent border border-gray-300 rounded-md shadow-sm focus:border-yellow-500 focus:outline-none focus:ring-yellow-500 sm:text-sm"
                       >
                         <option>Select a category</option>
-                        <option>Canada</option>
-                        <option>Mexico</option>
+                        <option key={1} value={'art'}>Art</option>
+                        <option key={2} value={'music'}>Music</option>
                       </select>
                     </div>
 
@@ -348,10 +362,10 @@ export default function CreateMultiple() {
                         value={supply}
                         onChange={(e) => setSupply(e.target.value)}
                         autoComplete="street-address"
-                        className="block w-full mt-1 border-gray-300 dark:bg-[#2A243D] dark:border-transparent rounded-md shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm"
+                        className="block w-full mt-1 border-gray-300 text-white dark:bg-[#2A243D] dark:border-transparent rounded-md shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm"
                       />
                     </div>
-                    <div className="col-span-6 sm:col-span-3">
+                    {/* <div className="col-span-6 sm:col-span-3">
                       <label
                         htmlFor="country"
                         className="block text-sm font-medium text-black dark:text-white"
@@ -371,7 +385,7 @@ export default function CreateMultiple() {
                         <option>Canada</option>
                         <option>Mexico</option>
                       </select>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
@@ -455,6 +469,7 @@ export default function CreateMultiple() {
           </form>
         </div>
       </div>
+     </div>
     </Layout>
   );
 }

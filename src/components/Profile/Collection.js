@@ -1,13 +1,42 @@
-import { useRouter } from "next/router";
-
-function ProfileCards({ products }) {
-  const router = useRouter();
-  
+import React, { useEffect, useState } from 'react'
+import getServices from '../../api/get-services'
+import { useAddress } from "@thirdweb-dev/react";
+import Base64Image from '../../components/base64image'
+function Collection() {
+    const [data, setData] = useState([])
+    const address = useAddress();
+    const [loading, setLoading] = useState(false)
+    
+    useEffect(() =>{
+      setLoading(true)
+        if(address?.length >1){
+            getServices.getUserCollection(address).then(
+                (response) => {
+                  setLoading(false)
+                if(response.data.data){
+                setData(response.data.data)
+                }else{
+                    setData([])
+                }
+               
+                console.log(response.data.data)
+                
+              },
+              (error) => {
+                  setLoading(false)
+                  
+              }
+              )
+        }
+       
+    },[address])
   return (
-    <div className="z-20 grid grid-cols-2 gap-3 md:gap-5 2xl:gap-10 mt-8 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 ">
-      {products.map((product) => (
+    <div>
+        {loading && <h1 className=' text-white font-bold text-center py-5'>Loading user collection...</h1>}
+         <div className="z-20 grid grid-cols-2 gap-3 md:gap-5 2xl:gap-10 mt-8 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 ">
+      {data.map((product, index) => (
         <div
-          key={product.id}
+          key={index}
           className="z-20 dark:bg-[#2A243D] bg-white border dark:border-none shadow-sm rounded-xl cursor-pointer"
           onClick={() =>
             router.push(
@@ -21,11 +50,12 @@ function ProfileCards({ products }) {
         >
           <div className="z-20 relative">
             <div className="relative w-full overflow-hidden rounded-xl aspect-square">
-              <img
-                src={product.imageSrc}
-                alt={product.name}
-                className="object-cover w-full h-full"
-              />
+             <Base64Image
+                src={product.banner}
+                type={product.banner_type}
+                name={product.name}
+                classes={"object-cover w-full h-full"}
+             />
             </div>
             <div className="z-20 absolute inset-x-0 top-0 flex items-end justify-end p-2 overflow-hidden rounded-xl aspect-square">
               <div
@@ -59,27 +89,25 @@ function ProfileCards({ products }) {
                 {product.name}
               </h3>
               <div className="flex items-center">
-                <img
-                  src={product.imageSrc}
-                  alt={product.name}
-                  className="z-20 object-cover object-center w-6 h-6 bg-white rounded-full aspect-square"
-                />
+              <Base64Image
+                src={product.logo}
+                type={product.logo_type}
+                name={product.name}
+                classes={"z-20 object-cover object-center w-6 h-6 bg-white rounded-full aspect-square"}
+             />
+                
                 <p className="z-20 mt-1 ml-2 text-[10px] font-light tracking-widest dark:text-white text-[#413A5A] uppercase">
                   @{product.url}
                 </p>
               </div>
-              <h1 className="dark:text-[#E6E0FA] text-[#413A5A]">
-                Reserve Price
-              </h1>
-              <p className="dark:text-white text-[#413A5A] text-xs">
-                {product.price} WBNB
-              </p>
+             
             </div>
           </div>
         </div>
       ))}
     </div>
-  );
+    </div>
+  )
 }
 
-export default ProfileCards;
+export default Collection

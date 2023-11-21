@@ -1,5 +1,9 @@
 import { ChakraProvider } from "@chakra-ui/react";
-import { ThirdwebProvider } from "@thirdweb-dev/react";
+import { ThirdwebProvider,
+  metamaskWallet,
+  coinbaseWallet,
+  walletConnect,
+} from "@thirdweb-dev/react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import type { AppProps } from "next/app";
@@ -20,6 +24,8 @@ function App({ Component, pageProps }: AppProps) {
   return (
     <ThirdwebProvider
       activeChain="ethereum"
+      supportedWallets={[metamaskWallet(), coinbaseWallet(), walletConnect()]}
+      clientId="cac2fd8377def9aaf16b1f2d128671bd"
       authConfig={{
         domain:
           process.env.NEXT_PUBLIC_THIRDWEB_AUTH_DOMAIN ||

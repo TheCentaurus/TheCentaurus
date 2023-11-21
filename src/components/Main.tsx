@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
+import { useAddress } from "@thirdweb-dev/react";
 import elipsePic from "../assets/EllipseCardPic.png";
 import cardpic from "../assets/cardpic.png";
 import prmElipsePic from "../assets/plm-eclipse.png";
@@ -49,6 +50,7 @@ export function Main() {
       },
     ],
   };
+  const address = useAddress();
   const router = useRouter();
   return (
     <section className="py-10 text-gray-600 sm:pt-64 sm:pb-24 body-font md:px-20 xl:px-40 2xl:px-80 ">
@@ -85,7 +87,7 @@ export function Main() {
               Discover , Create, Buy and Sell.
             </motion.p>
             <div className="z-20 flex justify-start mt-5">
-              <motion.p
+              {address?.length ?  <motion.p
                 initial={{ x: -20, y: 200 }}
                 animate={{
                   x: 0,
@@ -108,7 +110,10 @@ export function Main() {
                   className="absolute top-[2px] w-[94%] h-[18px] right-[2px] z-[-1]"
                 />
                 Create
-              </motion.p>
+              </motion.p>:
+              <p></p>
+               }
+             
 
               <motion.p
                 initial={{ x: -20, y: 200 }}

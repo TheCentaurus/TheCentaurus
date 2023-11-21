@@ -1,90 +1,104 @@
+import postService from "@/api/post-services";
 import { Layout } from "@/components/Layout";
 import { Spinner, useToast } from "@chakra-ui/react";
 import { useUser } from "@thirdweb-dev/react";
 import { ThirdwebStorage } from "@thirdweb-dev/storage";
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getProfile, updateProfile } from "../slices/profile";
-
-const storage = new ThirdwebStorage();
+import { ToastContainer, toast } from 'react-toastify';
+import { useAddress } from "@thirdweb-dev/react";
+import 'react-toastify/dist/ReactToastify.css';
+import getServices from "@/api/get-services";
 
 export default function Edit() {
-  const toast = useToast();
-  const { user, isLoggedIn } = useUser();
-  const { isLoading } = useSelector((state: any) => state.profile);
-  const dispatch = useDispatch();
-  const [data, setData] = useState<any>({
-    id: "",
-    username: "",
-    bio: "",
-    avatar: "",
-    banner: "",
-    email: "",
-    twitter: "",
-    discord: "",
-    links: "",
-    walletAddress: "",
-  });
 
-  const handleChange = (e: any) => {
-    setData({ ...data, [e.target.name]: e.target.value });
-  };
+  const [loading, setLoading] = useState(false)
+  const[mail, setMail] = useState('')
+  const[about, setAbout] = useState('')
+  const [username, setUsername] = useState('')
+  const [avater, setAvater] = useState('')
+  const [banner, setBanner] = useState('')
+  const [twitter, setTwitter] = useState('')
+  const [addresss, setAddress] = useState('')
+  const [url, setUrl] = useState('')
+  const [discord, setDiscord] = useState('')
+  const address = useAddress();
+  const [data, setData] = useState([])
 
-  const handleSubmit = () => {
-    //@ts-ignore
-    dispatch(updateProfile(data))
-      .unwrap()
-      .then((res) => {
-        toast({
-          title: "Profile Updated.",
-          description: "Your profile has been updated.",
-          status: "success",
-          duration: 9000,
-          isClosable: true,
-        });
+  const onSubmit = (e) =>{
+    e.preventDefault()
+    const formData = new FormData();
+    formData.append('userAddress', address?? '');
+    formData.append('username', username?? '');
+    formData.append('about', about?? '');
+    formData.append('secret', 'HwgGvrRwdTYUJuytr567jbHGftyI7TfvbnjUYTFVBNbvcGBHNhgdxcvbn985gb');
+    formData.append('avatar', avater?? '');
+    formData.append('banner', banner?? '');
+    formData.append('twitter', twitter?? '');
+    formData.append('website_url', url?? '');
+    formData.append('email', discord?? '');
+    formData.append('email', mail?? '');
+    setLoading(true)
 
-        console.log(res);
-        location.href = "/profile";
-      });
-  };
-
-  const uploadBanner = async (e: any) => {
-    const file = e.target.files[0];
-    const url = await storage.upload(file);
-    setData({ ...data, banner: url });
-  };
-
-  const uploadAvatar = async (e: any) => {
-    const file = e.target.files[0];
-    const url = await storage.upload(file);
-    setData({ ...data, avatar: url });
-  };
+    postService.userProfile(formData).then(
+      (response) => {
+        setLoading(false)
+        if(response.data.message === 'Update successful'){
+            toast.success(response.data.message, {
+                             
+                onClose: () => {
+                  window.location.reload()
+                }
+              })
+        }else{
+            toast.error(response.data.message)
+        }
+       
+      },
+            (error) => {
+                setLoading(false)
+                
+            }
+    )
+  }
 
   useEffect(() => {
-    if (isLoggedIn) {
-      //@ts-ignore
-      dispatch(getProfile(user?.data?.id))
-        .unwrap()
-        .then((res) => {
-          toast({
-            title: "Profile Loaded.",
-            description: "Your profile has been loaded.",
-            status: "info",
-            duration: 2000,
-            isClosable: true,
-          });
-          setData(res);
-        });
-    }
-  }, [isLoggedIn]);
+   
+      getServices.getUserProfile(address).then(
+          (response) => {
+            setLoading(false)
+          if(response.data.data.lenght >= 0){
+          setData(response.data.data)
+          setUsername(data[0].username?? '')
+          setAbout(data[0].about?? '')
+          setTwitter(data[0].twitter?? '')
+          setMail(data[0].email?? '')
+          setDiscord(data[0].discord?? '')
+          }else{
+              setData([])
+          }
+         
+          console.log(response.data.data)
+          
+        },
+        (error) => {
+            setLoading(false)
+            
+        }
+        )
+  
+  }, [])
+
 
   return (
     <Layout>
       <main className="relative pt-32">
+      
         <div className="max-w-screen-md px-4 pb-6 mx-auto sm:px-6 lg:px-8 lg:pb-16">
+        <ToastContainer/>
           <div className="overflow-hidden rounded-lg dark:bg-[#1b1324] bg-[#fff] shadow">
             <div className="divide-y divide-gray-200 lg:divide-y-0 lg:divide-x">
               <div className="divide-y divide-gray-200 lg:col-span-9">
+
                 {/* Profile section */}
                 <div className="px-4 py-6 sm:p-6 lg:pb-8">
                   <div>
@@ -96,7 +110,7 @@ export default function Edit() {
                       what you share.
                     </p>
                   </div>
-
+                  <form onSubmit={onSubmit}>
                   <div className="flex flex-col mt-6 lg:flex-row">
                     <div className="flex-grow space-y-6">
                       <div>
@@ -112,8 +126,8 @@ export default function Edit() {
                             name="username"
                             id="username"
                             autoComplete="username"
-                            value={data?.username}
-                            onChange={(e) => handleChange(e)}
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)}
                             className="block dark:text-white w-full mt-1 bg-white border-gray-300 rounded-md shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm dark:bg-[#1b1324]"
                           />
                         </div>
@@ -129,8 +143,8 @@ export default function Edit() {
                         <div className="mt-1">
                           <textarea
                             id="bio"
-                            value={data?.bio}
-                            onChange={(e) => handleChange(e)}
+                            value={about}
+                            onChange={(e) => setAbout(e.target.value)}
                             name="bio"
                             rows={3}
                             className="block p-2 dark:text-white w-full mt-1 bg-white border-gray-300 rounded-md shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm dark:bg-[#1b1324]"
@@ -153,10 +167,11 @@ export default function Edit() {
                       >
                         Avatar
                       </label>
-                      <input
-                        onChange={(e) => uploadAvatar(e)}
+                      <input 
+                      //  onChange={(e) => uploadAvatar(e)}
                         type="file"
                         name="avatar"
+                        onChange={(e) => setAvater(e.target.files ? e.target.files[0] : null)}
                         id="avatar"
                         className="block dark:text-white w-full mt-1 bg-white border-gray-300 rounded-md shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm dark:bg-[#1b1324]"
                       />
@@ -169,7 +184,7 @@ export default function Edit() {
                         Banner
                       </label>
                       <input
-                        onChange={(e) => uploadBanner(e)}
+                        onChange={(e) => setBanner(e.target.files ? e.target.files[0] : null)}
                         type="file"
                         name="banner"
                         id="banner"
@@ -187,8 +202,8 @@ export default function Edit() {
                         Twitter
                       </label>
                       <input
-                        value={data?.twitter}
-                        onChange={(e) => handleChange(e)}
+                        value={twitter}
+                        onChange={(e) => setTwitter(e.target.value)}
                         type="text"
                         name="twitter"
                         id="twitter"
@@ -204,8 +219,8 @@ export default function Edit() {
                         Discord
                       </label>
                       <input
-                        value={data?.discord}
-                        onChange={(e) => handleChange(e)}
+                        value={discord}
+                       onChange={(e) => setDiscord(e.target.value)}
                         type="text"
                         name="discord"
                         id="discord"
@@ -221,8 +236,8 @@ export default function Edit() {
                         Website Url
                       </label>
                       <input
-                        value={data?.links}
-                        onChange={(e) => handleChange(e)}
+                        value={url}
+                        onChange={(e) => setUrl(e.target.value)}
                         type="text"
                         name="links"
                         id="links"
@@ -238,8 +253,8 @@ export default function Edit() {
                         Email
                       </label>
                       <input
-                        value={data?.email}
-                        onChange={(e) => handleChange(e)}
+                        value={mail}
+                        onChange={(e) => setMail(e.target.value)}
                         type="email"
                         name="email"
                         id="email"
@@ -255,7 +270,7 @@ export default function Edit() {
                         Wallet Address
                       </label>
                       <input
-                        value={data?.walletAddress}
+                        value={address}
                         readOnly
                         type="text"
                         name="walletAddress"
@@ -266,10 +281,10 @@ export default function Edit() {
                   </div>
                   <div className="py-6 ">
                     <button
-                      onClick={() => handleSubmit()}
+                      // onClick={() => handleSubmit()}
                       className="float-right px-4 py-2 text-white bg-yellow-400 rounded-md "
                     >
-                      {isLoading ? (
+                      {loading ? (
                         <div className="flex items-center justify-center">
                           <div>
                             <Spinner size={"sm"} />
@@ -280,6 +295,7 @@ export default function Edit() {
                       )}
                     </button>
                   </div>
+                  </form>
                 </div>
               </div>
             </div>

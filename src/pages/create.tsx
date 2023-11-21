@@ -2,9 +2,27 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { BsImage, BsImages } from "react-icons/bs";
 import { Layout } from "../components/Layout";
-
+import { useEffect } from "react";
+import { useAddress } from "@thirdweb-dev/react";
+import postServices from '../api/post-services'
 export default function Create() {
+  const address = useAddress();
   const router = useRouter();
+  useEffect(() =>{
+    
+    postServices.registerUser(address).then(
+            
+      (response) => {
+        
+       
+        console.log(response.data)
+        
+      },
+      (error) => {
+         
+      }
+    )
+  },[])
   return (
     <Layout>
       <div className="py-10 md:py-32">
@@ -12,7 +30,7 @@ export default function Create() {
           <div className="z-20 flex items-center justify-between ">
             {" "}
             <h1 className="z-20 px-2 text-xl font-bold border-l lg:text-3xl">
-              Create Collectible
+              Create Collectible 
             </h1>
             <p
               className="z-20 underline cursor-pointer"
@@ -42,13 +60,13 @@ export default function Create() {
               </Link>
             </div>
             <div
-              onClick={() => router.push("/create-multiple")}
+              onClick={() => router.push("/create-collection")}
               className="z-20 flex flex-col items-center justify-center w-full transition duration-300 ease-in-out cursor-pointer rounded-xl hover:scale-75"
             >
               <BsImages className="z-20 text-[100px]" color="#f6d10b" />
               <Link href="/create-single">
                 <p className="z-20 dark:text-[#F6D10B] cursor-pointer mt-5 text-xl font-bold text-center">
-                  Multiple
+                 Collection
                 </p>
               </Link>
             </div>

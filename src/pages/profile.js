@@ -7,16 +7,36 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { FiEdit } from "react-icons/fi";
 import { Layout } from "../components/Layout";
+import Collection from "../components/Profile/Collection";
+import getServices from "@/api/get-services";
+import { useAddress } from "@thirdweb-dev/react";
 function Profile() {
   const router = useRouter();
   const [data, setData] = useState({});
   const { user, isLoggedIn } = useUser();
-
+  const address = useAddress();
+  const [loading, setLoading] = useState(false)
   useEffect(() => {
-    if (isLoggedIn) {
-      setData(user?.data);
-    }
-  }, [isLoggedIn]);
+   
+    getServices.getUserProfile(address).then(
+        (response) => {
+          setLoading(false)
+        if(response.data.data){
+        setData(response.data.data)
+        }else{
+            setData([])
+        }
+       
+        console.log(response.data.data)
+        
+      },
+      (error) => {
+          setLoading(false)
+          
+      }
+      )
+
+}, [])
 
   return (
     <Layout>
@@ -98,7 +118,7 @@ function Profile() {
                     Created
                   </Tab>
                   <Tab className="text-xs md:text-md dark:text-[#E6E0FA] text-[#413A5A]">
-                    Collected
+                    Collection
                   </Tab>
                   <Tab className="text-xs md:text-md dark:text-[#E6E0FA] text-[#413A5A]">
                     Listings
@@ -110,7 +130,7 @@ function Profile() {
                     <ProfileCards products={products} />
                   </TabPanel>
                   <TabPanel>
-                    <ProfileCards products={collection} />
+                    <Collection/>
                   </TabPanel>
                   <TabPanel>
                     <div className="grid grid-cols-4">
