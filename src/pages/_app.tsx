@@ -13,7 +13,7 @@ import { Provider } from "react-redux";
 import "tailwindcss/tailwind.css";
 import store from "../store.js";
 import "../styles/global.css";
-import { MyThemeContextProvider } from "../theme/themeContext.tsx";
+import { MyThemeContextProvider } from "../theme/themeContext";
 
 function App({ Component, pageProps }: AppProps) {
   useEffect(() => {

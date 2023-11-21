@@ -20,6 +20,6 @@
       "@/*": ["src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/profile.js", "src/components/Nav/Profile.js", "src/pages/edit-profile.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/profile.js", "src/components/Nav/Profile.js", "src/pages/edit-profile.js", "src/theme/themeContext.tsx"],
   "exclude": ["node_modules"]
 }
