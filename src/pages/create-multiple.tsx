@@ -3,7 +3,6 @@ import { CheckCircleIcon } from "@heroicons/react/20/solid";
 import { useState } from "react";
 import { Layout } from "../components/Layout";
 import postService from "@/api/post-services";
-import Loading from '../components/SelectValue/Loading'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 const mailingLists = [
@@ -70,9 +69,7 @@ export default function CreateMultiple() {
 
   return (
     <Layout>
-      <Loading
-      open={loading}
-      />
+     
       <div className="flex justify-center ">
         <div className="z-20 max-w-screen-lg px-8 pt-10 my-16 md:px-15 lg:px-20 lg:pt-32">
           <div className="py-2">
