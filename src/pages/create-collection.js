@@ -343,8 +343,21 @@ export default function CreateMultiple() {
                         className="block w-full px-3 py-2 mt-1 dark:text-white bg-white dark:bg-[#2A243D] dark:border-transparent border border-gray-300 rounded-md shadow-sm focus:border-yellow-500 focus:outline-none focus:ring-yellow-500 sm:text-sm"
                       >
                         <option>Select a category</option>
-                        <option key={1} value={'art'}>Art</option>
-                        <option key={2} value={'music'}>Music</option>
+                        <option key={1} value={'DIGITAL ART'}>DIGITAL ART</option>
+                        <option key={2} value={'PHISICAL ART'}>PHISICAL ART</option>
+                        <option key={3} value={'MUSIC'}>MUSIC</option>
+                        <option key={4} value={'VIDEO'}>VIDEO</option>
+                        <option key={5} value={'GAMES'}>GAMES</option>
+                        <option key={6} value={'COLLECTABLE'}>COLLECTABLE</option>
+                        <option key={7} value={'PFPS'}>PFPS</option>
+                        <option key={8} value={'DOCCUMENTS'}>DOCCUMENTS</option>
+                        <option key={9} value={'RECORDS'}>RECORDS</option>
+                        <option key={10} value={'DEEDS'}>DEEDS</option>
+                        <option key={11} value={'REALESTATE PHISICAL'}>REALESTATE PHISICAL</option>
+                        <option key={12} value={'REAL ESTATE FLORE PLANS'}>REAL ESTATE FLORE PLANS</option>
+                        <option key={13} value={'REAL ESTATE METAVERSE'}>REAL ESTATE METAVERSE</option>
+                        <option key={14} value={'SUBSCRIPTIONS'}>SUBSCRIPTIONS</option>
+                        <option key={15} value={'SERVICESS'}>SERVICESS</option>
                       </select>
                     </div>
 

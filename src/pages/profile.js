@@ -22,7 +22,7 @@ function Profile() {
         (response) => {
           setLoading(false)
         if(response.data.data){
-        setData(response.data.data)
+        setData(response.data.data[0])
         }else{
             setData([])
         }
@@ -36,7 +36,7 @@ function Profile() {
       }
       )
 
-}, [])
+}, [address])
 
   return (
     <Layout>
@@ -44,17 +44,20 @@ function Profile() {
         <div className="relative">
           <MediaRenderer
             src={
-              data?.banner ||
+              `https://${data?.banner}` ||
               "https://flowbite.com/docs/images/blog/image-1.jpg"
             }
             className="h-[150px] sm:h-[200px] xl:h-[320px] w-full object-cover"
             alt=""
+            width={500} // Desired width (number or string)
+            height={300} // Desired height (number or string)
+            layout="responsive" 
           />
 
           <Container>
             <MediaRenderer
               src={
-                data?.avatar ||
+                `https://${data?.avatar}` ||
                 "https://flowbite.com/docs/images/people/110/guy-6.jpg"
               }
               className="rounded-full h-[80px] w-[80px] md:h-[100px] md:w-[100px] xl:h-[180px] xl:w-[180px] object-cover -mt-16 md:-mt-20 xl:-mt-36 ring-4 lg:ring-[6px] ring-[#f0fbef] dark:ring-secondary absolute"
@@ -77,13 +80,7 @@ function Profile() {
                 </h1>
                 <div className="z-20 flex space-x-5">
                   <h3 className="font-medium text-sm text-[#413A5A] dark:text-white">
-                    {user?.address ? (
-                      user?.address.slice(0, 12) +
-                      "..." +
-                      user?.address.slice(-4)
-                    ) : (
-                      <div className="animate-pulse mt-1 bg-[#413A5A] dark:bg-[#E6E0FA] h-4 w-40 rounded-md"></div>
-                    )}
+                  {address}
                   </h3>
                   {data?.createdAt && (
                     <h3 className="font-medium text-sm text-[#413A5A] dark:text-white">

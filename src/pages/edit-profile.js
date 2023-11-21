@@ -35,7 +35,7 @@ export default function Edit() {
     formData.append('banner', banner?? '');
     formData.append('twitter', twitter?? '');
     formData.append('website_url', url?? '');
-    formData.append('email', discord?? '');
+    formData.append('discord', discord?? '');
     formData.append('email', mail?? '');
     setLoading(true)
 
@@ -66,13 +66,14 @@ export default function Edit() {
       getServices.getUserProfile(address).then(
           (response) => {
             setLoading(false)
-          if(response.data.data.lenght >= 0){
+          if(response.data.data.length >= 0){
           setData(response.data.data)
-          setUsername(data[0].username?? '')
-          setAbout(data[0].about?? '')
-          setTwitter(data[0].twitter?? '')
-          setMail(data[0].email?? '')
-          setDiscord(data[0].discord?? '')
+          setUsername(response.data.data[0].username?? '')
+          setAbout(response.data.data[0].about?? '')
+          setTwitter(response.data.data[0].twitter?? '')
+          setMail(response.data.data[0].email?? '')
+          setDiscord(response.data.data[0].discord?? '')
+          setUrl(response.data.data[0].website_url?? '')
           }else{
               setData([])
           }
@@ -86,7 +87,7 @@ export default function Edit() {
         }
         )
   
-  }, [])
+  }, [address])
 
 
   return (
